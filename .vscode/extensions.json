@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "robocorp.robotframework-lsp",
+    "techer.open-in-browser",
+    "eamodio.gitlens",
+    "EditorConfig.EditorConfig"
+]
+}

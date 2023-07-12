@@ -1,0 +1,28 @@
+==============================================================================
+Suites                                                                        
+==============================================================================
+Suites.P01 SA 01 Tests :: ...                                                 
+==============================================================================
+TC_TO01_suiteA :: This Test Case is to Check And Run Robot Framewo...   
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\edis\Desktop\New_IMB_Project\Performance\P01_SA_01_Tests.robot:11
+    T:  TC_TO01_suiteA    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\edis\Desktop\New_IMB_Project\Performance\P01_SA_01_Tests.robot:21
+      Run Robot Framework Scripts    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\edis\Desktop\New_IMB_Project\Resources\common.resource:73
+      Wait Until Element Is Visible    ${BTN_NEXT_BDD_EXAMPLE}
+      |  ${BTN_NEXT_BDD_EXAMPLE} = //button[contains(text(), ' next: BDD-Example')] (str)
+______________________________________________________________________________
+| FAIL |
+Element '//button[contains(text(), ' next: BDD-Example')]' not visible after 5 seconds.
+------------------------------------------------------------------------------
+Suites.P01 SA 01 Tests :: ...                                         | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Suites                                                                | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  C:\Users\edis\Desktop\New_IMB_Project\Performance\Results\pabot_results\0\output.xml
