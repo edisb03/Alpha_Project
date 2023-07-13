@@ -11,7 +11,7 @@ Test Teardown       Close Browser
 
 *** Test Cases ***
 TC_TO01_suiteB
-    [Documentation]    This Test Case is Check Mobile Testing
+    [Documentation]    This Test Case is Check Mobile Testing....
     [Tags]    tc_to01_b
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
