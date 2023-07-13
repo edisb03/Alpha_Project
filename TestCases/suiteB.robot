@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    ...
+Documentation    .....
 Resource            ../Resources/common.resource
 Resource            ../Resources/common_Second.resource
 Library             SeleniumLibrary
