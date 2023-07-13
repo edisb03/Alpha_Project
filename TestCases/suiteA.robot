@@ -21,7 +21,7 @@ TC_TO01_suiteA
     Run Robot Framework Scripts
 
 TC_TO02_suiteA
-    [Documentation]    This Test Case is to Check And Run Robot Framework Scripts
+    [Documentation]    This Test Case is to Check And Run Robot Framework Scripts.
     [Tags]    tc_to02_a
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
@@ -34,7 +34,7 @@ TC_TO02_suiteA
     Check Test Automation Strategy Title
 
 TC_TO03_suiteA
-    [Documentation]    This Test Case is to Check And Run Robot Framework Scripts
+    [Documentation]    This Test Case is to Check And Run Robot Framework Scripts.
     [Tags]    tc_to03_a
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
