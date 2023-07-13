@@ -22,7 +22,7 @@ TC_TO01_suiteA
 
 TC_TO02_suiteA
     [Documentation]    This Test Case is to Check And Run Robot Framework Scripts.
-    [Tags]    tc_to02_b
+    [Tags]    tc_to02_a
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
     Allow All Cookies
