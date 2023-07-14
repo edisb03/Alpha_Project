@@ -9,7 +9,7 @@ Test Teardown       Close Browser
 
 *** Test Cases ***
 TC_TO01_suiteA
-    [Documentation]    This Test Case is to Check And Run Robot Framework Scripts
+    [Documentation]    This Test Case is to Check And Run Robot Framework Scripts.
     [Tags]    tc_to01_a
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
