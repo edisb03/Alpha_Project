@@ -3,7 +3,8 @@ Documentation   ...
 Resource            ../Resources/common.resource
 Library             SeleniumLibrary
 
-# Test Setup    Open Browser
+# Test Setup    Open Web Browser     browser_type=headlesschrome
+Test Setup    Open Web Browser    
 Test Teardown       Close Browser
 
 
@@ -11,8 +12,6 @@ Test Teardown       Close Browser
 TC_TO01_suiteA
     [Documentation]    This Test Case is to Check And Run Robot Framework Scripts
     [Tags]    tc_to01_a
-    Open Browser    ${URL}    ${BROWSER}
-    Maximize Browser Window
     Allow All Cookies
     Navigate To Software Testing
     Navigate To Test Automation [Software Testing]
@@ -23,8 +22,6 @@ TC_TO01_suiteA
 TC_TO02_suiteA
     [Documentation]    This Test Case is to Check And Run Robot Framework Scripts.
     [Tags]    tc_to02_b
-    Open Browser    ${URL}    ${BROWSER}
-    Maximize Browser Window
     Allow All Cookies
     Navigate To Software Testing
     Navigate To Test Automation [Software Testing]
@@ -36,7 +33,6 @@ TC_TO02_suiteA
 TC_TO03_suiteA
     [Documentation]    This Test Case is to Check And Run Robot Framework Scripts.
     [Tags]    tc_to03_a
-    Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
     Allow All Cookies
     Navigate To Academy
