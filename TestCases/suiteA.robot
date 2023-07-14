@@ -18,7 +18,7 @@ TC_TO01_suiteA
     Navigate To Test Automation [Software Testing]
     Navigate To Test Automation With Robot Framework [Test Automation]
     Navigate To Robot Framework
-    Run Robot Framework Scripts
+    # Run Robot Framework Scripts
 
 TC_TO02_suiteA
     [Documentation]    This Test Case is to Check And Run Robot Framework Scripts.
