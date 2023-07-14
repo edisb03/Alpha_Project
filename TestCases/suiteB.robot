@@ -22,7 +22,7 @@ TC_TO01_suiteB
     Press Tab Key
 
 TC_TO02_suiteB
-    [Documentation]    This Test Case is to Check And Run Robot Framework Scripts
+    [Documentation]    This Test Case is to Check And Run Robot Framework Scripts...
     [Tags]    tc_to02_b
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
@@ -32,7 +32,7 @@ TC_TO02_suiteB
     Check Validation Form
 
 TC_TO03_suiteB
-    [Documentation]    This Test Case is to Check And Run Robot Framework Scripts
+    [Documentation]    This Test Case is to Check And Run Robot Framework Scripts...
     [Tags]    tc_to02_b
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
