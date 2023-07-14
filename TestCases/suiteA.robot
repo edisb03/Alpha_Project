@@ -4,7 +4,7 @@ Resource            ../Resources/common.resource
 Library             SeleniumLibrary
 
 # Test Setup    Open Browser
-Test Teardown       Close Browser
+# Test Teardown       Close Browser
 
 
 *** Test Cases ***
