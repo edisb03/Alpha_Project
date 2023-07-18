@@ -3,7 +3,7 @@ Library    SeleniumLibrary           implicit_wait=10 seconds    run_on_failure=
 Library    Collections
 
 *** Variables ***
-${URL}    https://www.imbus.de/en/
+${URL}    https://www.testbench.com/
 ${BROWSER}    chrome
 
 ${HEADLESS CHROME OPTIONS}
