@@ -13,6 +13,6 @@ Test Teardown       Close Browser
 *** Test Cases ***
 
 TC_01-----Test
-    [Documentation]     Test........123456
+    [Documentation]     Test........1234567
     Wait Until Page Contains    Accept all
     Sleep    5s
