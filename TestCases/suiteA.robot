@@ -10,4 +10,8 @@ Test Teardown       Close Browser
 
 
 *** Test Cases ***
+TC_01
+    [Documentation]     Test
+    Wait Until Page Contains    Accept all
+    Sleep    5s
  # Browser Library to install
