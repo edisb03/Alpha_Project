@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 4.1.3 (Python 3.10.2 on win32)" name="Generator">
+<meta content="Robot Framework 5.0.1 (Python 3.11.0 on win32)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all" type="text/css">
 /* Generic and misc styles */
@@ -318,6 +318,9 @@ th.stats-col-graph:hover {
     top: 0;
     padding: 3px;
     cursor: default;
+}
+.element-header .label {
+    margin-right: 0.5em;
 }
 .name {
     font-weight: bold;
@@ -966,6 +969,7 @@ window.model = (function () {
     }
     function Keyword(data) {
         var kw = createModelObject(data);
+        var flatTypes = ['RETURN', 'BREAK', 'CONTINUE'];
         kw.libname = data.libname;
         kw.fullName = (kw.libname ? kw.libname + '.' : '') + kw.name;
         kw.type = data.type;
@@ -1350,8 +1354,8 @@ window.testdata = function () {
     var _statistics = null;
     var LEVELS = ['TRACE', 'DEBUG', 'INFO', 'WARN', 'ERROR', 'FAIL', 'SKIP'];
     var STATUSES = ['FAIL', 'PASS', 'SKIP', 'NOT RUN'];
-    var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'VAR', 'IF', 'ELSE IF', 'ELSE'];
-    var MESSAGE_TYPE = 8;
+    var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF', 'ELSE IF', 'ELSE', 'RETURN',
+                         'TRY', 'EXCEPT', 'FINALLY', 'WHILE', 'CONTINUE', 'BREAK'];
     function addElement(elem) {
         if (!elem.id)
             elem.id = uniqueId();
@@ -1372,10 +1376,10 @@ window.testdata = function () {
                 elapsed];
     }
     function createMessage(element, strings) {
-        return model.Message(LEVELS[element[2]],
-                             util.timestamp(element[1]),
-                             strings.get(element[3]),
-                             strings.get(element[4]));
+        return model.Message(LEVELS[element[1]],
+                             util.timestamp(element[0]),
+                             strings.get(element[2]),
+                             strings.get(element[3]));
     }
     function parseStatus(stats) {
         return STATUSES[stats[0]];
@@ -1386,7 +1390,7 @@ window.testdata = function () {
         };
     }
     function createBodyItem(parent, element, strings, index) {
-        if (element[0] == MESSAGE_TYPE)
+        if (element.length < 5)
             return createMessage(element, strings);
         var messages = util.filter(parent.children(), function (child) {
             return child.type == 'message';
@@ -1799,25 +1803,25 @@ function stopPropagation(event) {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[1,0,8419],[],[[4,0,5,[6],[1,357,8058],[[0,7,8,0,9,10,0,0,[1,358,2874],[[8,359,2,11]]],[0,12,8,0,13,0,0,0,[1,3236,144],[]],[0,14,15,0,16,0,0,0,[1,3385,803],[[0,17,8,0,18,19,0,0,[1,3386,183],[]],[0,20,8,0,21,19,0,0,[1,3570,617],[[8,3571,2,22]]]]],[0,23,24,0,25,0,0,0,[1,4190,379],[[0,26,8,0,27,28,0,0,[1,4191,377],[[8,4191,2,29]]]]],[0,30,24,0,31,0,0,0,[1,4570,300],[[0,26,8,0,27,32,0,0,[1,4571,299],[[8,4572,2,33]]]]],[0,34,24,0,35,0,0,0,[1,4872,687],[[0,20,8,0,21,36,0,0,[1,4873,685],[[8,4874,2,37]]]]],[0,38,15,0,39,0,0,0,[1,5567,423],[[0,40,41,0,42,43,0,0,[1,5568,401],[[0,44,8,0,45,46,0,0,[1,5569,400],[]]]],[0,17,8,0,18,46,0,0,[1,5970,19],[]]]],[0,47,24,0,48,0,0,0,[1,5990,106],[[0,17,8,0,18,49,0,0,[1,5991,28],[]],[0,20,8,0,21,49,0,0,[1,6020,76],[[8,6020,2,50]]]]],[0,51,15,0,0,0,0,0,[1,6098,44],[[0,52,8,0,53,54,0,0,[1,6099,43],[]]]],[2,55,8,0,56,0,0,0,[1,6143,2269],[]]]]],[],[1,1,0,0]];
+window.output["suite"] = [1,2,3,0,[],[1,0,10919],[[4,5,6,0,[],[1,22,10891],[[7,8,9,10,[],[1,25,10879],[],[[11,0,12,[11],[1,397,10501],[[1,13,14,0,15,0,0,0,[1,398,3283],[[0,16,17,0,18,0,19,0,[1,398,1],[[399,2,20]]],[5,21,0,0,0,0,0,0,[3,399,0],[[0,22,23,0,24,25,0,0,[3,399,0],[]]]],[0,26,27,0,28,29,0,0,[1,399,3168],[[400,2,30]]],[0,31,27,0,32,0,0,0,[1,3568,112],[]]]],[0,33,27,0,34,35,0,0,[1,3681,22],[]],[0,36,17,0,37,38,0,0,[1,3703,5000],[[8703,2,39]]],[2,40,27,0,41,0,0,0,[1,8703,2194],[]]]]],[],[1,1,0,0]]],[],[],[1,1,0,0]]],[],[],[1,1,0,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*suiteA","*c:\\Users\\edis\\Desktop\\New_IMB_Project\\TestCases\\suiteA.robot","eNqzSVTIKEpNs1VKy8xJtdLX13e20g8tTi0q1k9NySzWd0ktzi7JL9D3Sy2P9/R1ig8oys9KTS7RD0ktLnFOLE4t1i8uzSxJddQryk/KL1Gyo4YpNvqJdgB/WTUU","*TC_TO02_suiteA","*<p>This Test Case is to Check And Run Robot Framework Scripts\x3c/p>","*TC_TO02_A","*Open Browser","*SeleniumLibrary","*<p>Opens a new browser instance to the optional <code>url\x3c/code>.\x3c/p>","*${URL}, ${BROWSER}","*Opening browser 'chrome' to base url '<a href=\"https://www.imbus.de/en/\">https://www.imbus.de/en/\x3c/a>'.","*Maximize Browser Window","*<p>Maximizes current browser window.\x3c/p>","*Allow All Cookies","*common","*<p>This keyword is to accept all Cookies\x3c/p>","*Wait Until Page Contains Element","*<p>Waits until the element <code>locator\x3c/code> appears on the current page.\x3c/p>","*${BTN_ALLOW_ALL COOKIES}","*Click Element","*<p>Click the element identified by <code>locator\x3c/code>.\x3c/p>","*Clicking element '//a[contains(text(), 'allow all cookies')]'.","*Navigate To Software Testing","*common_Navigate","*<p>This keyword is to navigate to Software Testing\x3c/p>","*Mouse Over","*<p>Simulates hovering the mouse over the element <code>locator\x3c/code>.\x3c/p>","*${LINK_SOFTWARE_TESTING}","*Simulating Mouse Over on element '(//a[contains(@title, 'Software Testing')])[1]'.","*Navigate To Test Automation [Software Testing]","*<p>This keyword is to navigate to Test Automation\x3c/p>","*${LINK_TEST_AUTOMATION}","*Simulating Mouse Over on element '(//a[contains(text(), 'Test Automation')])[1]'.","*Navigate To Test Automation Strategy [Test Automation]","*<p>This keyword is to navigate to Test Automation Strategy\x3c/p>","*${LINK_TEST-AUTOMATION-STRATEGY}","*Clicking element '//a[contains(text(), 'Test and automation strategy')]'.","*Check Roll-Out Title","*<p>This keyword is to Check Roll Out Title\x3c/p>","*Wait Until Keyword Succeeds","*BuiltIn","*<p>Runs the specified keyword and retries if it fails.\x3c/p>","*5x, 2s, Scroll Element Into View, ${TITLE_ROLL-OUT}","*Scroll Element Into View","*<p>Scrolls the element identified by <code>locator\x3c/code> into view.\x3c/p>","*${TITLE_ROLL-OUT}","*Navigate To Top Page","*<p>This keyword is navigate to the top of the page\x3c/p>","*${LINK_NAVIGATION_TO-TOP}","*Clicking element '//a[contains(@id, 'toTop')]'.","*Check Test Automation Strategy Title","*Wait Until Element Is Visible","*<p>Waits until the element <code>locator\x3c/code> is visible.\x3c/p>","*${TITLE_TEST&amp;AUTOMATION-STRATEGY}","*Close Browser","*<p>Closes the current browser.\x3c/p>"]);
+window.output["strings"] = window.output["strings"].concat(["*","*First Project IMBUS","*C:\\Users\\arber\\Desktop\\Imbus-Project\\First_Project_IMBUS","*../..","*TestCases","*C:\\Users\\arber\\Desktop\\Imbus-Project\\First_Project_IMBUS\\TestCases","*../../TestCases","*suiteA","*C:\\Users\\arber\\Desktop\\Imbus-Project\\First_Project_IMBUS\\TestCases\\suiteA.robot","*../../TestCases/suiteA.robot","*<p>...\x3c/p>","*TC_01","*<p>Test\x3c/p>","*Open Web Browser","*common_Second","*<p>Opens a new browser instance and maximizes the window\x3c/p>","*Create Dictionary","*BuiltIn","*<p>Creates and returns a dictionary based on the given <code>items\x3c/code>.\x3c/p>","*&amp;{browser args}","*&amp;{browser args} = { }","*&quot;${browser_type}&quot; == &quot;headlesschrome&quot;","*Set To Dictionary","*Collections","*<p>Adds the given <code>key_value_pairs\x3c/code> and <code>items\x3c/code> to the <code>dictionary\x3c/code>.\x3c/p>","*${browser args}, options=${HEADLESS CHROME OPTIONS}","*Open Browser","*SeleniumLibrary","*<p>Opens a new browser instance to the optional <code>url\x3c/code>.\x3c/p>","*${URL}, ${browser type}, &amp;{browser args}","*Opening browser 'chrome' to base url '<a href=\"https://www.testbench.com/\">https://www.testbench.com/\x3c/a>'.","*Maximize Browser Window","*<p>Maximizes current browser window.\x3c/p>","*Wait Until Page Contains","*<p>Waits until <code>text\x3c/code> appears on the current page.\x3c/p>","*Accept all","*Sleep","*<p>Pauses the test executed for the given time.\x3c/p>","*5s","*Slept 5 seconds","*Close Browser","*<p>Closes the current browser.\x3c/p>"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:08","fail":0,"label":"All Tests","pass":1,"skip":0}],[{"elapsed":"00:00:08","fail":0,"label":"TC_TO02_A","pass":1,"skip":0}],[{"elapsed":"00:00:08","fail":0,"id":"s1","label":"suiteA","name":"suiteA","pass":1,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:00:11","fail":0,"label":"All Tests","pass":1,"skip":0}],[{"elapsed":"00:00:11","fail":0,"label":"TC_01","pass":1,"skip":0}],[{"elapsed":"00:00:11","fail":0,"id":"s1","label":"First Project IMBUS","name":"First Project IMBUS","pass":1,"skip":0},{"elapsed":"00:00:11","fail":0,"id":"s1-s1","label":"First Project IMBUS.TestCases","name":"TestCases","pass":1,"skip":0},{"elapsed":"00:00:11","fail":0,"id":"s1-s1-s1","label":"First Project IMBUS.TestCases.suiteA","name":"suiteA","pass":1,"skip":0}]];
 </script>
 <script type="text/javascript">
 window.output["errors"] = [];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1688370038863;
+window.output["baseMillis"] = 1689765138015;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 8457;
+window.output["generated"] = 10951;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
@@ -2123,7 +2127,7 @@ function addExecutionLog(main) {
     <div class="element-header closed" onclick="toggleKeyword('${id}')">
       <div class="element-header-left" title="${type}  {{if name}}{{html fullName}}  {{/if}}[${status}]">
         <span class="elapsed" title="Elapsed time">${times.elapsedTime}</span>
-        <span class="label keyword ${status.toLowerCase()}">${type}</span>
+        <span class="label ${status.toLowerCase()}">${type}</span>
         <span>{{html assign}}</span>
         <span class="name"><span class="parent-name">{{html libname}}{{if libname}} . {{/if}}</span>{{html name}}</span>
         <span class="arg">{{html arguments}}</span>
@@ -2131,7 +2135,7 @@ function addExecutionLog(main) {
       <div class="element-header-right" onclick="stopPropagation(event)">
         <a class="expand" title="Expand all" href="javascript:expandAll('${id}')"></a>
         <a class="collapse" title="Collapse all" href="javascript:collapseAll('${id}')"></a>
-        <a class="link" title="Link to this keyword" href="#${id}" onclick="makeElementVisible('${id}')"></a>
+        <a class="link" title="Link to this item" href="#${id}" onclick="makeElementVisible('${id}')"></a>
       </div>
       <div class="element-header-toggle" title="Toggle visibility"></div>
     </div>
