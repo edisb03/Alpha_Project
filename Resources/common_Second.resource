@@ -25,3 +25,14 @@ Open Web Browser
     END
     SeleniumLibrary.Open Browser    ${URL}    ${browser type}    &{browser args}
     Maximize Browser Window
+
+Tolerant Click
+    [Documentation]    This tolerant click performs selenium actions
+    ...    and catches exceptions like: StaleElementReferenceException etc
+    [Arguments]    ${locator}    @{Exceptions_error}
+    TRY
+        Click Element    ${locator}
+    EXCEPT    StaleElementReferenceException
+        Log    Expected error '${Exceptions_error}' while clicking the '${locator}' element - ignoring it
+        Click Element    ${locator}
+    END
