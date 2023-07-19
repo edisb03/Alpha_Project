@@ -10,4 +10,6 @@ Test Teardown       Close Browser
 
 
 *** Test Cases ***
+TC_03
+   [Documentation]
  # Browser Library to install
