@@ -36,3 +36,4 @@ Tolerant Click
         Log    Expected error '${Exceptions_error}' while clicking the '${locator}' element - ignoring it
         Click Element    ${locator}
     END
+

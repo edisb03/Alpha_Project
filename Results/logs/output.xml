@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.11.0 on win32)" generated="20230719 13:43:23.559" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.11.0 on win32)" generated="20230720 10:46:14.674" rpa="false" schemaversion="3">
 <suite id="s1" name="First Project IMBUS" source="C:\Users\arber\Desktop\Imbus-Project\First_Project_IMBUS">
 <suite id="s1-s1" name="TestCases" source="C:\Users\arber\Desktop\Imbus-Project\First_Project_IMBUS\TestCases">
-<suite id="s1-s1-s1" name="MainHeader" source="C:\Users\arber\Desktop\Imbus-Project\First_Project_IMBUS\TestCases\MainHeader">
-<suite id="s1-s1-s1-s1" name="MainHeader" source="C:\Users\arber\Desktop\Imbus-Project\First_Project_IMBUS\TestCases\MainHeader\MainHeader.robot">
-<test id="s1-s1-s1-s1-t1" name="TC_02" line="20">
+<suite id="s1-s1-s1" name="Login In" source="C:\Users\arber\Desktop\Imbus-Project\First_Project_IMBUS\TestCases\Login_In">
+<suite id="s1-s1-s1-s1" name="Login In" source="C:\Users\arber\Desktop\Imbus-Project\First_Project_IMBUS\TestCases\Login_In\Login_In.robot">
+<test id="s1-s1-s1-s1-t1" name="TC_02 Navigate To Login" line="12">
 <kw name="Open Web Browser" library="common_Second" type="SETUP">
 <doc>Opens a new browser instance and maximizes the window</doc>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>&amp;{browser args}</var>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230719 13:43:23.986" level="INFO">&amp;{browser args} = { }</msg>
-<status status="PASS" starttime="20230719 13:43:23.985" endtime="20230719 13:43:23.986"/>
+<msg timestamp="20230720 10:46:15.087" level="INFO">&amp;{browser args} = { }</msg>
+<status status="PASS" starttime="20230720 10:46:15.087" endtime="20230720 10:46:15.087"/>
 </kw>
 <if>
 <branch type="IF" condition="&quot;${browser_type}&quot; == &quot;headlesschrome&quot;">
@@ -19,80 +19,170 @@
 <arg>${browser args}</arg>
 <arg>options=${HEADLESS CHROME OPTIONS}</arg>
 <doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
-<status status="NOT RUN" starttime="20230719 13:43:23.986" endtime="20230719 13:43:23.986"/>
+<status status="NOT RUN" starttime="20230720 10:46:15.087" endtime="20230720 10:46:15.088"/>
 </kw>
-<status status="NOT RUN" starttime="20230719 13:43:23.986" endtime="20230719 13:43:23.986"/>
+<status status="NOT RUN" starttime="20230720 10:46:15.087" endtime="20230720 10:46:15.088"/>
 </branch>
-<status status="PASS" starttime="20230719 13:43:23.986" endtime="20230719 13:43:23.987"/>
+<status status="PASS" starttime="20230720 10:46:15.087" endtime="20230720 10:46:15.088"/>
 </if>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <arg>${browser type}</arg>
 <arg>&amp;{browser args}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230719 13:43:23.987" level="INFO">Opening browser 'chrome' to base url 'https://www.testbench.com/'.</msg>
-<status status="PASS" starttime="20230719 13:43:23.987" endtime="20230719 13:43:27.148"/>
+<msg timestamp="20230720 10:46:15.088" level="INFO">Opening browser 'chrome' to base url 'https://www.testbench.com/'.</msg>
+<status status="PASS" starttime="20230720 10:46:15.088" endtime="20230720 10:46:18.143"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230719 13:43:27.148" endtime="20230719 13:43:27.261"/>
+<status status="PASS" starttime="20230720 10:46:18.143" endtime="20230720 10:46:18.257"/>
 </kw>
-<status status="PASS" starttime="20230719 13:43:23.985" endtime="20230719 13:43:27.261"/>
+<status status="PASS" starttime="20230720 10:46:15.086" endtime="20230720 10:46:18.257"/>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
-<arg>0.5</arg>
+<arg>0.8</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" starttime="20230719 13:43:27.261" endtime="20230719 13:43:27.262"/>
+<status status="PASS" starttime="20230720 10:46:18.258" endtime="20230720 10:46:18.258"/>
 </kw>
+<kw name="Accept Cokkies" library="common">
+<doc>Wait Until Page Contains Accept all</doc>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <arg>Accept all</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20230719 13:43:27.262" endtime="20230719 13:43:27.781"/>
+<status status="PASS" starttime="20230720 10:46:18.259" endtime="20230720 10:46:19.080"/>
 </kw>
-<kw name="Check TestBench Logo" library="Login_in">
-<doc>Checks if the test bench logo exits on the website</doc>
+<kw name="Tolerant Click" library="common_Second">
+<arg>${Accept_Cookies}</arg>
+<doc>This tolerant click performs selenium actions
+and catches exceptions like: StaleElementReferenceException etc</doc>
+<try>
+<branch type="TRY">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230720 10:46:19.080" level="INFO">Clicking element '(//a[@role='button'][normalize-space()='Accept all'])[1]'.</msg>
+<status status="PASS" starttime="20230720 10:46:19.080" endtime="20230720 10:46:20.829"/>
+</kw>
+<status status="PASS" starttime="20230720 10:46:19.080" endtime="20230720 10:46:20.829"/>
+</branch>
+<branch type="EXCEPT">
+<pattern>StaleElementReferenceException</pattern>
+<kw name="Log" library="BuiltIn">
+<arg>Expected error '${Exceptions_error}' while clicking the '${locator}' element - ignoring it</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230720 10:46:20.829" endtime="20230720 10:46:20.829"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230720 10:46:20.829" endtime="20230720 10:46:20.829"/>
+</kw>
+<status status="NOT RUN" starttime="20230720 10:46:20.829" endtime="20230720 10:46:20.829"/>
+</branch>
+<status status="PASS" starttime="20230720 10:46:19.080" endtime="20230720 10:46:20.829"/>
+</try>
+<status status="PASS" starttime="20230720 10:46:19.080" endtime="20230720 10:46:20.829"/>
+</kw>
+<status status="PASS" starttime="20230720 10:46:18.259" endtime="20230720 10:46:20.830"/>
+</kw>
+<kw name="Navigate To Login" library="Log_In">
+<doc>Navigates to Login Button</doc>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230720 10:46:20.831" endtime="20230720 10:46:20.831"/>
+</kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${Test_Bench_Logo}</arg>
+<arg>${LOGIN_BUTTON}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20230719 13:43:27.782" endtime="20230719 13:43:28.308"/>
+<status status="PASS" starttime="20230720 10:46:20.831" endtime="20230720 10:46:21.346"/>
 </kw>
-<kw name="Page Should Contain Image" library="SeleniumLibrary">
-<arg>${Test_Bench_Logo}</arg>
-<doc>Verifies image identified by ``locator`` is found from current page.</doc>
-<msg timestamp="20230719 13:43:29.343" level="INFO">Current page contains image '(//img[@alt='TestBench'])[1]'.</msg>
-<status status="PASS" starttime="20230719 13:43:28.308" endtime="20230719 13:43:29.343"/>
+<kw name="Tolerant Click" library="common_Second">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>This tolerant click performs selenium actions
+and catches exceptions like: StaleElementReferenceException etc</doc>
+<try>
+<branch type="TRY">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230720 10:46:21.346" level="INFO">Clicking element '//div[@class='wrapper']//li[5]'.</msg>
+<status status="PASS" starttime="20230720 10:46:21.346" endtime="20230720 10:46:22.717"/>
 </kw>
-<status status="PASS" starttime="20230719 13:43:27.782" endtime="20230719 13:43:29.343"/>
+<status status="PASS" starttime="20230720 10:46:21.346" endtime="20230720 10:46:22.717"/>
+</branch>
+<branch type="EXCEPT">
+<pattern>StaleElementReferenceException</pattern>
+<kw name="Log" library="BuiltIn">
+<arg>Expected error '${Exceptions_error}' while clicking the '${locator}' element - ignoring it</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230720 10:46:22.717" endtime="20230720 10:46:22.717"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230720 10:46:22.717" endtime="20230720 10:46:22.717"/>
+</kw>
+<status status="NOT RUN" starttime="20230720 10:46:22.717" endtime="20230720 10:46:22.717"/>
+</branch>
+<status status="PASS" starttime="20230720 10:46:21.346" endtime="20230720 10:46:22.717"/>
+</try>
+<status status="PASS" starttime="20230720 10:46:21.346" endtime="20230720 10:46:22.717"/>
+</kw>
+<status status="PASS" starttime="20230720 10:46:20.830" endtime="20230720 10:46:22.717"/>
+</kw>
+<kw name="Check That Login Page Is Open" library="Log_In">
+<doc>Verifies if the Login is open</doc>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.8</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230720 10:46:22.718" endtime="20230720 10:46:22.718"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${LOGIN_PAGE_TITLE}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<msg timestamp="20230720 10:46:28.833" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230720 10:46:28.833" level="FAIL">Text '//div[@class='box-inner box-inner--right']//div[@id='logIn']//div[@class='overline']' did not appear in 5 seconds.</msg>
+<status status="FAIL" starttime="20230720 10:46:22.719" endtime="20230720 10:46:28.845"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Log In to Get Started</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20230720 10:46:28.845" endtime="20230720 10:46:28.845"/>
+</kw>
+<status status="FAIL" starttime="20230720 10:46:22.718" endtime="20230720 10:46:28.845"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230719 13:43:29.343" endtime="20230719 13:43:31.998"/>
+<status status="PASS" starttime="20230720 10:46:28.854" endtime="20230720 10:46:31.782"/>
 </kw>
-<doc>Test_2</doc>
-<tag>tc_02</tag>
-<status status="PASS" starttime="20230719 13:43:23.983" endtime="20230719 13:43:31.999"/>
+<doc>Open TestBench web page and check if Login page is open</doc>
+<tag>exploratory</tag>
+<tag>TC_02</tag>
+<status status="FAIL" starttime="20230720 10:46:15.073" endtime="20230720 10:46:31.782">Text '//div[@class='box-inner box-inner--right']//div[@id='logIn']//div[@class='overline']' did not appear in 5 seconds.</status>
 </test>
 <doc>...</doc>
-<status status="PASS" starttime="20230719 13:43:23.591" endtime="20230719 13:43:32.002"/>
+<status status="FAIL" starttime="20230720 10:46:14.715" endtime="20230720 10:46:31.794"/>
 </suite>
-<status status="PASS" starttime="20230719 13:43:23.588" endtime="20230719 13:43:32.007"/>
+<status status="FAIL" starttime="20230720 10:46:14.712" endtime="20230720 10:46:31.805"/>
 </suite>
-<status status="PASS" starttime="20230719 13:43:23.583" endtime="20230719 13:43:32.011"/>
+<status status="FAIL" starttime="20230720 10:46:14.705" endtime="20230720 10:46:31.813"/>
 </suite>
-<status status="PASS" starttime="20230719 13:43:23.561" endtime="20230719 13:43:32.016"/>
+<status status="FAIL" starttime="20230720 10:46:14.674" endtime="20230720 10:46:31.819"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">tc_02</stat>
+<stat pass="0" fail="1" skip="0">exploratory</stat>
+<stat pass="0" fail="1" skip="0">TC_02</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="First Project IMBUS">First Project IMBUS</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="TestCases">First Project IMBUS.TestCases</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="MainHeader">First Project IMBUS.TestCases.MainHeader</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="MainHeader">First Project IMBUS.TestCases.MainHeader.MainHeader</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="First Project IMBUS">First Project IMBUS</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="TestCases">First Project IMBUS.TestCases</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Login In">First Project IMBUS.TestCases.Login In</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1" name="Login In">First Project IMBUS.TestCases.Login In.Login In</stat>
 </suite>
 </statistics>
 <errors>
