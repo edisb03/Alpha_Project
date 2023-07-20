@@ -16,3 +16,4 @@ TC_02 Navigate To Login
   Accept Cokkies
   Navigate To Login
   Check That Login Page Is Open
+  # Agnesa.
