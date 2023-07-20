@@ -28,7 +28,7 @@ Open Web Browser
 
 Tolerant Click
     [Documentation]    This tolerant click performs selenium actions
-    ...    and catches exceptions like: StaleElementReferenceException etc
+    ...    and catches exceptions like: StaleElementReferenceException etc...
     [Arguments]    ${locator}    @{Exceptions_error}
     TRY
         Click Element    ${locator}
