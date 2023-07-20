@@ -12,7 +12,7 @@
             "target": "^\"\\${file}\"",
             "terminal": "integrated",
             "args": [
-                "--outputdir", "logs"
+                "--outputdir", "Results/logs"
            
             ]
         }

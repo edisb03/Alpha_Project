@@ -11,10 +11,10 @@ Test Teardown       Close Browser
 
 
 *** Test Cases ***
-TC_01
-    [Documentation]    Test
-    [Tags]    tc_01
-    Wait Until Page Contains    Accept all
-    Sleep    5s
+TC_01 Open TestBench Website
+    [Documentation]    Checks if the TestBench website is successfully opened.
+    [Tags]    TC_01   exploratory
+    Set Selenium Speed    0.5
+    Accept Cokkies
 
  # Browser Library to install
