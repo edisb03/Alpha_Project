@@ -15,3 +15,8 @@ TC_02 Navigate To Login
   Accept Cokkies
   Navigate To Login
   Check That Login Page Is Open
+
+P1_TO02_LN_TC03 - Navigate to Log in
+    [Documentation]    Agnesa navigate to Log in
+    [Tags]    P1TO02_LN_03
+    Navigate To Login
