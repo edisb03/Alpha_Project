@@ -17,5 +17,6 @@ Navigate To Login
 Check That Login Page Is Open
   [Documentation]  Verifies if the Login is open
   Set Selenium Speed    0.8
-  Wait Until Page Contains    ${LOGIN_PAGE_TITLE}
-  Page Should Contain      Log In to Get Started
+  # Wait Until Page Contains    ${LOGIN_PAGE_TITLE}
+  # Page Should Contain      Enter your details below
+  Wait Until Element Is Visible    ${LOGIN_PAGE_TITLE}

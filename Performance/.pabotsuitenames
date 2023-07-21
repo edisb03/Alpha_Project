@@ -1,9 +1,0 @@
-datasources:b028aeda8ce165e805cda695ba16e9aa86b5d79f
-commandlineoptions:9f8598a690c7367accf83ead504756ddd374acc9
-suitesfrom:no-suites-from-option
-file:4d4ce004f4135070c5e75bb4f6d2c29bd85eb600
---suite Suites.P01 SA 01 Tests
---suite Suites.P01 SA 02 Tests
---suite Suites.P01 SA 03 Tests
---suite Suites.P01 SA 04 Tests
---suite Suites.P01 SA 05 Tests
