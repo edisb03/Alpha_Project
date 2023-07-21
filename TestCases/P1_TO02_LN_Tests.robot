@@ -15,8 +15,3 @@ P1_TO02_LN_TC01 Navigate To Login
   Accept Cokkies
   Navigate To Login
   Check That Login Page Is Open
-
-P1_TO02_LN_TC02 - Navigate to Login
-   [Documentation]     Navigate to Login.
-   [Tags]   P1TO02_LN_02
-   Navigate To Login
