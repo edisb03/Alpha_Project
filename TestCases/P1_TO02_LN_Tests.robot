@@ -35,3 +35,8 @@ P1_TO02_LN_TC009 - Navigate To Login
   [Documentation]  Test Login Page
   [Tags]   P1TO02_LN_05
   Navigate To Login
+
+P1_TO02_LN_TC010 - Navigate To Login
+  [Documentation]  Test Login Page
+  [Tags]   P1TO02_LN_05
+  Navigate To Login
