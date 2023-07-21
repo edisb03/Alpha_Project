@@ -26,6 +26,7 @@ P1_TOO2_LN_TC06 - Navigate To Login
   [Tags]   P1TO02_LN_05
   Navigate To Login
 
+<<<<<<< HEAD
 P1_TOO2_LN_TC07 - Navigate To Login
   [Documentation]  Test Login Page
   [Tags]   P1TO02_LN_05
@@ -33,11 +34,39 @@ P1_TOO2_LN_TC07 - Navigate To Login
   
 
 P1_TOO2_LN_TC307 - Navigate To Login
+=======
+P1_TOO2_LN_TC007 - Navigate To Login
   [Documentation]  Test Login Page
   [Tags]   P1TO02_LN_05
   Navigate To Login
 
+P1_TO02_LN_TC009 - Navigate To Login
+>>>>>>> e44ee1ded6811f7ef7be0e70047afdfd9a23844a
+  [Documentation]  Test Login Page
+  [Tags]   P1TO02_LN_05
+  Navigate To Login
+
+<<<<<<< HEAD
 P1_TOO2_LN_TC037 - Navigate To Login
   [Documentation]  Test Login Page
   [Tags]   P1TO02_LN_05
   Navigate To Login
+=======
+P1_TO02_LN_TC010 - Navigate To Login
+  [Documentation]  Test Login Page
+  [Tags]   P1TO02_LN_05
+  Navigate To Login
+
+
+P1_TO02_LN_TC0102 - Navigate To Login
+  [Documentation]  Test Login Page
+  [Tags]   P1TO02_LN_05
+  Navigate To Login
+
+  
+P1_TO02_LN_TC0103 - Navigate To Login
+  [Documentation]  Test Login Page
+  [Tags]   P1TO02_LN_05
+  Navigate To Login
+
+>>>>>>> e44ee1ded6811f7ef7be0e70047afdfd9a23844a
