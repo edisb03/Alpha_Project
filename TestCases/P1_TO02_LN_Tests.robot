@@ -8,10 +8,15 @@ Test Teardown       Close Browser
 
 
 *** Test Cases ***
-TC_02 Navigate To Login 
+P1_TO02_LN_TC01 Navigate To Login 
   [Documentation]  Open TestBench web page and check if Login page is open....
   [Tags]   TC_02   exploratory
   Set Selenium Speed    0.8
   Accept Cokkies
   Navigate To Login
   Check That Login Page Is Open
+
+P1_TO02_LN_TC02 - Navigate to Login
+   [Documentation]     Navigate to Login.
+   [Tags]   P1TO02_LN_02
+   Navigate To Login
