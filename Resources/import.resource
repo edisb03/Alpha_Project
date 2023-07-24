@@ -9,4 +9,4 @@ Resource    common/Web_Apps.resource
 # Keywords resources
 Resource    ../Resources/TestBench_Resources/Log_In.resource
 Resource            Main_Header/MH_Navigation.resource
-Library            ../Resources/python.configuration/test.py
+#Library            ../Resources/python.configuration/test.py

@@ -19,11 +19,8 @@ P1_TO02_LN_TC01 Navigate To Login
 TC_00_TEST
     [Documentation]   Test
     Accept Cokkies
-    
-
-
 
 TC_TEST_BLOG
     [Documentation]    Check for Blog in Main Header
     Accept Cokkies
-    Navigate To Features
+    Navigate To Blog
