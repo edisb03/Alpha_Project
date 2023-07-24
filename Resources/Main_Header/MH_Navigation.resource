@@ -32,7 +32,7 @@ Navigate To Resources
 
 Navigate To Login
   [Documentation]  Navigates to Login Button
-  Set Selenium Speed    0.5
+  Set Selenium Speed    0.8
   Wait Until Page Contains Element    ${LOGIN_BUTTON}
   Tolerant Click    ${LOGIN_BUTTON}
   Wait Until Element Is Visible    ${LOGIN_PAGE_TITLE}
