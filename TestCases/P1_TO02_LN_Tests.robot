@@ -17,5 +17,8 @@ P1_TO02_LN_TC01 Navigate To Login
   Check That Login Page Is Open
 
 TC_00_TEST
-    [Documentation]   Test
+    [Documentation]   Test   Language: English/Deutsch
     Accept Cokkies
+    Sleep    2s
+    Navigate To Language    Deutsch
+    Sleep    3s
