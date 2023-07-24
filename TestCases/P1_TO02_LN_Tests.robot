@@ -8,7 +8,7 @@ Test Teardown       Close Browser
 
 
 *** Test Cases ***
-P1_TO02_LN_TC01 Navigate To Login 
+P1_TO02_LN_TC01 Navigate To Login
   [Documentation]  Open TestBench web page and check if Login page is open....
   [Tags]   TC_02   exploratory
   Set Selenium Speed    0.8
@@ -19,5 +19,9 @@ P1_TO02_LN_TC01 Navigate To Login
 TC_00_TEST
     [Documentation]   Test
     Accept Cokkies
-    
 
+P1_TO02_LN_TC02 Navigate To Resources
+    [Documentation]    Navigate To Reseources
+    Accept Cokkies
+    Navigate To Resources
+    Sleep    10s
