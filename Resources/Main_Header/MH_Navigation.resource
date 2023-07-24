@@ -37,3 +37,9 @@ Navigate To Login
   Wait Until Page Contains Element    ${LOGIN_BUTTON}
   Tolerant Click    ${LOGIN_BUTTON}
   Wait Until Element Is Visible    ${LOGIN_PAGE_TITLE}
+  
+ Navigate To Sign Up
+    [Documentation]    This keyword is used to navigate to Sign Up.
+    Wait Until Page Contains Element    ${NAV_SIGN_UP}
+    Click Element    ${NAV_SIGN_UP}
+    Wait Until Page Contains     Get started with a free account
