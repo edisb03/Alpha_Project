@@ -50,7 +50,6 @@ Search Links By Name
         Tolerant Click    ${NAV_KEYWORD-DRIVENTESTING}
         Page Should Contain    Keyword-Driven Testing
     END
-    Wait Until Page Contains     Discover the features 
 
 Navigate To Blog
     [Documentation]    This Keyword is used to navigate to Blog
