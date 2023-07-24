@@ -62,7 +62,7 @@ Navigate To Features
 
 
 Navigate To Language
-    [Documentation]    Navigates to Research processes
+    [Documentation]    Navigates to Research processes...
     [Arguments]  ${LANGUAGE}
     Wait Until Element Is Visible    ${NAV_LOGO}
     IF    '${LANGUAGE}' == 'English'
