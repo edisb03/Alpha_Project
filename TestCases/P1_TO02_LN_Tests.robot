@@ -15,3 +15,8 @@ P1_TO02_LN_TC01 Navigate To Login
   Accept Cokkies
   Navigate To Login
   Check That Login Page Is Open
+
+TC_00_TEST
+    [Documentation]   ${TEST_DOCUMENTATION}  
+    Accept Cokkies
+
