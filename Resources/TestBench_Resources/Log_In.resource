@@ -9,11 +9,11 @@ ${LOGIN_PAGE_TITLE}        //div[@class='box-inner box-inner--right']//div[@id='
 
 
 *** Keywords ***
-Navigate To Login
-  [Documentation]  Navigates to Login Button
-  Set Selenium Speed    0.5
-  Wait Until Page Contains Element    ${LOGIN_BUTTON}
-  Tolerant Click    ${LOGIN_BUTTON}
+# Navigate To Login
+#   [Documentation]  Navigates to Login Button
+#   Set Selenium Speed    0.5
+#   Wait Until Page Contains Element    ${LOGIN_BUTTON}
+#   Tolerant Click    ${LOGIN_BUTTON}
 
 Check That Login Page Is Open
   [Documentation]  Verifies if the Login is open
