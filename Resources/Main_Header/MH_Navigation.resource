@@ -30,3 +30,10 @@ Navigate To Resources
     Wait Until Page Contains Element    ${NAV_RESOURCES}
     Click Element    ${NAV_RESOURCES}
     Wait Until Page Contains     Find it quick - Use it right away
+
+Navigate To Login
+  [Documentation]  Navigates to Login Button
+  Set Selenium Speed    0.8
+  Wait Until Page Contains Element    ${LOGIN_BUTTON}
+  Tolerant Click    ${LOGIN_BUTTON}
+  Wait Until Element Is Visible    ${LOGIN_PAGE_TITLE}
