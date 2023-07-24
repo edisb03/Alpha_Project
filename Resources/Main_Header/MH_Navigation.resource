@@ -16,23 +16,63 @@ Navigate To Features
     Click Element    ${NAV_FEATURES}
     Wait Until Page Contains     Discover the features
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Navigate To Language
-    [Documentation]     This Keyword is to Navigate to Language and select Gemran or English.
-    [Arguments]     ${LANGUAGE}
-    ${element check}    Run Keyword And Return Status    ${NAV_ENG}
-    Sleep    3s
-    IF    ${element check} == True
-        Wait Until Page Contains    English
-        Mouse Over      ${NAV_ENG}
-        Wait Until Page Contains    English
-        Click Element    //ul[contains(@class, 'menu')]//li[9]//ul//li//span[2][contains(text(), '${LANGUAGE}')]
-    ELSE
-        No Operation
-    END
-    ${element check}    Run Keyword And Return Status    ${NAV_GER}
-    IF     ${element check} == True
-        Wait Until Page Contains      Deutsch
-        Mouse Over    (//ul[contains(@class, 'menu')]//li[9]//span[contains(text(), 'Deutsch')])[1]
-        Click Element     //ul[contains(@class, 'menu')]//li[9]//ul//li//span[2][contains(text(), '${LANGUAGE}')]
+    [Documentation]    Navigates to Research processes
+    [Arguments]  ${LANGUAGE}
+    Wait Until Element Is Visible    ${NAV_LOGO}
+    IF    '${LANGUAGE}' == 'English'
+         Wait Until Page Contains Element       ${NAV_GER}
+         Mouse Over    ${NAV_GER}
+         Sleep    1s
+         Click Element    //ul[contains(@class, 'menu')]//li[9]//ul//li//span[2][contains(text(), 'Englisch')]
+    ELSE IF     '${LANGUAGE}' == 'Deutsch'
+         Wait Until Page Contains Element     ${NAV_ENG}
+         Mouse Over    ${NAV_ENG}
+         Click Element        //ul[contains(@class, 'menu')]//li[9]//ul//li//span[2][contains(text(), 'German')]
     END
 
