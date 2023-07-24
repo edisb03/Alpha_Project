@@ -19,5 +19,3 @@ P1_TO02_LN_TC01 Navigate To Login
 TC_00_TEST
     [Documentation]   Test
     Accept Cokkies
-    
-
