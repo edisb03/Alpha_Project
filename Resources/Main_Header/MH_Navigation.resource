@@ -7,6 +7,8 @@ Resource    ../import.resource
 ${NAV_FEATURES}    //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/features/')]
 ${NAV_BLOG}        //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/blog/')]
 ${NAV_RESOURCES}   //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/resources')]
+${LOGIN_BUTTON}            //div[@class='wrapper']//li[5]
+${LOGIN_PAGE_TITLE}        //div[@class='box-inner box-inner--right']//div[@id='logIn']//div[@class='overline']
 
 
 *** Keywords ***
@@ -27,3 +29,10 @@ Navigate To Resources
     Wait Until Page Contains Element    ${NAV_RESOURCES}
     Click Element    ${NAV_RESOURCES}
     Wait Until Page Contains     Find it quick - Use it right away
+
+Navigate To Login
+  [Documentation]  Navigates to Login Button
+  Set Selenium Speed    0.5
+  Wait Until Page Contains Element    ${LOGIN_BUTTON}
+  Tolerant Click    ${LOGIN_BUTTON}
+  Wait Until Element Is Visible    ${LOGIN_PAGE_TITLE}

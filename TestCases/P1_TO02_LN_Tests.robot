@@ -14,7 +14,6 @@ P1_TO02_LN_TC01 Navigate To Login
   Set Selenium Speed    0.8
   Accept Cokkies
   Navigate To Login
-  Check That Login Page Is Open
 
 TC_00_TEST
     [Documentation]   Test
