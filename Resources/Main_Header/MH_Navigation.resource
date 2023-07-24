@@ -19,7 +19,26 @@ ${NAV_KEYWORD-DRIVENTESTING}    //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/
 
 *** Keywords ***
 Navigate To Features
-    [Documentation]    This keyword is used to navigate to Features.
-    Wait Until Page Contains Element    ${NAV_FEATURES}
-    Click Element    ${NAV_FEATURES}
-    Wait Until Page Contains     Discover the features
+    [Documentation]    This keyword is used to navigate to Features 
+    Wait Until Page Contains Element    ${NAV_FEATURES} 
+    Click Element    ${NAV_FEATURES} 
+    Wait Until Page Contains     Discover the features 
+
+Navigate To Blog
+    [Documentation]    This Keyword is used to navigate to Blog
+    Wait Until Page Contains Element        ${NAV_BLOG} 
+    Click Element                           ${NAV_BLOG} 
+    Wait Until Page Contains                 TestBench Blog 
+
+Navigate To Resources
+    [Documentation]    This keyword is used to navigate to Resources
+    Wait Until Page Contains Element    ${NAV_RESOURCES} 
+    Click Element    ${NAV_RESOURCES}  
+    Wait Until Page Contains     Find it quick - Use it right away 
+
+Navigate To Login 
+  [Documentation]  Navigates to Login Button. 
+  Set Selenium Speed    0.8 
+  Wait Until Page Contains Element    ${LOGIN_BUTTON} 
+  Tolerant Click    ${LOGIN_BUTTON} 
+  Wait Until Element Is Visible        ${LOGIN_PAGE_TITLE} 
