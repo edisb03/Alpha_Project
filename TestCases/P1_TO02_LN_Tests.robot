@@ -30,3 +30,9 @@ TC_TEST_BLOG
     [Documentation]    Check for Blog in Main Header
     Accept Cokkies
     Navigate To Blog
+
+P1_TO02_LN_TC03 Navigate To Sign Up
+    [Documentation]    Navigate To Sign Up
+    Accept Cokkies
+    Navigate To Sign Up
+    Sleep    5s

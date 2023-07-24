@@ -7,6 +7,7 @@ Resource    ../import.resource
 ${NAV_FEATURES}    //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/features/')]
 ${NAV_BLOG}        //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/blog/')]
 ${NAV_RESOURCES}   //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/resources')]
+${NAV_SIGN_UP}     //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/sign-up/')]
 
 
 *** Keywords ***
@@ -27,3 +28,10 @@ Navigate To Resources
     Wait Until Page Contains Element    ${NAV_RESOURCES}
     Click Element    ${NAV_RESOURCES}
     Wait Until Page Contains     Find it quick - Use it right away
+
+Navigate To Sign Up
+    [Documentation]    This keyword is used to navigate to Sign Up.
+    Wait Until Page Contains Element    ${NAV_SIGN_UP}
+    Click Element    ${NAV_SIGN_UP}
+    Wait Until Page Contains     Get started with a free account
+
