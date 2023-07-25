@@ -11,5 +11,6 @@ Resource    ../Resources/TestBench_Resources/Log_In.resource
 Resource            Main_Header/MH_Navigation.resource
 Resource            Main_Header/Blog.Resource
 Resource            Main_Header/Features.resource
+Resource            Main_Header/Resource.resource
 #Library            ../Resources/python.configuration/test.py
 
