@@ -15,14 +15,15 @@ ${NAV_RESOURCES}                //nav[contains(@class, 'flyntComponent')][1]//li
 ${LOGIN_BUTTON}                 /div[@class='wrapper']//li[5]
 ${LOGIN_PAGE_TITLE}             //div[@class='box-inner box-inner--right']//div[@id='logIn']//div[@class='overline']
 ${NAV_SIGN_UP}                  //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/sign-up/')]
-${NAV_LOGO}        (//header[contains(@class, 'mainHeader')]//a//img[contains(@class, 'logo-image')])[1]
-${NAV_ENG}  (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'English')])[1]
-${NAV_GER}  (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'Deutsch')])[1]
+${NAV_LOGO}                     (//header[contains(@class, 'mainHeader')]//a//img[contains(@class, 'logo-image')])[1]
+${NAV_ENG}                      (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'English')])[1]
+${NAV_GER}                      (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'Deutsch')])[1]
+
 
 *** Keywords ***
 Navigate To Features
     [Documentation]    This keyword is used to navigate to Features
-    Wait Until Page Contains Element    ${NAV_FEATURES} 
+    Wait Until Page Contains Element    ${NAV_FEATURES}
     Click Element    ${NAV_FEATURES} 
     Wait Until Page Contains    Discover the features
 
