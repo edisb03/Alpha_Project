@@ -15,13 +15,11 @@ ${NAV_RESOURCES}                //nav[contains(@class, 'flyntComponent')][1]//li
 ${LOGIN_BUTTON}                 /div[@class='wrapper']//li[5]
 ${LOGIN_PAGE_TITLE}             //div[@class='box-inner box-inner--right']//div[@id='logIn']//div[@class='overline']
 ${NAV_SIGN_UP}                  //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/sign-up/')]
-${NAV_LOGO}        (//header[contains(@class, 'mainHeader')]//a//img[contains(@class, 'logo-image')])[1]
-${NAV_ENG}  (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'English')])[1]
-${NAV_GER}  (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'Deutsch')])[1]
-${GER_COOKIES}   //div[contains(@class, 'container')]//p//a[contains(text(), 'Alle Cookies akzeptieren')][1]
 ${NAV_LOGO}                     (//header[contains(@class, 'mainHeader')]//a//img[contains(@class, 'logo-image')])[1]
 ${NAV_ENG}                      (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'English')])[1]
 ${NAV_GER}                      (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'Deutsch')])[1]
+${GER_COOKIES}                  //div[contains(@class, 'container')]//p//a[contains(text(), 'Alle Cookies akzeptieren')][1]
+
 
 *** Keywords ***
 Navigate To Features
@@ -56,20 +54,20 @@ Navigate To Language
 Search Links By Name
     [Documentation]    Search the specified links by using its name
     [Arguments]    ${link_status}
-    Set Selenium Speed    0.5
+    Set Selenium Speed    0.3
     IF    "${link_status}" == "Exploratory Testing"
         Page Should Contain    Exploratory Testing
-        Sleep    5s
+        Sleep    3s
         Tolerant Click    ${NAV_EXPLOTARY_TESTING}
         Page Should Contain    Exploratory Testing Explained
     ELSE IF    "${link_status}" == "Data-Driven Testing"
         Page Should Contain    Data-Driven Testing
-        Sleep    4s
+        Sleep    3s
         Tolerant Click    ${NAV_DATA-DRIVEN-TESTING}
         Page Should Contain    Data-Driven Testing
     ELSE IF    "${link_status}" == "Keyword-Driven Testing"
         Page Should Contain    Keyword-Driven Testing
-        Sleep    4s
+        Sleep    3s
         Tolerant Click    ${NAV_KEYWORD-DRIVENTESTING}
         Page Should Contain    Keyword-Driven Testing
     END
