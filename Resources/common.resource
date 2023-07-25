@@ -1,7 +1,7 @@
 *** Settings ***
-Documentation       ...
-
+Documentation       Common 
 Resource    import.resource
+
 
 *** Variables ***
 ${ACCEPTC_COOKIES}           (//a[@role='button'][normalize-space()='Accept all'])[1]
@@ -9,7 +9,7 @@ ${ACCEPTC_COOKIES}           (//a[@role='button'][normalize-space()='Accept all'
 
 *** Keywords ***
 Accept Cookies
-   [Documentation]    Wait Until Page Contains    Accept all 2023
-   ...    Wait Until Page Contains    Accept all
+   [Documentation]    This keyword is for Cookies and for validate that TestBench web is open.
    Tolerant Click    ${ACCEPTC_COOKIES}
-   # AgnesaB.
+   Wait Until Keyword Succeeds    3x    1s    Wait Until Page Contains    The Smart Test Management Tool
+

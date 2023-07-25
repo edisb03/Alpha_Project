@@ -96,3 +96,9 @@ Navigate To Login
     Wait Until Page Contains Element    ${NAV_SIGN_UP}
     Click Element    ${NAV_SIGN_UP}
     Wait Until Page Contains     Get started with a free account
+
+Navigate To TestBench Logo
+    [Documentation]    This keyword is used to navigate to TestBench logo  
+    Wait Until Page Contains Element    ${NAV_LOGO}
+    Click Element    ${NAV_LOGO}
+    Wait Until Page Contains    The Smart Test Management Tool
