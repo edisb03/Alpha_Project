@@ -9,4 +9,12 @@ Resource            common/Web_Apps.resource
 # Keywords resources
 Resource            ../Resources/TestBench_Resources/Log_In.resource
 Resource            Main_Header/MH_Navigation.resource
+<<<<<<< HEAD
 #Library    ../Resources/python.configuration/test.py
+=======
+Resource            Main_Header/Blog.Resource
+Resource            Main_Header/Features.resource
+Resource            Main_Header/Resource.resource
+#Library            ../Resources/python.configuration/test.py
+
+>>>>>>> edd0ea1953f2e625b6e10d45661fa0fe646cca1f

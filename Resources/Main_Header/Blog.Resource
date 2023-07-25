@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Keywords to navigate to Blog
+Documentation    Blog
 
 Resource        ../import.resource
 
