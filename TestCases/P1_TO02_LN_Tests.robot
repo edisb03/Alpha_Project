@@ -19,8 +19,9 @@ P1_TO02_LN_TC01 Navigate To Login
 TC_00_TEST
     [Documentation]   Test   Language: English/Deutsch
     Accept Cokkies
-    Navigate To Language    Deutsch
-    Sleep    3sP1_TO02_LN_TC02 Navigate To Resources
+    Sleep    15S 
+    Navigate To Language    English
+    Sleep    3S
 
 TC_TEST_BLOG
     [Documentation]    Check for Blog in Main Header

@@ -18,6 +18,7 @@ ${NAV_SIGN_UP}                  //nav[contains(@class, 'flyntComponent')][1]//li
 ${NAV_LOGO}        (//header[contains(@class, 'mainHeader')]//a//img[contains(@class, 'logo-image')])[1]
 ${NAV_ENG}  (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'English')])[1]
 ${NAV_GER}  (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'Deutsch')])[1]
+${GER_COOKIES}   //div[contains(@class, 'container')]//p//a[contains(text(), 'Alle Cookies akzeptieren')][1]
 
 *** Keywords ***
 Navigate To Features
@@ -41,9 +42,12 @@ Navigate To Language
          Sleep    1s
          Click Element    //ul[contains(@class, 'menu')]//li[9]//ul//li//span[2][contains(text(), 'Englisch')]
     ELSE IF     '${LANGUAGE}' == 'Deutsch'
+         Sleep    2s
          Wait Until Page Contains Element     ${NAV_ENG}
          Mouse Over    ${NAV_ENG}
          Click Element        //ul[contains(@class, 'menu')]//li[9]//ul//li//span[2][contains(text(), 'German')]
+         Wait Until Page Contains Element    ${GER_COOKIES}
+         Click Element    ${GER_COOKIES}
     END
 
 Search Links By Name
