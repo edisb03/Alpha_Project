@@ -20,7 +20,7 @@ ${NAV_SIGN_UP}                  //nav[contains(@class, 'flyntComponent')][1]//li
 
 *** Keywords ***
 Navigate To Features
-    [Documentation]    This keyword is used to navigate to Features 
+    [Documentation]    This keyword is used to navigate to Features
     Wait Until Page Contains Element    ${NAV_FEATURES} 
     Click Element    ${NAV_FEATURES} 
     Wait Until Page Contains    Discover the features

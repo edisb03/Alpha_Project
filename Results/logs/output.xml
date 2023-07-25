@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.11.0 on win32)" generated="20230725 09:17:22.263" rpa="false" schemaversion="3">
+<suite id="s1" name="P1 TO02 LN Tests" source="c:\Users\arber\Desktop\Imbus-Project\First_Project_IMBUS\TestCases\P1_TO02_LN_Tests.robot">
+<test id="s1-t1" name="P1_TO02_LN_TC02 Navigate To Resources" line="23">
+<kw name="Open Web Browser" library="Web_Apps" type="SETUP">
+<doc>Opens a new browser instance and maximizes the window</doc>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{browser args}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230725 09:17:23.462" level="INFO">&amp;{browser args} = { }</msg>
+<status status="PASS" starttime="20230725 09:17:23.459" endtime="20230725 09:17:23.468"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${browser_type}&quot; == &quot;headlesschrome&quot;">
+<kw name="Set To Dictionary" library="Collections">
+<arg>${browser args}</arg>
+<arg>options=${HEADLESS CHROME OPTIONS}</arg>
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<status status="NOT RUN" starttime="20230725 09:17:23.470" endtime="20230725 09:17:23.472"/>
+</kw>
+<status status="NOT RUN" starttime="20230725 09:17:23.469" endtime="20230725 09:17:23.472"/>
+</branch>
+<status status="PASS" starttime="20230725 09:17:23.468" endtime="20230725 09:17:23.473"/>
+</if>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${browser type}</arg>
+<arg>&amp;{browser args}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230725 09:17:23.477" level="INFO">Opening browser 'chrome' to base url 'https://www.testbench.com/'.</msg>
+<status status="PASS" starttime="20230725 09:17:23.474" endtime="20230725 09:17:26.932"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230725 09:17:26.933" endtime="20230725 09:17:27.058"/>
+</kw>
+<status status="PASS" starttime="20230725 09:17:23.455" endtime="20230725 09:17:27.059"/>
+</kw>
+<kw name="Accept Cokkies" library="common">
+<doc>Wait Until Page Contains Accept all 2023
+Wait Until Page Contains Accept all</doc>
+<kw name="Tolerant Click" library="Web_Apps">
+<arg>${ACCEPTC_COOKIES}</arg>
+<doc>This tolerant click performs selenium actions
+and catches exceptions like: StaleElementReferenceException etc...</doc>
+<try>
+<branch type="TRY">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230725 09:17:27.069" level="INFO">Clicking element '(//a[@role='button'][normalize-space()='Accept all'])[1]'.</msg>
+<status status="PASS" starttime="20230725 09:17:27.067" endtime="20230725 09:17:27.168"/>
+</kw>
+<status status="PASS" starttime="20230725 09:17:27.066" endtime="20230725 09:17:27.169"/>
+</branch>
+<branch type="EXCEPT">
+<pattern>StaleElementReferenceException</pattern>
+<kw name="Log" library="BuiltIn">
+<arg>Expected error '${Exceptions_error}' while clicking the '${locator}' element - ignoring it</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230725 09:17:27.175" endtime="20230725 09:17:27.177"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230725 09:17:27.178" endtime="20230725 09:17:27.178"/>
+</kw>
+<status status="NOT RUN" starttime="20230725 09:17:27.172" endtime="20230725 09:17:27.179"/>
+</branch>
+<status status="PASS" starttime="20230725 09:17:27.066" endtime="20230725 09:17:27.179"/>
+</try>
+<status status="PASS" starttime="20230725 09:17:27.064" endtime="20230725 09:17:27.180"/>
+</kw>
+<status status="PASS" starttime="20230725 09:17:27.062" endtime="20230725 09:17:27.181"/>
+</kw>
+<kw name="Navigate To Resources" library="MH_Navigation">
+<doc>This keyword is used to navigate to Resources.</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${NAV_RESOURCES}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230725 09:17:27.184" endtime="20230725 09:17:27.215"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${NAV_RESOURCES}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230725 09:17:27.217" level="INFO">Clicking element '//nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/resources')]'.</msg>
+<status status="PASS" starttime="20230725 09:17:27.216" endtime="20230725 09:17:28.539"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Find it quick - Use it right away</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230725 09:17:28.541" endtime="20230725 09:17:28.557"/>
+</kw>
+<status status="PASS" starttime="20230725 09:17:27.182" endtime="20230725 09:17:28.558"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230725 09:17:38.562" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20230725 09:17:28.559" endtime="20230725 09:17:38.565"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230725 09:17:38.574" endtime="20230725 09:17:40.762"/>
+</kw>
+<doc>Navigate To Reseources</doc>
+<status status="PASS" starttime="20230725 09:17:23.447" endtime="20230725 09:17:40.767"/>
+</test>
+<doc>Login In ...</doc>
+<status status="PASS" starttime="20230725 09:17:22.287" endtime="20230725 09:17:40.789"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="P1 TO02 LN Tests">P1 TO02 LN Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

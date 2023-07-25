@@ -12,6 +12,6 @@ P1_TO01_MH_TC01 Verify Test Approaches Works
   [Documentation]  Checks if the test approaches works
   [Tags]   MH_TC01  exploratory
   Set Selenium Speed    0.5
-  Accept Cokkies
+  Accept Cookies
   Navigate To Test Approaches
   Search Links By Name      Keyword-Driven Testing

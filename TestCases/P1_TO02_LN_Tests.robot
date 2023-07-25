@@ -12,21 +12,17 @@ P1_TO02_LN_TC01 Navigate To Login
   [Documentation]  Open TestBench web page and check if Login page is open....
   [Tags]   TC_02   exploratory
   Set Selenium Speed    0.8
-  Accept Cokkies
+  Accept Cookies
   Navigate To Login
   Check That Login Page Is Open
 
-TC_00_TEST
-    [Documentation]   Test
-    Accept Cokkies
-
 P1_TO02_LN_TC02 Navigate To Resources
     [Documentation]    Navigate To Reseources
-    Accept Cokkies
+    Accept Cookies
     Navigate To Resources
     Sleep    10s
 
 TC_TEST_BLOG
     [Documentation]    Check for Blog in Main Header
-    Accept Cokkies
+    Accept Cookies
     Navigate To Blog
