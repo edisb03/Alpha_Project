@@ -8,7 +8,7 @@ ${ACCEPTC_COOKIES}           (//a[@role='button'][normalize-space()='Accept all'
 
 
 *** Keywords ***
-Accept Cokkies
+Accept Cookies
    [Documentation]    Wait Until Page Contains    Accept all 2023
    ...    Wait Until Page Contains    Accept all
    Tolerant Click    ${ACCEPTC_COOKIES}
