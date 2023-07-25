@@ -14,4 +14,4 @@ P1_TO01_MH_TC01 Verify Test Approaches Works
   Set Selenium Speed    0.5
   Accept Cookies
   Navigate To Test Approaches
-  Search Links By Name      Keyword-Driven Testing
+  Search Links By Name      Exploratory Testing
