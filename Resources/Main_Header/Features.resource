@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       Keywords for Features
+Documentation       Features
 
 Resource    ../import.resource
 
