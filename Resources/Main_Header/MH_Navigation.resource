@@ -40,7 +40,7 @@ Navigate To Language
     IF    '${LANGUAGE}' == 'English'
          Wait Until Page Contains Element       ${NAV_GER}
          Mouse Over    ${NAV_GER}
-         Sleep    1s
+         Sleep    2s
          Click Element    //ul[contains(@class, 'menu')]//li[9]//ul//li//span[2][contains(text(), 'Englisch')]
     ELSE IF     '${LANGUAGE}' == 'Deutsch'
          Sleep    2s

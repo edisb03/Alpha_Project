@@ -18,9 +18,8 @@ P1_TO02_LN_TC01 Navigate To Login
 
 TC_00_TEST
     [Documentation]   Test   Language: English/Deutsch
-    Accept Cookies
-    Sleep    15S 
-    Navigate To Language    English
+    Accept Cookies 
+    Navigate To Language    Deutsch
     Sleep    3S
 
 TC_TEST_BLOG
