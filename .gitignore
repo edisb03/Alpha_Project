@@ -1,0 +1,15 @@
+# RF output
+logs
+**/output.xml
+**/interactive_console_output.xml
+**/log.html
+**/report.html
+**/*screenshot*.png
+**/geckodriver*.log
+
+# auto generated docs
+**/docs/**/*.html
+
+# Python cache
+**/__pycache__
+**/**.pyc
