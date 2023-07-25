@@ -1,32 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <robot generator="Robot 5.0.1 (Python 3.11.0 on win32)" generated="20230725 09:17:22.263" rpa="false" schemaversion="3">
 <suite id="s1" name="P1 TO02 LN Tests" source="c:\Users\arber\Desktop\Imbus-Project\First_Project_IMBUS\TestCases\P1_TO02_LN_Tests.robot">
 <test id="s1-t1" name="P1_TO02_LN_TC02 Navigate To Resources" line="23">
+=======
+<robot generator="Robot 6.1 (Python 3.10.2 on win32)" generated="20230724 15:35:47.906" rpa="false" schemaversion="4">
+<suite id="s1" name="P1 TO02 LN Tests" source="c:\Users\edis\Desktop\Folder_1\First_Project_IMBUS\TestCases\P1_TO02_LN_Tests.robot">
+<test id="s1-t1" name="TC_00_TEST" line="19">
+>>>>>>> 3f1433ffff87ef797ee45f784acb252a8b0472f6
 <kw name="Open Web Browser" library="Web_Apps" type="SETUP">
 <doc>Opens a new browser instance and maximizes the window</doc>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>&amp;{browser args}</var>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<<<<<<< HEAD
 <msg timestamp="20230725 09:17:23.462" level="INFO">&amp;{browser args} = { }</msg>
 <status status="PASS" starttime="20230725 09:17:23.459" endtime="20230725 09:17:23.468"/>
+=======
+<msg timestamp="20230724 15:35:48.553" level="INFO">&amp;{browser args} = { }</msg>
+<status status="PASS" starttime="20230724 15:35:48.552" endtime="20230724 15:35:48.556"/>
+>>>>>>> 3f1433ffff87ef797ee45f784acb252a8b0472f6
 </kw>
 <if>
 <branch type="IF" condition="&quot;${browser_type}&quot; == &quot;headlesschrome&quot;">
 <kw name="Set To Dictionary" library="Collections">
 <arg>${browser args}</arg>
 <arg>options=${HEADLESS CHROME OPTIONS}</arg>
+<<<<<<< HEAD
 <doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
 <status status="NOT RUN" starttime="20230725 09:17:23.470" endtime="20230725 09:17:23.472"/>
 </kw>
 <status status="NOT RUN" starttime="20230725 09:17:23.469" endtime="20230725 09:17:23.472"/>
 </branch>
 <status status="PASS" starttime="20230725 09:17:23.468" endtime="20230725 09:17:23.473"/>
+=======
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="NOT RUN" starttime="20230724 15:35:48.557" endtime="20230724 15:35:48.558"/>
+</kw>
+<status status="NOT RUN" starttime="20230724 15:35:48.556" endtime="20230724 15:35:48.558"/>
+</branch>
+<status status="PASS" starttime="20230724 15:35:48.556" endtime="20230724 15:35:48.558"/>
+>>>>>>> 3f1433ffff87ef797ee45f784acb252a8b0472f6
 </if>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <arg>${browser type}</arg>
 <arg>&amp;{browser args}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
+<<<<<<< HEAD
 <msg timestamp="20230725 09:17:23.477" level="INFO">Opening browser 'chrome' to base url 'https://www.testbench.com/'.</msg>
 <status status="PASS" starttime="20230725 09:17:23.474" endtime="20230725 09:17:26.932"/>
 </kw>
@@ -39,6 +60,20 @@
 <kw name="Accept Cokkies" library="common">
 <doc>Wait Until Page Contains Accept all 2023
 Wait Until Page Contains Accept all</doc>
+=======
+<msg timestamp="20230724 15:35:48.560" level="INFO">Opening browser 'chrome' to base url 'https://www.testbench.com/'.</msg>
+<status status="PASS" starttime="20230724 15:35:48.559" endtime="20230724 15:35:52.210"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230724 15:35:52.212" endtime="20230724 15:35:52.385"/>
+</kw>
+<status status="PASS" starttime="20230724 15:35:48.552" endtime="20230724 15:35:52.386"/>
+</kw>
+<kw name="Accept Cokkies" library="common">
+<doc>Wait Until Page Contains    Accept all 2023
+Wait Until Page Contains    Accept all</doc>
+>>>>>>> 3f1433ffff87ef797ee45f784acb252a8b0472f6
 <kw name="Tolerant Click" library="Web_Apps">
 <arg>${ACCEPTC_COOKIES}</arg>
 <doc>This tolerant click performs selenium actions
@@ -48,21 +83,33 @@ and catches exceptions like: StaleElementReferenceException etc...</doc>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
+<<<<<<< HEAD
 <msg timestamp="20230725 09:17:27.069" level="INFO">Clicking element '(//a[@role='button'][normalize-space()='Accept all'])[1]'.</msg>
 <status status="PASS" starttime="20230725 09:17:27.067" endtime="20230725 09:17:27.168"/>
 </kw>
 <status status="PASS" starttime="20230725 09:17:27.066" endtime="20230725 09:17:27.169"/>
+=======
+<msg timestamp="20230724 15:35:52.401" level="INFO">Clicking element '(//a[@role='button'][normalize-space()='Accept all'])[1]'.</msg>
+<status status="PASS" starttime="20230724 15:35:52.393" endtime="20230724 15:35:52.610"/>
+</kw>
+<status status="PASS" starttime="20230724 15:35:52.393" endtime="20230724 15:35:52.610"/>
+>>>>>>> 3f1433ffff87ef797ee45f784acb252a8b0472f6
 </branch>
 <branch type="EXCEPT">
 <pattern>StaleElementReferenceException</pattern>
 <kw name="Log" library="BuiltIn">
 <arg>Expected error '${Exceptions_error}' while clicking the '${locator}' element - ignoring it</arg>
 <doc>Logs the given message with the given level.</doc>
+<<<<<<< HEAD
 <status status="NOT RUN" starttime="20230725 09:17:27.175" endtime="20230725 09:17:27.177"/>
+=======
+<status status="NOT RUN" starttime="20230724 15:35:52.611" endtime="20230724 15:35:52.614"/>
+>>>>>>> 3f1433ffff87ef797ee45f784acb252a8b0472f6
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
+<<<<<<< HEAD
 <status status="NOT RUN" starttime="20230725 09:17:27.178" endtime="20230725 09:17:27.178"/>
 </kw>
 <status status="NOT RUN" starttime="20230725 09:17:27.172" endtime="20230725 09:17:27.179"/>
@@ -108,6 +155,126 @@ and catches exceptions like: StaleElementReferenceException etc...</doc>
 </test>
 <doc>Login In ...</doc>
 <status status="PASS" starttime="20230725 09:17:22.287" endtime="20230725 09:17:40.789"/>
+=======
+<status status="NOT RUN" starttime="20230724 15:35:52.615" endtime="20230724 15:35:52.616"/>
+</kw>
+<status status="NOT RUN" starttime="20230724 15:35:52.611" endtime="20230724 15:35:52.616"/>
+</branch>
+<status status="PASS" starttime="20230724 15:35:52.393" endtime="20230724 15:35:52.616"/>
+</try>
+<status status="PASS" starttime="20230724 15:35:52.391" endtime="20230724 15:35:52.616"/>
+</kw>
+<status status="PASS" starttime="20230724 15:35:52.390" endtime="20230724 15:35:52.617"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230724 15:35:54.631" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230724 15:35:52.620" endtime="20230724 15:35:54.636"/>
+</kw>
+<kw name="Navigate To Language" library="MH_Navigation">
+<arg>Deutsch</arg>
+<doc>This Keyword is to Navigate to Language and select Gemran or English.</doc>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${element check}</var>
+<arg>${NAV_ENG}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="(//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'English')])[1]">
+<msg timestamp="20230724 15:35:54.678" level="FAIL">No keyword with name '(//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'English')])[1]' found.</msg>
+<status status="FAIL" starttime="20230724 15:35:54.678" endtime="20230724 15:35:54.678"/>
+</kw>
+<msg timestamp="20230724 15:35:54.679" level="INFO">${element check} = False</msg>
+<status status="PASS" starttime="20230724 15:35:54.645" endtime="20230724 15:35:54.679"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230724 15:35:57.692" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230724 15:35:54.681" endtime="20230724 15:35:57.693"/>
+</kw>
+<if>
+<branch type="IF" condition="${element check} == True">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>English</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20230724 15:35:57.694" endtime="20230724 15:35:57.694"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${NAV_ENG}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="NOT RUN" starttime="20230724 15:35:57.694" endtime="20230724 15:35:57.694"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>English</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20230724 15:35:57.695" endtime="20230724 15:35:57.695"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//ul[contains(@class, 'menu')]//li[9]//ul//li//span[2][contains(text(), '${LANGUAGE}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230724 15:35:57.695" endtime="20230724 15:35:57.695"/>
+</kw>
+<status status="NOT RUN" starttime="20230724 15:35:57.693" endtime="20230724 15:35:57.695"/>
+</branch>
+<branch type="ELSE">
+<kw name="No Operation" library="BuiltIn">
+<doc>Does absolutely nothing.</doc>
+<status status="PASS" starttime="20230724 15:35:57.695" endtime="20230724 15:35:57.696"/>
+</kw>
+<status status="PASS" starttime="20230724 15:35:57.695" endtime="20230724 15:35:57.696"/>
+</branch>
+<status status="PASS" starttime="20230724 15:35:57.693" endtime="20230724 15:35:57.696"/>
+</if>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${element check}</var>
+<arg>${NAV_GER}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="(//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'Deutsch')])[1]">
+<msg timestamp="20230724 15:35:57.705" level="FAIL">No keyword with name '(//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'Deutsch')])[1]' found.</msg>
+<status status="FAIL" starttime="20230724 15:35:57.705" endtime="20230724 15:35:57.706"/>
+</kw>
+<msg timestamp="20230724 15:35:57.706" level="INFO">${element check} = False</msg>
+<status status="PASS" starttime="20230724 15:35:57.696" endtime="20230724 15:35:57.706"/>
+</kw>
+<if>
+<branch type="IF" condition="${element check} == True">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Deutsch</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20230724 15:35:57.707" endtime="20230724 15:35:57.707"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>(//ul[contains(@class, 'menu')]//li[9]//span[contains(text(), 'Deutsch')])[1]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="NOT RUN" starttime="20230724 15:35:57.707" endtime="20230724 15:35:57.707"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//ul[contains(@class, 'menu')]//li[9]//ul//li//span[2][contains(text(), '${LANGUAGE}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230724 15:35:57.707" endtime="20230724 15:35:57.707"/>
+</kw>
+<status status="NOT RUN" starttime="20230724 15:35:57.706" endtime="20230724 15:35:57.708"/>
+</branch>
+<status status="PASS" starttime="20230724 15:35:57.706" endtime="20230724 15:35:57.708"/>
+</if>
+<status status="PASS" starttime="20230724 15:35:54.641" endtime="20230724 15:35:57.708"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230724 15:36:00.722" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230724 15:35:57.711" endtime="20230724 15:36:00.722"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230724 15:36:00.723" endtime="20230724 15:36:03.226"/>
+</kw>
+<doc>Test   Language: English/Deutsch</doc>
+<status status="PASS" starttime="20230724 15:35:48.550" endtime="20230724 15:36:03.230"/>
+</test>
+<doc>Login In     ...</doc>
+<status status="PASS" starttime="20230724 15:35:47.914" endtime="20230724 15:36:03.243"/>
+>>>>>>> 3f1433ffff87ef797ee45f784acb252a8b0472f6
 </suite>
 <statistics>
 <total>

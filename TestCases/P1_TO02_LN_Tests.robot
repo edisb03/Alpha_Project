@@ -16,11 +16,11 @@ P1_TO02_LN_TC01 Navigate To Login
   Navigate To Login
   Check That Login Page Is Open
 
-P1_TO02_LN_TC02 Navigate To Resources
-    [Documentation]    Navigate To Reseources
+TC_00_TEST
+    [Documentation]   Test   Language: English/Deutsch
     Accept Cookies
-    Navigate To Resources
-    Sleep    10s
+    Navigate To Language    Deutsch
+    Sleep    3sP1_TO02_LN_TC02 Navigate To Resources
 
 TC_TEST_BLOG
     [Documentation]    Check for Blog in Main Header

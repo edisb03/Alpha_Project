@@ -10,13 +10,14 @@ ${NAV_TEST_APPROACHES}          //a[@href="#"]
 ${NAV_EXPLOTARY_TESTING}        //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[1]/a[1]
 ${NAV_DATA-DRIVEN-TESTING}      //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[2]/a[1]
 ${NAV_KEYWORD-DRIVENTESTING}    //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[3]/a[1]
-# ${NAV_FEATURES}                 //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/features/')]
 ${NAV_BLOG}                     //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/blog/')]
 ${NAV_RESOURCES}                //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/resources')]
 ${LOGIN_BUTTON}                 /div[@class='wrapper']//li[5]
 ${LOGIN_PAGE_TITLE}             //div[@class='box-inner box-inner--right']//div[@id='logIn']//div[@class='overline']
 ${NAV_SIGN_UP}                  //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/sign-up/')]
-
+${NAV_LOGO}        (//header[contains(@class, 'mainHeader')]//a//img[contains(@class, 'logo-image')])[1]
+${NAV_ENG}  (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'English')])[1]
+${NAV_GER}  (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'Deutsch')])[1]
 
 *** Keywords ***
 Navigate To Features
@@ -29,6 +30,21 @@ Navigate To Test Approaches
     [Documentation]    Navigate To Test Approaches
     Wait Until Page Contains Element    ${NAV_TEST_APPROACHES}
     Tolerant Click    ${NAV_TEST_APPROACHES}
+
+Navigate To Language
+    [Documentation]    Navigates to Research processes...
+    [Arguments]  ${LANGUAGE}
+    Wait Until Element Is Visible    ${NAV_LOGO}
+    IF    '${LANGUAGE}' == 'English'
+         Wait Until Page Contains Element       ${NAV_GER}
+         Mouse Over    ${NAV_GER}
+         Sleep    1s
+         Click Element    //ul[contains(@class, 'menu')]//li[9]//ul//li//span[2][contains(text(), 'Englisch')]
+    ELSE IF     '${LANGUAGE}' == 'Deutsch'
+         Wait Until Page Contains Element     ${NAV_ENG}
+         Mouse Over    ${NAV_ENG}
+         Click Element        //ul[contains(@class, 'menu')]//li[9]//ul//li//span[2][contains(text(), 'German')]
+    END
 
 Search Links By Name
     [Documentation]    Search the specified links by using its name
