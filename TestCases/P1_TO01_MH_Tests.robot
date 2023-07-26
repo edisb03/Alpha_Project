@@ -16,6 +16,32 @@ P1_TO01_MH_TC01 Verify Test Approaches Works
   Navigate To Test Approaches
   Search Links By Name      Exploratory Testing
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 P1_TO02_MH_TC02 Validate Exploratory Testing HomePage
   [Documentation]  Validates if the page Exploratory Testing
   ...  page works properly
