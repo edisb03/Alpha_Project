@@ -28,13 +28,9 @@ P1_TO01_MH_TC01/2 Start For Free
     Navigate To TestBench Logo
     Scroll And Click Start For Free Button
 
-
-    
 P1_TO01_MH_TC01/3 Learn More About Imbus
     [Documentation]    Test Learn more about Imbus button
     [Tags]    P1TO01_TC01/3  exploratory
     Accept Cookies
     Navigate To TestBench Logo
     Scroll And Click Learn More About Imbus Button
-
-
