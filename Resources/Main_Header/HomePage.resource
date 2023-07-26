@@ -73,3 +73,21 @@ Verify As A Tester Button And Its Elements
     Page Should Contain Element    ${TESTER_QUOTE}
     Click Element                  ${TEST_DESIGN_LINK}
     Page Should Contain            Test Design
+
+Scroll And Click Start For Free Button
+    [Documentation]    This keyword is used to navigate to Start For Free button
+    Wait Until Element Is Visible    ${START_FOR_FREE}
+    Click Element    ${START_FOR_FREE}
+    Wait Until Page Contains     Get started with a free account
+
+Accept Cookies Imbus Page
+   [Documentation]    This keyword is for Cookies and for validate that TestBench web is open.
+   Tolerant Click    ${ACCEPT_COOKIES_IMBUS}
+   Wait Until Keyword Succeeds    3x    1s    Wait Until Page Contains    Our Portfolio and trend topics
+
+Scroll And Click Learn More About Imbus Button
+    [Documentation]   This keyword is used to navigate to Learn More About Imbus button
+    Scroll Element Into View    ${LEARN_MORE_ABOUT_IMBUS}
+    Wait Until Element Is Visible    ${LEARN_MORE_ABOUT_IMBUS}
+    Click Element    ${LEARN_MORE_ABOUT_IMBUS}
+    Wait Until Page Contains Element    ${IMBUS_LOGO}
