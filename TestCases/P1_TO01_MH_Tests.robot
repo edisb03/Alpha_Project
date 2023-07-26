@@ -35,7 +35,7 @@ P1_TO01_MH_TC01/3 Learn More About Imbus
     Navigate To TestBench Logo
     Scroll And Click Learn More About Imbus Button
 
-P1_TO02_MH_TC02 Validate Exploratory Testing HomePage
+P1_TO02_MH_TC02 Validate Exploratory Testing
   [Documentation]  Validates if the page Exploratory Testing
   ...  page works properly
   [Tags]  MH_TC02   exploratory
