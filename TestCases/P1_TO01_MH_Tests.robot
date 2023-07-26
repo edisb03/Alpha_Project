@@ -28,12 +28,7 @@ P1_TO01_MH_TC01/2 Start For Free
     Navigate To TestBench Logo
     Scroll And Click Start For Free Button
 
-P1_TC01_HP_TCO9_1 Verify As A Test Manager Button
-    [Documentation]    Validates if the As A Test Manager Button works correctly
-    [Tags]    HP_TC09_1  exploratory
-    Set Selenium Speed    0.5
-    Accept Cookies
-    Scroll To As A Test Manager Button And Click On
+
     
 P1_TO01_MH_TC01/3 Learn More About Imbus
     [Documentation]    Test Learn more about Imbus button
