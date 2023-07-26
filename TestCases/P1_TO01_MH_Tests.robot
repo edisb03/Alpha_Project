@@ -19,6 +19,7 @@ P1_TO01_MH_TC01 Verify Test Approaches Works
 P1_TO01_MH_TC01/2 Start For Features
     [Documentation]    Test Start For Free Button
     [Tags]    P1TO02_TC01/2  exploratory
+    Set Selenium Speed    0.5
     Accept Cookies
     Navigate To TestBench Logo
     Scroll And Click Start For Free Button
@@ -29,5 +30,3 @@ P1_TC01_HP_TCO9_1 Verify As A Test Manager Button
     Set Selenium Speed    0.5
     Accept Cookies
     Scroll To As A Test Manager Button And Click On
-
-    
