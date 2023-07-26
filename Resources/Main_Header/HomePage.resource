@@ -11,6 +11,7 @@ ${TEST_MANAGEMENT_BUTTON}    //div[contains (@class, 'box')]//a[contains(text(),
 ${START_FOR_FREE}            //a[contains(text(), 'Start for Free')]
 ${LEARN_MORE_ABOUT_IMBUS}    //a[contains(text(), 'Learn More About imbus')]
 ${IMBUS_LOGO}                //div[@id='logo']//a[contains(text(), 'imbus AG')]
+${ACCEPT_COOKIES_IMBUS}      //div[@id='cookieconsent:body']//a[contains(text(), 'allow all cookies ')]
 
 
 *** Keywords ***
@@ -19,6 +20,12 @@ Scroll And Click Start For Free Button
     Wait Until Element Is Visible    ${START_FOR_FREE}
     Click Element    ${START_FOR_FREE}
     Wait Until Page Contains     Get started with a free account
+
+Accept Cookies Imbus Page
+   [Documentation]    This keyword is for Cookies and for validate that TestBench web is open.
+   Tolerant Click    ${ACCEPT_COOKIES_IMBUS}
+   Wait Until Keyword Succeeds    3x    1s    Wait Until Page Contains    Our Portfolio and trend topics
+
 
 
 

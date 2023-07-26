@@ -34,3 +34,4 @@ P1_TO01_MH_TC01/3 Learn More About Imbus
     Accept Cookies
     Navigate To TestBench Logo
     Scroll And Click Learn More About Imbus Button
+    Accept Cookies Imbus Page
