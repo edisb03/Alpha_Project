@@ -9,12 +9,12 @@ Resource    ../import.resource
 ${TEST_MANAGER_BUTTON}         //div[contains (@class, 'tabs')]//a[contains(@class, 'button button--tab hovered')]
 ${TEST_MANAGER_QUOTE}          //div[contains(@class, 'box-inner--text')]//blockquote [contains( @class, 'quote')]
 ...    //p[contains (text(), 'are covered with an adequate number of test cases.“')]
-${TEST_MANAGEMENT_BUTTON}      //div[contains (@class, 'box')]//a[contains(text(), 'Learn more about Test Management')]
+${TEST_MANAGEMENT_LINK}      //div[contains (@class, 'box')]//a[contains(text(), 'Learn more about Test Management')]
 
 ${SOFTWARE_DEV_BUTTON}          //div[contains (@class, 'tabs')]//a[contains(text(), 'As a Software Developer')]
 ${SOFTWARE_DEV_QUOTE}           //div[contains(@class, 'box-inner--text')]//blockquote [contains( @class, 'quote')]
 ...    //p[contains (text(), 'which requirements I probably missed and which defects I should fix.“')]
-${TEST_EXECUTION_BUTTON}        //div[contains (@class, 'box')]//a[contains(text(), 'Learn more about Test Execution')]
+${TEST_EXECUTION_LINK}        //div[contains (@class, 'box')]//a[contains(text(), 'Learn more about Test Execution')]
 
 ${PROJECT_M_BUTTON}           //div[contains (@class, 'tabs')]//a[contains(text(), 'As a Project Manager')]
 ${PROJECT_M_QUOTE}            //div[contains(@class, 'box-inner--text')]//blockquote [contains( @class, 'quote')]
@@ -32,10 +32,10 @@ Verify As A Test Manager Button And Its Elements
     [Documentation]    This Keyword scrolls to the As A Test Manager button and verifies its content and items inside
     ...    of it
 
-    Scroll Element Into View       ${TEST_MANAGEMENT_BUTTON}  
+    Scroll Element Into View       ${TEST_MANAGEMENT_LINK}
     Wait Until Page Contains       As a Test Manager
     Page Should Contain Element    ${TEST_MANAGER_QUOTE} 
-    Click Element                  ${TEST_MANAGEMENT_BUTTON}
+    Click Element                  ${TEST_MANAGEMENT_LINK}
     Page Should Contain            Test Management
 
 Verify As A Software Developer Button And Its Elements
@@ -45,7 +45,7 @@ Verify As A Software Developer Button And Its Elements
     Scroll Element Into View       ${SOFTWARE_DEV_BUTTON}
     Click Element                  ${SOFTWARE_DEV_BUTTON}
     Page Should Contain Element    ${SOFTWARE_DEV_QUOTE}
-    Click Element                  ${TEST_EXECUTION_BUTTON}
+    Click Element                  ${TEST_EXECUTION_LINK}
     Page Should Contain            Test Execution
 
 Verify As A Project Manager Button And Its Elements
