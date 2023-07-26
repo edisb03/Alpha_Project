@@ -9,7 +9,7 @@ ${NAV_FEATURES}                 //nav[contains(@class, 'flyntComponent')][1]//li
 ${NAV_TEST_APPROACHES}          //a[@href="#"]
 ${NAV_EXPLOTARY_TESTING}        //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[1]/a[1]
 ${NAV_DATA-DRIVEN-TESTING}      //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[2]/a[1]
-${NAV_KEYWORD-DRIVENTESTING}    //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[3]/a[1]
+${NAV_KEYWORD-DRIVEN_TESTING}    //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[3]/a[1]
 ${NAV_BLOG}                     //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/blog/')]
 ${NAV_RESOURCES}                //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/resources')]
 ${LOGIN_BUTTON}                 /div[@class='wrapper']//li[5]
@@ -68,7 +68,7 @@ Search Links By Name
     ELSE IF    "${link_status}" == "Keyword-Driven Testing"
         Page Should Contain    Keyword-Driven Testing
         Sleep    3s
-        Tolerant Click    ${NAV_KEYWORD-DRIVENTESTING}
+        Tolerant Click    ${NAV_KEYWORD-DRIVEN_TESTING}
         Page Should Contain    Keyword-Driven Testing
     END
 
@@ -98,7 +98,20 @@ Navigate To Login
     Wait Until Page Contains     Get started with a free account
 
 Navigate To TestBench Logo
-    [Documentation]    This keyword is used to navigate to TestBench logo  
+    [Documentation]    This keyword is used to navigate to TestBench logo
     Wait Until Page Contains Element    ${NAV_LOGO}
     Click Element    ${NAV_LOGO}
     Wait Until Page Contains    The Smart Test Management Tool
+
+Check If The Page Contains
+  [Documentation]  Verifies if this text  Explore. Learn. Create. Execute. Improve. exits
+  [Arguments]   ${title}
+  Wait Until Page Contains    Explore. Learn. Create. Execute. Improve.
+  Page Should Contain     ${title}
+
+Scroll Down To
+  [Documentation]  Scrolls down to the middle of the page
+  [Arguments]   ${text}
+  Execute JavaScript    window.scrollTo(0,500);
+  Wait Until Page Contains     What Is Exploratory Testing?
+  Page Should Contain    ${text}
