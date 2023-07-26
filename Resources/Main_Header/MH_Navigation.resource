@@ -87,20 +87,20 @@ Navigate To Resources
 Navigate To Login
   [Documentation]  Navigates to Login Button
   Set Selenium Speed    0.8
-  Wait Until Page Contains Element    ${LOGIN_BUTTON}
-  Tolerant Click    ${LOGIN_BUTTON}
-  Wait Until Element Is Visible    ${LOGIN_PAGE_TITLE}
+  Wait Until Page Contains Element     ${LOGIN_BUTTON}
+  Tolerant Click                       ${LOGIN_BUTTON}
+  Wait Until Element Is Visible        ${LOGIN_PAGE_TITLE}
 
  Navigate To Sign Up
     [Documentation]    This keyword is used to navigate to Sign Up.
     Wait Until Page Contains Element    ${NAV_SIGN_UP}
-    Click Element    ${NAV_SIGN_UP}
+    Click Element                       ${NAV_SIGN_UP}
     Wait Until Page Contains     Get started with a free account
 
 Navigate To TestBench Logo
     [Documentation]    This keyword is used to navigate to TestBench logo
     Wait Until Page Contains Element    ${NAV_LOGO}
-    Click Element    ${NAV_LOGO}
+    Click Element                       ${NAV_LOGO}
     Wait Until Page Contains    The Smart Test Management Tool
 
 Check If The Page Contains
