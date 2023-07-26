@@ -8,6 +8,6 @@ Test Teardown       Close Browser
 P1_TO03_SU_TC04 Navigate To Sign Up
     [Documentation]    Open TestBench web page navigate to Sign Up And validate if page is open.
     [Tags]   P1TO03_TC04   exploratory
-    Accept Cookies
+    Accept Cookies  Accept all
     Navigate To Sign Up
     Navigate To TestBench Logo

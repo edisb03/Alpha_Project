@@ -10,6 +10,6 @@ Test Teardown       Close Browser
 P1_TO02_LN_TC03 Navigate To Log In
   [Documentation]  Open TestBench web page navigate to Log in And validate if page is open.
   [Tags]   P1TO02_TC03   exploratory
-  Accept Cookies
+  Accept Cookies  Accept all
   Navigate To Login
   Navigate To TestBench Logo
