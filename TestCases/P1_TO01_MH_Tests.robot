@@ -15,3 +15,16 @@ P1_TO01_MH_TC01 Verify Test Approaches Works
   Accept Cookies
   Navigate To Test Approaches
   Search Links By Name      Exploratory Testing
+
+
+
+
+
+
+
+P1_TO01_MH_TC01/2 Start For Features
+    [Documentation]    Test Start For Free Button
+    [Tags]    P1TO02_TC01/2  exploratory
+    Accept Cookies
+    Navigate To TestBench Logo
+    Scroll And Click Start For Free Button
