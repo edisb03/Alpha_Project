@@ -16,11 +16,17 @@ P1_TO01_MH_TC01 Verify Test Approaches Works
   Navigate To Test Approaches
   Search Links By Name      Exploratory Testing
 
-P1_TC01_HP_TCO9_1 Verify As A Test Manager Button
+P1_TO01_MH_TCO9_1 Verify As A Test Manager Button
     [Documentation]    Validates if the As A Test Manager Button works correctly
-    [Tags]    HP_TC09_1  exploratory
+    [Tags]    MH_TC09_1  exploratory
     Set Selenium Speed    0.5
     Accept Cookies
-    Scroll To As A Test Manager Button And Click On
+    Verify As A Test Manager Button And Its Elements
 
-    
+P1_TO01_TC09_2 Verify As A Software Developer Button
+    [Documentation]    Verifies if the As A Software Developer Button works correctyl
+    [Tags]    MH_TC09_2    exploratory
+    Set Selenium Speed    0.5
+    Accept Cookies
+    Verify As A Software Developer Button And Its Elements
+  
