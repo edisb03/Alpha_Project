@@ -34,6 +34,7 @@ P1_TC01_HP_TCO9_1 Verify As A Test Manager Button
     Set Selenium Speed    0.5
     Accept Cookies
     Scroll To As A Test Manager Button And Click On
+    
 P1_TO01_MH_TC01/3 Learn More About Imbus
     [Documentation]    Test Learn more about Imbus button
     [Tags]    P1TO01_TC01/3  exploratory
