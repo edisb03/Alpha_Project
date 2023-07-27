@@ -49,25 +49,25 @@ P1_TO01_MH_TCO9_1 Test Manager Verify Box
     [Tags]    MH_TC09_1  exploratory
     Set Selenium Speed    0.5
     Accept Cookies   Accept all
-    Verify As A Test Manager Button And Its Elements
+    Navigate To As A Test Manager
 
 P1_TO01_MH_TC09_2 Software Developer Verify Box
     [Documentation]    Verifies if the As A Software Developer Button works correctly
     [Tags]    MH_TC09_2    exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
-    Verify As A Software Developer Button And Its Elements
+    Navigate To As A Software Developer
 
 P1_TO01_MH_TC09_3 Project Manager Verify Box
     [Documentation]    Verifies if the As A Project Manager Button works correctly
     [Tags]    MH_TC09_3    exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
-    Verify As A Project Manager Button And Its Elements
+    Navigate To As A Project Manager
 
 P1_T009_MH_TC09_4 Tester Verify Box
     [Documentation]    Verifies if the As A Tester Button works correctly
     [Tags]    MH_TC09_4    exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
-    Verify As A Tester Button And Its Elements
+    Navigate To As A Test Manager

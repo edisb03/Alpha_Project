@@ -26,7 +26,7 @@ ${ACCEPT_COOKIES_IMBUS}         //div[@id='cookieconsent:body']//a[contains(text
 
 
 *** Keywords ***
-Verify As A Test Manager Button And Its Elements
+Navigate To As A Test Manager
     [Documentation]  Scrolls to the As A Test Manager button
     ...    and verifies its content and items insid of it
     Execute JavaScript    window.scrollTo(0,1000);
@@ -36,7 +36,7 @@ Verify As A Test Manager Button And Its Elements
     Click Element    ${TEST_MANAGEMENT_LINK}
     Page Should Contain    Test Management
 
-Verify As A Software Developer Button And Its Elements
+Navigate To As A Software Developer
     [Documentation]  Scrolls to the As A Software Developer button
     ...    and verifies its content anditems inside of it
     Execute JavaScript    window.scrollTo(0,1000);
@@ -46,7 +46,7 @@ Verify As A Software Developer Button And Its Elements
     Click Element    ${TEST_EXECUTION_LINK}
     Page Should Contain    Test Execution
 
-Verify As A Project Manager Button And Its Elements
+Navigate To As A Project Manager
     [Documentation]  Scrolls to the As A Project Manager button
     ...    and verifies its content and items inside of it
     Execute JavaScript    window.scrollTo(0,1000);
@@ -56,7 +56,7 @@ Verify As A Project Manager Button And Its Elements
     Click Element    ${TEAM_COLLAB_LINK}
     Page Should Contain    Team Collaboration
 
-Verify As A Tester Button And Its Elements
+Navigate To As A Tester
     [Documentation]  Scrolls to the As A Tester button
     ...    and verifies its content and items inside of it
     Execute JavaScript    window.scrollTo(0,1000);
