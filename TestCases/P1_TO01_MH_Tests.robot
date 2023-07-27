@@ -100,3 +100,12 @@ P1_TO01_MH_TC03 Verify Cards On Home Page
    Verify Main Header
    Check If Page Contains Text   What You Can Do With TestBench
    Navigate To Card     Tool Integration
+
+P1_TO01_MH_TC10 Verify Resources Links
+    [Documentation]    Verify Resources Links
+    [Tags]    MH_TC10   exploratory
+    Set Selenium Speed    0.5
+    Accept Cookies   Accept all
+    Verify Main Header
+    Navigate To Resources
+    Resources Links Works    Test Automation
