@@ -34,15 +34,15 @@ P1_TO01_MH_TC01/3 Learn More About Imbus
     Accept Cookies Imbus Page
 
 P1_TO02_MH_TC02 Validate Exploratory Testing
-  [Documentation]  Validates if the page Exploratory Testing
-  ...  page works properly
-  [Tags]  MH_TC02   exploratory
-  Set Selenium Speed    0.5
-  Accept Cookies   Accept all
-  Navigate To Test Approaches
-  Search Links By Name      Exploratory Testing
-  Check If The Page Contains   Explore. Learn. Create. Execute. Improve.
-  Scroll Down To   What Is Exploratory Testing?
+   [Documentation]  Validates if the page Exploratory Testing
+   ...  page works properly
+   [Tags]  MH_TC02   exploratory
+   Set Selenium Speed    0.5
+   Accept Cookies   Accept all
+   Navigate To Test Approaches
+   Search Links By Name      Exploratory Testing
+   Check If The Page Contains   Explore. Learn. Create. Execute. Improve.
+   Scroll Down To   What Is Exploratory Testing?
 
 P1_TO01_MH_TCO9_1 Verify As A Test Manager Button
     [Documentation]    Validates if the As A Test Manager Button works correctly
