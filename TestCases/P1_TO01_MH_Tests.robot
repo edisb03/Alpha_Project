@@ -75,8 +75,19 @@ P1_T009_MH_TC09_4 Tester Verify Box
 P1_TO01_MH_TC02 Features
     [Documentation]    Navigate to Features and checks if page is open
     [Tags]    P1TO01_TC02  exploratory
+    Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To Features
     Navigate Through Features Page
-
-
+    Click Try TestBench Now
+    Navigate To TestBench Logo
+    Navigate To Features
+    Check If The Page Contains    Explore. Learn. Create. Execute. Improve.
+    Click Try Exploratory Testing
+    Navigate To TestBench Logo
+    Navigate To Features
+    Click Learn More    Learn More
+    Check If The Page Contains    Explore. Learn. Create. Execute. Improve.
+    Navigate To Features
+    Check If The Page Contains    Let the Data Do All Your Testing
+    Click Try Data-Driven Testing
