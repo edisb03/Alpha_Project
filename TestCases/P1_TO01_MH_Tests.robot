@@ -99,4 +99,4 @@ P1_TO01_MH_TC03 Verify Cards On Home Page
    Accept Cookies   Accept all
    Verify Main Header
    Check If Page Contains Text   What You Can Do With TestBench
-   Navigate To Card     Tool Integration
+   Navigate To Card     Requirements Management

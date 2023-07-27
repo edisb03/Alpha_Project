@@ -106,42 +106,34 @@ Navigate To Card
     Execute JavaScript    window.scrollTo(0,1200);
     IF    "${card_links}" == "Requirements Management"
         Page Should Contain    Requirements Management
-        Sleep    3
         Tolerant Click    ${REQUIREMENTS_MANAGEMENT}
         Page Should Contain    Requirements Management
     ELSE IF    "${card_links}" == "Test Management"
         Page Should Contain    Test Management
-        Sleep    3
         Tolerant Click    ${TEST_MANAGEMENT}
         Page Should Contain    Test Management
     ELSE IF    "${card_links}" == "Test Design"
         Page Should Contain    Test Design
-        Sleep    3
         Tolerant Click    ${TEST_DESIGN}
         Page Should Contain    Test Design
     ELSE IF    "${card_links}" == "Test Execution"
         Page Should Contain    Test Execution
-        Sleep    3
         Tolerant Click    ${TEST_EXECUTION}
         Page Should Contain    Test Execution
     ELSE IF    "${card_links}" == "Test Automation"
         Page Should Contain    Test Automation
-        Sleep    3
         Tolerant Click    ${TEST_AUTOMATION}
         Page Should Contain    Test Automation
     ELSE IF    "${card_links}" == "Team Collaboration"
         Page Should Contain    Team Collaboration
-        Sleep    3
         Tolerant Click    ${TEST_COLLABORATION}
         Page Should Contain    Team Collaboration
     ELSE IF    "${card_links}" == "Tool Customization"
         Page Should Contain    Tool Customization
-        Sleep    3
         Tolerant Click    ${TOOL_CUSTOMIZATION}
         Page Should Contain    Customization
     ELSE IF    "${card_links}" == "Tool Integration"
         Page Should Contain    Tool Integration
-        Sleep    3
         Tolerant Click    ${TOOL_INTEGRATION}
         Page Should Contain    Integration
     END
