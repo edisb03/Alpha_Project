@@ -34,40 +34,40 @@ P1_TO01_MH_TC01/3 Learn More About Imbus
     Accept Cookies Imbus Page
 
 P1_TO02_MH_TC02 Validate Exploratory Testing
-  [Documentation]  Validates if the page Exploratory Testing
-  ...  page works properly
-  [Tags]  MH_TC02   exploratory
-  Set Selenium Speed    0.5
-  Accept Cookies   Accept all
-  Navigate To Test Approaches
-  Search Links By Name      Exploratory Testing
-  Check If The Page Contains   Explore. Learn. Create. Execute. Improve.
-  Scroll Down To   What Is Exploratory Testing?
+   [Documentation]  Validates if the page Exploratory Testing
+   ...  page works properly
+   [Tags]  MH_TC02   exploratory
+   Set Selenium Speed    0.5
+   Accept Cookies   Accept all
+   Navigate To Test Approaches
+   Search Links By Name      Exploratory Testing
+   Check If The Page Contains   Explore. Learn. Create. Execute. Improve.
+   Scroll Down To   What Is Exploratory Testing?
 
-P1_TO01_MH_TCO9_1 Verify As A Test Manager Button
+P1_TO01_MH_TCO9_1 Test Manager Verify Box
     [Documentation]    Validates if the As A Test Manager Button works correctly
     [Tags]    MH_TC09_1  exploratory
     Set Selenium Speed    0.5
     Accept Cookies   Accept all
-    Verify As A Test Manager Button And Its Elements
+    Navigate To As A Test Manager
 
-P1_TO01_MH_TC09_2 Verify As A Software Developer Button
+P1_TO01_MH_TC09_2 Software Developer Verify Box
     [Documentation]    Verifies if the As A Software Developer Button works correctly
     [Tags]    MH_TC09_2    exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
-    Verify As A Software Developer Button And Its Elements
+    Navigate To As A Software Developer
 
-P1_TO01_MH_TC09_3 Verify As A Project Manager Button
+P1_TO01_MH_TC09_3 Project Manager Verify Box
     [Documentation]    Verifies if the As A Project Manager Button works correctly
     [Tags]    MH_TC09_3    exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
-    Verify As A Project Manager Button And Its Elements
+    Navigate To As A Project Manager
 
-P1_T009_MH_TC09_4 Verify As A Tester Button
+P1_T009_MH_TC09_4 Tester Verify Box
     [Documentation]    Verifies if the As A Tester Button works correctly
     [Tags]    MH_TC09_4    exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
-    Verify As A Tester Button And Its Elements
+    Navigate To As A Test Manager
