@@ -53,5 +53,3 @@ Click Try Data-Driven Testing
     Wait Until Element Is Visible    ${TRY_DATA-DRIVEN_TESTING}
     Click Element    ${TRY_DATA-DRIVEN_TESTING}
     Wait Until Page Contains     Get started with a free account
-
-

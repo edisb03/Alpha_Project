@@ -91,3 +91,12 @@ P1_TO01_MH_TC02 Features
     Navigate To Features
     Check If The Page Contains    Let the Data Do All Your Testing
     Click Try Data-Driven Testing
+
+P1_TO01_MH_TC03 Verify Cards On Home Page
+   [Documentation]  Verify Cards On Home Page
+   [Tags]   MH_TC03   exploratory
+   Set Selenium Speed    0.5
+   Accept Cookies   Accept all
+   Verify Main Header
+   Check If Page Contains Text   What You Can Do With TestBench
+   Navigate To Card     Tool Integration

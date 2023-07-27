@@ -19,6 +19,7 @@ ${NAV_LOGO}                     (//header[contains(@class, 'mainHeader')]//a//im
 ${NAV_ENG}                      (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'English')])[1]
 ${NAV_GER}                      (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'Deutsch')])[1]
 ${GER_COOKIES}                  //div[contains(@class, 'container')]//p//a[contains(text(), 'Alle Cookies akzeptieren')][1]
+${MAIN_HEADER}                  (//ul[contains(@class, "menu")])[1]
 
 
 *** Keywords ***
@@ -115,3 +116,7 @@ Scroll Down To
   Execute JavaScript    window.scrollTo(0,500);
   Wait Until Page Contains     What Is Exploratory Testing?
   Page Should Contain    ${text}
+
+Verify Main Header
+  [Documentation]  Checks if the main header exits
+  Wait Until Page Contains Element    ${MAIN_HEADER} 
