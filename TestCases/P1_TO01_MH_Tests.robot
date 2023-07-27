@@ -71,3 +71,12 @@ P1_T009_MH_TC09_4 Tester Verify Box
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To As A Test Manager
+
+P1_TO01_MH_TC02 Features
+    [Documentation]    Navigate to Features and checks if page is open
+    [Tags]    P1TO01_TC02  exploratory
+    Accept Cookies  Accept all
+    Navigate To Features
+    Navigate Through Features Page
+
+
