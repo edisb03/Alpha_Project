@@ -32,6 +32,7 @@ ${TEST_AUTOMATION}              //h3[contains(text(), 'Test Automation')]
 ${TEST_COLLABORATION}           //h3[contains(text(), 'Team Collaboration')]
 ${TOOL_CUSTOMIZATION}           //h3[contains(text(), 'Tool Customization')]
 ${TOOL_INTEGRATION}             //h3[contains(text(), 'Tool Integration')]
+${SUBTITLE_TESTBENCH}           //h3[contains(text(), 'What You Can Do With TestBench')]
 
 
 *** Keywords ***
@@ -96,7 +97,7 @@ Scroll And Click Learn More About Imbus Button
 Check If Page Contains
     [Documentation]    Check If Page Contains Text
     [Arguments]    ${teksti}
-    Wait Until Page Contains Element    //h3[contains(text(), 'What You Can Do With TestBench')]
+    Wait Until Page Contains Element    ${SUBTITLE_TESTBENCH}
     Page Should Contain    ${teksti}
 
 Navigate To Card
