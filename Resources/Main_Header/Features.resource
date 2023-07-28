@@ -66,7 +66,7 @@ Navigate To Learn More Exploratory Testing
   [Arguments]    ${Learn_More_1}
   Execute JavaScript    window.scrollTo(0,7800);
   Wait Until Page Contains Element    (//a[@href='https://www.testbench.com/exploratory-testing/'][normalize-space()='Learn More'])[1]
-  Page Should Contain    Learn More
+  Page Should Contain    ${Learn_More_1}
   Click Element            (//a[@href='https://www.testbench.com/exploratory-testing/'][normalize-space()='Learn More'])[1]
 
 Navigate To Learn More Data Driven
@@ -75,7 +75,7 @@ Navigate To Learn More Data Driven
   [Arguments]    ${Learn_More_2}
   Execute JavaScript    window.scrollTo(0,7800);
   Wait Until Page Contains Element      (//a[@href='/data-driven-testing/'])[1]
-  Page Should Contain    Learn More
+  Page Should Contain     ${Learn_More_2}
   Click Element            (//a[@href='/data-driven-testing/'])[1]
 
 Click Try Data-Driven Testing

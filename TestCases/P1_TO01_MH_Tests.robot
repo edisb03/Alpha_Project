@@ -97,7 +97,7 @@ P1_TO01_MH_TC06 Verify Try Exploratory Testing
     Check If The Page Contains    Explore. Learn. Create. Execute. Improve.
     Click Try Exploratory Testing
     Redirect To Main Page
-    Navigate To Learn More Exploratory Testing    1
+    Navigate To Learn More Exploratory Testing    Learn More
     Check If The Page Contains    Explore. Learn. Create. Execute. Improve.
 
 P1_TO01_MH_TC07 Verify Try Data-Driven Testing
@@ -109,7 +109,7 @@ P1_TO01_MH_TC07 Verify Try Data-Driven Testing
     Check If The Page Contains    Let the Data Do All Your Testing
     Click Try Data-Driven Testing
     Redirect To Main Page
-    Navigate To Learn More Data Driven  2
+    Navigate To Learn More Data Driven  Learn More
     Check If The Page Contains   Let the Data Do All Your Testing
 
 P1_TO01_MH_TC03 Verify Cards On Home Page
