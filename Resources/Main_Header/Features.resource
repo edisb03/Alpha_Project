@@ -47,25 +47,30 @@ Verify Content Features
 
 Click Try TestBench Now
     [Documentation]    Navigate to Try Testbench Now button
+    Execute JavaScript    window.scrollTo(0,6800);
     Wait Until Page Contains Element    ${TRY_TESTBENCH_NOW}
     Wait Until Keyword Succeeds    3x    3s    Click Element   ${TRY_TESTBENCH_NOW}
     Wait Until Page Contains     Get started with a free account
 
 Click Try Exploratory Testing
     [Documentation]    Navigate to Try Exploratory Testing button
+    Execute JavaScript    window.scrollTo(0,7800);
     Wait Until Element Is Visible    ${TRY_EXPLORTORY_TESTING}
     Click Element    ${TRY_EXPLORTORY_TESTING}
     Wait Until Page Contains     Get started with a free account
 
 Click Learn More
   [Documentation]  Scrolls down to the middle of the page
-  [Arguments]   ${text}
-  Execute JavaScript    window.scrollTo(0,1000);
-  Wait Until Page Contains     Learn More
-  Page Should Contain    ${text}
+  [Arguments]       ${number}
+  Execute JavaScript    window.scrollTo(0,7800);
+#   Wait Until Page Contains     Learn More
+  Page Should Contain    Learn More
+  Click Element    (//a[contains(text(), 'Learn More')])[${number}]
+  
 
 Click Try Data-Driven Testing
     [Documentation]    Navigate to Try Data-Driven Testing button
+    Execute JavaScript    window.scrollTo(0,8800);
     Wait Until Element Is Visible    ${TRY_DATA-DRIVEN_TESTING}
     Click Element    ${TRY_DATA-DRIVEN_TESTING}
     Wait Until Page Contains     Get started with a free account

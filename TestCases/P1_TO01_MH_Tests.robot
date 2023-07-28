@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Login In     ...
+Documentation    Home Page     ...
 Resource            ..//Resources/import.resource
 
 # Test Setup    Open Web Browser    browser_type=headlesschrome
@@ -79,18 +79,37 @@ P1_TO01_MH_TC02 Verify Feature Functions
     Accept Cookies  Accept all
     Navigate To Features
     Verify Content Features
-    # Click Try TestBench Now
-    # Navigate To TestBench Logo
-    # Navigate To Features
-    # Check If The Page Contains    Explore. Learn. Create. Execute. Improve.
-    # Click Try Exploratory Testing
-    # Navigate To TestBench Logo
-    # Navigate To Features
-    # Click Learn More    Learn More
-    # Check If The Page Contains    Explore. Learn. Create. Execute. Improve.
-    # Navigate To Features
-    # Check If The Page Contains    Let the Data Do All Your Testing
-    # Click Try Data-Driven Testing
+
+P1_TO01_MH_TC02/1 Verify Try TestBench Now
+    [Documentation]    Verify Try Test Bench button
+    Set Selenium Speed    0.5
+    Accept Cookies  Accept all
+    Navigate To Features
+    Click Try TestBench Now
+
+P1_TO01_MH_TC02/2 Verify Try Exploratory Testing
+    [Documentation]    Verify Try Exploratory Testing button
+    Set Selenium Speed    0.5
+    Accept Cookies  Accept all
+    Navigate To Features
+    Check If The Page Contains    Explore. Learn. Create. Execute. Improve.
+    Click Try Exploratory Testing
+    Navigate To TestBench Logo
+    Navigate To Features
+    Click Learn More    1
+    Check If The Page Contains    Explore. Learn. Create. Execute. Improve.
+
+P1_TO01_MH_TC02/3 Verify Try Data-Driven Testing
+    [Documentation]    Verify Try Data-Driven Testing button
+    Set Selenium Speed    0.5
+    Accept Cookies  Accept all
+    Navigate To Features
+    Check If The Page Contains    Let the Data Do All Your Testing
+    Click Try Data-Driven Testing
+    Navigate To TestBench Logo
+    Navigate To Features
+    Click Learn More    2
+    Check If The Page Contains   Let the Data Do All Your Testing
 
 P1_TO01_MH_TC03 Verify Cards On Home Page
    [Documentation]  Verify Cards On Home Page

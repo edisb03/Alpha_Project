@@ -107,7 +107,7 @@ Navigate To TestBench Logo
 Check If The Page Contains
   [Documentation]  Verifies if this text  Explore. Learn. Create. Execute. Improve. exits
   [Arguments]   ${title}
-  Wait Until Page Contains    Explore. Learn. Create. Execute. Improve.
+#   Wait Until Page Contains    Explore. Learn. Create. Execute. Improve.
   Page Should Contain     ${title}
 
 Scroll Down To
