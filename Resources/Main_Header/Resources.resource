@@ -5,10 +5,12 @@ Resource         ../common.resource
 
 
 *** Variables ***
-${AUTOMATED_GET_STARTED}    (//a[contains (@href, 'https://github.com/testbench-cs-imbus/automation')])[1]
-${DD_GET_STARTED}		    (//a[contains (@href, 'https://github.com/testbench-cs-imbus/automation')])[2]
-${DE_GET_STARTED}			(//a[contains (@href, 'https://github.com/testbench-cs-imbus/automation')])[3]
-${FS_GET_STARTED}			(//a[contains (@href, 'https://github.com/testbench-cs-imbus/automation')])[4]
+${TEST_AUTO}        //h3[contains(text(),'Test Automation')]
+${DATA_DRIVEN}		//h3[contains(text(),'Data-Driven Testing')]
+${DEFECT_REPORT}	//h3[contains(text(),'Export')]
+${FAST_SETUP}	    //h3[contains(text(),'Fast Setup')]
+${AUTOMATION_PAGE_TITLE}   //a[@id='user-content-test-case-automation-agent-for-testbenchcs']
+${DD_PAGE_TITLE}           //a[@id='user-content-ddt-table-import-via-excel-for-testbench-cs']
 
 
 *** Keywords ***
@@ -18,21 +20,22 @@ Resources Links Works
     IF  "${resources_links}" == "Test Automation"
         Page Should Contain    Test Automation
         Sleep    3
-        Click Element   //h3[contains(text(),'Test Automation')]
+        Click Element   ${TEST_AUTO}
         Verify New Automation Page
 
     ELSE IF    "${resources_links}" == "Data-Driven Testing "
         Page Should Contain    Data-Driven Testing
         Sleep    3
-        Tolerant Click    ${DD_GET_STARTED}
+        Click Element   ${DATA_DRIVEN}
+        Verify New Data-Driven Page
     ELSE IF    "${resources_links}" == "Defect Export"
         Page Should Contain    Defect  Export
         Sleep    3
-        Tolerant Click    ${DE_GET_STARTED}
+        Click Element   ${DEFECT_REPORT}
     ELSE IF    "${resources_links}" == "Fast Setup"
         Page Should Contain    Fast Setup
         Sleep    3
-        Tolerant Click    ${FS_GET_STARTED}
+        Click Element   ${FAST_SETUP}
     END
 
 Verify New Automation Page
@@ -47,4 +50,18 @@ Identify Text On The Automation Page
     [Documentation]    Check for the content text
     Set Selenium Speed    0.3
     Execute JavaScript    window.scrollTo(0,1000);
-    Wait Until Page Contains Element    //a[@id='user-content-test-case-automation-agent-for-testbenchcs']
+    Wait Until Page Contains Element    ${AUTOMATION_PAGE_TITLE}
+
+Verify New Data-Driven Page
+    [Documentation]    Check for New Page Loaded
+    ${windows}    Get Window Handles
+    Switch Window    ${windows}[1]
+    Identify Text On New Data Driven Page
+    ${windows}    Get Window Handles
+    Switch Window     ${windows}[0]
+
+Identify Text On New Data Driven Page
+    [Documentation]    Check for the content text
+    Set Selenium Speed    0.3
+    Execute JavaScript    window.scrollTo(0,1000);
+    Wait Until Page Contains Element    ${DD_PAGE_TITLE}
