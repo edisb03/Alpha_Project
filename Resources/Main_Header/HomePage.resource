@@ -93,7 +93,7 @@ Scroll And Click Learn More About Imbus Button
     Click Element    ${LEARN_MORE_ABOUT_IMBUS}
     Wait Until Page Contains Element    ${IMBUS_LOGO}
 
-Check If Page Contains Text
+Check If Page Contains
     [Documentation]    Check If Page Contains Text
     [Arguments]    ${teksti}
     Wait Until Page Contains Element    //h3[contains(text(), 'What You Can Do With TestBench')]

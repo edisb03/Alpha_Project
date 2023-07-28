@@ -98,5 +98,5 @@ P1_TO01_MH_TC03 Verify Cards On Home Page
    Set Selenium Speed    0.5
    Accept Cookies   Accept all
    Verify Main Header
-   Check If Page Contains Text   What You Can Do With TestBench
+   Check If Page Contains    What You Can Do With TestBench
    Navigate To Card     Requirements Management
