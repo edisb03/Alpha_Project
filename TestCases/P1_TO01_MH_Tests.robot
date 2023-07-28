@@ -104,7 +104,7 @@ P1_TO01_MH_TC03 Verify Cards On Home Page
 P1_TO01_MH_TC10 Verify Resources Links
     [Documentation]    Verify Resources Links
     [Tags]    MH_TC10   exploratory
-    Set Selenium Speed    0.5
+    Set Selenium Speed    0.8
     Accept Cookies   Accept all
     Verify Main Header
     Navigate To Resources
