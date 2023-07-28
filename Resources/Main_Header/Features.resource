@@ -17,6 +17,7 @@ ${TRY_TESTBENCH_NOW}                             //a[contains(text(), 'Try TestB
 ${TRY_EXPLORTORY_TESTING}                        //a[contains(text(), 'Try Exploratory Testing')]
 ${TRY_DATA-DRIVEN_TESTING}                       //a[contains(text(), 'Try Data-Driven Testing')]
 
+
 *** Keywords ***
 Verify Content Features
     [Documentation]    Navigate to Requirements Management within Features
@@ -59,14 +60,23 @@ Click Try Exploratory Testing
     Click Element    ${TRY_EXPLORTORY_TESTING}
     Wait Until Page Contains     Get started with a free account
 
-Click Learn More
+Navigate To Learn More Exploratory Testing
   [Documentation]  Scrolls down to the middle of the page
-  [Arguments]       ${number}
+  ...  finds the Learn More Function and Clicks on it
+  [Arguments]    ${Learn_More_1}
   Execute JavaScript    window.scrollTo(0,7800);
-#   Wait Until Page Contains     Learn More
+  Wait Until Page Contains Element    (//a[@href='https://www.testbench.com/exploratory-testing/'][normalize-space()='Learn More'])[1]
   Page Should Contain    Learn More
-  Click Element    (//a[contains(text(), 'Learn More')])[${number}]
-  
+  Click Element            (//a[@href='https://www.testbench.com/exploratory-testing/'][normalize-space()='Learn More'])[1]
+
+Navigate To Learn More Data Driven
+  [Documentation]  Scrolls down to the middle of the page
+  ...  finds the Learn More Function and Clicks on it
+  [Arguments]    ${Learn_More_2}
+  Execute JavaScript    window.scrollTo(0,7800);
+  Wait Until Page Contains Element      (//a[@href='/data-driven-testing/'])[1]
+  Page Should Contain    Learn More
+  Click Element            (//a[@href='/data-driven-testing/'])[1]
 
 Click Try Data-Driven Testing
     [Documentation]    Navigate to Try Data-Driven Testing button
@@ -74,3 +84,8 @@ Click Try Data-Driven Testing
     Wait Until Element Is Visible    ${TRY_DATA-DRIVEN_TESTING}
     Click Element    ${TRY_DATA-DRIVEN_TESTING}
     Wait Until Page Contains     Get started with a free account
+
+Redirect To Main Page
+  [Documentation]  Goes back to main page
+  Navigate To TestBench Logo
+  Navigate To Features
