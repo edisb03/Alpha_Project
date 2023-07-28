@@ -16,17 +16,17 @@ P1_TO01_MH_TC01 Verify Test Approaches Works
   Navigate To Test Approaches
   Search Links By Name      Exploratory Testing
 
-P1_TO01_MH_TC01/2 Start For Free
+P1_TO01_MH_TC02 Start For Free
     [Documentation]    Test Start For Free Button
-    [Tags]    P1TO01_TC01/2  exploratory
+    [Tags]    P1TO01_TC02  exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To TestBench Logo
     Scroll And Click Start For Free Button
 
-P1_TO01_MH_TC01/3 Learn More About Imbus
+P1_TO01_MH_TC03 Learn More About Imbus
     [Documentation]    Test Learn more about Imbus button
-    [Tags]    P1TO01_TC01/3  exploratory
+    [Tags]    P1TO01_TC03  exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To TestBench Logo
@@ -72,23 +72,25 @@ P1_T009_MH_TC09_4 Tester Verify Box
     Accept Cookies  Accept all
     Navigate To As A Test Manager
 
-P1_TO01_MH_TC02 Verify Feature Functions
+P1_TO01_MH_TC04 Verify Feature Functions
     [Documentation]    Navigate to Features and checks if page is open
-    [Tags]    P1TO01_TC02  exploratory
+    [Tags]    P1TO01_TC04  exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To Features
     Verify Content Features
 
-P1_TO01_MH_TC02/1 Verify Try TestBench Now
+P1_TO01_MH_TC05 Verify Try TestBench Now
     [Documentation]    Verify Try Test Bench button
+    [Tags]    P1TO01_TC05  exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To Features
     Click Try TestBench Now
 
-P1_TO01_MH_TC02/2 Verify Try Exploratory Testing
+P1_TO01_MH_TC06 Verify Try Exploratory Testing
     [Documentation]    Verify Try Exploratory Testing button
+    [Tags]    P1TO01_TC06  exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To Features
@@ -99,8 +101,9 @@ P1_TO01_MH_TC02/2 Verify Try Exploratory Testing
     Click Learn More    1
     Check If The Page Contains    Explore. Learn. Create. Execute. Improve.
 
-P1_TO01_MH_TC02/3 Verify Try Data-Driven Testing
+P1_TO01_MH_TC07 Verify Try Data-Driven Testing
     [Documentation]    Verify Try Data-Driven Testing button
+    [Tags]    P1TO01_TC07  exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To Features
