@@ -96,9 +96,8 @@ P1_TO01_MH_TC06 Verify Try Exploratory Testing
     Navigate To Features
     Check If The Page Contains    Explore. Learn. Create. Execute. Improve.
     Click Try Exploratory Testing
-    Navigate To TestBench Logo
-    Navigate To Features
-    Click Learn More    1
+    Redirect To Main Page
+    Navigate To Learn More Exploratory Testing    1
     Check If The Page Contains    Explore. Learn. Create. Execute. Improve.
 
 P1_TO01_MH_TC07 Verify Try Data-Driven Testing
@@ -109,9 +108,8 @@ P1_TO01_MH_TC07 Verify Try Data-Driven Testing
     Navigate To Features
     Check If The Page Contains    Let the Data Do All Your Testing
     Click Try Data-Driven Testing
-    Navigate To TestBench Logo
-    Navigate To Features
-    Click Learn More    2
+    Redirect To Main Page
+    Navigate To Learn More Data Driven  2
     Check If The Page Contains   Let the Data Do All Your Testing
 
 P1_TO01_MH_TC03 Verify Cards On Home Page

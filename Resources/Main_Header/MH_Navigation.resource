@@ -104,10 +104,9 @@ Navigate To TestBench Logo
     Click Element                       ${NAV_LOGO}
     Wait Until Page Contains    The Smart Test Management Tool
 
-Check If The Page Contains
-  [Documentation]  Verifies if this text  Explore. Learn. Create. Execute. Improve. exits
+ Check If The Page Contains
+  [Documentation]  Reusable keyword
   [Arguments]   ${title}
-#   Wait Until Page Contains    Explore. Learn. Create. Execute. Improve.
   Page Should Contain     ${title}
 
 Scroll Down To
@@ -119,4 +118,4 @@ Scroll Down To
 
 Verify Main Header
   [Documentation]  Checks if the main header exits
-  Wait Until Page Contains Element    ${MAIN_HEADER} 
+  Wait Until Page Contains Element    ${MAIN_HEADER}
