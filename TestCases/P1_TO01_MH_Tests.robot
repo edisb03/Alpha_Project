@@ -108,4 +108,4 @@ P1_TO01_MH_TC10 Verify Resources Links
     Accept Cookies   Accept all
     Verify Main Header
     Navigate To Resources
-    Resources Links Works       Test Automation
+    Resources Links Works       Data-Driven Testing
