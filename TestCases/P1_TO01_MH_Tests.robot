@@ -8,7 +8,7 @@ Test Teardown       Close Browser
 
 
 *** Test Cases ***
-P1_TO01_MH_TC10 Verify Test Approaches Works          
+P1_TO01_MH_TC10 Verify Test Approaches Works
   [Documentation]  Checks if the test approaches works
   [Tags]   P1TO01_TC10  exploratory
   Set Selenium Speed    0.5
