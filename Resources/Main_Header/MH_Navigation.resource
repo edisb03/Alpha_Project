@@ -24,7 +24,7 @@ ${MAIN_HEADER}                  (//ul[contains(@class, "menu")])[1]
 
 *** Keywords ***
 Navigate To Features
-    [Documentation]    This keyword is used to navigate to Features
+    [Documentation]    This keyword is used to navigate to Features...
     Wait Until Page Contains Element    ${NAV_FEATURES}
     Click Element    ${NAV_FEATURES} 
     Wait Until Page Contains    Discover the features
