@@ -41,7 +41,7 @@ P1_TO02_MH_TC11 Validate Exploratory Testing
    Accept Cookies   Accept all
    Navigate To Test Approaches
    Search Links By Name      Exploratory Testing
-   Check If The Page Contains   Explore. Learn. Create. Execute. Improve.
+   Control If The Page Contains   Explore. Learn. Create. Execute. Improve.
    Scroll Down To   What Is Exploratory Testing?
 
 P1_TO01_MH_TCO9-1 Test Manager Verify Box
@@ -94,11 +94,11 @@ P1_TO01_MH_TC06 Verify Try Exploratory Testing
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To Features
-    Check If The Page Contains    Explore. Learn. Create. Execute. Improve.
+    Control If The Page Contains    Explore. Learn. Create. Execute. Improve.
     Click Try Exploratory Testing
     Redirect To Main Page
     Navigate To Learn More Exploratory Testing    Learn More
-    Check If The Page Contains    Explore. Learn. Create. Execute. Improve.
+    Control If The Page Contains   Explore. Learn. Create. Execute. Improve.
 
 P1_TO01_MH_TC07 Verify Try Data-Driven Testing
     [Documentation]    Verify Try Data-Driven Testing button
@@ -106,17 +106,16 @@ P1_TO01_MH_TC07 Verify Try Data-Driven Testing
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To Features
-    Check If The Page Contains    Let the Data Do All Your Testing
+    Control If The Page Contains   Let the Data Do All Your Testing
     Click Try Data-Driven Testing
     Redirect To Main Page
     Navigate To Learn More Data Driven  Learn More
-    Check If The Page Contains   Let the Data Do All Your Testing
+    Control If The Page Contains  Let the Data Do All Your Testing
 
 P1_TO01_MH_TC01 Verify Cards On Home Page
    [Documentation]  Verify Cards On Home Page
    [Tags]   P1TO01_TC01   exploratory
    Set Selenium Speed    0.5
    Accept Cookies   Accept all
-   Verify Main Header
-   Check If Page Contains Text   What You Can Do With TestBench
+   Control If The Page Contains  What You Can Do With TestBench
    Navigate To Card     Tool Integration
