@@ -104,7 +104,7 @@ Navigate To TestBench Logo
     Click Element                       ${NAV_LOGO}
     Wait Until Page Contains    The Smart Test Management Tool
 
- Check If The Page Contains
+ Control If The Page Contains
   [Documentation]  Reusable keyword
   [Arguments]   ${title}
   Page Should Contain     ${title}
