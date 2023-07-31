@@ -23,7 +23,7 @@ Resources Links Works
         Click Element   ${TEST_AUTO}
         Verify New Automation Page
 
-    ELSE IF    "${resources_links}" == "Data-Driven Testing "
+    ELSE IF    "${resources_links}" == "Data-Driven Testing"
         Page Should Contain    Data-Driven Testing
         Sleep    3
         Click Element   ${DATA_DRIVEN}

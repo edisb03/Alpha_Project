@@ -44,30 +44,30 @@ P1_TO02_MH_TC02 Validate Exploratory Testing
    Check If The Page Contains   Explore. Learn. Create. Execute. Improve.
    Scroll Down To   What Is Exploratory Testing?
 
-P1_TO01_MH_TCO9_1 Test Manager Verify Box
+P1_TO01_MH_TCO9-1 Test Manager Verify Box
     [Documentation]    Validates if the As A Test Manager Button works correctly
-    [Tags]    MH_TC09_1  exploratory
+    [Tags]    P1TO01_TC09-1  exploratory
     Set Selenium Speed    0.5
     Accept Cookies   Accept all
     Navigate To As A Test Manager
 
-P1_TO01_MH_TC09_2 Software Developer Verify Box
+P1_TO01_MH_TC09-2 Software Developer Verify Box
     [Documentation]    Verifies if the As A Software Developer Button works correctly
-    [Tags]    MH_TC09_2    exploratory
+    [Tags]    PITO01_TC09-2    exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To As A Software Developer
 
-P1_TO01_MH_TC09_3 Project Manager Verify Box
+P1_TO01_MH_TC09-3 Project Manager Verify Box
     [Documentation]    Verifies if the As A Project Manager Button works correctly
-    [Tags]    MH_TC09_3    exploratory
+    [Tags]    P1TO01_TC09-3    exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To As A Project Manager
 
-P1_T009_MH_TC09_4 Tester Verify Box
+P1_T009_MH_TC09-4 Tester Verify Box
     [Documentation]    Verifies if the As A Tester Button works correctly
-    [Tags]    MH_TC09_4    exploratory
+    [Tags]    P1TO09_TC09    exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To As A Test Manager
@@ -103,9 +103,9 @@ P1_TO01_MH_TC03 Verify Cards On Home Page
 
 P1_TO01_MH_TC10 Verify Resources Links
     [Documentation]    Verify Resources Links
-    [Tags]    MH_TC10   exploratory
+    [Tags]    P1TO01_TC10   exploratory
     Set Selenium Speed    0.8
     Accept Cookies   Accept all
     Verify Main Header
     Navigate To Resources
-    Resources Links Works    Data-Driven Testing
+    Resources Links Works       Test Automation
