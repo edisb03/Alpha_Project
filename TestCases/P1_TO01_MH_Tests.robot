@@ -57,7 +57,7 @@ P1_TO01_MH_TC06 Verify Try Exploratory Testing
     Navigate To Features
     Control If The Page Contains    Explore. Learn. Create. Execute. Improve.
     Click Try Exploratory Testing
-    Go Back
+    Go Back 
     Navigate To Learn More Exploratory Testing    Learn More
     Control If The Page Contains   Explore. Learn. Create. Execute. Improve.
 
