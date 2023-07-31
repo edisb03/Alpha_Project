@@ -63,7 +63,7 @@ Verify New Data-Driven Page
     Switch Window     ${windows}[0]
 
 Identify Text On New Data Driven Page
-    [Documentation]    Check for the content text
+    [Documentation]    Check for the content text of Data driven
     Set Selenium Speed    0.3
     Execute JavaScript    window.scrollTo(0,1000);
     Wait Until Page Contains Element    ${DD_PAGE_TITLE}
