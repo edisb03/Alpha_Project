@@ -15,4 +15,3 @@ Accept Cookies
    Tolerant Click    ${ACCEPT_COOKIES}
    Wait Until Keyword Succeeds    3x    1s    Wait Until Page Contains    The Smart Test Management Tool
    Wait Until Keyword Succeeds    3x    1s    Verify Main Header
-
