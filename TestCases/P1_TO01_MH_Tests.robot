@@ -8,9 +8,9 @@ Test Teardown       Close Browser
 
 
 *** Test Cases ***
-P1_TO01_MH_TC01 Verify Test Approaches Works
+P1_TO01_MH_TC10 Verify Test Approaches Works          
   [Documentation]  Checks if the test approaches works
-  [Tags]   MH_TC01  exploratory
+  [Tags]   P1TO01_TC10  exploratory
   Set Selenium Speed    0.5
   Accept Cookies  Accept all
   Navigate To Test Approaches
@@ -33,10 +33,10 @@ P1_TO01_MH_TC03 Learn More About Imbus
     Scroll And Click Learn More About Imbus Button
     Accept Cookies Imbus Page
 
-P1_TO02_MH_TC02 Validate Exploratory Testing
-   [Documentation]  Validates if the page Exploratory Testing
-   ...  page works properly
-   [Tags]  MH_TC02   exploratory
+P1_TO02_MH_TC11 Validate Exploratory Testing
+   [Documentation]  Validates if the page Exploratory Testing under Test Approaches
+   ...   works properly
+   [Tags]  P1TO01_TC11   exploratory
    Set Selenium Speed    0.5
    Accept Cookies   Accept all
    Navigate To Test Approaches
@@ -44,30 +44,30 @@ P1_TO02_MH_TC02 Validate Exploratory Testing
    Check If The Page Contains   Explore. Learn. Create. Execute. Improve.
    Scroll Down To   What Is Exploratory Testing?
 
-P1_TO01_MH_TCO9_1 Test Manager Verify Box
+P1_TO01_MH_TC12 Test Manager Verify Box
     [Documentation]    Validates if the As A Test Manager Button works correctly
-    [Tags]    MH_TC09_1  exploratory
+    [Tags]    P1TO01_TC12  exploratory
     Set Selenium Speed    0.5
     Accept Cookies   Accept all
     Navigate To As A Test Manager
 
-P1_TO01_MH_TC09_2 Software Developer Verify Box
+P1_TO01_MH_TC13 Software Developer Verify Box
     [Documentation]    Verifies if the As A Software Developer Button works correctly
-    [Tags]    MH_TC09_2    exploratory
+    [Tags]    P1TO01_TC13    exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To As A Software Developer
 
-P1_TO01_MH_TC09_3 Project Manager Verify Box
+P1_TO01_MH_TC14 Project Manager Verify Box
     [Documentation]    Verifies if the As A Project Manager Button works correctly
-    [Tags]    MH_TC09_3    exploratory
+    [Tags]    P1TO01_TC14    exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To As A Project Manager
 
-P1_T009_MH_TC09_4 Tester Verify Box
+P1_T009_MH_TC15 Tester Verify Box
     [Documentation]    Verifies if the As A Tester Button works correctly
-    [Tags]    MH_TC09_4    exploratory
+    [Tags]    P1TO01_TC15    exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To As A Test Manager
@@ -112,9 +112,9 @@ P1_TO01_MH_TC07 Verify Try Data-Driven Testing
     Navigate To Learn More Data Driven  Learn More
     Check If The Page Contains   Let the Data Do All Your Testing
 
-P1_TO01_MH_TC03 Verify Cards On Home Page
+P1_TO01_MH_TC01 Verify Cards On Home Page
    [Documentation]  Verify Cards On Home Page
-   [Tags]   MH_TC03   exploratory
+   [Tags]   P1TO01_TC01   exploratory
    Set Selenium Speed    0.5
    Accept Cookies   Accept all
    Verify Main Header
