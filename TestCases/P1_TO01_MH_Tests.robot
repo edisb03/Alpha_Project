@@ -44,30 +44,30 @@ P1_TO02_MH_TC11 Validate Exploratory Testing
    Check If The Page Contains   Explore. Learn. Create. Execute. Improve.
    Scroll Down To   What Is Exploratory Testing?
 
-P1_TO01_MH_TC12 Test Manager Verify Box
+P1_TO01_MH_TCO9-1 Test Manager Verify Box
     [Documentation]    Validates if the As A Test Manager Button works correctly
-    [Tags]    P1TO01_TC12  exploratory
+    [Tags]    MH_TC09_1  exploratory
     Set Selenium Speed    0.5
     Accept Cookies   Accept all
     Navigate To As A Test Manager
 
-P1_TO01_MH_TC13 Software Developer Verify Box
+P1_TO01_MH_TC09_2 Software Developer Verify Box
     [Documentation]    Verifies if the As A Software Developer Button works correctly
-    [Tags]    P1TO01_TC13    exploratory
+    [Tags]    MH_TC09_2    exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To As A Software Developer
 
-P1_TO01_MH_TC14 Project Manager Verify Box
+P1_TO01_MH_TC09_3 Project Manager Verify Box
     [Documentation]    Verifies if the As A Project Manager Button works correctly
-    [Tags]    P1TO01_TC14    exploratory
+    [Tags]    MH_TC09_3    exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To As A Project Manager
 
-P1_T009_MH_TC15 Tester Verify Box
+P1_T009_MH_TC09_4 Tester Verify Box
     [Documentation]    Verifies if the As A Tester Button works correctly
-    [Tags]    P1TO01_TC15    exploratory
+    [Tags]    MH_TC09_4    exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To As A Test Manager
@@ -117,5 +117,6 @@ P1_TO01_MH_TC01 Verify Cards On Home Page
    [Tags]   P1TO01_TC01   exploratory
    Set Selenium Speed    0.5
    Accept Cookies   Accept all
-   Control If Page Contains    What You Can Do With TestBench
-   Navigate To Card     Test Design
+   Verify Main Header
+   Check If Page Contains Text   What You Can Do With TestBench
+   Navigate To Card     Tool Integration

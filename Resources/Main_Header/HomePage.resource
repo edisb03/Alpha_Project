@@ -50,7 +50,6 @@ Navigate To As A Software Developer
     [Documentation]    Scrolls to the As A Software Developer button
     ...    and verifies its content anditems inside of it
     Execute JavaScript    window.scrollTo(0,1000);
-    # Scroll Element Into View    ${SOFTWARE_DEV_BUTTON}
     Click Element    ${SOFTWARE_DEV_BUTTON}
     Page Should Contain Element    ${SOFTWARE_DEV_QUOTE}
     Click Element    ${TEST_EXECUTION_LINK}
@@ -60,7 +59,6 @@ Navigate To As A Project Manager
     [Documentation]    Scrolls to the As A Project Manager button
     ...    and verifies its content and items inside of it
     Execute JavaScript    window.scrollTo(0,1000);
-    # Scroll Element Into View    ${PROJECT_M_BUTTON}
     Click Element    ${PROJECT_M_BUTTON}
     Page Should Contain Element    ${PROJECT_M_QUOTE}
     Click Element    ${TEAM_COLLAB_LINK}
@@ -70,7 +68,6 @@ Navigate To As A Tester
     [Documentation]    Scrolls to the As A Tester button
     ...    and verifies its content and items inside of it
     Execute JavaScript    window.scrollTo(0,1000);
-    # Scroll Element Into View    ${TESTER_BUTTON}
     Click Element    ${TESTER_BUTTON}
     Page Should Contain Element    ${TESTER_QUOTE}
     Click Element    ${TEST_DESIGN_LINK}
