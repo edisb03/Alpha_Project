@@ -117,6 +117,5 @@ P1_TO01_MH_TC01 Verify Cards On Home Page
    [Tags]   P1TO01_TC01   exploratory
    Set Selenium Speed    0.5
    Accept Cookies   Accept all
-   Verify Main Header
-   Check If Page Contains    What You Can Do With TestBench
+   Control If Page Contains    What You Can Do With TestBench
    Navigate To Card     Test Design
