@@ -84,7 +84,7 @@ Accept Cookies Imbus Page
     Tolerant Click    ${ACCEPT_COOKIES_IMBUS}
     Wait Until Keyword Succeeds    3x    1s    Wait Until Page Contains    Our Portfolio and trend topics
 
-Scroll And Click Learn More About Imbus Button
+More About Imbus
     [Documentation]    This keyword is used to navigate to Learn More About Imbus button
     Scroll Element Into View    ${LEARN_MORE_ABOUT_IMBUS}
     Wait Until Element Is Visible    ${LEARN_MORE_ABOUT_IMBUS}

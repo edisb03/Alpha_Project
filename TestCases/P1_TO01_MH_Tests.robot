@@ -44,7 +44,7 @@ P1_TO01_MH_TC03 Learn More About Imbus
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To TestBench Logo
-    Scroll And Click Learn More About Imbus Button
+    More About Imbus
     Accept Cookies Imbus Page
 
 P1_TO01_MH_TC04 Verify Feature Functions
