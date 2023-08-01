@@ -31,12 +31,12 @@ P1_TO01_MH_TC01 Verify Cards On Home Page
    Navigate To Card     Tool Integration
 
 P1_TO01_MH_TC02 Start For Free
-    [Documentation]    Navigate to the Start For Free Button and Click Start For Free Button.
+    [Documentation]    Navigate to the TestBench for free use.
     [Tags]    P1TO01_TC02  exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To TestBench Logo
-    Scroll And Click Start For Free Button
+    Use TestBench For Free
 
 P1_TO01_MH_TC03 Learn More About Imbus
     [Documentation]    Verifies that Learn More About Imbus button is clickable and its own new page is opened

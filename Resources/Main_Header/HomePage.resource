@@ -73,8 +73,8 @@ Navigate To As A Tester
     Click Element    ${TEST_DESIGN_LINK}
     Page Should Contain    Test Design
 
-Scroll And Click Start For Free Button
-    [Documentation]    This keyword is used to navigate to Start For Free button
+Use TestBench For Free
+    [Documentation]    This keyword is used to navigate to Start For Free
     Wait Until Element Is Visible    ${START_FOR_FREE}
     Click Element    ${START_FOR_FREE}
     Wait Until Page Contains    Get started with a free account
