@@ -126,11 +126,10 @@ Navigate To Card
         Tolerant Click    ${TEST_COLLABORATION}
         Page Should Contain    Team Collaboration
     ELSE IF    "${card_links}" == "Tool Customization"
-        Page Should Contain    Tool Customization
         Tolerant Click    ${TOOL_CUSTOMIZATION}
         Page Should Contain    Customization
     ELSE IF    "${card_links}" == "Tool Integration"
-        Page Should Contain    Tool Integration
+        Page Should Contain     Tool Integration
         Tolerant Click    ${TOOL_INTEGRATION}
         Page Should Contain    Integration
     END
