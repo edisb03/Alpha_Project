@@ -4,7 +4,7 @@ Library    Collections
 
 *** Variables ***
 ${URL}    https://www.testbench.com/
-${BROWSER}    edge
+${BROWSER}   chrome
 
 ${HEADLESS CHROME OPTIONS}
 ...    SEPARATOR=${SPACE}
