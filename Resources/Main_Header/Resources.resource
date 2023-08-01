@@ -14,7 +14,7 @@ ${DD_PAGE_TITLE}           //a[@id='user-content-ddt-table-import-via-excel-for-
 
 
 *** Keywords ***
-Resources Links Works
+Verify Resources Links 
     [Documentation]    Verify Resources Links
     [Arguments]    ${resources_links}
     IF  "${resources_links}" == "Test Automation"
