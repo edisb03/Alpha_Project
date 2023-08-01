@@ -39,7 +39,7 @@ P1_TO01_MH_TC02 Start For Free
     Scroll And Click Start For Free Button
 
 P1_TO01_MH_TC03 Learn More About Imbus
-    [Documentation]    Test Learn more about Imbus button
+    [Documentation]    Verifies that Learn More About Imbus button is clickable and its own new page is opened
     [Tags]    P1TO01_TC03  exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
@@ -48,8 +48,7 @@ P1_TO01_MH_TC03 Learn More About Imbus
     Accept Cookies Imbus Page
 
 P1_TO01_MH_TC04 Verify Feature Functions
-    [Documentation]    Navigate to Features and checks if page is open
-    [Tags]    P1TO01_TC04  exploratory
+    [Documentation]    Navigates to Features and verifies each existing features 
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To Features
@@ -89,23 +88,23 @@ P1_TO01_MH_TC07 Verify Try Data-Driven Testing
     Navigate To Learn More Data Driven  Learn More
     Control If The Page Contains  Let the Data Do All Your Testing
 
-P1_TO01_MH_TCO9-1 Test Manager Verify Box
+P1_TO01_MH_TC15 Test Manager Verify Box
     [Documentation]    Validates if the As A Test Manager Button works correctly
-    [Tags]    MH_TC09_1  exploratory
+    [Tags]    P1TO01_TC15  exploratory
     Set Selenium Speed    0.5
     Accept Cookies   Accept all
     Navigate To As A Test Manager
 
-P1_TO01_MH_TC09_2 Software Developer Verify Box
+P1_TO01_MH_TC13 Software Developer Verify Box
     [Documentation]    Verifies if the As A Software Developer Button works correctly
-    [Tags]    MH_TC09_2    exploratory
+    [Tags]    P1TO01_TC13    exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To As A Software Developer
 
-P1_TO01_MH_TC09_3 Project Manager Verify Box
+P1_TO01_MH_TC14 Project Manager Verify Box
     [Documentation]    Verifies if the As A Project Manager Button works correctly
-    [Tags]    MH_TC09_3    exploratory
+    [Tags]   P1TO01_TC14   exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To As A Project Manager
