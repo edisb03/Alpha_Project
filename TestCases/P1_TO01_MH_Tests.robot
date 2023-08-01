@@ -25,7 +25,7 @@ P1_TO01_MH_TC02 Start For Free
     Scroll And Click Start For Free Button
 
 P1_TO01_MH_TC03 Learn More About Imbus
-    [Documentation]    Test Learn more about Imbus button
+    [Documentation]    Verifies that Learn More About Imbus button is clickable and its own new page is opened
     [Tags]    P1TO01_TC03  exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
@@ -34,8 +34,7 @@ P1_TO01_MH_TC03 Learn More About Imbus
     Accept Cookies Imbus Page
 
 P1_TO01_MH_TC04 Verify Feature Functions
-    [Documentation]    Navigate to Features and checks if page is open
-    [Tags]    P1TO01_TC04  exploratory
+    [Documentation]    Navigates to Features and verifies each existing features 
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To Features
