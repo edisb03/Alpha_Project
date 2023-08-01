@@ -9,7 +9,7 @@ ${NAV_FEATURES}                 //nav[contains(@class, 'flyntComponent')][1]//li
 ${NAV_TEST_APPROACHES}          //a[@href="#"]
 ${NAV_EXPLOTARY_TESTING}        //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[1]/a[1]
 ${NAV_DATA-DRIVEN-TESTING}      //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[2]/a[1]
-${NAV_KEYWORD-DRIVENTESTING}    //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[3]/a[1]
+${NAV_KEYWORD-DRIVEN_TESTING}    //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[3]/a[1]
 ${NAV_BLOG}                     //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/blog/')]
 ${NAV_RESOURCES}                //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/resources')]
 ${LOGIN_BUTTON}                 /div[@class='wrapper']//li[5]
@@ -19,11 +19,12 @@ ${NAV_LOGO}                     (//header[contains(@class, 'mainHeader')]//a//im
 ${NAV_ENG}                      (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'English')])[1]
 ${NAV_GER}                      (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'Deutsch')])[1]
 ${GER_COOKIES}                  //div[contains(@class, 'container')]//p//a[contains(text(), 'Alle Cookies akzeptieren')][1]
+${MAIN_HEADER}                  (//ul[contains(@class, "menu")])[1]
 
 
 *** Keywords ***
 Navigate To Features
-    [Documentation]    This keyword is used to navigate to Features
+    [Documentation]    This keyword is used to navigate to Features...
     Wait Until Page Contains Element    ${NAV_FEATURES}
     Click Element    ${NAV_FEATURES} 
     Wait Until Page Contains    Discover the features
@@ -68,7 +69,7 @@ Search Links By Name
     ELSE IF    "${link_status}" == "Keyword-Driven Testing"
         Page Should Contain    Keyword-Driven Testing
         Sleep    3s
-        Tolerant Click    ${NAV_KEYWORD-DRIVENTESTING}
+        Tolerant Click    ${NAV_KEYWORD-DRIVEN_TESTING}
         Page Should Contain    Keyword-Driven Testing
     END
 
@@ -87,18 +88,34 @@ Navigate To Resources
 Navigate To Login
   [Documentation]  Navigates to Login Button
   Set Selenium Speed    0.8
-  Wait Until Page Contains Element    ${LOGIN_BUTTON}
-  Tolerant Click    ${LOGIN_BUTTON}
-  Wait Until Element Is Visible    ${LOGIN_PAGE_TITLE}
+  Wait Until Page Contains Element     ${LOGIN_BUTTON}
+  Tolerant Click                       ${LOGIN_BUTTON}
+  Wait Until Element Is Visible        ${LOGIN_PAGE_TITLE}
 
  Navigate To Sign Up
     [Documentation]    This keyword is used to navigate to Sign Up.
     Wait Until Page Contains Element    ${NAV_SIGN_UP}
-    Click Element    ${NAV_SIGN_UP}
+    Click Element                       ${NAV_SIGN_UP}
     Wait Until Page Contains     Get started with a free account
 
 Navigate To TestBench Logo
-    [Documentation]    This keyword is used to navigate to TestBench logo  
+    [Documentation]    This keyword is used to navigate to TestBench logo
     Wait Until Page Contains Element    ${NAV_LOGO}
-    Click Element    ${NAV_LOGO}
+    Click Element                       ${NAV_LOGO}
     Wait Until Page Contains    The Smart Test Management Tool
+
+ Control If The Page Contains
+  [Documentation]  Reusable keyword
+  [Arguments]   ${title}
+  Page Should Contain     ${title}
+
+Scroll Down To
+  [Documentation]  Scrolls down to the middle of the page
+  [Arguments]   ${text}
+  Execute JavaScript    window.scrollTo(0,500);
+  Wait Until Page Contains     What Is Exploratory Testing?
+  Page Should Contain    ${text}
+
+Verify Main Header
+  [Documentation]  Checks if the main header exits
+  Wait Until Page Contains Element    ${MAIN_HEADER}
