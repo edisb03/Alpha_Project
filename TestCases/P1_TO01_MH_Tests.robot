@@ -42,7 +42,8 @@ P1_TO01_MH_TC04 Verify Feature Functions
     Verify Content Features
 
 P1_TO01_MH_TC05 Verify Try TestBench Now
-    [Documentation]    Verify Try Test Bench button
+    [Documentation]    After open test bench page, open Features item and check
+    ...                if button "Try TestBench Now" within the page is available
     [Tags]    P1TO01_TC05  exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
@@ -50,7 +51,8 @@ P1_TO01_MH_TC05 Verify Try TestBench Now
     Click Try TestBench Now
 
 P1_TO01_MH_TC06 Verify Try Exploratory Testing
-    [Documentation]    Verify Try Exploratory Testing button
+    [Documentation]    After open test bench page, open Features item and check
+    ...                if button "Try Exploratory Testing" within the page is available
     [Tags]    P1TO01_TC06  exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
