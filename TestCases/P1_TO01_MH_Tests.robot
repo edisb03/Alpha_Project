@@ -9,15 +9,29 @@ Test Teardown       Close Browser
 
 *** Test Cases ***
 P1_TO01_MH_TC01 Verify Cards On Home Page
-   [Documentation]  Verify Cards On Home Page
+   [Documentation]  Navigate and Validate Cards On Home Page.
    [Tags]   P1TO01_TC01   exploratory
    Set Selenium Speed    0.5
    Accept Cookies   Accept all
    Control If The Page Contains  What You Can Do With TestBench
+   Navigate To Card     Requirements Management
+   Go Back
+   Navigate To Card     Test Management
+   Go Back
+   Navigate To Card     Test Design
+   Go Back
+   Navigate To Card     Test Execution
+   Go Back
+   Navigate To Card     Test Automation
+   Go Back
+   Navigate To Card     Team Collaboration
+   Go Back
+   Navigate To Card     Tool Customization
+   Go Back
    Navigate To Card     Tool Integration
 
 P1_TO01_MH_TC02 Start For Free
-    [Documentation]    Test Start For Free Button
+    [Documentation]    Navigate to the Start For Free Button and Click Start For Free Button.
     [Tags]    P1TO01_TC02  exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
