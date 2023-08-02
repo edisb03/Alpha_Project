@@ -88,28 +88,31 @@ P1_TO01_MH_TC07 Verify Try Data-Driven Testing
     Navigate To Learn More Data Driven  Learn More
     Control If The Page Contains  Let the Data Do All Your Testing
 
-P1_TO01_MH_TC15 Test Manager Verify Box
+P1_TO01_MH_TC12 Navigate As A Test Manager
     [Documentation]    Validates if the As A Test Manager Button works correctly
-    [Tags]    P1TO01_TC15  exploratory
-    Set Selenium Speed    0.5
+    [Tags]    P1TO01_TC12  exploratory
     Accept Cookies   Accept all
-    Navigate To As A Test Manager
+    Navigate To Your Personal TestBench Benefit    Test Manager
 
-P1_TO01_MH_TC13 Software Developer Verify Box
+P1_TO01_MH_TC13 Navigate As A Software Developer
     [Documentation]    Verifies if the As A Software Developer Button works correctly
     [Tags]    P1TO01_TC13    exploratory
-    Set Selenium Speed    0.5
     Accept Cookies  Accept all
-    Navigate To As A Software Developer
+    Navigate To Your Personal TestBench Benefit    Software Developer
 
-P1_TO01_MH_TC14 Project Manager Verify Box
+P1_TO01_MH_TC14 Navigate As A Project Manager
     [Documentation]    Verifies if the As A Project Manager Button works correctly
     [Tags]   P1TO01_TC14   exploratory
-    Set Selenium Speed    0.5
     Accept Cookies  Accept all
-    Navigate To As A Project Manager
+    Navigate To Your Personal TestBench Benefit    Project Manager
 
-P1_TO01_MH_TC10 Verify Test Approaches Works          
+P1_TO01_MH_TC15 Navigate As A Tester
+    [Documentation]    Validates if the As A Test Manager Button works correctly
+    [Tags]    P1TO01_TC15  exploratory
+    Accept Cookies   Accept all
+    Navigate To Your Personal TestBench Benefit    Tester
+
+P1_TO01_MH_TC10 Verify Test Approaches Works
     [Documentation]  Checks if the test approaches works
     [Tags]   P1TO01_TC10  exploratory
     Set Selenium Speed    0.5
