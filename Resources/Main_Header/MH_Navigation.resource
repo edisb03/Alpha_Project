@@ -20,13 +20,13 @@ ${NAV_ENG}                      (//div[contains(@class, 'container centerMaxWidt
 ${NAV_GER}                      (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'Deutsch')])[1]
 ${GER_COOKIES}                  //div[contains(@class, 'container')]//p//a[contains(text(), 'Alle Cookies akzeptieren')][1]
 ${MAIN_HEADER}                  (//ul[contains(@class, "menu")])[1]
-
+${NAV_TESTBENCH_BENEFITS}       //h2[contains(text(), 'Your Personal TestBench Benefit')]
 
 *** Keywords ***
 Navigate To Features
     [Documentation]    This keyword is used to navigate to Features...
     Wait Until Page Contains Element    ${NAV_FEATURES}
-    Click Element    ${NAV_FEATURES} 
+    Click Element    ${NAV_FEATURES}
     Wait Until Page Contains    Discover the features
 
 Navigate To Test Approaches
@@ -104,18 +104,4 @@ Navigate To TestBench Logo
     Click Element                       ${NAV_LOGO}
     Wait Until Page Contains    The Smart Test Management Tool
 
- Control If The Page Contains
-  [Documentation]  Reusable keyword
-  [Arguments]   ${title}
-  Page Should Contain     ${title}
 
-Scroll Down To
-  [Documentation]  Scrolls down to the middle of the page
-  [Arguments]   ${text}
-  Execute JavaScript    window.scrollTo(0,500);
-  Wait Until Page Contains     What Is Exploratory Testing?
-  Page Should Contain    ${text}
-
-Verify Main Header
-  [Documentation]  Checks if the main header exits
-  Wait Until Page Contains Element    ${MAIN_HEADER}

@@ -46,14 +46,14 @@ Verify Content Features
     Wait Until Page Contains Element    ${INTEGRATION_FEATURES}
     Page Should Contain    Integration
 
-Click Try TestBench Now
+Try TestBench Now
     [Documentation]    Navigate to Try Testbench Now button
     Execute JavaScript    window.scrollTo(0,6800);
     Wait Until Page Contains Element    ${TRY_TESTBENCH_NOW}
     Wait Until Keyword Succeeds    3x    3s    Click Element   ${TRY_TESTBENCH_NOW}
     Wait Until Page Contains     Get started with a free account
 
-Click Try Exploratory Testing
+Try Exploratory Testing
     [Documentation]    Navigate to Try Exploratory Testing button
     Execute JavaScript    window.scrollTo(0,7800);
     Wait Until Element Is Visible    ${TRY_EXPLORTORY_TESTING}
@@ -78,14 +78,9 @@ Navigate To Learn More Data Driven
   Page Should Contain     ${Learn_More_2}
   Click Element            (//a[@href='/data-driven-testing/'])[1]
 
-Click Try Data-Driven Testing
+Try Data-Driven Testing
     [Documentation]    Navigate to Try Data-Driven Testing button
     Execute JavaScript    window.scrollTo(0,8800);
     Wait Until Element Is Visible    ${TRY_DATA-DRIVEN_TESTING}
     Click Element    ${TRY_DATA-DRIVEN_TESTING}
     Wait Until Page Contains     Get started with a free account
-
-Redirect To Main Page
-  [Documentation]  Goes back to main page
-  Navigate To TestBench Logo
-  Navigate To Features

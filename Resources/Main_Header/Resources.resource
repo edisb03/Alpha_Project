@@ -67,3 +67,18 @@ Identify Text On New Data Driven Page
     Set Selenium Speed    0.3
     Execute JavaScript    window.scrollTo(0,1000);
     Wait Until Page Contains Element    ${DD_PAGE_TITLE}
+
+ Control If The Page Contains
+  [Documentation]  Reusable keyword
+  [Arguments]   ${title}
+  Page Should Contain     ${title}
+
+Validate Title
+  [Documentation]  Scrolls down to the middle of the page
+  [Arguments]   ${text}
+  Execute JavaScript    window.scrollTo(0,500);
+  Page Should Contain    ${text}
+
+Verify Main Header
+  [Documentation]  Checks if the main header exits
+  Wait Until Page Contains Element    ${MAIN_HEADER}

@@ -36,42 +36,96 @@ ${SUBTITLE_TESTBENCH}           //h3[contains(text(), 'What You Can Do With Test
 
 
 *** Keywords ***
-Navigate To As A Test Manager
-    [Documentation]    Scrolls to the As A Test Manager button
-    ...    and verifies its content and items insid of it
-    Execute JavaScript    window.scrollTo(0,1000);
-    Scroll Element Into View    ${TEST_MANAGEMENT_LINK}
-    Wait Until Page Contains    As a Test Manager
-    Page Should Contain Element    ${TEST_MANAGER_QUOTE}
-    Click Element    ${TEST_MANAGEMENT_LINK}
-    Page Should Contain    Test Management
 
-Navigate To As A Software Developer
-    [Documentation]    Scrolls to the As A Software Developer button
-    ...    and verifies its content anditems inside of it
-    Execute JavaScript    window.scrollTo(0,1000);
-    Click Element    ${SOFTWARE_DEV_BUTTON}
-    Page Should Contain Element    ${SOFTWARE_DEV_QUOTE}
-    Click Element    ${TEST_EXECUTION_LINK}
-    Page Should Contain    Test Execution
 
-Navigate To As A Project Manager
-    [Documentation]    Scrolls to the As A Project Manager button
-    ...    and verifies its content and items inside of it
-    Execute JavaScript    window.scrollTo(0,1000);
-    Click Element    ${PROJECT_M_BUTTON}
-    Page Should Contain Element    ${PROJECT_M_QUOTE}
-    Click Element    ${TEAM_COLLAB_LINK}
-    Page Should Contain    Team Collaboration
 
-Navigate To As A Tester
-    [Documentation]    Scrolls to the As A Tester button
-    ...    and verifies its content and items inside of it
-    Execute JavaScript    window.scrollTo(0,1000);
-    Click Element    ${TESTER_BUTTON}
-    Page Should Contain Element    ${TESTER_QUOTE}
-    Click Element    ${TEST_DESIGN_LINK}
-    Page Should Contain    Test Design
+
+
+Navigate To Your Personal TestBench Benefit
+    [Documentation]     This keyword is used for navigation to TestBench Benefits
+    [Arguments]      ${testbench_tab}
+    Wait Until Page Contains Element     ${NAV_LOGO} 
+    Click Element     ${NAV_LOGO}
+    Wait Until Keyword Succeeds    3x    1s    Scroll Element Into View    ${NAV_TESTBENCH_BENEFITS}
+    IF    "${testbench_tab}" == "Test Manager"
+        Wait Until Page Contains    As a Test Manager
+        Page Should Contain Element    ${TEST_MANAGER_QUOTE}
+        Click Element    ${TEST_MANAGEMENT_LINK}
+        Page Should Contain    Test Management
+    ELSE IF    "${testbench_tab}" == "Software Developer"
+        Page Should Contain    Test Management
+        Tolerant Click    ${TEST_MANAGEMENT}
+        Page Should Contain    Test Management
+    ELSE IF    "${testbench_tab}" == "Project Manager"
+        Page Should Contain    Test Design
+        Tolerant Click    ${TEST_DESIGN}
+        Page Should Contain    Test Design
+    ELSE IF    "${testbench_tab}" == "Test Execution"
+        Page Should Contain    Test Execution
+        Tolerant Click    ${TEST_EXECUTION}
+        Page Should Contain    Test Execution
+    END
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Navigate To As A Test Manager
+#     [Documentation]    Scrolls to the As A Test Manager button
+#     ...    and verifies its content and items insid of it
+#     Execute JavaScript    window.scrollTo(0,1000);
+#     Scroll Element Into View    ${TEST_MANAGEMENT_LINK}
+#     Wait Until Page Contains    As a Test Manager
+#     Page Should Contain Element    ${TEST_MANAGER_QUOTE}
+#     Click Element    ${TEST_MANAGEMENT_LINK}
+#     Page Should Contain    Test Management
+
+# Navigate To As A Software Developer
+#     [Documentation]    Scrolls to the As A Software Developer button
+#     ...    and verifies its content anditems inside of it
+#     Execute JavaScript    window.scrollTo(0,1000);
+#     Click Element    ${SOFTWARE_DEV_BUTTON}
+#     Page Should Contain Element    ${SOFTWARE_DEV_QUOTE}
+#     Click Element    ${TEST_EXECUTION_LINK}
+#     Page Should Contain    Test Execution
+
+# Navigate To As A Project Manager
+#     [Documentation]    Scrolls to the As A Project Manager button
+#     ...    and verifies its content and items inside of it
+#     Execute JavaScript    window.scrollTo(0,1000);
+#     Click Element    ${PROJECT_M_BUTTON}
+#     Page Should Contain Element    ${PROJECT_M_QUOTE}
+#     Click Element    ${TEAM_COLLAB_LINK}
+#     Page Should Contain    Team Collaboration
+
+# Navigate To As A Tester
+#     [Documentation]    Scrolls to the As A Tester button
+#     ...    and verifies its content and items inside of it
+#     Execute JavaScript    window.scrollTo(0,1000);
+#     Click Element    ${TESTER_BUTTON}
+#     Page Should Contain Element    ${TESTER_QUOTE}
+#     Click Element    ${TEST_DESIGN_LINK}
+#     Page Should Contain    Test Design
 
 Use TestBench For Free
     [Documentation]    This keyword is used to navigate to Start For Free
