@@ -94,7 +94,7 @@ P1_TO01_MH_TC13 Navigate As A Software Developer
     Navigate To Your Personal TestBench Benefit    Software Developer
 
 P1_TO01_MH_TC14 Navigate As A Project Manager
-    [Documentation]    Verifies if the As A Project Manager Button works correctly
+    [Documentation]    Verifies if the As A Project Manager Button works correctly.
     [Tags]   P1TO01_TC14   exploratory
     Accept Cookies  Accept all
     Navigate To Your Personal TestBench Benefit    Project Manager
