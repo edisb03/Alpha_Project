@@ -8,7 +8,7 @@ Resource            ../import.resource
 ${NAV_FEATURES}                 //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/features/')]
 ${NAV_TEST_APPROACHES}          //a[@href="#"]
 ${NAV_EXPLOTARY_TESTING}        //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[1]/a[1]
-${NAV_DATA-DRIVEN-TESTING}      /(//a[contains (@href, "https://www.testbench.com/data-driven-testing/")])[1]
+${NAV_DATA-DRIVEN-TESTING}      (//a[contains (@href, "https://www.testbench.com/data-driven-testing/")])[1]
 ${NAV_KEYWORD-DRIVEN_TESTING}    //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[3]/a[1]
 ${NAV_BLOG}                     //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/blog/')]
 ${NAV_RESOURCES}                //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/resources')]
