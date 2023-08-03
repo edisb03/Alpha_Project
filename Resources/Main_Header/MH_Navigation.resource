@@ -8,7 +8,7 @@ Resource            ../import.resource
 ${NAV_FEATURES}                 //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/features/')]
 ${NAV_TEST_APPROACHES}          //a[@href="#"]
 ${NAV_EXPLOTARY_TESTING}        //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[1]/a[1]
-${NAV_DATA-DRIVEN-TESTING}      //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[2]/a[1]
+${NAV_DATA-DRIVEN-TESTING}      (//a[contains (@href, "https://www.testbench.com/data-driven-testing/")])[1]
 ${NAV_KEYWORD-DRIVEN_TESTING}    //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[3]/a[1]
 ${NAV_BLOG}                     //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/blog/')]
 ${NAV_RESOURCES}                //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/resources')]
@@ -57,13 +57,13 @@ Search Links By Name
     [Arguments]    ${link_status}
     Set Selenium Speed    0.3
     IF    "${link_status}" == "Exploratory Testing"
-        Page Should Contain    Exploratory Testing
         Sleep    3s
+        Page Should Contain    Exploratory Testing
         Tolerant Click    ${NAV_EXPLOTARY_TESTING}
         Page Should Contain    Exploratory Testing Explained
     ELSE IF    "${link_status}" == "Data-Driven Testing"
+        Sleep    5s
         Page Should Contain    Data-Driven Testing
-        Sleep    3s
         Tolerant Click    ${NAV_DATA-DRIVEN-TESTING}
         Page Should Contain    Data-Driven Testing
     ELSE IF    "${link_status}" == "Keyword-Driven Testing"
@@ -103,34 +103,3 @@ Navigate To TestBench Logo
     Wait Until Page Contains Element    ${NAV_LOGO}
     Click Element                       ${NAV_LOGO}
     Wait Until Page Contains    The Smart Test Management Tool
-
-Navigate To Your Personal TestBench Benefit
-    [Documentation]     This keyword is used for navigation to TestBench Benefits
-    [Arguments]      ${testbench_tab}
-    Wait Until Page Contains Element     ${NAV_LOGO}
-    Click Element     ${NAV_LOGO}
-    Wait Until Keyword Succeeds    3x    1s    Scroll Element Into View    ${NAV_TESTBENCH_BENEFITS}
-    IF    "${testbench_tab}" == "Test Manager"
-        Wait Until Page Contains    As a Test Manager
-        Page Should Contain Element    ${TEST_MANAGER_QUOTE}
-        Click Element    ${TEST_MANAGEMENT_LINK}
-        Page Should Contain    Test Management
-    ELSE IF    "${testbench_tab}" == "Software Developer"
-        Wait Until Page Contains    As a Software Developer
-        Click Element    ${SOFTWARE_DEV_BUTTON}
-        Page Should Contain Element    ${SOFTWARE_DEV_QUOTE}
-        Click Element    ${TEST_EXECUTION_LINK}
-        Page Should Contain    Test Execution
-    ELSE IF    "${testbench_tab}" == "Project Manager"
-        Wait Until Page Contains    As a Project Manager
-        Click Element    ${PROJECT_M_BUTTON}
-        Page Should Contain Element    ${PROJECT_M_QUOTE}
-        Click Element    ${TEAM_COLLAB_LINK}
-        Page Should Contain    Team Collaboration
-    ELSE IF    "${testbench_tab}" == "Tester"
-        Wait Until Page Contains    As a Tester
-        Click Element    ${TESTER_BUTTON}
-        Page Should Contain Element    ${TESTER_QUOTE}
-        Click Element    ${TEST_DESIGN_LINK}
-        Page Should Contain    Test Design
-    END

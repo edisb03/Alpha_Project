@@ -6,16 +6,16 @@ Resource            ../import.resource
 
 *** Variables ***
 ### Locators for boxes ###
-${TEST_MANAGER_BUTTON}          //div[contains (@class, 'tabs')]//a[contains(@class, 'button button--tab hovered')]
+${BTN_TEST_MANAGER}          //div[contains (@class, 'tabs')]//a[contains(@class, 'button button--tab hovered')]
 ${TEST_MANAGER_QUOTE}           //p[contains(text(),'„I can track at any time whether all requirements ')]
 ${TEST_MANAGEMENT_LINK}         //div[contains (@class, 'box')]//a[contains(text(), 'Learn more about Test Management')]
-${SOFTWARE_DEV_BUTTON}          //div[contains (@class, 'tabs')]//a[contains(text(), 'As a Software Developer')]
+${BTN_SOFTWARE_DEV}          //div[contains (@class, 'tabs')]//a[contains(text(), 'As a Software Developer')]
 ${SOFTWARE_DEV_QUOTE}           //p[contains(text(),'„I can check if my feature implementations were ac')]
 ${TEST_EXECUTION_LINK}          //div[contains (@class, 'box')]//a[contains(text(), 'Learn more about Test Execution')]
-${PROJECT_M_BUTTON}             //div[contains (@class, 'tabs')]//a[contains(text(), 'As a Project Manager')]
+${BTN_PROJECT_M}             //div[contains (@class, 'tabs')]//a[contains(text(), 'As a Project Manager')]
 ${PROJECT_M_QUOTE}              //p[contains(text(),'„TestBench is our central quality monitoring tool.')]
 ${TEAM_COLLAB_LINK}        //div[contains (@class, 'box')]//a[contains(text(), 'Learn more about Team Collaboration')]
-${TESTER_BUTTON}                //div[contains (@class, 'tabs')]//a[contains(text(), 'As a Tester')]
+${BTN_TESTER}                //div[contains (@class, 'tabs')]//a[contains(text(), 'As a Tester')]
 ${TESTER_QUOTE}               //p[contains (text(), 'structured test procedures, checklists, automated test scripts, or exploratory testing.“')]
 ${TEST_DESIGN_LINK}             //div[contains (@class, 'box')]//a[contains(text(), 'Learn more about Test Design')]
 ### Locators for homepage ###
@@ -95,4 +95,35 @@ Navigate To Card
         Page Should Contain     Tool Integration
         Tolerant Click    ${TOOL_INTEGRATION}
         Page Should Contain    Integration
+    END
+
+Navigate To Your Personal TestBench Benefit
+    [Documentation]     This keyword is used for navigation to TestBench Benefits
+    [Arguments]      ${testbench_tab}
+    Wait Until Page Contains Element     ${NAV_LOGO}
+    Click Element     ${NAV_LOGO}
+    Wait Until Keyword Succeeds    3x    1s    Scroll Element Into View    ${NAV_TESTBENCH_BENEFITS}
+    IF    "${testbench_tab}" == "Test Manager"
+        Wait Until Page Contains    As a Test Manager
+        Page Should Contain Element    ${TEST_MANAGER_QUOTE}
+        Click Element    ${TEST_MANAGEMENT_LINK}
+        Page Should Contain    Test Management
+    ELSE IF    "${testbench_tab}" == "Software Developer"
+        Wait Until Page Contains    As a Software Developer
+        Click Element    ${BTN_SOFTWARE_DEV}
+        Page Should Contain Element    ${SOFTWARE_DEV_QUOTE}
+        Click Element    ${TEST_EXECUTION_LINK}
+        Page Should Contain    Test Execution
+    ELSE IF    "${testbench_tab}" == "Project Manager"
+        Wait Until Page Contains    As a Project Manager
+        Click Element    ${BTN_PROJECT_M}
+        Page Should Contain Element    ${PROJECT_M_QUOTE}
+        Click Element    ${TEAM_COLLAB_LINK}
+        Page Should Contain    Team Collaboration
+    ELSE IF    "${testbench_tab}" == "Tester"
+        Wait Until Page Contains    As a Tester
+        Click Element    ${BTN_TESTER}
+        Page Should Contain Element    ${TESTER_QUOTE}
+        Click Element    ${TEST_DESIGN_LINK}
+        Page Should Contain    Test Design
     END
