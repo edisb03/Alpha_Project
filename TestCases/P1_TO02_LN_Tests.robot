@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Login In
+Documentation    Login In Section
 Resource            ..//Resources/import.resource
 # Test Setup    Open Web Browser    browser_type=headlesschrome
 Test Setup          Open Web Browser

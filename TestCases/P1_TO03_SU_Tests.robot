@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Sign Up
+Documentation    Sign Up Section
 Resource        ../Resources/import.resource
 Test Setup          Open Web Browser
 Test Teardown       Close Browser

@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       HomePage elements
+Documentation       Home Page elements
 
 Resource            ../import.resource
 
@@ -37,7 +37,7 @@ ${SUBTITLE_TESTBENCH}           //h3[contains(text(), 'What You Can Do With Test
 
 *** Keywords ***
 Use TestBench For Free
-    [Documentation]    This keyword is used to navigate to Start For Free
+    [Documentation]    This keyword is used to navigate to Start For Free.
     Wait Until Element Is Visible    ${START_FOR_FREE}
     Click Element    ${START_FOR_FREE}
     Wait Until Page Contains    Get started with a free account
@@ -48,14 +48,14 @@ Accept Cookies Imbus Page
     Wait Until Keyword Succeeds    3x    1s    Wait Until Page Contains    Our Portfolio and trend topics
 
 More About Imbus
-    [Documentation]    This keyword is used to navigate to Learn More About Imbus button
+    [Documentation]    This keyword is used to navigate to Learn More About Imbus button.
     Scroll Element Into View    ${LEARN_MORE_ABOUT_IMBUS}
     Wait Until Element Is Visible    ${LEARN_MORE_ABOUT_IMBUS}
     Click Element    ${LEARN_MORE_ABOUT_IMBUS}
     Wait Until Page Contains Element    ${IMBUS_LOGO}
 
 Control If Page Contains
-    [Documentation]    Check If Page Contains Text
+    [Documentation]    Check If Page Contains Text.
     [Arguments]    ${teksti}
     Page Should Contain    ${teksti}
 

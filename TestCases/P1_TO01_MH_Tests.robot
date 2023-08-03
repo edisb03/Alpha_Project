@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Home Page     ...
+Documentation    Main Header Section    ...
 Resource            ..//Resources/import.resource
 
 # Test Setup    Open Web Browser    browser_type=headlesschrome
@@ -50,7 +50,6 @@ P1_TO01_MH_TC03 Learn More About Imbus
 P1_TO01_MH_TC04 Verify Feature Functions
     [Documentation]    Navigates to Features and verifies each existing features
     [Tags]    P1TO01_TC04  exploratory
-    Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To Features
     Verify Content Features
@@ -58,8 +57,7 @@ P1_TO01_MH_TC04 Verify Feature Functions
 P1_TO01_MH_TC05 Verify Try TestBench Now
     [Documentation]    After open test bench page, open Features item and check
     ...                if button "Try TestBench Now" within the page is available
-    [Tags]    P1TO01_TC05  exploratory
-    Set Selenium Speed    0.5
+    [Tags]    P1TO01_TC05  explorator
     Accept Cookies  Accept all
     Navigate To Features
     Try TestBench Now
@@ -82,7 +80,6 @@ P1_TO01_MH_TC07 Verify Try Data-Driven Testing
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To Features
-    Control If The Page Contains   Let the Data Do All Your Testing
     Try Data-Driven Testing
     Go Back
     Navigate To Learn More Data Driven  Learn More
@@ -115,7 +112,6 @@ P1_TO01_MH_TC15 Navigate As A Tester
 P1_TO01_MH_TC10 Verify Test Approaches Works
     [Documentation]  Checks if the test approaches works
     [Tags]   P1TO01_TC10  exploratory
-    Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To Test Approaches
     Search Links By Name      Exploratory Testing
@@ -124,7 +120,6 @@ P1_TO02_MH_TC11 Validate Exploratory Testing
    [Documentation]  Validates if the page Exploratory Testing under Test Approaches
    ...   works properly
    [Tags]  P1TO01_TC11   exploratory
-   Set Selenium Speed    0.5
    Accept Cookies   Accept all
    Navigate To Test Approaches
    Search Links By Name      Exploratory Testing
