@@ -1,6 +1,8 @@
 *** Settings ***
+Documentation    Web Apps
 Library    SeleniumLibrary           implicit_wait=10 seconds    run_on_failure=NOTHING
 Library    Collections
+
 
 *** Variables ***
 ${URL}    https://www.testbench.com/
