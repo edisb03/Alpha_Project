@@ -60,7 +60,7 @@ Control If Page Contains
     Page Should Contain    ${teksti}
 
 Navigate To Card
-    [Documentation]    Verifies if all the links works properly
+    [Documentation]    Verifies if all the links works properly.
     [Arguments]    ${card_links}
     Set Selenium Speed    0.3
     Execute JavaScript    window.scrollTo(0,1200);

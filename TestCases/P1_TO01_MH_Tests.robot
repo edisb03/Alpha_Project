@@ -9,7 +9,7 @@ Test Teardown       Close Browser
 
 *** Test Cases ***
 P1_TO01_MH_TC01 Verify Cards On Home Page
-   [Documentation]  Navigate and Validate Cards On Home Page......
+   [Documentation]  Navigate and Validate Cards On Home Page.
    [Tags]   P1TO01_TC01   exploratory
    Set Selenium Speed    0.5
    Accept Cookies   Accept all
@@ -39,7 +39,7 @@ P1_TO01_MH_TC02 Start For Free
     Use TestBench For Free
 
 P1_TO01_MH_TC03 Learn More About Imbus
-    [Documentation]    Verifies that Learn More About Imbus button is clickable and its own new page is opened
+    [Documentation]    Verifies that Learn More About Imbus button is clickable and its own new page is opened.
     [Tags]    P1TO01_TC03  exploratory
     Set Selenium Speed    0.5
     Accept Cookies  Accept all
@@ -48,7 +48,7 @@ P1_TO01_MH_TC03 Learn More About Imbus
     Accept Cookies Imbus Page
 
 P1_TO01_MH_TC04 Verify Feature Functions
-    [Documentation]    Navigates to Features and verifies each existing features
+    [Documentation]    Navigates to Features and verifies each existing features.
     [Tags]    P1TO01_TC04  exploratory
     Accept Cookies  Accept all
     Navigate To Features
