@@ -11,7 +11,6 @@ Test Teardown       Close Browser
 P1_TO01_MH_TC01 Verify Cards On Home Page
    [Documentation]  Navigate and Validate Cards On Home Page.
    [Tags]   P1TO01_TC01   exploratory
-   Set Selenium Speed    0.5
    Accept Cookies   Accept all
    Control If The Page Contains  What You Can Do With TestBench
    Navigate To Card     Requirements Management
@@ -54,7 +53,7 @@ P1_TO01_MH_TC04 Verify Feature Functions
 
 P1_TO01_MH_TC05 Verify Try TestBench Now
     [Documentation]    After open test bench page, open Features item and check
-    ...                if button "Try TestBench Now" within the page is available
+    ...                if button "Try TestBench Now" within the page is enabled.
     [Tags]    P1TO01_TC05  explorator
     Accept Cookies  Accept all
     Navigate To Features
@@ -62,7 +61,7 @@ P1_TO01_MH_TC05 Verify Try TestBench Now
 
 P1_TO01_MH_TC06 Verify Try Exploratory Testing
     [Documentation]    After open test bench page, open Features item and check
-    ...                if button "Try Exploratory Testing" within the page is available
+    ...                if button "Try Exploratory Testing" within the page is enabled.
     [Tags]    P1TO01_TC06  exploratory
     Accept Cookies  Accept all
     Navigate To Features
@@ -72,7 +71,7 @@ P1_TO01_MH_TC06 Verify Try Exploratory Testing
     Control If The Page Contains   Explore. Learn. Create. Execute. Improve.
 
 P1_TO01_MH_TC07 Verify Try Data-Driven Testing
-    [Documentation]    Verify Try Data-Driven Testing button
+    [Documentation]    Verify Try Data-Driven Testing button.
     [Tags]    P1TO01_TC07  exploratory
     Accept Cookies  Accept all
     Navigate To Features
@@ -82,42 +81,42 @@ P1_TO01_MH_TC07 Verify Try Data-Driven Testing
     Control If The Page Contains  Let the Data Do All Your Testing
 
 P1_TO01_MH_TC12 Navigate As A Test Manager
-    [Documentation]    Validates if the As A Test Manager Button works correctly
+    [Documentation]    Verify if  As A Test Manager Button is enabled, validate all its elements,
+    ...                and verify new page content.
     [Tags]    P1TO01_TC12  exploratory
     Accept Cookies   Accept all
     Navigate To Your Personal TestBench Benefit    Test Manager
 
 P1_TO01_MH_TC13 Navigate As A Software Developer
-    [Documentation]    Verifies if the As A Software Developer Button works correctly
+    [Documentation]    Verifies if As A Software Developer Button is enabled, validate all its elements,
+    ...                and verify new page content.
     [Tags]    P1TO01_TC13    exploratory
     Accept Cookies  Accept all
     Navigate To Your Personal TestBench Benefit    Software Developer
 
 P1_TO01_MH_TC14 Navigate As A Project Manager
-    [Documentation]    Verifies if the As A Project Manager Button works correctly
+    [Documentation]    Verifies if the As A Project Manager Button is enabled, validate all its elements,
+    ...                and verify new page content.
     [Tags]   P1TO01_TC14   exploratory
     Accept Cookies  Accept all
     Navigate To Your Personal TestBench Benefit    Project Manager
 
 P1_TO01_MH_TC15 Navigate As A Tester
-    [Documentation]    Validates if the As A Test Manager Button works correctly
+    [Documentation]    Validates if the As A Test Manager Button is enabled, validate all it elements,
+    ...                and verify new page content.
     [Tags]    P1TO01_TC15  exploratory
     Accept Cookies   Accept all
     Navigate To Your Personal TestBench Benefit    Tester
 
-P1_TO01_MH_TC10 Verify Test Approaches Works
-    [Documentation]  Checks if the test approaches works
+P1_TO01_MH_TC10 Verify Test Approaches Links
+    [Documentation]   Check if Test Approaches link are opened successfully and validate each content of links.
     [Tags]   P1TO01_TC10  exploratory
     Accept Cookies  Accept all
     Navigate To Test Approaches
     Search Links By Name      Exploratory Testing
-
-P1_TO02_MH_TC11 Validate Exploratory Testing
-   [Documentation]  Validates if the page Exploratory Testing under Test Approaches
-   ...   works properly
-   [Tags]  P1TO01_TC11   exploratory
-   Accept Cookies   Accept all
-   Navigate To Test Approaches
-   Search Links By Name      Exploratory Testing
-   Control If The Page Contains   Explore. Learn. Create. Execute. Improve.
-   Validate Title   What Is Exploratory Testing?
+    Go Back
+    Navigate To Test Approaches
+    Search Links By Name      Data-Driven Testing
+    Go Back
+    Navigate To Test Approaches
+    Search Links By Name      Keyword-Driven Testing
