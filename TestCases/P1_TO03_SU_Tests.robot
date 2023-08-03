@@ -1,8 +1,11 @@
 *** Settings ***
-Documentation    Sign Up
+Documentation    Sign Up Section
 Resource        ../Resources/import.resource
+
+# Test Setup    Open Web Browser    browser_type=headlesschrome
 Test Setup          Open Web Browser
 Test Teardown       Close Browser
+
 
 *** Test Cases ***
 P1_TO03_SU_TC01 Navigate To Sign Up

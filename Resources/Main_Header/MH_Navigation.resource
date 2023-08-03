@@ -8,7 +8,7 @@ Resource            ../import.resource
 ${NAV_FEATURES}                 //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/features/')]
 ${NAV_TEST_APPROACHES}          //a[@href="#"]
 ${NAV_EXPLOTARY_TESTING}        //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[1]/a[1]
-${NAV_DATA-DRIVEN-TESTING}      //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[2]/a[1]
+${NAV_DATA-DRIVEN-TESTING}      (//a[contains (@href, "https://www.testbench.com/data-driven-testing/")])[1]
 ${NAV_KEYWORD-DRIVEN_TESTING}    //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[3]/a[1]
 ${NAV_BLOG}                     //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/blog/')]
 ${NAV_RESOURCES}                //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/resources')]
@@ -16,17 +16,17 @@ ${LOGIN_BUTTON}                 /div[@class='wrapper']//li[5]
 ${LOGIN_PAGE_TITLE}             //div[@class='box-inner box-inner--right']//div[@id='logIn']//div[@class='overline']
 ${NAV_SIGN_UP}                  //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/sign-up/')]
 ${NAV_LOGO}                     (//header[contains(@class, 'mainHeader')]//a//img[contains(@class, 'logo-image')])[1]
-${NAV_ENG}                      (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'English')])[1]
-${NAV_GER}                      (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'Deutsch')])[1]
-${GER_COOKIES}                  //div[contains(@class, 'container')]//p//a[contains(text(), 'Alle Cookies akzeptieren')][1]
+${GER_COOKIES}               //div[contains(@class, 'container')]//p//a[contains(text(), 'Alle Cookies akzeptieren')][1]
 ${MAIN_HEADER}                  (//ul[contains(@class, "menu")])[1]
-
+${NAV_ENG}                      (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'English')])[1] 
+${NAV_GER}                      (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'Deutsch')])[1]
+${NAV_TESTBENCH_BENEFITS}       //h2[contains(text(), 'Your Personal TestBench Benefit')]
 
 *** Keywords ***
 Navigate To Features
     [Documentation]    This keyword is used to navigate to Features...
     Wait Until Page Contains Element    ${NAV_FEATURES}
-    Click Element    ${NAV_FEATURES} 
+    Click Element    ${NAV_FEATURES}
     Wait Until Page Contains    Discover the features
 
 Navigate To Test Approaches
@@ -57,13 +57,13 @@ Search Links By Name
     [Arguments]    ${link_status}
     Set Selenium Speed    0.3
     IF    "${link_status}" == "Exploratory Testing"
-        Page Should Contain    Exploratory Testing
         Sleep    3s
+        Page Should Contain    Exploratory Testing
         Tolerant Click    ${NAV_EXPLOTARY_TESTING}
         Page Should Contain    Exploratory Testing Explained
     ELSE IF    "${link_status}" == "Data-Driven Testing"
+        Sleep    5s
         Page Should Contain    Data-Driven Testing
-        Sleep    3s
         Tolerant Click    ${NAV_DATA-DRIVEN-TESTING}
         Page Should Contain    Data-Driven Testing
     ELSE IF    "${link_status}" == "Keyword-Driven Testing"
@@ -103,19 +103,3 @@ Navigate To TestBench Logo
     Wait Until Page Contains Element    ${NAV_LOGO}
     Click Element                       ${NAV_LOGO}
     Wait Until Page Contains    The Smart Test Management Tool
-
- Control If The Page Contains
-  [Documentation]  Reusable keyword
-  [Arguments]   ${title}
-  Page Should Contain     ${title}
-
-Scroll Down To
-  [Documentation]  Scrolls down to the middle of the page
-  [Arguments]   ${text}
-  Execute JavaScript    window.scrollTo(0,500);
-  Wait Until Page Contains     What Is Exploratory Testing?
-  Page Should Contain    ${text}
-
-Verify Main Header
-  [Documentation]  Checks if the main header exits
-  Wait Until Page Contains Element    ${MAIN_HEADER}

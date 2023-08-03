@@ -1,0 +1,24 @@
+name: CI Workflow
+
+on:
+  push:
+    branches:
+      - dev 
+
+jobs:
+  build-and-test:
+    runs-on: windows
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build
+        run: |
+          # Add your build commands here
+          echo "Building the project..."
+
+      - name: Test
+        run: |
+          # Add your test commands here
+          echo "Running tests..."
