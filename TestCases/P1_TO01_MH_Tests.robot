@@ -119,3 +119,16 @@ P1_TO01_MH_TC10 Verify Test Approaches Links
     Go Back
     Navigate To Test Approaches
     Search Links By Name      Keyword-Driven Testing
+
+P1_TO01_MH_TC10 Verify Test Approaches Links
+    [Documentation]   Check if Test Approaches link are opened successfully and validate each content of links.
+    [Tags]   P1TO01_TC10  exploratory
+    Accept Cookies  Accept all
+    Navigate To Test Approaches
+    Search Links By Name      Exploratory Testing
+    Go Back
+    Navigate To Test Approaches
+    Search Links By Name      Data-Driven Testing
+    Go Back
+    Navigate To Test Approaches
+    Search Links By Name      Keyword-Driven Testing
