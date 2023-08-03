@@ -14,9 +14,9 @@ ${SOFTWARE_DEV_QUOTE}           //p[contains(text(),'„I can check if my featur
 ${TEST_EXECUTION_LINK}          //div[contains (@class, 'box')]//a[contains(text(), 'Learn more about Test Execution')]
 ${PROJECT_M_BUTTON}             //div[contains (@class, 'tabs')]//a[contains(text(), 'As a Project Manager')]
 ${PROJECT_M_QUOTE}              //p[contains(text(),'„TestBench is our central quality monitoring tool.')]
-${TEAM_COLLAB_LINK}             //div[contains (@class, 'box')]//a[contains(text(), 'Learn more about Team Collaboration')]
+${TEAM_COLLAB_LINK}        //div[contains (@class, 'box')]//a[contains(text(), 'Learn more about Team Collaboration')]
 ${TESTER_BUTTON}                //div[contains (@class, 'tabs')]//a[contains(text(), 'As a Tester')]
-${TESTER_QUOTE}                 //p[contains (text(), 'structured test procedures, checklists, automated test scripts, or exploratory testing.“')]
+${TESTER_QUOTE}            //p[contains (text(), 'structured test procedures, checklists, automated test scripts.“')]
 ${TEST_DESIGN_LINK}             //div[contains (@class, 'box')]//a[contains(text(), 'Learn more about Test Design')]
 ### Locators for homepage ###
 ${START_FOR_FREE}               //a[contains(text(), 'Start for Free')]

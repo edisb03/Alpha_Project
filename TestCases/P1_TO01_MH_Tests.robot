@@ -33,7 +33,6 @@ P1_TO01_MH_TC01 Verify Cards On Home Page
 P1_TO01_MH_TC02 Start For Free
     [Documentation]    Navigate to the TestBench for free use.
     [Tags]    P1TO01_TC02  exploratory
-    Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To TestBench Logo
     Use TestBench For Free
@@ -41,7 +40,6 @@ P1_TO01_MH_TC02 Start For Free
 P1_TO01_MH_TC03 Learn More About Imbus
     [Documentation]    Verifies that Learn More About Imbus button is clickable and its own new page is opened.
     [Tags]    P1TO01_TC03  exploratory
-    Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To TestBench Logo
     More About Imbus
@@ -66,7 +64,6 @@ P1_TO01_MH_TC06 Verify Try Exploratory Testing
     [Documentation]    After open test bench page, open Features item and check
     ...                if button "Try Exploratory Testing" within the page is available
     [Tags]    P1TO01_TC06  exploratory
-    Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To Features
     Try Exploratory Testing
@@ -77,7 +74,6 @@ P1_TO01_MH_TC06 Verify Try Exploratory Testing
 P1_TO01_MH_TC07 Verify Try Data-Driven Testing
     [Documentation]    Verify Try Data-Driven Testing button
     [Tags]    P1TO01_TC07  exploratory
-    Set Selenium Speed    0.5
     Accept Cookies  Accept all
     Navigate To Features
     Try Data-Driven Testing
