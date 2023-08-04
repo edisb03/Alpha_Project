@@ -23,7 +23,7 @@ jobs:
 
       - name: Install dependecies 
         run:
-         python -m pip istall --upgrade pip
+         python -m pip install --upgrade pip
          pip install robotframework
 
       - name: Run Robot Framework Tests
