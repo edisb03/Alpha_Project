@@ -14,11 +14,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        
+
       - name: Install Robot Framework
         run: |
           pip install robotframework
           pip install robotframework-seleniumlibrary
 
       - name: Run Robot Framework Tests
-        run: C:\Users\edis\Desktop\Folder_1\First_Project_IMBUS> 
+        run: robot :\Users\edis\Desktop\Folder_1\First_Project_IMBUS\TestCases
