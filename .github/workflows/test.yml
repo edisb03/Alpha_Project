@@ -22,4 +22,4 @@ jobs:
           pip install robotframework-seleniumlibrary
 
       - name: Run Robot Framework Tests
-        run: robot  TestCase/P1_TO01_MH_Tests.robot
+        run: robot TestCase/P1_TO01_MH_Tests.robot
