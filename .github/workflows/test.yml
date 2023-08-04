@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - dev 
-    pull_request:
+  pull_request:
     branches:
       - dev 
 
@@ -21,7 +21,7 @@ jobs:
           pip install robotframework
           pip install robotframework-seleniumlibrary
 
-      -name: Navigate to TestCases folder
+      -name:  Navigate to TestCases folder
         run: cd Desktop/Folder_1/First_Project_IMBUS/TestCases
 
       - name: Run Robot Framework Tests
