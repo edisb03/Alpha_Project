@@ -21,11 +21,5 @@ jobs:
           pip install robotframework
           pip install robotframework-seleniumlibrary
 
-      - name: List files and directories in the repository
-        run: ls -R
-
-      - name: List files and directories in the TestCases directory
-        run: ls -R TestCases
-
       - name: Run Robot Framework Tests
-        run: robot TestCases/P1TO01_MH_Tests.robot
+        run: robot  TestCase/P1_TO01_MH_Tests.robot
