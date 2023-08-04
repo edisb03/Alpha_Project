@@ -6,7 +6,6 @@ on:
       - dev 
     pull_request:
       - dev 
-    # workflow_dispatch
 
 jobs:
   build-and-test:
@@ -15,9 +14,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
-        python-version: 3.9.12
-      
+        
       - name: Install Robot Framework
         run: |
           pip install robotframework
