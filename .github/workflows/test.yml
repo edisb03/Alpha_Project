@@ -10,17 +10,18 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: windows
+    runs-on: windows-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+        python-version: 3.9.12
       
-      - name: Build
+      - name: Install Robot Framework
         run: |
-          # Add your build commands here
-          echo "Building the project..."
+          pip install robotframework
+          pip install robotframework-seleniumlibrary
 
-      - name: TestCases
-        run: |
-          P1_TO01_MH_Tests.robot
+      - name: Run Robot Framework Tests
+        run: C:\Users\edis\Desktop\Folder_1\First_Project_IMBUS> 
