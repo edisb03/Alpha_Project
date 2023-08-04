@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - dev 
+    pull_request:
+      - dev 
+    workflow_dispatch
 
 jobs:
   build-and-test:
@@ -12,12 +15,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        run: echo "Hello"
 
       - name: Build
         run: |
           # Add your build commands here
           echo "Building the project..."
 
-      - name: Test
+      - name: TestCases
         run: |
           P1_TO01_MH_Tests.robot
