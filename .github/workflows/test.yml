@@ -6,7 +6,7 @@ on:
       - dev 
     pull_request:
       - dev 
-    workflow_dispatch
+    # workflow_dispatch
 
 jobs:
   build-and-test:
@@ -15,8 +15,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        run: echo "Hello"
-
+      
       - name: Build
         run: |
           # Add your build commands here
