@@ -24,4 +24,4 @@ jobs:
 
       - name: TestCases
         run: |
-          P1_TO01_MH_Tests.robot.
+          P1_TO01_MH_Tests.robot
