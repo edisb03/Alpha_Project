@@ -21,9 +21,10 @@ jobs:
           pip install robotframework
           pip install robotframework-seleniumlibrary
 
-      - name: Instal Web Driver
+      - name: Install dependecies 
         run:
-          pip install robotframework-seleniumlibrary   
+         python -m pip istall --upgrade pip
+         pip install robotframework
 
       - name: Run Robot Framework Tests
         run: robot TestCases/P1_TO01_MH_Tests.robot
