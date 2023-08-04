@@ -24,11 +24,10 @@ jobs:
       - name: Install dependecies 
         run:
          python -m pip install --upgrade pip
-         pip install robotframework
-
+      
       - name: Set up Chrome WebDriver
         run: 
-          LATEST_CHROMEDRIVER_VERSION=$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE)
+          https://chromedriver.storage.googleapis.com/LATEST_RELEASE)
           curl -sS -o chromedriver.zip "https://chromedriver.storage.googleapis.com/$LATEST_CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
           unzip chromedriver.zip
           chmod +x chromedriver
