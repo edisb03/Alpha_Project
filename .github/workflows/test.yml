@@ -21,8 +21,8 @@ jobs:
           pip install robotframework
           pip install robotframework-seleniumlibrary
 
-      - name:  Navigate to TestCases folder
-        run: cd First_Project_IMBUS/TestCases
+      - name: Navigate to TestCases folder
+        run: cd ${First_Project_IMBUS}/Desktop/FOLDER_1/fIRST_Project_IMBUS/TestCases
 
       - name: Run Robot Framework Tests
-        run: robot First_Project_IMBUS/TestCases/P1TO01_MH_Tests.robot
+        run: robot P1TO01_MH_Tests.robot
