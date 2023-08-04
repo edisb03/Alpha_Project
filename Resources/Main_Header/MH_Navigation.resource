@@ -58,6 +58,8 @@ Navigate To Language
 Search Links By Name
     [Documentation]    Search the specified links by using its name
     [Arguments]    ${link_status}
+    Wait Until Page Contains    Test Approaches
+    Navigate To Test Approaches
     Set Selenium Speed    0.3
     IF    "${link_status}" == "Exploratory Testing"
         Sleep    3s
