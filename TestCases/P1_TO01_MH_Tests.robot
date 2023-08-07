@@ -60,7 +60,7 @@ P1_TO01_MH_TC05 Verify Try TestBench Now
     Try TestBench Now
 
 P1_TO01_MH_TC06 Verify Try Exploratory Testing
-    [Documentation]    After open test bench page, open Features item and check
+    [Documentation]    After open test bench page, open Features item and check,
     ...                if button "Try Exploratory Testing" within the page is enabled.
     [Tags]    P1TO01_TC06  exploratory
     Accept Cookies  Accept all
