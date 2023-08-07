@@ -154,5 +154,4 @@ jobs:
 
       - name: Build and run tests with Docker
         run: 
-          docker build -t robot-tests .
           docker run -v $(pwd)/First_Project_IMBUS/TestCases:/opt/robotframework/tests robot-tests
