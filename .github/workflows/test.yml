@@ -152,6 +152,11 @@ jobs:
         run:
          python -m pip install --upgrade pip
 
-      - name: Build and run tests with Docker
-        run: 
-          docker run -v $(pwd)/First_Project_IMBUS/TestCases:/opt/robotframework/tests robot-tests
+      robot_tests:
+    runs-on: ubuntu-latest
+
+      - name: Build Docker image
+        run: docker build -t robot-tests .
+
+      - name: Run tests with Docker
+        run: docker run -v $(pwd)/First_Project_IMBUS/TestCases:/opt/robotframework/tests robot-tests
