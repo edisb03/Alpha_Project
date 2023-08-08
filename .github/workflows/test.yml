@@ -1,50 +1,48 @@
-# name: Docker
+name: Docker Build
 
-# on: workflow_dispatch
+on: workflow_dispatch
 
-# env:
+env:
 
-#   # The image name
+  # The image name
 
-#   IMAGE_NAME: docker-robot-framework:ci
+  IMAGE_NAME: docker-robot-framework:ci
 
-#   jobs:
+  jobs:
 
-#    Run tests.
+   Run tests.
 
-#   # See also https://docs.docker.com/docker-hub/builds/automated-testing/
+  # See also https://docs.docker.com/docker-hub/builds/automated-testing/
 
-#     build:
+    build:
 
-#     runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-#     # run all our tests on each browser
+    # run all our tests on each browser
 
-#     strategy:
+    strategy:
 
-#       matrix:
+      matrix:
 
-#         include:
+        include:
 
-#           - browser: "chrome"
+          - browser: "chrome"
 
-#           - browser: "firefox"
+    env:
 
-#     env:
+      BROWSER: ${{ matrix.browser }}
 
-#       BROWSER: ${{ matrix.browser }}
+    steps:
 
-#     steps:
+      - name: Checkout
 
-#       - name: Checkout
+        uses: actions/checkout@v2
 
-#         uses: actions/checkout@v2
+      - name: Build image
 
-#       - name: Build image
+        run:
 
-#         run:
-
-#           docker build . --tag $IMAGE_NAME --file Dockerfile
+          docker build . --tag $IMAGE_NAME --file Dockerfile
 
 #       - name: Basic Test
 
@@ -125,36 +123,36 @@
 #           docker run --user=2000:2000 --shm-size=1g -v `pwd`/test:/opt/robotframework/tests:Z -e BROWSER=$BROWSER -e TZ="America/New_York" $IMAGE_NAME
 
 
-name: CI Workflow
+# name: CI Workflow
 
-on:
-  push:
-    branches:
-      - dev 
-  pull_request:
-    branches:
-      - dev 
+# on:
+#   push:
+#     branches:
+#       - dev 
+#   pull_request:
+#     branches:
+#       - dev 
 
-jobs:
-  build-and-test:
-    runs-on: ubuntu-latest
+# jobs:
+#   build-and-test:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
 
-      - name: Install Robot Framework
-        run: |
-          pip install robotframework
-          pip install robotframework-seleniumlibrary
+#       - name: Install Robot Framework
+#         run: |
+#           pip install robotframework
+#           pip install robotframework-seleniumlibrary
 
-      - name: Install dependecies 
-        run:
-         python -m pip install --upgrade pip
+#       - name: Install dependecies 
+#         run:
+#          python -m pip install --upgrade pip
 
 
-      - name: Build Docker image
-        run: docker build -t robot-tests .
+#       - name: Build Docker image
+#         run: docker build -t robot-tests .
 
-      - name: Run tests with Docker
-        run: docker run -v $(pwd)/First_Project_IMBUS/TestCases:/opt/robotframework/tests robot-tests
+#       - name: Run tests with Docker
+#         run: docker run -v $(pwd)/First_Project_IMBUS/TestCases:/opt/robotframework/tests robot-tests
