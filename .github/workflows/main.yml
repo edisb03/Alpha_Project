@@ -13,4 +13,4 @@ jobs:
           - name: Build Docker
             run: docker build -t my_app:v1.0 . --file Dockerfile
           - name: Execute Test Cases
-            run: docker run -it my_app:v1.0 robot /workdir/TestCases
+            run: docker run -rm my_app:v1.0 robot /workdir/TestCases
