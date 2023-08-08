@@ -19,7 +19,7 @@ RUN apt-get update && apt-get -y install chromium-driver \
 # COPY . .
 
 # # Initialize rfbrowser (assuming it's a CLI command provided by your application)
-# RUN rfbrowser init
+RUN rfbrowser init
 
 # # Your other commands and configuration here...
 
