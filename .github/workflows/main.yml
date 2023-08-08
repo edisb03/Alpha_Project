@@ -1,4 +1,11 @@
 on: workflow_dispatch
+
+env:
+
+  # The image name
+
+  IMAGE_NAME: docker-robot-framework:ci
+
 jobs:
   first_autobot:
         runs-on:  ubuntu-latest
@@ -8,4 +15,4 @@ jobs:
           - name: Dark side of the moon
             run: echo "We have suffered losses, but we have not lost the war."
           - name: Build Docker
-            run: docker build . --file Dockerfile
+            run: docker build . --tag $IMAGE_NAME --file Dockerfile
