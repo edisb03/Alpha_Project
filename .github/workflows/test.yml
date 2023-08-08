@@ -3,9 +3,9 @@ on: workflow_dispatch
 jobs:
   first_autobot:
         runs-on:  ubuntu-latest
-        steps:
-          - name: Return of the autobots
-            run:  echo "Hi, my name is Optimus Prime"
-          - name: Dark side of the moon
-            run: echo "We have suffered losses, but we have not lost the war."
+                steps:
+                      - name: Return of the autobots
+                        run:  echo "Hi, my name is Optimus Prime"
+                      - name: Dark side of the moon
+                        run: echo "We have suffered losses, but we have not lost the war."
           
