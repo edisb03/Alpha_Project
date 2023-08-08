@@ -11,6 +11,6 @@ jobs:
           - name: Checkout
             uses: actions/checkout@v2
           - name: Build Docker
-            run: docker build . --file Dockerfile
+            run: docker build -t my_app:v1.0 . --file Dockerfile
           - name: Execute Test Cases
-            run: docker run --rm -v /workdir bash -c "robot workdir/TestCases"
+            run: docker run -it my_app:v1.0 robot /workdir/TestCases
