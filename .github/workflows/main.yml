@@ -13,4 +13,4 @@ jobs:
           - name: Build Docker
             run: docker build . --file Dockerfile
           - name: Execute Test Cases
-            run: docker run --rm -v pwd:/workdir bash -c "robot workdir/TestCases"
+            run: docker run --rm -v /workdir bash -c "robot workdir/TestCases"
