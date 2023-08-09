@@ -1,8 +1,4 @@
 *** Settings ***
-Documentation    Keywords for Sign Up Form
-Resource    ../import.resource
+Documentation       Keywords for Sign Up Form
 
-
-*** Variables ***
-
-*** Keywords ***
+Resource            ../import.resource
