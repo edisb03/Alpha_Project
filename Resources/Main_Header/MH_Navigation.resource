@@ -7,9 +7,11 @@ Resource            ../import.resource
 *** Variables ***
 ${NAV_FEATURES}                 //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/features/')]
 ${NAV_TEST_APPROACHES}          //a[@href="#"]
+### Locators for Test Approaches Links ###
 ${NAV_EXPLOTARY_TESTING}        //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[1]/a[1]
 ${NAV_DATA-DRIVEN-TESTING}      (//a[contains (@href, "https://www.testbench.com/data-driven-testing/")])[1]
 ${NAV_KEYWORD-DRIVEN_TESTING}    //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[3]/a[1]
+### Main Header Locators ###
 ${NAV_BLOG}                     //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/blog/')]
 ${NAV_RESOURCES}                //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/resources')]
 ${LOGIN_BUTTON}                 /div[@class='wrapper']//li[5]
@@ -21,6 +23,7 @@ ${MAIN_HEADER}                  (//ul[contains(@class, "menu")])[1]
 ${NAV_ENG}                      (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'English')])[1] 
 ${NAV_GER}                      (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'Deutsch')])[1]
 ${NAV_TESTBENCH_BENEFITS}       //h2[contains(text(), 'Your Personal TestBench Benefit')]
+
 
 *** Keywords ***
 Navigate To Features
@@ -55,6 +58,8 @@ Navigate To Language
 Search Links By Name
     [Documentation]    Search the specified links by using its name
     [Arguments]    ${link_status}
+    Wait Until Page Contains    Test Approaches
+    Navigate To Test Approaches
     Set Selenium Speed    0.3
     IF    "${link_status}" == "Exploratory Testing"
         Sleep    3s
