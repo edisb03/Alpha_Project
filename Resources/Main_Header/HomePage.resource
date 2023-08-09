@@ -3,20 +3,19 @@ Documentation       Home Page elements
 
 Resource            ../import.resource
 
-
 *** Variables ***
 ### Locators for boxes ###
-${BTN_TEST_MANAGER}          //div[contains (@class, 'tabs')]//a[contains(@class, 'button button--tab hovered')]
+${BTN_TEST_MANAGER}             //div[contains (@class, 'tabs')]//a[contains(@class, 'button button--tab hovered')]
 ${TEST_MANAGER_QUOTE}           //p[contains(text(),'„I can track at any time whether all requirements ')]
 ${TEST_MANAGEMENT_LINK}         //div[contains (@class, 'box')]//a[contains(text(), 'Learn more about Test Management')]
-${BTN_SOFTWARE_DEV}          //div[contains (@class, 'tabs')]//a[contains(text(), 'As a Software Developer')]
+${BTN_SOFTWARE_DEV}             //div[contains (@class, 'tabs')]//a[contains(text(), 'As a Software Developer')]
 ${SOFTWARE_DEV_QUOTE}           //p[contains(text(),'„I can check if my feature implementations were ac')]
 ${TEST_EXECUTION_LINK}          //div[contains (@class, 'box')]//a[contains(text(), 'Learn more about Test Execution')]
-${BTN_PROJECT_M}             //div[contains (@class, 'tabs')]//a[contains(text(), 'As a Project Manager')]
+${BTN_PROJECT_M}                //div[contains (@class, 'tabs')]//a[contains(text(), 'As a Project Manager')]
 ${PROJECT_M_QUOTE}              //p[contains(text(),'„TestBench is our central quality monitoring tool.')]
-${TEAM_COLLAB_LINK}        //div[contains (@class, 'box')]//a[contains(text(), 'Learn more about Team Collaboration')]
-${BTN_TESTER}                //div[contains (@class, 'tabs')]//a[contains(text(), 'As a Tester')]
-${TESTER_QUOTE}               //p[contains (text(), 'structured test procedures, checklists, automated test scripts, or exploratory testing.“')]
+${TEAM_COLLAB_LINK}             //div[contains (@class, 'box')]//a[contains(text(), 'Learn more about Team Collaboration')]
+${BTN_TESTER}                   //div[contains (@class, 'tabs')]//a[contains(text(), 'As a Tester')]
+${TESTER_QUOTE}                 //p[contains (text(), 'structured test procedures, checklists, automated test scripts, or exploratory testing.“')]
 ${TEST_DESIGN_LINK}             //div[contains (@class, 'box')]//a[contains(text(), 'Learn more about Test Design')]
 ### Locators for homepage ###
 ${START_FOR_FREE}               //a[contains(text(), 'Start for Free')]
@@ -33,7 +32,6 @@ ${TEST_COLLABORATION}           //h3[contains(text(), 'Team Collaboration')]
 ${TOOL_CUSTOMIZATION}           //h3[contains(text(), 'Tool Customization')]
 ${TOOL_INTEGRATION}             //h3[contains(text(), 'Tool Integration')]
 ${SUBTITLE_TESTBENCH}           //h3[contains(text(), 'What You Can Do With TestBench')]
-
 
 *** Keywords ***
 Use TestBench For Free
@@ -92,16 +90,16 @@ Navigate To Card
         Tolerant Click    ${TOOL_CUSTOMIZATION}
         Page Should Contain    Customization
     ELSE IF    "${card_links}" == "Tool Integration"
-        Page Should Contain     Tool Integration
+        Page Should Contain    Tool Integration
         Tolerant Click    ${TOOL_INTEGRATION}
         Page Should Contain    Integration
     END
 
 Navigate To Your Personal TestBench Benefit
-    [Documentation]     This keyword is used for navigation to TestBench Benefits
-    [Arguments]      ${testbench_tab}
-    Wait Until Page Contains Element     ${NAV_LOGO}
-    Click Element     ${NAV_LOGO}
+    [Documentation]    This keyword is used for navigation to TestBench Benefits
+    [Arguments]    ${testbench_tab}
+    Wait Until Page Contains Element    ${NAV_LOGO}
+    Click Element    ${NAV_LOGO}
     Wait Until Keyword Succeeds    3x    1s    Scroll Element Into View    ${NAV_TESTBENCH_BENEFITS}
     IF    "${testbench_tab}" == "Test Manager"
         Wait Until Page Contains    As a Test Manager

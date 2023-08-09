@@ -118,5 +118,3 @@ P1_TO01_MH_TC15 Navigate As A Tester
     [Tags]    P1TO01_TC15  exploratory
     Accept Cookies   Accept all
     Navigate To Your Personal TestBench Benefit    Tester
-
-
