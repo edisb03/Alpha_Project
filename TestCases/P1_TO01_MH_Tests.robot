@@ -79,6 +79,19 @@ P1_TO01_MH_TC07 Verify Try Data-Driven Testing
     Navigate To Learn More Data Driven  Learn More
     Control If The Page Contains  Let the Data Do All Your Testing
 
+P1_TO01_MH_TC10 Verify Test Approaches Links
+    [Documentation]   Check if Test Approaches link are opened successfully and validate each content of links.
+    [Tags]   P1TO01_TC10  exploratory
+    Accept Cookies  Accept all
+    Navigate To Test Approaches
+    Search Links By Name      Exploratory Testing
+    Go Back
+    Navigate To Test Approaches
+    Search Links By Name      Data-Driven Testing
+    Go Back
+    Navigate To Test Approaches
+    Search Links By Name      Keyword-Driven Testing
+
 P1_TO01_MH_TC12 Navigate As A Test Manager
     [Documentation]    Verify if  As A Test Manager Button is enabled, validate all its elements,
     ...                and verify new page content.
@@ -106,15 +119,4 @@ P1_TO01_MH_TC15 Navigate As A Tester
     Accept Cookies   Accept all
     Navigate To Your Personal TestBench Benefit    Tester
 
-P1_TO01_MH_TC10 Verify Test Approaches Links
-    [Documentation]   Check if Test Approaches link are opened successfully and validate each content of links.
-    [Tags]   P1TO01_TC10  exploratory
-    Accept Cookies  Accept all
-    Navigate To Test Approaches
-    Search Links By Name      Exploratory Testing
-    Go Back
-    Navigate To Test Approaches
-    Search Links By Name      Data-Driven Testing
-    Go Back
-    Navigate To Test Approaches
-    Search Links By Name      Keyword-Driven Testing
+
