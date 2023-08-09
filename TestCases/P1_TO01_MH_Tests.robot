@@ -93,8 +93,6 @@ P1_TO01_MH_TC10 Verify Test Approaches Links
     Navigate To Test Approaches
     Search Links By Name      Keyword-Driven Testing
 
-
-
 P1_TO01_MH_TC12 Navigate As A Test Manager
     [Documentation]    Verify if    As A Test Manager Button is enabled, validate all its elements,
     ...    and verify new page content.
