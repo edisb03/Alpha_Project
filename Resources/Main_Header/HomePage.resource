@@ -96,10 +96,17 @@ Navigate To Card
     END
 
 Navigate To Your Personal TestBench Benefit
+<<<<<<< HEAD
     [Documentation]    This keyword is used for navigation to TestBench Benefits
     [Arguments]    ${testbench_tab}
     Wait Until Page Contains Element    ${NAV_LOGO}
     Click Element    ${NAV_LOGO}
+=======
+    [Documentation]     This keyword is used for navigation to TestBench Benefits.
+    [Arguments]      ${testbench_tab}
+    Wait Until Page Contains Element     ${NAV_LOGO}
+    Click Element     ${NAV_LOGO}
+>>>>>>> dev
     Wait Until Keyword Succeeds    3x    1s    Scroll Element Into View    ${NAV_TESTBENCH_BENEFITS}
     IF    "${testbench_tab}" == "Test Manager"
         Wait Until Page Contains    As a Test Manager
