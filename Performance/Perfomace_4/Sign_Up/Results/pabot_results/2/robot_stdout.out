@@ -1,14 +1,14 @@
 ==============================================================================
 Suites                                                                        
 ==============================================================================
-Suites.P1TO01 LN P2Tests :: Login In ...                                      
+Suites.P1 TO01 SU P3Tests :: Sign Up Section                                  
 ==============================================================================
-P1_TO02_LN_TC01 Navigate To Log In :: Open TestBench web page navi... | PASS |
+P1_TO03_SU_TC01 Navigate To Sign Up :: Open TestBench web page nav... | PASS |
 ------------------------------------------------------------------------------
-Suites.P1TO01 LN P2Tests :: Login In ...                              | PASS |
+Suites.P1 TO01 SU P3Tests :: Sign Up Section                          | PASS |
 1 test, 1 passed, 0 failed
 ==============================================================================
 Suites                                                                | PASS |
 1 test, 1 passed, 0 failed
 ==============================================================================
-Output:  C:\Users\arber\Desktop\Imbus-Project\First_Project_IMBUS\Performance\Performance_1\Results\pabot_results\1\output.xml
+Output:  C:\Users\arber\Desktop\Imbus-Project\First_Project_IMBUS\Performance\Perfomace_4\Sign_Up\Results\pabot_results\2\output.xml
