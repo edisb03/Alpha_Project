@@ -1,0 +1,14 @@
+==============================================================================
+Suites                                                                        
+==============================================================================
+Suites.P1TO01 LN P1Tests :: Login In ...                                      
+==============================================================================
+P1_TO02_LN_TC01 Navigate To Log In :: Open TestBench web page navi... | PASS |
+------------------------------------------------------------------------------
+Suites.P1TO01 LN P1Tests :: Login In ...                              | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Suites                                                                | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Output:  C:\Users\arber\Desktop\Imbus-Project\First_Project_IMBUS\Performance\Performance_1\Results\pabot_results\0\output.xml
