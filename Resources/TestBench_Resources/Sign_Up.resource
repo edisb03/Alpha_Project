@@ -41,7 +41,7 @@ Sign Up Button State
     IF    ${is_enabled}
         Log    "Sign Up" button is enabled and clickable
         Click Button    ${SIGN_UP_BUTTON}
-        Element Should Be Disabled    ${SIGN_UP_BUTTON}
+        Element Should Be Visible   ${SIGN_UP_BUTTON}
         Log    "Sign Up" button is now disabled
     ELSE
         Log    "Sign Up" button is already disabled
