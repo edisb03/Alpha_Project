@@ -14,3 +14,11 @@ P1_TO03_SU_TC01 Navigate To Sign Up
     Accept Cookies  Accept all
     Navigate To Sign Up
     Navigate To TestBench Logo
+
+P1_TO03_TC04 Invalid Password Blocks Sign Up with Valid Email
+    [Documentation]     Test the Sign Up process with a valid email and
+    ...    an invalid password to ensure appropriate error handling.
+    [Tags]    P1TO03_TC04    exploratory
+    Accept Cookies    Accept all
+    Navigate To Sign Up
+    Signup Validation With New Email And Weak Password
