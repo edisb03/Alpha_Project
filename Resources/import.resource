@@ -13,5 +13,7 @@ Resource            Main_Header/Blog.Resource
 Resource            Main_Header/Features.resource
 Resource            Main_Header/Resources.resource
 Resource            Main_Header/HomePage.resource
+Resource            TestBench_Resources/Sign_Up.resource
+
 ### Python files resources
 # Library    ../Resources/python.configuration/test.py
