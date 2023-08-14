@@ -14,3 +14,14 @@ P1_TO02_LN_TC01 Navigate To Log In
     Accept Cookies    Accept all
     Navigate To Login
     Navigate To TestBench Logo
+
+P1TO02_TO02_LN_TC02 Valid Credentials
+    [Documentation]    User attempts to log in with valid credentials username and password.
+    [Tags]    P1TO02_TC02  exploratory
+    Accept Cookies    Accept all
+    Navigate To Login
+    Enter Valid Email    test@test.com
+    Verify Tick Sign Is Visible
+    Enter Valid Password    Test123.
+    Login Button State
+
