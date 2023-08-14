@@ -1,24 +1,29 @@
 *** Settings ***
-Documentation    Sign Up Section
-Resource        ../Resources/import.resource
+Documentation       Sign Up Section
 
-# Test Setup    Open Web Browser    browser_type=headlesschrome
-Test Setup          Open Web Browser
+Resource            ../Resources/import.resource
+Resource    ../Resources/TestBench_Resources/Sign_Up.resource
+
+Test Setup    Open Web Browser    #browser_type=headlesschrome
 Test Teardown       Close Browser
 
 
 *** Test Cases ***
 P1_TO03_SU_TC01 Navigate To Sign Up
     [Documentation]    Open TestBench web page navigate to Sign Up And validate if page is open.
-    [Tags]   P1TO03_TC01   exploratory
-    Accept Cookies  Accept all
+    [Tags]    p1to03_tc01    exploratory
+    Accept Cookies    Accept all
     Navigate To Sign Up
     Navigate To TestBench Logo
 
-P1_TO03_TC04 Invalid Password Blocks Sign Up with Valid Email
-    [Documentation]     Test the Sign Up process with a valid email and
-    ...    an invalid password to ensure appropriate error handling.
-    [Tags]    P1TO03_TC04    exploratory
+P1_TO03_TC04 Register To Sign Up With Valid Email And Invalid Password
+    [Documentation]  This test case navigates to the TestBench web page's Sign Up section and
+    ...   provides valid Email and not valid password for registration.
+    ...    It checks the Sign Up Button State
+    [Tags]   P1_TO03_TC04   exploratory  registration
     Accept Cookies    Accept all
     Navigate To Sign Up
-    Signup Validation With New Email And Weak Password
+    Enter Valid Email         arberdresha@gmail.com
+    Verify Tick Sign Is Visible
+    Enter Invalid Password    12345678
+    Sign Up Button State

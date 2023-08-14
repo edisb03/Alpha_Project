@@ -3,7 +3,6 @@ Documentation       Home Page elements
 
 Resource            ../import.resource
 
-
 *** Variables ***
 ### Locators for boxes ###
 ${BTN_TEST_MANAGER}             //div[contains (@class, 'tabs')]//a[contains(@class, 'button button--tab hovered')]
@@ -33,7 +32,6 @@ ${TEST_COLLABORATION}           //h3[contains(text(), 'Team Collaboration')]
 ${TOOL_CUSTOMIZATION}           //h3[contains(text(), 'Tool Customization')]
 ${TOOL_INTEGRATION}             //h3[contains(text(), 'Tool Integration')]
 ${SUBTITLE_TESTBENCH}           //h3[contains(text(), 'What You Can Do With TestBench')]
-
 
 *** Keywords ***
 Use TestBench For Free
@@ -92,16 +90,16 @@ Navigate To Card
         Tolerant Click    ${TOOL_CUSTOMIZATION}
         Page Should Contain    Customization
     ELSE IF    "${card_links}" == "Tool Integration"
-        Page Should Contain     Tool Integration
+        Page Should Contain    Tool Integration
         Tolerant Click    ${TOOL_INTEGRATION}
         Page Should Contain    Integration
     END
 
 Navigate To Your Personal TestBench Benefit
-    [Documentation]     This keyword is used for navigation to TestBench Benefits.
-    [Arguments]      ${testbench_tab}
-    Wait Until Page Contains Element     ${NAV_LOGO}
-    Click Element     ${NAV_LOGO}
+    [Documentation]    This keyword is used for navigation to TestBench Benefits.
+    [Arguments]    ${testbench_tab}
+    Wait Until Page Contains Element    ${NAV_LOGO}
+    Click Element    ${NAV_LOGO}
     Wait Until Keyword Succeeds    3x    1s    Scroll Element Into View    ${NAV_TESTBENCH_BENEFITS}
     IF    "${testbench_tab}" == "Test Manager"
         Wait Until Page Contains    As a Test Manager

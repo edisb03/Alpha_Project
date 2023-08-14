@@ -1,41 +1,40 @@
 *** Settings ***
-Documentation    Resource
+Documentation       Resource
 
-Resource         ../common.resource
+Resource            ../common.resource
 
 
 *** Variables ***
 ${TEST_AUTO}                //h3[contains(text(),'Test Automation')]
-${DATA_DRIVEN}		        //h3[contains(text(),'Data-Driven Testing')]
-${DEFECT_REPORT}	        //h3[contains(text(),'Export')]
-${FAST_SETUP}	            //h3[contains(text(),'Fast Setup')]
-${AUTOMATION_PAGE_TITLE}   //a[@id='user-content-test-case-automation-agent-for-testbenchcs']
-${DD_PAGE_TITLE}           //a[@id='user-content-ddt-table-import-via-excel-for-testbench-cs']
+${DATA_DRIVEN}              //h3[contains(text(),'Data-Driven Testing')]
+${DEFECT_REPORT}            //h3[contains(text(),'Export')]
+${FAST_SETUP}               //h3[contains(text(),'Fast Setup')]
+${AUTOMATION_PAGE_TITLE}    //a[@id='user-content-test-case-automation-agent-for-testbenchcs']
+${DD_PAGE_TITLE}            //a[@id='user-content-ddt-table-import-via-excel-for-testbench-cs']
 
 
 *** Keywords ***
-Verify Resources Links 
+Verify Resources Links
     [Documentation]    Verify Resources Links
     [Arguments]    ${resources_links}
-    IF  "${resources_links}" == "Test Automation"
+    IF    "${resources_links}" == "Test Automation"
         Page Should Contain    Test Automation
         Sleep    2s
-        Click Element   ${TEST_AUTO}
+        Click Element    ${TEST_AUTO}
         Verify New Automation Page
-
     ELSE IF    "${resources_links}" == "Data-Driven Testing"
         Page Should Contain    Data-Driven Testing
         Sleep    2s
-        Click Element   ${DATA_DRIVEN}
+        Click Element    ${DATA_DRIVEN}
         Verify New Data-Driven Page
     ELSE IF    "${resources_links}" == "Defect Export"
-        Page Should Contain    Defect  Export
+        Page Should Contain    Defect    Export
         Sleep    2s
-        Click Element   ${DEFECT_REPORT}
+        Click Element    ${DEFECT_REPORT}
     ELSE IF    "${resources_links}" == "Fast Setup"
         Page Should Contain    Fast Setup
         Sleep    2s
-        Click Element   ${FAST_SETUP}
+        Click Element    ${FAST_SETUP}
     END
 
 Verify New Automation Page
@@ -44,7 +43,7 @@ Verify New Automation Page
     Switch Window    ${windows}[1]
     Identify Text On The Automation Page
     ${windows}    Get Window Handles
-    Switch Window     ${windows}[0]
+    Switch Window    ${windows}[0]
 
 Identify Text On The Automation Page
     [Documentation]    Check for the content text
@@ -58,7 +57,7 @@ Verify New Data-Driven Page
     Switch Window    ${windows}[1]
     Identify Text On New Data Driven Page
     ${windows}    Get Window Handles
-    Switch Window     ${windows}[0]
+    Switch Window    ${windows}[0]
 
 Identify Text On New Data Driven Page
     [Documentation]    Check for the content text of Data driven
@@ -67,16 +66,16 @@ Identify Text On New Data Driven Page
     Wait Until Page Contains Element    ${DD_PAGE_TITLE}
 
  Control If The Page Contains
-  [Documentation]  Reusable keyword
-  [Arguments]   ${title}
-  Page Should Contain     ${title}
+    [Documentation]    Reusable keyword
+    [Arguments]    ${title}
+    Page Should Contain    ${title}
 
 Validate Title
-  [Documentation]  Scrolls down to the middle of the page
-  [Arguments]   ${text}
-  Execute JavaScript    window.scrollTo(0,500);
-  Page Should Contain    ${text}
+    [Documentation]    Scrolls down to the middle of the page
+    [Arguments]    ${text}
+    Execute JavaScript    window.scrollTo(0,500);
+    Page Should Contain    ${text}
 
 Verify Main Header
-  [Documentation]  Checks if the main header exits
-  Wait Until Page Contains Element    ${MAIN_HEADER}
+    [Documentation]    Checks if the main header exits
+    Wait Until Page Contains Element    ${MAIN_HEADER}
