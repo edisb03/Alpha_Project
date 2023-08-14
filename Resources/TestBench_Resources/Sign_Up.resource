@@ -5,7 +5,7 @@ Resource    ../import.resource
 
 *** Variables ***
 ### SU - SIGN UP
-${SU_EMAIL}             //input[@type='text']    
+${SU_EMAIL}             //input[@type='text']
 ${SU_PASSWORD}          //input[@name='password']
 ${TICK_SIGN}            //input[@class='success']
 ${SIGN_UP_BUTTON}       //button[@class='button button--primary']
