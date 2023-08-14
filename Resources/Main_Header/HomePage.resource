@@ -55,7 +55,7 @@ More About Imbus
 Control If Page Contains
     [Documentation]    Check If Page Contains Text.
     [Arguments]    ${teksti}
-    Page Should Contain    ${teksti}
+    Wait Until Keyword Succeeds    3x    1s    Page Should Contain    ${teksti}
 
 Navigate To Card
     [Documentation]    Verifies if all the links works properly.
