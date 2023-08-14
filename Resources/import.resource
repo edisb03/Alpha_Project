@@ -13,6 +13,5 @@ Resource            Main_Header/Blog.Resource
 Resource            Main_Header/Features.resource
 Resource            Main_Header/Resources.resource
 Resource            Main_Header/HomePage.resource
-Resource            ../Performance/Performance_2/MainHeader/P1TO01_MH_P1Test.robot
 ### Python files resources
 # Library    ../Resources/python.configuration/test.py
