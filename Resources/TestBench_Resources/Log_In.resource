@@ -35,9 +35,9 @@ Enter Valid Password
     Input Text    ${LOGIN_PSSW}     ${password}
 
 Login Button State
-    [Documentation]    Keyword state of Sign Button State checks if
-    ...    the Sign Button is disabled or enabled to click, and keyword
-    ...    have two options depends which state of Sign Button is.
+    [Documentation]    Keyword state of Login Button State checks if
+    ...    the Login Button is disabled or enabled to click, and keyword
+    ...    have two options depends which state of Login Button is.
     ${is_enabled} =    Run Keyword And Return Status    Element Should Be Enabled    ${LOGIN_BTN}
     IF    ${is_enabled}
         Log    "Sign Up" button is enabled and clickable
