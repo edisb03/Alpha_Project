@@ -22,7 +22,6 @@ P1_TO03_TC04 Register To Sign Up With Valid Email And Invalid Password
     [Tags]   P1_TO03_TC04   exploratory  registration
     Accept Cookies    Accept all
     Navigate To Sign Up
-    Enter Valid Email         arberdresha@gmail.com
-    Verify Tick Sign Is Visible
-    Enter Invalid Password    12345678
-    Sign Up Button State
+    Enter Email And Password         &{USER_03}
+    Verify Tick Is Visible    Sign Up
+    Check Button State And Sign-Up/Log-In

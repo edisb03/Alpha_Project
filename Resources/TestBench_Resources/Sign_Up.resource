@@ -1,6 +1,7 @@
 *** Settings ***
-Documentation    Keywords for Sign Up Form
-Resource    ../import.resource
+Documentation       Keywords for Sign Up Form
+
+Resource            ../import.resource
 
 
 *** Variables ***
@@ -33,18 +34,11 @@ Verify Tick Is Visible
         Element Should Be Visible    ${LOG_IN_TICK}
     END
 
-Enter Invalid Password
-    [Documentation]    Keyword is used to simulate the input of an incorrect password during
-    ...    testing or automation tasks.
-    [Arguments]    ${password}
-    Set Selenium Speed    0.3
-    Input Text    ${SU_PASSWORD}    ${password}
-
 Check Button State And Sign-Up/Log-In
     [Documentation]    Keyword state of Sign Button State checks if
     ...    the Sign Button is disabled or enabled to click, and keyword
     ...    have two options depends which state of Sign Button is.
-    ${is_enabled} =    Run Keyword And Return Status    Element Should Be Enabled      ${SIGN_UP_BUTTON}
+    ${is_enabled} =    Run Keyword And Return Status    Element Should Be Enabled    ${SIGN_UP_BUTTON}
     ${is_disabled} =    Run Keyword And Return Status    Element Should Be Disabled    ${SIGN_UP_BUTTON}
     IF    ${is_enabled}
         Element Should Be Visible    ${SIGN_UP_BUTTON}

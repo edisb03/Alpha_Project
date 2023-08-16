@@ -1,5 +1,6 @@
 *** Settings ***
 Documentation       Keywords for Log In Form
+
 Resource            ../import.resource
 
 
@@ -11,8 +12,6 @@ ${SU_EMAIL}             //input[@type='text']
 ${SIGN_UP_BUTTON}       //button[@class='button button--primary']
 
 ### Users ###
-&{USER_01}           email=agnesaa_m@hotmail.com     password=Seharoj@400
-&{USER_02}           email=arberdresha@gmail.com      password=Valid123
-
-
-*** Keywords ***
+&{USER_01}              email=agnesaa_m@hotmail.com    password=Seharoj@400
+&{USER_02}              email=arberdresha@gmail.com    password=Valid123
+&{USER_03}              email=arberdresha@gmail.com    password=12345678
