@@ -1,20 +1,22 @@
 *** Settings ***
 Documentation       Features
 
-Resource            ../import.resource
+Resource    ../import.resource
+
 
 *** Variables ***
-${REQUIREMENTS_MANAGEMENT_FEATURES}     //h2[contains(text(), 'Requirements Management')]
-${TEST_MANAGEMENT_FEATURES}             //h2[contains(text(), 'Test Management')]
-${TEST_DESIGN_FEATURES}                 //h2[contains(text(), 'Test Design')]
-${TEST_EXECUTION_FEATURES}              //h2[contains(text(), 'Test Execution')]
-${TEST_AUTOMATION_FEATURES}             //h2[contains(text(), 'Test Automation')]
-${TEST_COLLABORATION_FEATURES}          //h2[contains(text(), 'Team Collaboration')]
-${CUSTOMIZATION_FEATURES}               //h2[contains(text(), 'Customization')]
-${INTEGRATION_FEATURES}                 //h2[contains(text(), 'Integration')]
-${TRY_TESTBENCH_NOW}                    //a[contains(text(), 'Try TestBench Now')]
-${TRY_EXPLORTORY_TESTING}               //a[contains(text(), 'Try Exploratory Testing')]
-${TRY_DATA-DRIVEN_TESTING}              //a[contains(text(), 'Try Data-Driven Testing')]
+${REQUIREMENTS_MANAGEMENT_FEATURES}              //h2[contains(text(), 'Requirements Management')]
+${TEST_MANAGEMENT_FEATURES}                      //h2[contains(text(), 'Test Management')]
+${TEST_DESIGN_FEATURES}                          //h2[contains(text(), 'Test Design')]
+${TEST_EXECUTION_FEATURES}                       //h2[contains(text(), 'Test Execution')]
+${TEST_AUTOMATION_FEATURES}                      //h2[contains(text(), 'Test Automation')]
+${TEST_COLLABORATION_FEATURES}                   //h2[contains(text(), 'Team Collaboration')]
+${CUSTOMIZATION_FEATURES}                        //h2[contains(text(), 'Customization')]
+${INTEGRATION_FEATURES}                          //h2[contains(text(), 'Integration')]
+${TRY_TESTBENCH_NOW}                             //a[contains(text(), 'Try TestBench Now')]
+${TRY_EXPLORTORY_TESTING}                        //a[contains(text(), 'Try Exploratory Testing')]
+${TRY_DATA-DRIVEN_TESTING}                       //a[contains(text(), 'Try Data-Driven Testing')]
+
 
 *** Keywords ***
 Verify Content Features
