@@ -1,11 +1,11 @@
 ==============================================================================
 Suites                                                                        
 ==============================================================================
-Suites.P1 TO01 MH P2Tests :: Login In ...                                     
+Suites.P1 TO01 MH P1.2Tests :: This test case conducts Second Performance T...
 ==============================================================================
 P1_TO01_MH_TC01 Verify Cards On Home Page :: Navigate and Validate... | PASS |
 ------------------------------------------------------------------------------
-Suites.P1 TO01 MH P2Tests :: Login In ...                             | PASS |
+Suites.P1 TO01 MH P1.2Tests :: This test case conducts Second Perf... | PASS |
 1 test, 1 passed, 0 failed
 ==============================================================================
 Suites                                                                | PASS |
