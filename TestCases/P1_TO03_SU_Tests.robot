@@ -24,4 +24,4 @@ P1_TO03_TC04 Register To Sign Up With Valid Email And Invalid Password
     Navigate To Sign Up
     Enter Email And Password         &{USER_03}
     Verify Tick Is Visible    Sign Up
-    Check Button State And Sign-Up/Log-In
+    Check Button State And Sign-Up/Log-In    Disabled
