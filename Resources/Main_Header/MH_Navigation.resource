@@ -37,24 +37,6 @@ Navigate To Test Approaches
     Wait Until Page Contains Element    ${NAV_TEST_APPROACHES}
     Tolerant Click    ${NAV_TEST_APPROACHES}
 
-Navigate To Language
-    [Documentation]    Navigates to Research processes...
-    [Arguments]    ${LANGUAGE}
-    Wait Until Element Is Visible    ${NAV_LOGO}
-    IF    '${LANGUAGE}' == 'English'
-        Wait Until Page Contains Element    ${NAV_GER}
-        Mouse Over    ${NAV_GER}
-        Sleep    2s
-        Click Element    //ul[contains(@class, 'menu')]//li[9]//ul//li//span[2][contains(text(), 'Englisch')]
-    ELSE IF    '${LANGUAGE}' == 'Deutsch'
-        Sleep    2s
-        Wait Until Page Contains Element    ${NAV_ENG}
-        Mouse Over    ${NAV_ENG}
-        Click Element    //ul[contains(@class, 'menu')]//li[9]//ul//li//span[2][contains(text(), 'German')]
-        Wait Until Page Contains Element    ${GER_COOKIES}
-        Click Element    ${GER_COOKIES}
-    END
-
 Search Links By Name
     [Documentation]    Search the specified links by using its name
     [Arguments]    ${link_status}
