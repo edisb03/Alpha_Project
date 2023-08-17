@@ -40,17 +40,26 @@ Check Button State And Sign-Up/Log-In
     ...    The keyword checks if the button is disabled or enabled to click, and takes actions
     ...    based on the button state.
     [Arguments]    ${state}
-    ${status} =    Run Keyword And Return Status     Element Should Be Enabled    ${SIGN_UP_OR_LOGIN_BUTTON}
+    ${status} =    Run Keyword And Return Status    Element Should Be Enabled    ${SIGN_UP_OR_LOGIN_BUTTON}
     Wait Until Element Is Visible    ${NAV_LOGO}
-    IF    '${state}' == 'Enabled'
+    IF    '${state}' == 'Sign_up_Enabled'
         Wait Until Page Contains Element    ${SIGN_UP_OR_LOGIN_BUTTON}
-        Element Should Be Visible           ${SIGN_UP_OR_LOGIN_BUTTON}
-        Click Button                        ${SIGN_UP_OR_LOGIN_BUTTON}
-        Log        Button is enabled and clickable
-    ELSE IF    '${state}' == 'Disabled'
-        IF    '${status}' == 'False'
-            Log    Button is disabled and not clickable
-        ELSE
-            Log    Button is enabled and clickable
+        Element Should Be Visible    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Click Button    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Log    Sign Up button is enabled and clickable
+    ELSE IF    '${state}' == 'Log_in_Enabled'
+        Wait Until Page Contains Element    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Element Should Be Visible    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Click Button    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Log    Login button is enabled and clickable
+    ELSE IF    '${state}' == 'Sign_up_Disabled'
+        IF    ${status} == False
+            Log    Sign Up button is disabled and not clickable
+        ELSE IF    '${state}' == 'Log_in_Disabled'
+            IF    ${status} == False
+                Log    Log In button is disabled and not clickable
+            ELSE
+                Log    Button is clickable and enable
+            END
         END
     END
