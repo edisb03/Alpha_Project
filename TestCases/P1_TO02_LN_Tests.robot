@@ -34,5 +34,5 @@ P1_TO02_LN_TC09 Valid Credentials Of Not Registered User
     Navigate To Login
     Enter Email And Password    &{USER_02}
     Verify Tick Is Visible    Login
-    Check Button State And Sign-Up/Log-In
+    Check Button State And Sign-Up/Log-In    
     Control If Page Contains     Log in failed. Please check your credentials.
