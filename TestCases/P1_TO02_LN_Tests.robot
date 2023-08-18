@@ -43,7 +43,7 @@ P1TO02_TC03_Invalid Email - Failed Login
     [Tags]    P1TO02_TC03    exploratory
     Accept Cookies    Accept all
     Navigate To Login
-    Enter Email And Password    &{USER_04}
+    Enter Email And Password    &{USER_03}
     Verify Tick Is Visible    Login
     Check Button State And Sign-Up/Log-In    Log_in_Enabled
-    Control If Page Contains     Log in failed. Please check your credentials. 
+    Control If Page Contains     Log in failed. Please check your credentials.
