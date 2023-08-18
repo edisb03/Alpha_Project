@@ -6,11 +6,12 @@ Resource            ../import.resource
 
 *** Variables ***
 ### SU - SIGN UP
-${SU_EMAIL}             //input[@type='text']
-${SU_PASSWORD}          //input[@name='password']
-${SIGN_IN_TICK}         //input[@class='success']
-${SIGN_UP_BUTTON}       //button[@class='button button--primary']
-${LOG_IN_TICK}          //input[@class='success update']
+${SU_EMAIL}                     //input[@type='text']
+${SU_PASSWORD}                  //input[@name='password']
+${SIGN_IN_TICK}                 //input[@class='success']
+${SIGN_UP_OR_LOGIN_BUTTON}      //button[@class='button button--primary']
+${DISABLED_BUTTON}              //button[contains(text(),'Sign Up')]
+${LOG_IN_TICK}                  //input[@class='success update']
 
 
 *** Keywords ***
@@ -35,15 +36,30 @@ Verify Tick Is Visible
     END
 
 Check Button State And Sign-Up/Log-In
-    [Documentation]    Keyword state of Sign Button State checks if
-    ...    the Sign Button is disabled or enabled to click, and keyword
-    ...    have two options depends which state of Sign Button is.
-    ${is_enabled} =    Run Keyword And Return Status    Element Should Be Enabled    ${SIGN_UP_BUTTON}
-    ${is_disabled} =    Run Keyword And Return Status    Element Should Be Disabled    ${SIGN_UP_BUTTON}
-    IF    ${is_enabled}
-        Element Should Be Visible    ${SIGN_UP_BUTTON}
-        Click Button    ${SIGN_UP_BUTTON}
-        Log    "Sign Up" button is enabled and clickable
-    ELSE IF    ${is_disabled}
-        Log    "Sign Up" button is already disabled
+    [Documentation]    Keyword to check the state of a button and perform actions accordingly.
+    ...    The keyword checks if the button is disabled or enabled to click, and takes actions
+    ...    based on the button state.
+    [Arguments]    ${state}
+    ${status} =    Run Keyword And Return Status    Element Should Be Enabled    ${SIGN_UP_OR_LOGIN_BUTTON}
+    Wait Until Element Is Visible    ${NAV_LOGO}
+    IF    '${state}' == 'Sign_up_Enabled'
+        Wait Until Page Contains Element    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Element Should Be Visible    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Click Button    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Log    Sign Up button is enabled and clickable
+    ELSE IF    '${state}' == 'Log_in_Enabled'
+        Wait Until Page Contains Element    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Element Should Be Visible    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Click Button    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Log    Login button is enabled and clickable
+    ELSE IF    '${state}' == 'Sign_up_Disabled'
+        IF    ${status} == False
+            Log    Sign Up button is disabled and not clickable
+        ELSE IF    '${state}' == 'Log_in_Disabled'
+            IF    ${status} == False
+                Log    Log In button is disabled and not clickable
+            ELSE
+                Log    Button is clickable and enable
+            END
+        END
     END
