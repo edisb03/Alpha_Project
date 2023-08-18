@@ -28,7 +28,7 @@ P1_TO02_LN_TC02 Valid Credentials Of Registered User
 
 P1_TO02_LN_TC09 Valid Credentials Of Not Registered User
     [Documentation]    In this test case is tested if not registered user can fullfill login form
-    ...                with his valid credentials and the Login button is enabled.
+    ...                with his valid credentials and the Login button is enabled...
     [Tags]    P1TO02_TC09    exploratory
     Accept Cookies    Accept all
     Navigate To Login
