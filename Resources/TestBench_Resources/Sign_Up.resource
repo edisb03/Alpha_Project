@@ -3,16 +3,16 @@ Documentation       Keywords for Sign Up Form
 
 Resource            ../import.resource
 
-
 *** Variables ***
 ### SU - SIGN UP
 ${SU_EMAIL}                     //input[@type='text']
 ${SU_PASSWORD}                  //input[@name='password']
-${SIGN_IN_TICK}                 //input[@class='success']
+${SIGN_IN_TICK}                 //input[contains(@class, 'success')]//..//label[contains(text(), 'Email')]
+${PASSWORD_TICK_VERIFY}         //input[contains(@class, 'success')]//..//..//label[contains(text(), 'Password')]
+${PASSWORD_TICK_VERIFY_2}       (//input[contains(@class, 'success')]//..//..//label[contains(text(), 'Password')])[2]
 ${SIGN_UP_OR_LOGIN_BUTTON}      //button[@class='button button--primary']
 ${DISABLED_BUTTON}              //button[contains(text(),'Sign Up')]
 ${LOG_IN_TICK}                  //input[@class='success update']
-
 
 *** Keywords ***
 Enter Email And Password
@@ -22,17 +22,38 @@ Enter Email And Password
     Input Text    ${SU_EMAIL}    ${email}
     Input Text    ${SU_PASSWORD}    ${password}
 
+# Verify Tick Is Visible
+#    [Documentation]    Keyword ensures that a tick sign icon is displayed on the page, often used
+#    ...    to confirm successful actions or completion during testing or automation tasks.
+#    [Arguments]    ${login_OR_sign_up}
+#    Wait Until Element Is Visible    ${NAV_LOGO}
+#    IF    '${login_OR_sign_up}' == 'Sign Up'
+#    Wait Until Page Contains Element    ${SIGN_IN_TICK}
+#    Element Should Be Visible    ${SIGN_IN_TICK}
+#    ELSE IF    '${login_OR_sign_up}' == 'Login'
+#    Wait Until Page Contains Element    ${LOG_IN_TICK}
+#    Element Should Be Visible    ${LOG_IN_TICK}
+#    END
+
 Verify Tick Is Visible
     [Documentation]    Keyword ensures that a tick sign icon is displayed on the page, often used
     ...    to confirm successful actions or completion during testing or automation tasks.
     [Arguments]    ${login_OR_sign_up}
     Wait Until Element Is Visible    ${NAV_LOGO}
-    IF    '${login_OR_sign_up}' == 'Sign Up'
+    IF    '${login_OR_sign_up}' == 'SignUp_Email'
         Wait Until Page Contains Element    ${SIGN_IN_TICK}
         Element Should Be Visible    ${SIGN_IN_TICK}
-    ELSE IF    '${login_OR_sign_up}' == 'Login'
+    ELSE IF    '${login_OR_sign_up}' == 'Login_Email'
         Wait Until Page Contains Element    ${LOG_IN_TICK}
         Element Should Be Visible    ${LOG_IN_TICK}
+    ELSE IF    '${login_OR_sign_up}' == 'SignUp_Password'
+        Wait Until Page Contains Element    ${PASSWORD_TICK_VERIFY}
+        Element Should Be Visible    ${PASSWORD_TICK_VERIFY}
+        Wait Until Keyword Succeeds    3x    5s    ${PASSWORD_TICK_VERIFY}
+    ELSE
+        Wait Until Page Contains Element    ${PASSWORD_TICK_VERIFY_2}
+        Element Should Be Visible    ${PASSWORD_TICK_VERIFY_2}
+        Wait Until Keyword Succeeds    3x    5s    ${PASSWORD_TICK_VERIFY_2}
     END
 
 Check Button State And Sign-Up/Log-In
