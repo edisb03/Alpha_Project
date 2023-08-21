@@ -3,7 +3,7 @@ Documentation       Login In Section
 
 Resource            ..//Resources/import.resource
 
-Test Setup    Open Web Browser    browser_type=headlesschrome
+Test Setup    Open Web Browser    #browser_type=headlesschrome
 Test Teardown       Close Browser
 
 
@@ -47,3 +47,11 @@ P1TO02_TC03 Invalid Email Failed Login
     Verify Tick Is Visible    Login
     Check Button State And Sign-Up/Log-In    Log_in_Enabled
     Control If Page Contains     Log in failed. Please check your credentials.
+
+P1TO02_TC05 Empty Email And Password
+    [Documentation]    In this test case user navigates to Log in and try
+    ...    to login without filling the login form at all.
+    [Tags]    P1TO02_TC03
+    Accept Cookies    Accept all
+    Navigate To Login
+    Check Button State And Sign-Up/Log-In    Log_in_Disabled
