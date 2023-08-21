@@ -13,7 +13,7 @@ ${SIGN_UP_BUTTON}       //button[@class='button button--primary']
 
 ### Users ###
 # &{USER_01} Registered user with valid credentials
-&{USER_01}              email=agnesaa_m@hotmail.com    password=hero
+&{USER_01}              email=agnesaa_m@hotmail.com    password=Seharoj@400
 # &{USER_02} Not registered user with valid email and invalid pass
 &{USER_02}              email=arberdresha@gmail.com    password=Valid123
 # &{USER_03} Registered user with wrong email and valid pass

@@ -3,7 +3,7 @@ Documentation       Login In Section
 
 Resource            ..//Resources/import.resource
 
-Test Setup    Open Web Browser    browser_type=headlesschrome
+Test Setup    Open Web Browser    #browser_type=headlesschrome
 Test Teardown       Close Browser
 
 
@@ -22,7 +22,8 @@ P1_TO02_LN_TC02 Valid Credentials Of Registered User
     Accept Cookies    Accept all
     Navigate To Login
     Enter Email And Password    &{USER_01}
-    Verify Tick Is Visible    Login
+    Verify Tick Is Visible    SignUp_Valid_Email
+    Verify Tick Is Visible    SignUp_Valid_Password
     Check Button State And Sign-Up/Log-In    Log_in_Enabled
     Control If Page Contains     Welcome!
 
@@ -33,7 +34,8 @@ P1_TO02_LN_TC09 Valid Credentials Of Not Registered User
     Accept Cookies    Accept all
     Navigate To Login
     Enter Email And Password    &{USER_02}
-    Verify Tick Is Visible    Login
+    Verify Tick Is Visible    SignUp_Valid_Email
+    Verify Tick Is Visible    SignUp_Invalid_Password
     Check Button State And Sign-Up/Log-In    Log_in_Enabled
     Control If Page Contains     Log in failed. Please check your credentials.
 
@@ -44,6 +46,7 @@ P1TO02_TC03 Invalid Email Failed Login
     Accept Cookies    Accept all
     Navigate To Login
     Enter Email And Password    &{USER_03}
-    Verify Tick Is Visible    Login
+    Verify Tick Is Visible    SignUp_Invalid_Email
+    Verify Tick Is Visible    SignUp_Valid_Password
     Check Button State And Sign-Up/Log-In    Log_in_Enabled
     Control If Page Contains     Log in failed. Please check your credentials.
