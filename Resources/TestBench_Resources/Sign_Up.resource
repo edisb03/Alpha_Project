@@ -8,7 +8,9 @@ Resource            ../import.resource
 ### SU - SIGN UP
 ${SU_EMAIL}                     //input[@type='text']
 ${SU_PASSWORD}                  //input[@name='password']
-${SIGN_IN_TICK}                 //input[@class='success']
+${SIGN_IN_TICK}                 //input[contains(@class, 'success')]//..//label[contains(text(), 'Email')]
+${PASSWORD_TICK_VERIFY}         //input[contains(@class, 'success')]//..//..//label[contains(text(),'Password')]
+${INVALID_PASSWORD}             //div[@class='pw-check']
 ${SIGN_UP_OR_LOGIN_BUTTON}      //button[@class='button button--primary']
 ${DISABLED_BUTTON}              //button[contains(text(),'Sign Up')]
 ${LOG_IN_TICK}                  //input[@class='success update']
@@ -22,15 +24,37 @@ Enter Email And Password
     Input Text    ${SU_EMAIL}    ${email}
     Input Text    ${SU_PASSWORD}    ${password}
 
+# Verify Tick Is Visible
+#    [Documentation]    Keyword ensures that a tick sign icon is displayed on the page, often used
+#    ...    to confirm successful actions or completion during testing or automation tasks.
+#    [Arguments]    ${login_OR_sign_up}
+#    Wait Until Element Is Visible    ${NAV_LOGO}
+#    IF    '${login_OR_sign_up}' == 'Sign Up'
+#    Wait Until Page Contains Element    ${SIGN_IN_TICK}
+#    Element Should Be Visible    ${SIGN_IN_TICK}
+#    ELSE IF    '${login_OR_sign_up}' == 'Login'
+#    Wait Until Page Contains Element    ${LOG_IN_TICK}
+#    Element Should Be Visible    ${LOG_IN_TICK}
+#    END
+
 Verify Tick Is Visible
     [Documentation]    Keyword ensures that a tick sign icon is displayed on the page, often used
     ...    to confirm successful actions or completion during testing or automation tasks.
     [Arguments]    ${login_OR_sign_up}
     Wait Until Element Is Visible    ${NAV_LOGO}
-    IF    '${login_OR_sign_up}' == 'Sign Up'
+    IF    '${login_OR_sign_up}' == 'SignUp_Valid_Email'
         Wait Until Page Contains Element    ${SIGN_IN_TICK}
         Element Should Be Visible    ${SIGN_IN_TICK}
-    ELSE IF    '${login_OR_sign_up}' == 'Login'
+    ELSE IF    '${login_OR_sign_up}' == 'SignUp_Invalid_Email'
+        Wait Until Page Contains Element    ${SU_EMAIL}
+        Element Should Be Visible    ${SU_EMAIL}
+    ELSE IF    '${login_OR_sign_up}' == 'SignUp_Invalid_Password'
+        Wait Until Page Contains Element    ${INVALID_PASSWORD}
+        Element Should Be Visible    ${INVALID_PASSWORD}
+    ELSE IF    '${login_OR_sign_up}' == 'SignUp_Valid_Password'
+        Wait Until Page Contains Element    ${PASSWORD_TICK_VERIFY}
+        Element Should Be Visible    ${PASSWORD_TICK_VERIFY}
+    ELSE IF    '${login_OR_sign_up}' == 'Login_Email'
         Wait Until Page Contains Element    ${LOG_IN_TICK}
         Element Should Be Visible    ${LOG_IN_TICK}
     END
