@@ -37,7 +37,7 @@ P1_TO02_LN_TC09 Valid Credentials Of Not Registered User
     Check Button State And Sign-Up/Log-In    Log_in_Enabled
     Control If Page Contains     Log in failed. Please check your credentials.
 
-P1TO02_TC03_Invalid Email - Failed Login
+P1TO02_TC03 Invalid Email Failed Login
     [Documentation]    In this test case is tested if a registered user can fulfill the login form
     ...    with wrong email and valid password and then check the Login button state and error message as well.
     [Tags]    P1TO02_TC03    exploratory
