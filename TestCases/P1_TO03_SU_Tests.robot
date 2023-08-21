@@ -22,6 +22,6 @@ P1_TO03_TC04 Register To Sign Up With Valid Email And Invalid Password
     [Tags]   P1_TO03_TC04   exploratory  registration
     Accept Cookies    Accept all
     Navigate To Sign Up
-    Enter Email And Password         &{USER_03}
+    Enter Email And Password         &{USER_02}
     Verify Tick Is Visible    Sign Up
     Check Button State And Sign-Up/Log-In    Sign_up_Disabled
