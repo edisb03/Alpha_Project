@@ -24,19 +24,6 @@ Enter Email And Password
     Input Text    ${SU_EMAIL}    ${email}
     Input Text    ${SU_PASSWORD}    ${password}
 
-# Verify Tick Is Visible
-#    [Documentation]    Keyword ensures that a tick sign icon is displayed on the page, often used
-#    ...    to confirm successful actions or completion during testing or automation tasks.
-#    [Arguments]    ${login_OR_sign_up}
-#    Wait Until Element Is Visible    ${NAV_LOGO}
-#    IF    '${login_OR_sign_up}' == 'Sign Up'
-#    Wait Until Page Contains Element    ${SIGN_IN_TICK}
-#    Element Should Be Visible    ${SIGN_IN_TICK}
-#    ELSE IF    '${login_OR_sign_up}' == 'Login'
-#    Wait Until Page Contains Element    ${LOG_IN_TICK}
-#    Element Should Be Visible    ${LOG_IN_TICK}
-#    END
-
 Verify Tick Is Visible
     [Documentation]    Keyword ensures that a tick sign icon is displayed on the page, often used
     ...    to confirm successful actions or completion during testing or automation tasks.
