@@ -59,6 +59,25 @@ Verify Tick Is Visible
         Element Should Be Visible    ${LOG_IN_TICK}
     END
 
+# Verify Tick Is Visible
+#     [Documentation]  Ensures that a tick sign icon is displayed on the page to,
+#     ...    confirm successful actions or completion during testing or automation tasks.
+#     [Arguments]    ${login_OR_sign_up}
+#     Wait Until Element Is Visible    ${NAV_LOGO}
+#     IF    '${login_OR_sign_up}' == 'SignUp_Valid_Email'
+#         ${element_to_verify}=    Set Variable    ${SIGN_IN_TICK}
+#     ELSE IF    '${login_OR_sign_up}' == 'SignUp_Invalid_Email'
+#         ${element_to_verify}=    Set Variable    ${SU_EMAIL}
+#     ELSE IF    '${login_OR_sign_up}' == 'SignUp_Invalid_Password'
+#         ${element_to_verify}=    Set Variable    ${INVALID_PASSWORD}
+#     ELSE IF    '${login_OR_sign_up}' == 'SignUp_Valid_Password'
+#         ${element_to_verify}=    Set Variable    ${PASSWORD_TICK_VERIFY}
+#     ELSE IF    '${login_OR_sign_up}' == 'Login_Email'
+#         ${element_to_verify}=    Set Variable    ${LOG_IN_TICK}
+#     END
+#     Wait Until Page Contains Element    ${element_to_verify}
+#     Element Should Be Visible    ${element_to_verify}
+
 Check Button State And Sign-Up/Log-In
     [Documentation]    Keyword to check the state of a button and perform actions accordingly.
     ...    The keyword checks if the button is disabled or enabled to click, and takes actions

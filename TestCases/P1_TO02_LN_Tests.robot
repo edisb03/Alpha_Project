@@ -39,7 +39,7 @@ P1_TO02_LN_TC09 Valid Credentials Of Not Registered User
     Check Button State And Sign-Up/Log-In    Log_in_Enabled
     Control If Page Contains    Log in failed. Please check your credentials.
 
-P1TO02_TC03 Invalid Email Failed Login
+P1TO02_TC03 Invalid Email Valid Password Failed Login
     [Documentation]    In this test case is tested if a registered user can fulfill the login form
     ...    with wrong email and valid password and then check the Login button state and error message as well.
     [Tags]    P1TO01_TC03    exploratory
@@ -51,6 +51,18 @@ P1TO02_TC03 Invalid Email Failed Login
     Check Button State And Sign-Up/Log-In    Log_in_Enabled
     Control If Page Contains    Log in failed. Please check your credentials.
 
+# P1TO02_TC04 Valid Email Invalid Password Failed Login
+#     [Documentation]    In this test case is tested if a registered user can fulfill the login form
+#     ...    with correct email and invalid password and then check the Login button state and error message as well.
+#     [Tags]    P1TO01_TC06    exploratory
+#     Accept Cookies    Accept all
+#     Navigate To Login
+#     Enter Email And Password    &{USER_05}
+#     Verify Tick Is Visible    SignUp_Valid_Email
+#     Verify Tick Is Visible    SignUp_Invalid_Password
+#     Check Button State And Sign-Up/Log-In    Log_in_Enabled
+#     Control If Page Contains    Log in failed. Please check your credentials.
+
 P1TO02_TC05 Empty Email And Password
     [Documentation]    In this test case user navigates to Log in and try
     ...    to login without filling the login form at all.
@@ -58,14 +70,3 @@ P1TO02_TC05 Empty Email And Password
     Accept Cookies    Accept all
     Navigate To Login
     Check Button State And Sign-Up/Log-In    Log_in_Disabled
-
-P1TO02_TC04 Invalid Password-Failed Login
-    [Documentation]    In this test case is tested if a registered user can fulfill the login form
-    ...    with correct email and invalid password and then check the Login button state and error message as well.
-    [Tags]    P1TO01_TC06    exploratory
-    Accept Cookies    Accept all
-    Navigate To Login
-    Enter Email And Password    &{USER_05}
-    Verify Tick Is Visible    Login
-    Check Button State And Sign-Up/Log-In    Log_in_Enabled
-    Control If Page Contains    Log in failed. Please check your credentials.
