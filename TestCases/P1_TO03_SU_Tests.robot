@@ -38,7 +38,7 @@ P1TO03_TC06 Register To Sign Up With Invalid Email And Valid Password
     Verify If Tick Is Visible    SignUp_Valid_Password
     Check Button State And Sign-Up/Log-In    Sign_up_Disabled
 
-P1TO03_TC03 Register to Sign Up with registered email
+P1TO03_TC03 Register To Sign Up With Registered Email
     [Documentation]    This Test Case verifies the behavior of the 'Sign up' process on test bench website
     ...    when an registered user is trying to register again.
     [Tags]    P1TO03_TC03
@@ -47,11 +47,11 @@ P1TO03_TC03 Register to Sign Up with registered email
     Enter Email And Password    &{USER_01}
     Control If Page Contains   Email already exists.
     Control If Page Contains    Well done
-    Verify Tick Is Visible     SignUp_Valid_Email
-    Verify Tick Is Visible    SignUp_Valid_Password
+    Verify If Tick Is Visible     SignUp_Valid_Email
+    Verify If Tick Is Visible     SignUp_Valid_Password
     Check Button State And Sign-Up/Log-In    Sign_up_Disabled
 
-P1TO03_TC05 Register to Sign Up with valid email and valid password
+P1TO03_TC05 Register to Sign Up with Valid Email And Valid Password
     [Documentation]    This Test Case verifies the behavior of 'Sign Up' process on the test bench website 
     ...    when a not registered user is trying to register for the first time.
     [Tags]    P1TO03_TC05
@@ -59,7 +59,7 @@ P1TO03_TC05 Register to Sign Up with valid email and valid password
     Navigate To Sign Up
     Enter Email And Password    &{USER_06}
     Control If Page Contains    Well done
-    Verify Tick Is Visible     SignUp_Valid_Email
-    Verify Tick Is Visible    SignUp_Valid_Password
+    Verify If Tick Is Visible     SignUp_Valid_Email
+    Verify If Tick Is Visible     SignUp_Valid_Password
     Check Button State And Sign-Up/Log-In    Sign_up_Enabled
     Control If Page Contains    Check Your Email
