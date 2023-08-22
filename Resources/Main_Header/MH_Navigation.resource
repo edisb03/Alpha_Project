@@ -23,6 +23,9 @@ ${MAIN_HEADER}                      (//ul[contains(@class, "menu")])[1]
 ${NAV_ENG}                          (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'English')])[1]
 ${NAV_GER}                          (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'Deutsch')])[1]
 ${NAV_TESTBENCH_BENEFITS}           //h2[contains(text(), 'Your Personal TestBench Benefit')]
+### Exploratory testing video locators
+${EXPLORATORY_TESTING_TITLE_VIDEO}      //h3[contains(text(),'The Right Tool – For the Right Job')]
+${EXPLORATORY_TESTING_VIDEO}            //button[@aria-label='Play Video']
 
 
 *** Keywords ***
@@ -90,3 +93,16 @@ Navigate To TestBench Logo
     Wait Until Page Contains Element    ${NAV_LOGO}
     Click Element    ${NAV_LOGO}
     Wait Until Page Contains    The Smart Test Management Tool
+
+Scroll To Video
+    [Documentation]    Scrolls the page to bring the video element into view.
+    [Arguments]    ${video_title}
+    Wait Until Page Contains Element    ${EXPLORATORY_TESTING_TITLE_VIDEO}
+    Page Should Contain    ${video_title}
+    Wait Until Page Contains Element    ${EXPLORATORY_TESTING_VIDEO}
+    Scroll Element Into View    ${EXPLORATORY_TESTING_VIDEO}
+
+Play Video
+    [Documentation]    Placeholder for the Play Video keyword.
+    Wait Until Page Contains Element    ${EXPLORATORY_TESTING_VIDEO}
+    Tolerant Click    ${EXPLORATORY_TESTING_VIDEO}
