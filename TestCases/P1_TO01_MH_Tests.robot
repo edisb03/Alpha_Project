@@ -89,9 +89,11 @@ P1_TO01_MH_TC10 Verify Test Approaches Links
     Navigate To Test Approaches
     Search Links By Name    Keyword-Driven Testing
 
-P1TO01_TC11 Validate Exploratory Testing
+P1TO01_TC11 Validate Video Exploratory Testing
     [Documentation]    User opens the web page of TestBench: www.testbench.com and
     ...    checks if they can open Exploratory Testing under Test Approaches on the Main Header
+    ...    finding the specified link, scrolling to a video, and controlling the video
+    ...    playback by playing and pausing it.
     [Tags]    P1TO01_TC11    exploratory
     Set Selenium Speed    0.5
     Accept Cookies    Accept all
@@ -99,6 +101,7 @@ P1TO01_TC11 Validate Exploratory Testing
     Search Links By Name    Exploratory Testing
     Scroll To Video   The Right Tool – For the Right Job
     Control Video Playback   Play_video
+    Sleep    0.1min
     Control Video Playback   Pause_Video
 
 P1_TO01_MH_TC12 Navigate As A Test Manager
