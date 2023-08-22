@@ -58,8 +58,7 @@ P1TO02_TC04 Valid Email Invalid Password Failed Login
     Accept Cookies    Accept all
     Navigate To Login
     Enter Email And Password    &{USER_05}
-    Verify If Tick Is Visible   SignUp_Valid_Email
-    Verify If Tick Is Visible   SignUp_Invalid_Password
+    Verify If Tick Is Visible   Login_Valid_Email
     Check Button State And Sign-Up/Log-In    Log_in_Enabled
     Control If Page Contains    Log in failed. Please check your credentials.
 

@@ -41,7 +41,7 @@ Verify If Tick Is Visible
     ELSE IF    '${login_OR_sign_up}' == 'SignUp_Valid_Password'
         Wait Until Page Contains Element    ${PASSWORD_TICK_VERIFY}
         Element Should Be Visible    ${PASSWORD_TICK_VERIFY}
-    ELSE IF    '${login_OR_sign_up}' == 'Login_Email'
+    ELSE IF    '${login_OR_sign_up}' == 'Login_Valid_Email'
         Wait Until Page Contains Element    ${LOG_IN_TICK}
         Element Should Be Visible    ${LOG_IN_TICK}
     END
