@@ -111,7 +111,7 @@ Play Video
     Wait Until Page Contains Element    ${VIDEO_PLAYER}
     Tolerant Click    ${VIDEO_PLAYER}
 
-Play Or Pause Video
+Control Video Playback
     [Documentation]    Placeholder for the Pause Video keyword.
     [Arguments]    ${video_status}
     Set Selenium Speed    0.3

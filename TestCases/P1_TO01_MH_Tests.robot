@@ -98,8 +98,8 @@ P1TO01_TC11 Validate Exploratory Testing
     Navigate To Test Approaches
     Search Links By Name    Exploratory Testing
     Scroll To Video   The Right Tool – For the Right Job
-    Play Or Pause Video   Play_video
-    Play Or Pause Video   Pause_Video
+    Control Video Playback   Play_video
+    Control Video Playback   Pause_Video
 
 P1_TO01_MH_TC12 Navigate As A Test Manager
     [Documentation]    Verify if    As A Test Manager Button is enabled, validate all its elements,
