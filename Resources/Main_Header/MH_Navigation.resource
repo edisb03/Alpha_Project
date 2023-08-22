@@ -26,6 +26,7 @@ ${NAV_TESTBENCH_BENEFITS}           //h2[contains(text(), 'Your Personal TestBen
 ### Exploratory testing video locators
 ${EXPLORATORY_TESTING_TITLE_VIDEO}      //h3[contains(text(),'The Right Tool – For the Right Job')]
 ${EXPLORATORY_TESTING_VIDEO}            //button[@aria-label='Play Video']
+${VIDEO_PLAYER}                         (//iframe)[1]
 
 
 *** Keywords ***
@@ -104,5 +105,14 @@ Scroll To Video
 
 Play Video
     [Documentation]    Placeholder for the Play Video keyword.
+    Set Selenium Speed    0.3
     Wait Until Page Contains Element    ${EXPLORATORY_TESTING_VIDEO}
-    Tolerant Click    ${EXPLORATORY_TESTING_VIDEO}
+    Double Click Element   ${EXPLORATORY_TESTING_VIDEO}
+    Wait Until Page Contains Element    ${VIDEO_PLAYER}  
+    Tolerant Click                      ${VIDEO_PLAYER}  
+
+Pause Video
+    [Documentation]   Placeholder for the Pause Video keyword.
+    Set Selenium Speed    0.5
+    Wait Until Page Contains Element    ${VIDEO_PLAYER}
+    Tolerant Click                      ${VIDEO_PLAYER}
