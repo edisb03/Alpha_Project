@@ -37,3 +37,16 @@ P1TO03_TC06 Register To Sign Up With Invalid Email And Valid Password
     Verify Tick Is Visible    SignUp_Invalid_Email
     Verify Tick Is Visible    SignUp_Valid_Password
     Check Button State And Sign-Up/Log-In    Sign_up_Disabled
+
+P1TO03_TC03 Register to Sign Up with registered email 
+    [Documentation]    This Test Case verifies the behavior of the 'Sign up' process on test bench website 
+    ...    when an registered user is trying to register again
+    [Tags]    P1TO03_TC03
+    Accept Cookies    Accept all
+    Navigate To Sign Up
+    Enter Email And Password    &{USER_01}
+    Control If Page Contains   Email already exists.
+    Verify Tick Is Visible     SignUp_Valid_Email
+    Verify Tick Is Visible    SignUp_Valid_Password
+    Check Button State And Sign-Up/Log-In    Sign_up_Disabled
+
