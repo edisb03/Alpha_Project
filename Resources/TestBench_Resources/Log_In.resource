@@ -3,6 +3,8 @@ Documentation       Keywords for Log In Form
 
 Resource            ../import.resource
 
+Library    String
+
 
 *** Variables ***
 ${LOGIN_BUTTON}         //div[@class='wrapper']//li[5]
@@ -22,4 +24,16 @@ ${SIGN_UP_BUTTON}       //button[@class='button button--primary']
 # &{USER_05} Registered user with wrong email and valid pass
 &{USER_05}              email=agnesaa_m@hotmail.com    password=seharoj@400
 # ${User_06}  Not registered user with valid email and valid pass
-&{USER_06}              email=blertaa.nn@gmail.com        password=Testing@email123
+
+
+*** Keywords ***
+Generate Random Number 
+    [Documentation]    This keyword is used for generating a random number
+    ${random_number}    Generate Random String    4    [NUMBERS]
+    [RETURN]    ${random_number}
+
+Generate Random Email
+    [Documentation]    This keyword generates a random email using a random number
+    ${random_number}    Generate Random Number
+    ${random_email}    Set Variable    blertaa.n${random_number}@gmail.com
+    [RETURN]    ${random_email}
