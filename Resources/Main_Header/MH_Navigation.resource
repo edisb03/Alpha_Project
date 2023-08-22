@@ -5,24 +5,24 @@ Resource            ../import.resource
 
 
 *** Variables ***
-${NAV_FEATURES}                     //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/features/')]
-${NAV_TEST_APPROACHES}              //a[@href="#"]
+${NAV_FEATURES}                         //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/features/')]
+${NAV_TEST_APPROACHES}                  //a[@href="#"]
 ### Locators for Test Approaches Links ###
-${NAV_EXPLOTARY_TESTING}            //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[1]/a[1]
-${NAV_DATA-DRIVEN-TESTING}          (//a[contains (@href, "https://www.testbench.com/data-driven-testing/")])[1]
-${NAV_KEYWORD-DRIVEN_TESTING}       //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[3]/a[1]
+${NAV_EXPLOTARY_TESTING}                //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[1]/a[1]
+${NAV_DATA-DRIVEN-TESTING}              (//a[contains (@href, "https://www.testbench.com/data-driven-testing/")])[1]
+${NAV_KEYWORD-DRIVEN_TESTING}           //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[3]/a[1]
 ### Main Header Locators ###
-${NAV_BLOG}                         //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/blog/')]
-${NAV_RESOURCES}                    //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/resources')]
-${LOGIN_BUTTON}                     /div[@class='wrapper']//li[5]
-${LOGIN_PAGE_TITLE}                 //div[@class='box-inner box-inner--right']//div[@id='logIn']//div[@class='overline']
-${NAV_SIGN_UP}                      //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/sign-up/')]
-${NAV_LOGO}                         (//header[contains(@class, 'mainHeader')]//a//img[contains(@class, 'logo-image')])[1]
-${GER_COOKIES}                      //div[contains(@class, 'container')]//p//a[contains(text(), 'Alle Cookies akzeptieren')][1]
-${MAIN_HEADER}                      (//ul[contains(@class, "menu")])[1]
-${NAV_ENG}                          (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'English')])[1]
-${NAV_GER}                          (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'Deutsch')])[1]
-${NAV_TESTBENCH_BENEFITS}           //h2[contains(text(), 'Your Personal TestBench Benefit')]
+${NAV_BLOG}                             //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/blog/')]
+${NAV_RESOURCES}                        //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/resources')]
+${LOGIN_BUTTON}                         /div[@class='wrapper']//li[5]
+${LOGIN_PAGE_TITLE}                     //div[@class='box-inner box-inner--right']//div[@id='logIn']//div[@class='overline']
+${NAV_SIGN_UP}                          //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/sign-up/')]
+${NAV_LOGO}                             (//header[contains(@class, 'mainHeader')]//a//img[contains(@class, 'logo-image')])[1]
+${GER_COOKIES}                          //div[contains(@class, 'container')]//p//a[contains(text(), 'Alle Cookies akzeptieren')][1]
+${MAIN_HEADER}                          (//ul[contains(@class, "menu")])[1]
+${NAV_ENG}                              (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'English')])[1]
+${NAV_GER}                              (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'Deutsch')])[1]
+${NAV_TESTBENCH_BENEFITS}               //h2[contains(text(), 'Your Personal TestBench Benefit')]
 ### Exploratory testing video locators
 ${EXPLORATORY_TESTING_TITLE_VIDEO}      //h3[contains(text(),'The Right Tool – For the Right Job')]
 ${EXPLORATORY_TESTING_VIDEO}            //button[@aria-label='Play Video']
@@ -107,12 +107,20 @@ Play Video
     [Documentation]    Placeholder for the Play Video keyword.
     Set Selenium Speed    0.3
     Wait Until Page Contains Element    ${EXPLORATORY_TESTING_VIDEO}
-    Double Click Element   ${EXPLORATORY_TESTING_VIDEO}
-    Wait Until Page Contains Element    ${VIDEO_PLAYER}  
-    Tolerant Click                      ${VIDEO_PLAYER}  
-
-Pause Video
-    [Documentation]   Placeholder for the Pause Video keyword.
-    Set Selenium Speed    0.5
+    Double Click Element    ${EXPLORATORY_TESTING_VIDEO}
     Wait Until Page Contains Element    ${VIDEO_PLAYER}
-    Tolerant Click                      ${VIDEO_PLAYER}
+    Tolerant Click    ${VIDEO_PLAYER}
+
+Play Or Pause Video
+    [Documentation]    Placeholder for the Pause Video keyword.
+    [Arguments]    ${video_status}
+    Set Selenium Speed    0.3
+    IF    "${video_status}" == "Play_video"
+        Wait Until Page Contains Element    ${EXPLORATORY_TESTING_VIDEO}
+        Double Click Element    ${EXPLORATORY_TESTING_VIDEO}
+        Wait Until Page Contains Element    ${VIDEO_PLAYER}
+        Tolerant Click    ${VIDEO_PLAYER}
+    ELSE IF    "${video_status}" == "Pause_Video"
+        Wait Until Page Contains Element    ${VIDEO_PLAYER}
+        Tolerant Click    ${VIDEO_PLAYER}
+    END
