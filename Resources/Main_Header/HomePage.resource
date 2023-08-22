@@ -127,7 +127,7 @@ Navigate To Your Personal TestBench Benefit
     END
 
 Check Test Bench Service Cards
-    [Documentation]     Checks and clicks all cards available in the fist page of Test Bench.
+    [Documentation]     Checks and clicks all cards available in the fist page of Test Bench..
     Navigate To Card    Requirements Management
     Go Back
     Navigate To Card    Test Management
