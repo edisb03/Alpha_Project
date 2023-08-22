@@ -24,7 +24,7 @@ Enter Email And Password
     Input Text    ${SU_EMAIL}    ${email}
     Input Text    ${SU_PASSWORD}    ${password}
 
-Verify Tick Is Visible
+Verify If Tick Is Visible
     [Documentation]    Keyword ensures that a tick sign icon is displayed on the page, often used
     ...    to confirm successful actions or completion during testing or automation tasks.
     [Arguments]    ${login_OR_sign_up}

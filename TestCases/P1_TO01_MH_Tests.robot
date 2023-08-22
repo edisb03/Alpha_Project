@@ -13,21 +13,7 @@ P1_TO01_MH_TC01 Verify Cards On Home Page
     [Tags]    p1to01_tc01    exploratory
     Accept Cookies    Accept all
     Control If The Page Contains    What You Can Do With TestBench
-    Navigate To Card    Requirements Management
-    Go Back
-    Navigate To Card    Test Management
-    Go Back
-    Navigate To Card    Test Design
-    Go Back
-    Navigate To Card    Test Execution
-    Go Back
-    Navigate To Card    Test Automation
-    Go Back
-    Navigate To Card    Team Collaboration
-    Go Back
-    Navigate To Card    Tool Customization
-    Go Back
-    Navigate To Card    Tool Integration
+    Check Test Bench Service Cards
 
 P1_TO01_MH_TC02 Start For Free
     [Documentation]    Navigate to the TestBench for free use.
