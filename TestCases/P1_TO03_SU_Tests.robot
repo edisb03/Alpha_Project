@@ -23,8 +23,8 @@ P1_TO03_TC04 Register To Sign Up With Valid Email And Invalid Password
     Accept Cookies    Accept all
     Navigate To Sign Up
     Enter Email And Password         &{USER_02}
-    Verify Tick Is Visible    SignUp_Valid_Email
-    Verify Tick Is Visible    SignUp_Invalid_Password
+    Verify If Tick Is Visible    SignUp_Valid_Email
+    Verify If Tick Is Visible   SignUp_Invalid_Password
     Check Button State And Sign-Up/Log-In    Sign_up_Disabled
 
 P1TO03_TC06 Register To Sign Up With Invalid Email And Valid Password
@@ -34,6 +34,6 @@ P1TO03_TC06 Register To Sign Up With Invalid Email And Valid Password
     Accept Cookies    Accept all
     Navigate To Sign Up
     Enter Email And Password    &{USER_04}
-    Verify Tick Is Visible    SignUp_Invalid_Email
-    Verify Tick Is Visible    SignUp_Valid_Password
+    Verify If Tick Is Visible    SignUp_Invalid_Email
+    Verify If Tick Is Visible    SignUp_Valid_Password
     Check Button State And Sign-Up/Log-In    Sign_up_Disabled
