@@ -99,6 +99,7 @@ P1TO01_TC11 Validate Exploratory Testing
     Search Links By Name    Exploratory Testing
     Scroll To Video   The Right Tool – For the Right Job
     Play Video
+    Pause Video
 
 P1_TO01_MH_TC12 Navigate As A Test Manager
     [Documentation]    Verify if    As A Test Manager Button is enabled, validate all its elements,
