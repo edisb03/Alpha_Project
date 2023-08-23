@@ -41,6 +41,8 @@ Generate Random Email
 Generate User Data And Setup
     [Documentation]    This keyword generates user data and sets the suite variable '&{USER_06}'
     ${random_email}    Generate Random Email
-    &{USER_06}    Create Dictionary    email=${random_email}    password=Valid@123
-    ${user_06_data}    Set Suite Variable    &{USER_06}    email=${random_email}    password=Valid@123
-    RETURN  ${user_06_data}
+    ${USER_06_DATA}    Create Dictionary    email=${random_email}    password=Valid@123
+    #${user_06_data}    Set Suite Variable    &{USER_06}    email=${random_email}    password=Valid@123
+    Log    User data created: ${USER_06_DATA}
+    Set Suite Variable    ${USER_06_DATA}
+    RETURN  ${USER_06_DATA}
