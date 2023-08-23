@@ -57,8 +57,7 @@ P1_TO03_TC05 Register to Sign Up with Valid Email And Valid Password
     [Tags]    P1TO03_TC05    exploratory
     Accept Cookies    Accept all
     Navigate To Sign Up
-    ${random_email}    Generate Random Email
-    &{USER_06}   Create Dictionary   email=${random_email}   password=Valid@123
+    Generate User Data And Setup
     Enter Email And Password    &{USER_06}
     Control If Page Contains    Well done
     Verify If Tick Is Visible     SignUp_Valid_Email

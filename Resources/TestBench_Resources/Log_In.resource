@@ -24,17 +24,23 @@ ${SIGN_UP_BUTTON}       //button[@class='button button--primary']
 &{USER_04}              email=agnesa_m    password=Seharoj@4004444
 # &{USER_05} Registered user with correct email and wrong valid pass
 &{USER_05}              email=agnesaa_m@hotmail.com    password=seharoj@400
-# ${User_06}  Not registered user with valid email and valid pass
 
 
 *** Keywords ***
 Generate Random Number 
     [Documentation]    This keyword is used for generating a random number
     ${random_number}    Generate Random String    4    [NUMBERS]
-    [RETURN]    ${random_number}
+    RETURN    ${random_number}
 
 Generate Random Email
     [Documentation]    This keyword generates a random email using a random number
     ${random_number}    Generate Random Number
     ${random_email}    Set Variable    blertaa.n${random_number}@gmail.com
-    [RETURN]    ${random_email}
+    RETURN    ${random_email}
+
+Generate User Data And Setup
+    [Documentation]    This keyword generates user data and sets the suite variable '&{USER_06}'
+    ${random_email}    Generate Random Email
+    &{USER_06}    Create Dictionary    email=${random_email}    password=Valid@123
+    ${user_06_data}    Set Suite Variable    &{USER_06}    email=${random_email}    password=Valid@123
+    RETURN  ${user_06_data}
