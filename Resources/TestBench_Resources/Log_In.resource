@@ -20,8 +20,9 @@ ${SIGN_UP_BUTTON}       //button[@class='button button--primary']
 &{USER_02}              email=arberdresha@gmail.com    password=Valid123
 # &{USER_03} Registered user with wrong email and valid pass
 &{USER_03}              email=agnesa_m@hotmail.com    password=Seharoj@400
+# &{USER_04} Not registered user with invalid email and valid pass
 &{USER_04}              email=agnesa_m    password=Seharoj@4004444
-# &{USER_05} Registered user with wrong email and valid pass
+# &{USER_05} Registered user with correct email and wrong valid pass
 &{USER_05}              email=agnesaa_m@hotmail.com    password=seharoj@400
 # ${User_06}  Not registered user with valid email and valid pass
 
