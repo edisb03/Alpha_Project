@@ -26,25 +26,31 @@ ${SIGN_UP_BUTTON}       //button[@class='button button--primary']
 &{USER_04}              email=agnesa_m    password=Seharoj@4004444
 # &{USER_05} Registered user with correct email and wrong pass
 &{USER_05}              email=agnesaa_m@hotmail.com    password=seharoj@400
+# ${USER_06},${USER_07},${USER_08} for dynamic domain names
+${USER_06}              hotmail.com
+${USER_07}              gmail.com
+${USER_08}              imbus-peja.de
 
 
 *** Keywords ***
-Generate Random Email And Password
-    [Documentation]    Generates a random email and password
-    [Arguments]  ${name}   ${email_length}=4    ${password_length}=5
+Enter Dynamic Email And Password
+    [Documentation]    Generates a random email and password for test purposes.
+    [Arguments]  ${name}  ${user}  ${email_length}=10    ${password_length}=12
     Set Selenium Speed    0.3
     ### My static name
     ${random_name}=    Set Variable    ${name}
-    ${domain}=    Set Variable    gmail.com
     ### Generate random email
-    ${random_email_string}=    Generate Random String    1    [NUMBERS]
-    ${email}=    Catenate      ${random_name}${random_email_string}@${domain}
+    ${random_email_string}=    Generate Random String    3    [NUMBERS]
+    ${email}=    Catenate      ${random_name}${random_email_string}@${user}
+    Set Suite Variable    ${USER_06}
+    Set Suite Variable    ${USER_07}
+    Set Suite Variable    ${USER_08}
     ### Generate random password
     ${uppercase_letter}=    Generate Random String    1    [UPPERCASE]
-    ${lowercase_letter}=    Generate Random String    1    [LOWERCASE]@e
+    ${lowercase_letter}=    Generate Random String    1    [LOWERCASE]
     ${digit}=               Generate Random String    1    [PUNCTUATION]
     ${special_char}=        Generate Random String    1    [NUMBERS]
-    ${password}=    Catenate    ${uppercase_letter}@${lowercase_letter}${digit}${special_char}@_/;e
+    ${low_case}=  Set Variable    imbus
+    ${PASSWORD_DYNAMIC}=    Catenate     ${low_case}${uppercase_letter}@${lowercase_letter}${digit}${special_char}@_
     Input Text    ${SU_EMAIL}       ${email}
-    Input Text    ${SU_PASSWORD}    ${password}
-    RETURN    ${email}    ${password}
+    Input Text    ${SU_PASSWORD}    ${PASSWORD_DYNAMIC}
