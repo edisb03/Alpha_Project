@@ -2,8 +2,12 @@
 Documentation       Keywords for Log In Form
 
 Resource            ../import.resource
+Resource      ../python.configuration/random.py
 
 Library    String
+Library    Collections
+Library      BuiltIn
+Library    random 
 
 
 *** Variables ***
@@ -27,7 +31,7 @@ ${SIGN_UP_BUTTON}       //button[@class='button button--primary']
 
 
 *** Keywords ***
-Generate Random Number 
+Generate Random Number
     [Documentation]    This keyword is used for generating a random number
     ${random_number}    Generate Random String    4    [NUMBERS]
     RETURN    ${random_number}
@@ -46,3 +50,11 @@ Generate User Data And Setup
     Log    User data created: ${USER_06_DATA}
     Set Suite Variable    ${USER_06_DATA}
     RETURN  ${USER_06_DATA}
+
+Generate A Random Email
+
+    [Documentation]   Generate Random Email
+    ${random_name}    Generate Random String    10    [LETTERS][DIGITS]
+    ${domain}    Set Variable    example.com
+    ${random_email}    Catenate    ${random_name}@${domain}
+    RETURN  ${random_email}

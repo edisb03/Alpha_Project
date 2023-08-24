@@ -78,8 +78,8 @@ Check Button State And Sign-Up/Log-In
 Enter Dynamic Email And Password
     [Documentation]    This keyword is used to input email and password dynamically.
     Set Selenium Speed    0.3
-    ${USER_06_DATA}     Generate User Data And Setup
-    ${EMAIL}    Set Variable    ${USER_06_DATA}[email]
+    ${random_email}     Generate A Random Email
+    ${USER_06_DATA}    Generate User Data And Setup
     ${PASSWORD}   Set Variable    ${USER_06_DATA}[password]
-    Input Text    ${SU_EMAIL}    ${EMAIL}
+    Input Text    ${SU_EMAIL}    ${random_email}
     Input Text    ${SU_PASSWORD}    ${PASSWORD}
