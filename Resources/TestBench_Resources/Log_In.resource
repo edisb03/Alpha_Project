@@ -2,12 +2,10 @@
 Documentation       Keywords for Log In Form
 
 Resource            ../import.resource
-Resource      ../python.configuration/random.py
-
-Library    String
-Library    Collections
-Library      BuiltIn
-Library    random 
+Library             String
+Library             Collections
+Library             BuiltIn
+Library             random
 
 
 *** Variables ***
@@ -31,30 +29,22 @@ ${SIGN_UP_BUTTON}       //button[@class='button button--primary']
 
 
 *** Keywords ***
-Generate Random Number
-    [Documentation]    This keyword is used for generating a random number
-    ${random_number}    Generate Random String    4    [NUMBERS]
-    RETURN    ${random_number}
-
-Generate Random Email
-    [Documentation]    This keyword generates a random email using a random number
-    ${random_number}    Generate Random Number
-    ${random_email}    Set Variable    blertaa.n${random_number}@gmail.com
-    RETURN    ${random_email}
-
-Generate User Data And Setup
-    [Documentation]    This keyword generates user data and sets the suite variable '&{USER_06}'
-    ${random_email}    Generate Random Email
-    ${USER_06_DATA}    Create Dictionary    email=${random_email}    password=Valid@123
-    #${user_06_data}    Set Suite Variable    &{USER_06}    email=${random_email}    password=Valid@123
-    Log    User data created: ${USER_06_DATA}
-    Set Suite Variable    ${USER_06_DATA}
-    RETURN  ${USER_06_DATA}
-
-Generate A Random Email
-
-    [Documentation]   Generate Random Email
-    ${random_name}    Generate Random String    10    [LETTERS][DIGITS]
-    ${domain}    Set Variable    example.com
-    ${random_email}    Catenate    ${random_name}@${domain}
-    RETURN  ${random_email}
+Generate Random Email And Password
+    [Documentation]    Generates a random email and password
+    [Arguments]    ${email_length}=4    ${password_length}=5
+    Set Selenium Speed    0.3
+    ### My static name
+    ${random_name}=    Set Variable    Arber
+    ${domain}=    Set Variable    gmail.com
+    ### Generate random email
+    ${random_email_string}=    Generate Random String    1    [NUMBERS]
+    ${email}=    Catenate    ${random_name}${random_email_string}@${domain}
+    ### Generate random password
+    ${uppercase_letter}=    Generate Random String    1    [UPPERCASE]
+    ${lowercase_letter}=    Generate Random String    1    [LOWERCASE]@e
+    ${digit}=               Generate Random String    1    [PUNCTUATION]
+    ${special_char}=        Generate Random String    1    [NUMBERS]
+    ${password}=    Catenate    ${uppercase_letter}@${lowercase_letter}${digit}${special_char}@_/;e
+    Input Text    ${SU_EMAIL}       ${email}
+    Input Text    ${SU_PASSWORD}    ${password}
+    RETURN    ${email}    ${password}
