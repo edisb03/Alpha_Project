@@ -58,7 +58,7 @@ P1_TO03_TC05 Register to Sign Up with Valid Email And Valid Password
     [Tags]    P1TO03_TC05    exploratory
     Accept Cookies    Accept all
     Navigate To Sign Up
-    ${email}    ${password}=    Generate Random Email And Password
+    ${email}    ${password}=    Generate Random Email And Password    Arber
     Control If Page Contains    Well done
     Verify If Tick Is Visible     SignUp_Valid_Email
     Verify If Tick Is Visible     SignUp_Valid_Password

@@ -31,14 +31,14 @@ ${SIGN_UP_BUTTON}       //button[@class='button button--primary']
 *** Keywords ***
 Generate Random Email And Password
     [Documentation]    Generates a random email and password
-    [Arguments]    ${email_length}=4    ${password_length}=5
+    [Arguments]  ${name}   ${email_length}=4    ${password_length}=5
     Set Selenium Speed    0.3
     ### My static name
-    ${random_name}=    Set Variable    Arber
+    ${random_name}=    Set Variable    ${name}
     ${domain}=    Set Variable    gmail.com
     ### Generate random email
     ${random_email_string}=    Generate Random String    1    [NUMBERS]
-    ${email}=    Catenate    ${random_name}${random_email_string}@${domain}
+    ${email}=    Catenate      ${random_name}${random_email_string}@${domain}
     ### Generate random password
     ${uppercase_letter}=    Generate Random String    1    [UPPERCASE]
     ${lowercase_letter}=    Generate Random String    1    [LOWERCASE]@e
