@@ -33,3 +33,23 @@ ${USER_08}              imbus-peja.de
 
 
 *** Keywords ***
+Enter Dynamic Email And Password
+    [Documentation]    Generates a random email and password for test purposes.
+    [Arguments]  ${name}    ${user}   ${email_length}=10    ${password_length}=12
+    Set Selenium Speed    0.3
+    ${random_name}=    Set Variable    ${name}
+    ### Generate random email
+    ${random_email_string}=    Generate Random String    3    [NUMBERS]
+    ${email}=    Catenate      ${random_name}${random_email_string}@${user}
+    Set Suite Variable    ${USER_06}
+    Set Suite Variable    ${USER_07}
+    Set Suite Variable    ${USER_08}
+    ### Generate random password
+    ${uppercase_letter}=    Generate Random String    1    [UPPERCASE]
+    ${lowercase_letter}=    Generate Random String    1    [LOWERCASE]
+    ${digit}=               Generate Random String    1    [PUNCTUATION]
+    ${special_char}=        Generate Random String    1    [NUMBERS]
+    ${low_case}=  Set Variable    imbus
+    ${dynamic_password}=    Catenate     ${low_case}${uppercase_letter}${lowercase_letter}${digit}${special_char}@_
+    Input Text    ${SU_EMAIL}       ${email}
+    Input Text    ${SU_PASSWORD}    ${dynamic_password}
