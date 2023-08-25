@@ -52,12 +52,13 @@ P1_TO03_TC03 Register To Sign Up With Registered Email
     Check Button State And Sign-Up/Log-In    Sign_up_Disabled
 
 P1_TO03_TC05 Register to Sign Up with Valid Email And Valid Password
-    [Documentation]    This Test Case verifies the behavior of 'Sign Up' process on the test bench website 
-    ...    when a not registered user is trying to register for the first time.
+    [Documentation]    This Test Case check for valid email,
+    ...  and valid password ,this keyword 'Enter Dynamic Email And Password'
+    ...  generates dynamicly email and password,and also we check for button state
     [Tags]    P1TO03_TC05    exploratory
     Accept Cookies    Accept all
     Navigate To Sign Up
-    Enter Dynamic Email And Password
+    Enter Dynamic Email And Password     Agnesa    ${USER_08}      # imbus-peja.de
     Control If Page Contains    Well done
     Verify If Tick Is Visible     SignUp_Valid_Email
     Verify If Tick Is Visible     SignUp_Valid_Password
