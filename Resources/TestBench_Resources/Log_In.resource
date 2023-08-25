@@ -33,30 +33,3 @@ ${USER_08}              imbus-peja.de
 
 
 *** Keywords ***
-Generate Random Number
-    [Documentation]    This keyword is used for generating a random number
-    ${random_number}    Generate Random String    4    [NUMBERS]
-    RETURN    ${random_number}
-
-Generate Random Email
-    [Documentation]    This keyword generates a random email using a random number
-    ${random_number}    Generate Random Number
-    ${random_email}    Set Variable    blertaa.n${random_number}@gmail.com
-    RETURN    ${random_email}
-
-Generate User Data And Setup
-    [Documentation]    This keyword generates user data and sets the suite variable '&{USER_06}'
-    ${random_email}    Generate Random Email
-    ${USER_06_DATA}    Create Dictionary    email=${random_email}    password=Valid@123
-    #${user_06_data}    Set Suite Variable    &{USER_06}    email=${random_email}    password=Valid@123
-    Log    User data created: ${USER_06_DATA}
-    Set Suite Variable    ${USER_06_DATA}
-    RETURN  ${USER_06_DATA}
-
-Generate A Random Email
-
-    [Documentation]   Generate Random Email
-    ${random_name}    Generate Random String    10    [LETTERS][DIGITS]
-    ${domain}    Set Variable    example.com
-    ${random_email}    Catenate    ${random_name}@${domain}
-    RETURN  ${random_email}
