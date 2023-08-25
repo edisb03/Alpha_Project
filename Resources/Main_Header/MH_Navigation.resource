@@ -27,6 +27,10 @@ ${NAV_TESTBENCH_BENEFITS}               //h2[contains(text(), 'Your Personal Tes
 ${EXPLORATORY_TESTING_TITLE_VIDEO}      //h3[contains(text(),'The Right Tool – For the Right Job')]
 ${EXPLORATORY_TESTING_VIDEO}            //button[@aria-label='Play Video']
 ${VIDEO_PLAYER}                         (//iframe)[1]
+${DROP_DOWN_LIST}                       (//span[@lang='en'][normalize-space()='English'])[1]
+${ENGLISH}                              (//span[@lang='en'][normalize-space()='English'])[1]
+${GERMAN}                               (//span[@lang='de'][normalize-space()='Deutsch'])[1]
+${FOOTER_TB_LOGO}                       (//img[@alt='TestBench'])[3]
 
 
 *** Keywords ***
@@ -92,8 +96,7 @@ Navigate To Login
 Navigate To TestBench Logo
     [Documentation]    This keyword is used to navigate to TestBench logo
     Wait Until Page Contains Element    ${NAV_LOGO}
-    Click Element    ${NAV_LOGO}
-    Wait Until Page Contains    The Smart Test Management Tool
+    Tolerant Click    ${NAV_LOGO}
 
 Scroll To Video
     [Documentation]    Scrolls the page to bring the video element into view.
@@ -124,3 +127,50 @@ Control Video Playback
         Wait Until Page Contains Element    ${VIDEO_PLAYER}
         Tolerant Click    ${VIDEO_PLAYER}
     END
+
+Navigate To Drop Down List
+    [Documentation]    Goes to the right of the page and click drop down List
+    [Arguments]    ${option}
+    Set Selenium Speed    0.3
+    IF    "${option}" == "English"
+        Wait Until Page Contains Element    ${ENGLISH}
+        Page Should Contain    English
+        ${english_text}   Get Text     ${ENGLISH}
+        Tolerant Click    ${ENGLISH}
+    ELSE IF    "${option}" == "German"
+        Wait Until Page Contains Element    ${GERMAN}
+        Page Should Contain    Deutsch
+    END
+
+Perform Language Switching
+    [Documentation]    Performs language switching from `${ENGLISH}` to `${GERMAN}`
+    ...    and,${GERMAN} to ${ENGLISH} verifies the switch.
+    [Arguments]    ${language}
+    Set Selenium Speed    0.3
+    IF    "${language}" == "English"
+        Wait Until Page Contains Element    ${ENGLISH}
+        Page Should Contain    English
+        Tolerant Click    ${ENGLISH}
+    ELSE IF    "${language}" == "German"
+        Wait Until Page Contains Element    ${GERMAN}
+        Page Should Contain    Deutsch
+        Tolerant Click    ${GERMAN}
+    ELSE IF    "${language}" == "English_To_German"
+        Page Should Contain    English
+        Wait Until Page Contains Element    ${GERMAN}
+        Tolerant Click    ${GERMAN}
+        Wait Until Page Contains Element    ${ACCEPT_GERMAN_COOKEIS}
+        Tolerant Click    ${ACCEPT_GERMAN_COOKEIS}
+    ELSE IF    "${language}" == "German_To_English"
+        Page Should Contain    Deutsch
+        Wait Until Page Contains Element    ${GERMAN}
+        Tolerant Click    ${GERMAN}
+        Wait Until Page Contains Element    ${ENGLISH}
+        Tolerant Click    ${ENGLISH}
+    END
+
+Scroll To Verify Test Bench Logo
+    [Documentation]    Scrolls to and clicks the Test Bench Logo,
+    ...    on footer page
+    Scroll Element Into View    ${FOOTER_TB_LOGO}
+    Tolerant Click    ${FOOTER_TB_LOGO}

@@ -4,7 +4,7 @@ Documentation       Main Header Section    ...
 Resource            ..//Resources/import.resource
 
 Test Setup          Open Web Browser    # browser_type=headlesschrome
-#Test Teardown       Close Browser
+Test Teardown       Close Browser
 
 
 *** Test Cases ***
@@ -130,3 +130,16 @@ P1_TO01_MH_TC15 Navigate As A Tester
     [Tags]    P1TO01_TC15     exploratory
     Accept Cookies    Accept all
     Navigate To Your Personal TestBench Benefit    Tester
+
+P1_TO01_TC21 Switch Page To Deutch And Revert To Default Language English
+   [Documentation]  Verify that users can navigate to the Deutsch version,
+   ...    of the website from the home page using the language switcher.
+   [Tags]    P1TO01_TC21     exploratory
+   Accept Cookies    Accept all
+   Navigate To Drop Down List   English
+   Perform Language Switching   English_To_German
+   Control If Page Contains    Das intelligente Testmanagement-Werkzeug
+   Scroll To Verify Test Bench Logo
+   Navigate To TestBench Logo
+   Perform Language Switching    German_To_English
+   Control If Page Contains     The Smart Test Management Tool
