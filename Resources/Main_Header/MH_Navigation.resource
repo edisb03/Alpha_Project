@@ -131,11 +131,10 @@ Control Video Playback
 Verify Default Languange
     [Documentation]    Checks which language is currently on the page
     [Arguments]    ${language_page}
-    Set Selenium Speed    0.3
     IF    "${language_page}" == "English"
         Wait Until Page Contains Element    ${ENGLISH}
         Page Should Contain    English
-        Tolerant Click    ${ENGLISH}
+        Mouse Over    ${ENGLISH}
     ELSE IF    "${language_page}" == "Deutsch"
         Wait Until Page Contains Element    ${GERMAN}
         Page Should Contain    Deutsch
@@ -152,7 +151,7 @@ Perform Language Switching
         Page Should Contain    English
         ${english_text}    Get Text    ${ENGLISH}
         Tolerant Click    ${ENGLISH}
-    ELSE IF    "${language}" == "Deutch_To_Deutch"
+    ELSE IF    "${language}" == "Deutsch_To_Deutsch"
         Wait Until Page Contains Element    ${ENGLISH}
         Mouse Over    ${ENGLISH}
         Wait Until Page Contains Element    ${GERMAN}
@@ -162,8 +161,6 @@ Perform Language Switching
         Page Should Contain    Deutsch
         ${german_text}    Get Text    ${GERMAN}
     ELSE IF    "${language}" == "English_To_Deutsch"
-        Wait Until Page Contains Element    ${ENGLISH}
-        Tolerant Click    ${ENGLISH}
         Wait Until Page Contains Element    ${GERMAN}
         Tolerant Click    ${GERMAN}
         Accept Cookies    Alle Cookies akzeptieren
