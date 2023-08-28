@@ -77,7 +77,7 @@ P1TO01_TC09 Navigate To Blog
     Control If Page Contains    Welcome to the World of Testing
 
 P1_TO01_MH_TC10 Verify Test Approaches Links
-    [Documentation]    Check if Test Approaches link are opened successfully and validate each content of links.
+    [Documentation]    Check if Test Approaches link are opened successfully and validate each content of links..
     [Tags]    P1TO01_TC10    exploratory
     Accept Cookies    Accept all
     Navigate To Test Approaches

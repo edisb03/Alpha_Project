@@ -64,7 +64,7 @@ P1TO02_TC04 Valid Email Invalid Password Failed Login
 
 P1TO02_TC05 Empty Email And Password
     [Documentation]    In this test case user navigates to Log in and try
-    ...    to login without filling the login form at all.
+    ...    to login without filling the login form at all..
     [Tags]    P1TO02_TC05    exploratory
     Accept Cookies    Accept all
     Navigate To Login
