@@ -149,21 +149,20 @@ Perform Language Switching
     IF    "${language}" == "English_To_English"
         Wait Until Page Contains Element    ${ENGLISH}
         Page Should Contain    English
-        ${english_text}    Get Text    ${ENGLISH}
         Tolerant Click    ${ENGLISH}
+    ELSE IF    "${language}" == "English_To_English"
+        Element Should Not Be Visible    ${ACCEPT_COOKIES}
+        No Operation
     ELSE IF    "${language}" == "Deutsch_To_Deutsch"
-        Wait Until Page Contains Element    ${ENGLISH}
-        Mouse Over    ${ENGLISH}
         Wait Until Page Contains Element    ${GERMAN}
-        Tolerant Click    ${GERMAN}
-        Page Should Contain    Deutsch
         Mouse Over    ${GERMAN}
         Page Should Contain    Deutsch
-        ${german_text}    Get Text    ${GERMAN}
     ELSE IF    "${language}" == "English_To_Deutsch"
         Wait Until Page Contains Element    ${GERMAN}
         Tolerant Click    ${GERMAN}
         Accept Cookies    Alle Cookies akzeptieren
+    ELSE IF    "${language}" == "English_To_Deutsch"
+        Element Should Not Be Visible    ${ACCEPT_GERMAN_COOKEIS}
     ELSE IF    "${language}" == "Deutsch_To_English"
         Page Should Contain    Deutsch
         Wait Until Page Contains Element    ${GERMAN}
