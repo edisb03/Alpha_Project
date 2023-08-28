@@ -137,12 +137,14 @@ P1_TO01_TC21 Switch Page To Deutch And Revert To Default Language English
    [Tags]    P1TO01_TC21     exploratory
    Accept Cookies    Accept all
    Verify Default Languange      English
+   Perform Language Switching    English_To_English
+   Control If Page Contains      The Smart Test Management Tool
    Perform Language Switching    English_To_Deutsch
    Control If Page Contains      Das intelligente Testmanagement-Werkzeug
    Scroll To Verify Test Bench Logo
    Navigate To TestBench Logo
-   Perform Language Switching    Deutch_To_Deutch
+   Verify Default Languange      Deutsch
+   Perform Language Switching    Deutsch_To_Deutsch
    Control If Page Contains      Das intelligente Testmanagement-Werkzeug
    Perform Language Switching    Deutsch_To_English
    Control If Page Contains      The Smart Test Management Tool
-   Perform Language Switching    English_To_English
