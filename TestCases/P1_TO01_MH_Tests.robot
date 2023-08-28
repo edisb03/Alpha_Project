@@ -136,8 +136,7 @@ P1_TO01_TC21 Switch Page To Deutch And Revert To Default Language English
    ...    of the website from the home page using the language switcher.
    [Tags]    P1TO01_TC21     exploratory
    Accept Cookies    Accept all
-   Navigate To Drop Down List   English
-   Perform Language Switching   English_To_German
+   Perform Language Switching    English_To_German
    Control If Page Contains    Das intelligente Testmanagement-Werkzeug
    Scroll To Verify Test Bench Logo
    Navigate To TestBench Logo

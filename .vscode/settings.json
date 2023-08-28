@@ -6,7 +6,10 @@
     "robot.lint.robocop.enabled": true,    
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
-    "python.formatting.provider": "black",
-    "python.analysis.completeFunctionParens": true
+    "python.formatting.provider": "none",
+    "python.analysis.completeFunctionParens": true,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    }
 
     }
