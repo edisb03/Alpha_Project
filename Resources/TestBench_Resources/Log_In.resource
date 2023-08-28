@@ -34,7 +34,7 @@ ${USER_08}              imbus-peja.de
 
 *** Keywords ***
 Enter Dynamic Email And Password
-    [Documentation]    Generates a random email and password for test purposes.
+    [Documentation]    Generates a random email and password for test purposes..
     [Arguments]  ${name}    ${user}   ${email_length}=10    ${password_length}=12
     Set Selenium Speed    0.3
     ${random_name}=    Set Variable    ${name}
