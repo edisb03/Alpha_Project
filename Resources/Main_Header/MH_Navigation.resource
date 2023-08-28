@@ -128,68 +128,52 @@ Control Video Playback
         Tolerant Click    ${VIDEO_PLAYER}
     END
 
+Verify Default Languange
+    [Documentation]    Checks which language is currently on the page
+    [Arguments]    ${language_page}
+    Set Selenium Speed    0.3
+    IF    "${language_page}" == "English"
+        Wait Until Page Contains Element    ${ENGLISH}
+        Page Should Contain    English
+        Tolerant Click    ${ENGLISH}
+    ELSE IF    "${language_page}" == "Deutsch"
+        Wait Until Page Contains Element    ${GERMAN}
+        Page Should Contain    Deutsch
+        Tolerant Click    ${GERMAN}
+    END
+
 Perform Language Switching
     [Documentation]    Performs language switching from `${ENGLISH}` to `${GERMAN}`
     ...    and,${GERMAN} to ${ENGLISH} verifies the switch.
     [Arguments]    ${language}
     Set Selenium Speed    0.3
-    IF    "${language}" == "English"
+    IF    "${language}" == "English_To_English"
         Wait Until Page Contains Element    ${ENGLISH}
         Page Should Contain    English
         ${english_text}    Get Text    ${ENGLISH}
         Tolerant Click    ${ENGLISH}
-    ELSE IF    "${language}" == "German"
+    ELSE IF    "${language}" == "Deutch_To_Deutch"
         Wait Until Page Contains Element    ${ENGLISH}
         Mouse Over    ${ENGLISH}
         Wait Until Page Contains Element    ${GERMAN}
-        Tolerant Click     ${GERMAN}
-        Wait Until Page Contains Element    ${ACCEPT_GERMAN_COOKEIS}
-        Tolerant Click                      ${ACCEPT_GERMAN_COOKEIS}
+        Tolerant Click    ${GERMAN}
         Page Should Contain    Deutsch
         Mouse Over    ${GERMAN}
         Page Should Contain    Deutsch
         ${german_text}    Get Text    ${GERMAN}
-    ELSE IF    "${language}" == "English_To_German"
+    ELSE IF    "${language}" == "English_To_Deutsch"
         Wait Until Page Contains Element    ${ENGLISH}
         Tolerant Click    ${ENGLISH}
         Wait Until Page Contains Element    ${GERMAN}
         Tolerant Click    ${GERMAN}
-        Wait Until Page Contains Element    ${ACCEPT_GERMAN_COOKEIS}
-        Tolerant Click                      ${ACCEPT_GERMAN_COOKEIS}
-    ELSE IF    "${language}" == "German_To_English"
+        Accept Cookies    Alle Cookies akzeptieren
+    ELSE IF    "${language}" == "Deutsch_To_English"
         Page Should Contain    Deutsch
         Wait Until Page Contains Element    ${GERMAN}
         Tolerant Click    ${GERMAN}
         Wait Until Page Contains Element    ${ENGLISH}
         Tolerant Click    ${ENGLISH}
     END
-
-# Perform Language Switching
-#    [Documentation]    Performs language switching from `${ENGLISH}` to `${GERMAN}`
-#    ...    and,${GERMAN} to ${ENGLISH} verifies the switch.
-#    [Arguments]    ${language}
-#    Set Selenium Speed    0.3
-#    IF    "${language}" == "English"
-#    Wait Until Page Contains Element    ${ENGLISH}
-#    Page Should Contain    English
-#    Tolerant Click    ${ENGLISH}
-#    ELSE IF    "${language}" == "German"
-#    Wait Until Page Contains Element    ${GERMAN}
-#    Page Should Contain    Deutsch
-#    Tolerant Click    ${GERMAN}
-#    ELSE IF    "${language}" == "English_To_German"
-#    Page Should Contain    English
-#    Wait Until Page Contains Element    ${GERMAN}
-#    Tolerant Click    ${GERMAN}
-#    Wait Until Page Contains Element    ${ACCEPT_GERMAN_COOKEIS}
-#    Tolerant Click    ${ACCEPT_GERMAN_COOKEIS}
-#    ELSE IF    "${language}" == "German_To_English"
-#    Page Should Contain    Deutsch
-#    Wait Until Page Contains Element    ${GERMAN}
-#    Tolerant Click    ${GERMAN}
-#    Wait Until Page Contains Element    ${ENGLISH}
-#    Tolerant Click    ${ENGLISH}
-#    END
 
 Scroll To Verify Test Bench Logo
     [Documentation]    Scrolls to and clicks the Test Bench Logo,
