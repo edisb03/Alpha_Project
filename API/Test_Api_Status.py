@@ -10,7 +10,7 @@ API Endpoint: https://www.testbench.com/wp-content/uploads/resized/2020/04/1-1-h
 import requests
 
 
-def emri_metodes():
+def emri_api_status():
     """
     Sends an HTTP GET request to the API endpoint and prints the status code of the response.
 
@@ -22,4 +22,4 @@ def emri_metodes():
 
 
 # Call the function directly
-emri_metodes()
+emri_api_status()
