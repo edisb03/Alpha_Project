@@ -62,7 +62,8 @@ P1_TO03_TC05 Register to Sign Up with Valid Email And Valid Password With Checkb
     [Tags]    P1TO03_TC05    exploratory
     Accept Cookies    Accept all
     Navigate To Sign Up
-    Enter Dynamic Email And Password     Arber    ${USER_06}      # hotmail.com
+    Enter Dynamic Email And Password     Arber    ${USER_06}
+    Sleep  5s
     Tick The Checkbox   Please send me occasional
     Control If Page Contains    Well done
     Verify If Tick Is Visible     SignUp_Valid_Email
