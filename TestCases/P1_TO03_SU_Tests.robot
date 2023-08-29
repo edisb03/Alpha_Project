@@ -13,7 +13,7 @@ P1_TO03_TC01 Navigate To Sign Up
     [Tags]    P1TO03_TC01     exploratory
     Accept Cookies    Accept all
     Navigate To Sign Up
-    Navigate To TestBench Logo
+    Navigate To TestBench Logo   The Smart Test Management Tool
 
 P1_TO03_TC02 Register to Sign Up with Valid Email And Valid Password Without Checkbox
     [Documentation]    This Test Case check for valid email,
