@@ -13,7 +13,7 @@ P1_TO02_LN_TC01 Navigate To Log In
     [Tags]    P1TO02_TC01    exploratory
     Accept Cookies    Accept all
     Navigate To Login
-    Navigate To TestBench Logo
+    Navigate To TestBench Logo    The Smart Test Management Tool
 
 P1_TO02_LN_TC02 Valid Credentials Of Registered User
     [Documentation]    In this test case is tested if a registered user can fulfill the login form
