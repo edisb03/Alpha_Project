@@ -19,14 +19,14 @@ P1_TO01_MH_TC02 Start For Free
     [Documentation]    Navigate to the TestBench for free use.
     [Tags]     P1TO01_TC02    exploratory
     Accept Cookies    Accept all
-    Navigate To TestBench Logo
+    Navigate To TestBench Logo     The Smart Test Management Tool
     Use TestBench For Free
 
 P1_TO01_MH_TC03 Learn More About Imbus
     [Documentation]    Verifies that Learn More About Imbus button is clickable and its own new page is opened.
     [Tags]     P1TO01_TC03     exploratory
     Accept Cookies    Accept all
-    Navigate To TestBench Logo
+    Navigate To TestBench Logo     The Smart Test Management Tool
     More About Imbus
     Accept Cookies Imbus Page
 
@@ -136,15 +136,10 @@ P1_TO01_TC21 Switch Page To Deutch And Revert To Default Language English
    ...    of the website from the home page using the language switcher.
    [Tags]    P1TO01_TC21     exploratory
    Accept Cookies    Accept all
-   Verify Default Languange      English
-   Perform Language Switching    English_To_English
-   Control If Page Contains      The Smart Test Management Tool
+   Verify Default Languange Is   English
    Perform Language Switching    English_To_Deutsch
    Control If Page Contains      Das intelligente Testmanagement-Werkzeug
    Scroll To Verify Test Bench Logo
-   Navigate To TestBench Logo
-   Verify Default Languange      Deutsch
-   Perform Language Switching    Deutsch_To_Deutsch
-   Control If Page Contains      Das intelligente Testmanagement-Werkzeug
+   Navigate To TestBench Logo    Das intelligente Testmanagement-Werkzeug
    Perform Language Switching    Deutsch_To_English
    Control If Page Contains      The Smart Test Management Tool

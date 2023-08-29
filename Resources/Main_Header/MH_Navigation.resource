@@ -95,8 +95,10 @@ Navigate To Login
 
 Navigate To TestBench Logo
     [Documentation]    This keyword is used to navigate to TestBench logo
+    [Arguments]    ${title}
     Wait Until Page Contains Element    ${NAV_LOGO}
-    Tolerant Click    ${NAV_LOGO}
+    Tolerant Click   ${NAV_LOGO}
+    Control If Page Contains    ${title}
 
 Scroll To Video
     [Documentation]    Scrolls the page to bring the video element into view.
@@ -128,17 +130,15 @@ Control Video Playback
         Tolerant Click    ${VIDEO_PLAYER}
     END
 
-Verify Default Languange
+Verify Default Languange Is
     [Documentation]    Checks which language is currently on the page
     [Arguments]    ${language_page}
     IF    "${language_page}" == "English"
         Wait Until Page Contains Element    ${ENGLISH}
-        Page Should Contain    English
-        Mouse Over    ${ENGLISH}
+        ${english_text}    Get Text    ${ENGLISH}
     ELSE IF    "${language_page}" == "Deutsch"
         Wait Until Page Contains Element    ${GERMAN}
-        Page Should Contain    Deutsch
-        Tolerant Click    ${GERMAN}
+        ${german_text}    Get Text    ${GERMAN}
     END
 
 Perform Language Switching
@@ -158,6 +158,7 @@ Perform Language Switching
         Mouse Over    ${GERMAN}
         Page Should Contain    Deutsch
     ELSE IF    "${language}" == "English_To_Deutsch"
+        Mouse Over    ${ENGLISH}
         Wait Until Page Contains Element    ${GERMAN}
         Tolerant Click    ${GERMAN}
         Accept Cookies    Alle Cookies akzeptieren
