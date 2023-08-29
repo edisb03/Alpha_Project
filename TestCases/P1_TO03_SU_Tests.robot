@@ -23,6 +23,7 @@ P1_TO03_TC02 Register to Sign Up with Valid Email And Valid Password Without Che
     Accept Cookies    Accept all
     Navigate To Sign Up
     Enter Dynamic Email And Password     Arber    ${USER_06}      # hotmail.com
+    Tick The Checkbox   Please send me occasional
     Control If Page Contains    Well done
     Verify If Tick Is Visible     SignUp_Valid_Email
     Verify If Tick Is Visible     SignUp_Valid_Password
@@ -62,6 +63,7 @@ P1_TO03_TC05 Register to Sign Up with Valid Email And Valid Password With Checkb
     Accept Cookies    Accept all
     Navigate To Sign Up
     Enter Dynamic Email And Password     Arber    ${USER_06}      # hotmail.com
+    Tick The Checkbox   Please send me occasional
     Control If Page Contains    Well done
     Verify If Tick Is Visible     SignUp_Valid_Email
     Verify If Tick Is Visible     SignUp_Valid_Password
