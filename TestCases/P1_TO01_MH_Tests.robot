@@ -99,7 +99,7 @@ P1TO01_TC11 Validate Video Exploratory Testing
     Accept Cookies    Accept all
     Navigate To Test Approaches
     Search Links By Name    Exploratory Testing
-    Scroll To Video   The Right Tool – For the Right Job
+    Scroll To Video   The Right Tool
     Control Video Playback   Play_video
     Sleep    0.1min
     Control Video Playback   Pause_Video
