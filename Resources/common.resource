@@ -33,7 +33,7 @@ Accept Cookies
     END
 
 Tick The Checkbox
-    [Documentation]    Waits until the specified checkbox element is present on the page.
+    [Documentation]    Waits until the specified checkbox element is present on the page
     ...    Once the checkbox is visible, it's clicked to select it.
     [Arguments]    ${tick_checkbox}
     Wait Until Page Contains Element    ${CHECKBOX}
