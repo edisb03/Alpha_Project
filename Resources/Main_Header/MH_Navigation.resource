@@ -157,6 +157,7 @@ Perform Language Switching
         Wait Until Page Contains Element    ${GERMAN}
         Mouse Over    ${GERMAN}
         Page Should Contain    Deutsch
+        Tolerant Click    ${GERMAN}
     ELSE IF    "${language}" == "English_To_Deutsch"
         Mouse Over    ${ENGLISH}
         Wait Until Page Contains Element    ${GERMAN}

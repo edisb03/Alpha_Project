@@ -15,4 +15,3 @@ Resource            Main_Header/Resources.resource
 Resource            Main_Header/HomePage.resource
 Resource            ../Resources/TestBench_Resources/Sign_Up.resource
 ### Python files resources
-Library            ../Resources/python.configuration/test.py
