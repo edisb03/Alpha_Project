@@ -126,15 +126,14 @@ P1_TO01_MH_TC14 Navigate As A Project Manager
 
 P1_TO01_MH_TC15 Navigate As A Tester
     [Documentation]    Validates if the As A Test Manager Button is enabled, validate all it elements,
-    ...    and verify new page content.
+    ...    and verify new page content...
     [Tags]    P1TO01_TC15     exploratory
     Accept Cookies    Accept all
     Navigate To Your Personal TestBench Benefit    Tester
 
 P1_TO01_TC21 Switch Page To Deutch And Revert To Default Language English
    [Documentation]  Verify that users can navigate to the Deutsch version,
-   ...    of the website from the home page using the language switcher.
-   [Tags]    P1TO01_TC21     exploratory
+   ...    of the website from the home page using the language switcher...
    Accept Cookies    Accept all
    Verify Default Languange Is   English
    Perform Language Switching    English_To_Deutsch
