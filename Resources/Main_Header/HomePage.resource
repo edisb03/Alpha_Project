@@ -56,7 +56,7 @@ Control If Page Contains
     [Documentation]    Check If Page Contains Text.
     [Arguments]    ${teksti}
     Wait Until Keyword Succeeds    3x    1s    Page Should Contain    ${teksti}
-
+    
 Navigate To Card
     [Documentation]    Verifies if all the links works properly.
     [Arguments]    ${card_links}
@@ -125,3 +125,21 @@ Navigate To Your Personal TestBench Benefit
         Click Element    ${TEST_DESIGN_LINK}
         Page Should Contain    Test Design
     END
+
+Check Test Bench Service Cards
+    [Documentation]     Checks and clicks all cards available in the fist page of Test Bench..
+    Navigate To Card    Requirements Management
+    Go Back
+    Navigate To Card    Test Management
+    Go Back
+    Navigate To Card    Test Design
+    Go Back
+    Navigate To Card    Test Execution
+    Go Back
+    Navigate To Card    Test Automation
+    Go Back
+    Navigate To Card    Team Collaboration
+    Go Back
+    Navigate To Card    Tool Customization
+    Go Back
+    Navigate To Card    Tool Integration
