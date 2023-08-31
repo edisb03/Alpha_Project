@@ -14,4 +14,7 @@ Resource            Main_Header/Features.resource
 Resource            Main_Header/Resources.resource
 Resource            Main_Header/HomePage.resource
 Resource            ../Resources/TestBench_Resources/Sign_Up.resource
+Library             ../API/Test_Api_Status.py
+Library             ../API/Api_Responve.py
+
 ### Python files resources
