@@ -18,3 +18,4 @@ pabot_results/
 # Ignore robot_stdout.out
 robot_stdout.out
 robot_stderr.out
+.pabotsuitenames
