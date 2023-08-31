@@ -19,3 +19,4 @@ pabot_results/
 robot_stdout.out
 robot_stderr.out
 .pabotsuitenames
+Performance/MainHeader2/.pabotsuitenames
