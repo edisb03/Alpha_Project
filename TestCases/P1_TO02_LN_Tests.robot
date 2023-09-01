@@ -58,10 +58,22 @@ P1TO02_TC05 Empty Email And Password
     Navigate To Login
     Check Button State And Sign-Up/Log-In    Log_in_Disabled
 
+P1TO02_TC06 Account Lockout After Multiple Failed Attempts
+    [Documentation]    In this test case is tested if an error message is shown after filling the Login form
+    ...    with incorrect credentials and the user can click the checkbox Forgot my password.
+    [Tags]    P1TO02_TC06    exploratory
+    Accept Cookies    Accept all
+    Navigate To Login
+    Enter Email And Password    &{USER_05}
+    Verify If Tick Is Visible   Login_Valid_Email
+    Check Button State And Sign-Up/Log-In    Log_in_Enabled
+    Control If Page Contains    Log in failed. Please check your credentials.
+    Verify And Click Forgot Your Password
+
 P1_TO02_LN_TC08 Translate Login Page To Deutsch (German)
     [Documentation]    In this test case is tested if login page is translated correctly from English to German
     ...    and works correct in each language.
-    [Tags]    P1TO02_TC09    exploratory
+    [Tags]    P1TO02_TC08    exploratory
     Accept Cookies    Accept all
     Navigate To Login
     Verify Default Languange Is    English

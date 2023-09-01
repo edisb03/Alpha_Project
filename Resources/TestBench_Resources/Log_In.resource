@@ -18,6 +18,7 @@ ${SIGN_UP_BUTTON}       //button[@class='button button--primary']
 ${EMAIL_LABEL_ENG}      //div[@id="logIn"]//label[contains(text(), 'Email')]
 ${PASSWORD_LABEL_ENG}   //div[@id="logIn"]//label[contains(text(), 'Password')]
 ${LN_SIGN_UP_BUTTON}    //div[@class='cta space-between']//a[contains(@href, '/sign-up/')]
+${FORGOT_PASSWORD}      //a[contains(@href, '/log-in/#/password-forgot')]
 ### Login labels and buttons in German language  ###
 ${EMAIL_LABEL_GER}      //div[@id="logIn"]//label[contains(text(), 'E-Mail')]
 ${PASSWORD_LABEL_GER}   //div[@id="logIn"]//label[contains(text(), 'Passwort')]
@@ -78,4 +79,30 @@ Verify Login Form Is In
         Wait Until Page Contains Element    ${SIGN_UP_OR_LOGIN_BUTTON}
         Element Should Be Visible    ${SIGN_UP_OR_LOGIN_BUTTON}
         Element Should Be Visible    ${LN_ANMELDEN_BUTTON}
+    END
+
+Verify And Click Forgot Your Password
+    [Documentation]    This keyword verify if "Forgot your password" is shown in the Login form and can be clicked.
+    Wait Until Element Is Visible    ${FORGOT_PASSWORD}
+    Click Element    ${FORGOT_PASSWORD}
+    Wait Until Page Contains    Don’t Worry, We Got You!
+    Wait Until Element Is Visible    ${SIGN_UP_OR_LOGIN_BUTTON}
+    Element Should Be Disabled    ${SIGN_UP_OR_LOGIN_BUTTON}
+
+Check Reset Password Availability
+    [Documentation]    Keyword is used to check the state of a button and perform actions accordingly.
+    ...    The keyword checks if the button is disabled or enabled to click, and takes actions
+    ...    based on the button state.
+    [Arguments]    ${button_available}
+    ${status}=    Run Keyword And Return Status    Element Should Be Enabled    ${SIGN_UP_OR_LOGIN_BUTTON}
+    Wait Until Element Is Visible    ${NAV_LOGO}
+    IF    '${button_available}' == 'Reset_Password_Enabled'
+        Wait Until Page Contains Element    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Element Should Be Visible    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Click Button    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Log    Reset password button is enabled and clickable
+    ELSE IF    '${button_available}' == 'Reset_Password_Disabled'
+        IF    ${status} == False
+            Log    Reset password button is disabled and not clickable
+        END
     END
