@@ -47,5 +47,6 @@ def emri_api_status():
     else:
         print("API Response Status Code: Unknown Status")
 
+
 # Call the function directly
 emri_api_status()

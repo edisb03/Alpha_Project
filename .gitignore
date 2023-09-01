@@ -13,6 +13,3 @@ logs
 # Python cache
 **/__pycache__
 **/**.pyc
-robot_stdout.out
-robot_stderr.out
-.pabotsuitenames
