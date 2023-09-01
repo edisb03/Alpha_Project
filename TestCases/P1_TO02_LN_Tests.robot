@@ -58,6 +58,19 @@ P1TO02_TC05 Empty Email And Password
     Navigate To Login
     Check Button State And Sign-Up/Log-In    Log_in_Disabled
 
+P1_TO02_LN_TC08 Translate Login Page To Deutsch (German)
+    [Documentation]    In this test case is tested if login page is translated correctly from English to German 
+    ...    and works correct in each language.
+    [Tags]    P1TO02_TC09    exploratory
+    Accept Cookies    Accept all
+    Navigate To Login
+    Verify Default Languange Is    English
+    Control If Page Contains       Enter your details below
+    Perform Language Switching     English_To_Deutsch
+    Control If Page Contains       Einloggen um loszulegen
+    Verify Login Form Is In    Deutsch
+    Enter Email And Password    &{USER_02}
+
 P1_TO02_LN_TC09 Valid Credentials Of Not Registered User
     [Documentation]    In this test case is tested if not registered user can fullfill login form
     ...    with his valid credentials and the Login button is enabled...

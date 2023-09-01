@@ -14,6 +14,14 @@ ${LOGIN_PAGE_TITLE}     //div[@class='box-inner box-inner--right']//div[@id='log
 ${SU_PASSWORD}          //input[@name='password']
 ${SU_EMAIL}             //input[@type='text']
 ${SIGN_UP_BUTTON}       //button[@class='button button--primary']
+### Login labels and buttons in English language  ###
+${EMAIL_LABEL_ENG}      //div[@id="logIn"]//label[contains(text(), 'Email')]
+${PASSWORD_LABEL_ENG}   //div[@id="logIn"]//label[contains(text(), 'Password')]
+${LN_SIGN_UP_BUTTON}    //div[@class='cta space-between']//a[contains(@href, '/sign-up/')]
+### Login labels and buttons in German language  ###
+${EMAIL_LABEL_GER}      //div[@id="logIn"]//label[contains(text(), 'E-Mail')]
+${PASSWORD_LABEL_GER}   //div[@id="logIn"]//label[contains(text(), 'Passwort')]
+${LN_ANMELDEN_BUTTON}   //div[@class='cta space-between']//a[contains(@href, '/de/sign-up/')]
 
 ### Users ###
 # &{USER_01} Registered user with valid credentials
@@ -53,3 +61,21 @@ Enter Dynamic Email And Password
     ${dynamic_password}=    Catenate     ${low_case}${uppercase_letter}${lowercase_letter}${digit}${special_char}@_
     Input Text    ${SU_EMAIL}       ${email}
     Input Text    ${SU_PASSWORD}    ${dynamic_password}
+
+Verify Login Form Is In
+    [Documentation]    This keyword checks the Log in form language
+    [Arguments]    ${language}
+    Set Selenium Speed    0.3
+    IF    "${language}" == "English"
+        Page Should Contain Element    ${EMAIL_LABEL_ENG}
+        Page Should Contain Element    ${PASSWORD_LABEL_ENG}
+        Wait Until Page Contains Element    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Element Should Be Visible    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Element Should Be Visible    ${LN_SIGN_UP_BUTTON}
+    ELSE IF    "${language}" == "Deutsch"
+        Page Should Contain Element    ${EMAIL_LABEL_GER}
+        Page Should Contain Element    ${PASSWORD_LABEL_GER}
+        Wait Until Page Contains Element    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Element Should Be Visible    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Element Should Be Visible    ${LN_ANMELDEN_BUTTON}
+    END
