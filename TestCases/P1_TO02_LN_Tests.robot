@@ -59,7 +59,7 @@ P1TO02_TC05 Empty Email And Password
     Check Button State And Sign-Up/Log-In    Log_in_Disabled
 
 P1_TO02_LN_TC08 Translate Login Page To Deutsch (German)
-    [Documentation]    In this test case is tested if login page is translated correctly from English to German 
+    [Documentation]    In this test case is tested if login page is translated correctly from English to German
     ...    and works correct in each language.
     [Tags]    P1TO02_TC09    exploratory
     Accept Cookies    Accept all
