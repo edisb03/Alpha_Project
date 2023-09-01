@@ -79,20 +79,3 @@ Validate Title
 Verify Main Header
     [Documentation]    Checks if the main header exits
     Wait Until Page Contains Element    ${MAIN_HEADER}
-
-Test Api
-    [Documentation]    Checks the status codes
-    ${status}    check_api_status
-    IF  ${status} == 200
-        Succesfull Results
-    ELSE
-        Not Succesfull Results
-    END
-
-Succesfull Results
-    [Documentation]    Message should be 200
-    Log    API Response Status Code is 200
-
-Not Succesfull Results
-    [Documentation]    Message its not 200 value
-    Log    API Response Status Code is not 200
