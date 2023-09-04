@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation       Main Header Section    ...
 
-Resource            ../../Resources/import.resource
+Resource            ..//Resources/import.resource
 
 
 *** Test Cases ***
