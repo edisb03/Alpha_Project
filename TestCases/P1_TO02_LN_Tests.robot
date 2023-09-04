@@ -80,7 +80,7 @@ P1TO02_TC07 Forgot Password Reset Password Flow
     Enter Email And Password    &{USER_05}
     Verify If Tick Is Visible    Login_Valid_Email
     Check Button State And Sign-Up/Log-In    Log_in_Enabled
-    Control If Page Contains    Log in failed. Please check your credentials.
+    Control If Login/SignUp Page Contains    Log in failed. Please check your credentials.
     Verify And Click Forgot Your Password
     Enter The Email    agnesaa_m@hotmail.com
     Verify If Tick Is Visible    SignUp_Valid_Email
@@ -94,9 +94,9 @@ P1_TO02_LN_TC08 Translate Login Page To Deutsch
     Accept Cookies
     Navigate To Login
     Verify Default Languange Is    English
-    Control If Page Contains    Enter your details below
+    Control If Login/SignUp Page Contains    Enter your details below
     Perform Language Switching    English_To_Deutsch
-    Control If Page Contains    Einloggen um loszulegen
+    Control If Login/SignUp Page Contains    Einloggen um loszulegen
     Check The Login Form Is As According Language    Deutsch
     Enter Email And Password    &{USER_02}
 

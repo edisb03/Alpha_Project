@@ -38,6 +38,13 @@ ${SUBTITLE_TESTBENCH}           //h3[contains(text(), 'What You Can Do With Test
 ${WELL_DONE_STATUS}             //div[contains(@class, 'checklist')]//p[contains(@class, 'msg--success')]
 ${EMAIL_ALEADY_EXIST}           //p[contains(@class, 'msg--error')]
 ${CHECK_YOUR_EMAIL}             ////h3[contains(@class, 'h2')]
+${ENTER_YOUR_DETAILS_BELOW}     //div[contains(@class, 'overline')]
+
+
+# MH_STATUS
+${EXPLORE_LERAN...TITLE}        //h2[contains(@class, 'h1')]
+${BLOG_PAGE_TITLE}        //h2[contains(@class, 'h2')]
+
 
 *** Keywords ***
 Use TestBench For Free
@@ -66,7 +73,11 @@ Control If Login/SignUp Page Contains
     ELSE IF    "${status}" == "Email already exists"
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${EMAIL_ALEADY_EXIST}
     ELSE IF    "${status}" == "Check Your Email"
-        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${CHECK_YOUR_EMAIL}   
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${CHECK_YOUR_EMAIL}
+    ELSE IF    "${status}" == "Log in failed. Please check your credentials"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${EMAIL_ALEADY_EXIST} 
+    ELSE IF    "${status}" == "Enter your details below"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${ENTER_YOUR_DETAILS_BELOW}
     ELSE
         Fail    Unexpected status: ${status}
     END
