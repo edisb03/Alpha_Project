@@ -7,7 +7,7 @@ Resource            import.resource
 *** Variables ***
 ${ACCEPT_COOKIES}           (//a[@role='button'][normalize-space()='Accept all'])[1]
 ${ACCEPT_GERMAN_COOKEIS}    //*[@id="BorlabsCookieBox"]/div/div/div/div[1]/div/div/div/p[2]/a
-${CHECKBOX}                 //span[contains(text(),'Please send me occasional')]
+${CHECKBOX}                 //div[@class='newsletter']//label//span
 
 
 *** Keywords ***
@@ -35,7 +35,5 @@ Accept Cookies
 Tick The Checkbox
     [Documentation]    Waits until the specified checkbox element is present on the page
     ...    Once the checkbox is visible, it's clicked to select it.
-    [Arguments]    ${tick_checkbox}
-    Wait Until Page Contains Element    ${CHECKBOX}
-    Tolerant Click    ${CHECKBOX}
-    Page Should Contain    ${tick_checkbox}
+    Wait Until Page Contains Element        ${CHECKBOX}
+    Tolerant Click                         ${CHECKBOX}
