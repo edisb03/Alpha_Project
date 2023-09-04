@@ -4,7 +4,7 @@ Documentation       Keywords for Navigation
 Resource            ../import.resource
 
 *** Variables ***
-${NAV_FEATURES}                         //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/features/')]
+${NAV_FEATURES}                         (//a[contains(@href, 'https://www.testbench.com')])[2]
 ${NAV_TEST_APPROACHES}                  //a[@href="#"]
 ### Locators for Test Approaches Links ###
 ${NAV_EXPLOTARY_TESTING}                //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[1]/a[1]
@@ -13,9 +13,9 @@ ${NAV_KEYWORD-DRIVEN_TESTING}           //header/nav[1]/div[1]/div[1]/ul[1]/li[2
 ### Main Header Locators ###
 ${NAV_BLOG}                             //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/blog/')]
 ${NAV_RESOURCES}                        //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/resources')]
-${LOGIN_BUTTON}                         /div[@class='wrapper']//li[5]
+${LOGIN_BUTTON}                         (//a[contains(@href, 'https://www.testbench.com')])[8]
 ${LOGIN_PAGE_TITLE}                     //div[@class='box-inner box-inner--right']//div[@id='logIn']//div[@class='overline']
-${NAV_SIGN_UP}                          //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/sign-up/')]
+${NAV_SIGN_UP}                          (//a[contains(@href, 'https://www.testbench.com')])[9]
 ${NAV_LOGO}                             (//header[contains(@class, 'mainHeader')]//a//img[contains(@class, 'logo-image')])[1]
 ${GER_COOKIES}                          //div[contains(@class, 'container')]//p//a[contains(text(), 'Alle Cookies akzeptieren')][1]
 ${MAIN_HEADER}                          (//ul[contains(@class, "menu")])[1]
