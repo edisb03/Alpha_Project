@@ -3,6 +3,7 @@ Documentation       Home Page elements
 
 Resource            ../import.resource
 
+
 *** Variables ***
 ### Locators for boxes ###
 ${BTN_TEST_MANAGER}             //div[contains (@class, 'tabs')]//a[contains(@class, 'button button--tab hovered')]
@@ -34,8 +35,7 @@ ${TOOL_INTEGRATION}             //h3[contains(text(), 'Tool Integration')]
 ${SUBTITLE_TESTBENCH}           //h3[contains(text(), 'What You Can Do With TestBench')]
 
 # Status
-${WELL_DONE_STATUS}            //div[contains(@class, 'checklist')]//p[contains(@class, 'msg--success')]
-
+${WELL_DONE_STATUS}             //div[contains(@class, 'checklist')]//p[contains(@class, 'msg--success')]
 
 *** Keywords ***
 Use TestBench For Free
@@ -60,11 +60,11 @@ Control If Page Contains
     [Documentation]    Check If Page Contains Text.
     [Arguments]    ${status}
     IF    "${status}" == "Well done"
-        Wait Until Keyword Succeeds    3x    1s    Page Should Contain    ${WELL_DONE_STATUS}
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${WELL_DONE_STATUS}
     ELSE IF    "${status}" == "not defined"
         No Operation
     END
-    
+
 Navigate To Card
     [Documentation]    Verifies if all the links works properly.
     [Arguments]    ${card_links}
@@ -135,7 +135,7 @@ Navigate To Your Personal TestBench Benefit
     END
 
 Check Test Bench Service Cards
-    [Documentation]     Checks and clicks all cards available in the fist page of Test Bench..
+    [Documentation]    Checks and clicks all cards available in the fist page of Test Bench..
     Navigate To Card    Requirements Management
     Go Back
     Navigate To Card    Test Management
