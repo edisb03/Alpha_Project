@@ -68,7 +68,7 @@ Enter Dynamic Email And Password
     Input Text    ${SU_EMAIL}       ${email}
     Input Text    ${SU_PASSWORD}    ${dynamic_password}
 
-Verify Login Form Is In
+Check The Login Form Is As According Language
     [Documentation]    This keyword checks the Log in form language
     [Arguments]    ${language}
     Set Selenium Speed    0.3
