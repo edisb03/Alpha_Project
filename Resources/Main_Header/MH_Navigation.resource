@@ -89,7 +89,7 @@ Navigate To Login
     [Documentation]    This keyword is used to navigate to Sign Up.
     Wait Until Page Contains Element    ${NAV_SIGN_UP}
     Click Element    ${NAV_SIGN_UP}
-    Wait Until Page Contains Element    ${FIRST_HEADER}
+    Wait Until Page Contains Element    //h3[@class='h2']
 
 Navigate To TestBench Logo
     [Documentation]    This keyword is used to navigate to TestBench logo

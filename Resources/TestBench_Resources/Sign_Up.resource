@@ -8,11 +8,11 @@ Resource            ../import.resource
 ### SU - SIGN UP
 ${SU_EMAIL}                     //input[@type='text']
 ${SU_PASSWORD}                  //input[@name='password']
-${SIGN_IN_TICK}                 //input[contains(@class, 'success')]//..//label[contains(text(), 'Email')]
-${PASSWORD_TICK_VERIFY}         //input[contains(@class, 'success')]//..//..//label[contains(text(),'Password')]
+${SIGN_IN_TICK}                 //input[@type='text']
+${PASSWORD_TICK_VERIFY}         //input[@name='password']
 ${INVALID_PASSWORD}             //div[@class='pw-check']
 ${SIGN_UP_OR_LOGIN_BUTTON}      //button[@class='button button--primary']
-${DISABLED_BUTTON}              //button[contains(text(),'Sign Up')]
+${DISABLED_BUTTON}              //button[@disabled='disabled']
 ${LOG_IN_TICK}                  //input[@class='success update']
 
 

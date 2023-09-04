@@ -45,7 +45,6 @@ ${USER_2}               agnesa@hotmail.com      ### Not Registered user in the t
 ${USER_3}               agnesa                  ### Invalid Email
 
 
-
 *** Keywords ***
 Enter Dynamic Email And Password
     [Documentation]    Generates a random email and password for test purposes..
