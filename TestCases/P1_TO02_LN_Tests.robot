@@ -71,6 +71,23 @@ P1TO02_TC06 Account Lockout After Multiple Failed Attempts
     Verify And Click Forgot Your Password
     Check Reset Password Availability    Reset_Password_Disabled
 
+P1TO02_TC07 Forgot Password - Reset Password Flow
+    [Documentation]    In this test case is tested if an error message is shown after filling the Login form
+    ...    with incorrect credentials and the user can click the checkbox Forgot my password.
+    ...    Then enter the email and checks the if Reset Password is enable and clickable.
+    [Tags]    P1TO02_TC07    exploratory
+    Accept Cookies    Accept all
+    Navigate To Login
+    Enter Email And Password    &{USER_05}
+    Verify If Tick Is Visible   Login_Valid_Email
+    Check Button State And Sign-Up/Log-In    Log_in_Enabled
+    Control If Page Contains    Log in failed. Please check your credentials.
+    Verify And Click Forgot Your Password
+    Enter The Email    agnesaa_m@hotmail.com
+    Verify If Tick Is Visible    SignUp_Valid_Email
+    Check Reset Password Availability    Reset_Password_Enabled
+    Navigate To TestBench Logo    The Smart Test Management Tool
+
 P1_TO02_LN_TC08 Translate Login Page To Deutsch (German)
     [Documentation]    In this test case is tested if login page is translated correctly from English to German
     ...    and works correct in each language.
