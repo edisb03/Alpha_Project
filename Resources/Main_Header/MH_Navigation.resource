@@ -3,7 +3,6 @@ Documentation       Keywords for Navigation
 
 Resource            ../import.resource
 
-
 *** Variables ***
 ${NAV_FEATURES}                         //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/features/')]
 ${NAV_TEST_APPROACHES}                  //a[@href="#"]
@@ -31,7 +30,6 @@ ${DROP_DOWN_LIST}                       (//span[@lang='en'][normalize-space()='E
 ${ENGLISH}                              (//span[@lang='en'][normalize-space()='English'])[1]
 ${GERMAN}                               (//span[@lang='de'][normalize-space()='Deutsch'])[1]
 ${FOOTER_TB_LOGO}                       (//img[@alt='TestBench'])[3]
-
 
 *** Keywords ***
 Navigate To Features
@@ -91,14 +89,13 @@ Navigate To Login
     [Documentation]    This keyword is used to navigate to Sign Up.
     Wait Until Page Contains Element    ${NAV_SIGN_UP}
     Click Element    ${NAV_SIGN_UP}
-    Wait Until Page Contains Element    ${FIRST_HEADER} 
+    Wait Until Page Contains Element    ${FIRST_HEADER}
 
 Navigate To TestBench Logo
     [Documentation]    This keyword is used to navigate to TestBench logo
-    [Arguments]    ${title}
     Wait Until Page Contains Element    ${NAV_LOGO}
-    Tolerant Click   ${NAV_LOGO}
-    Control If Page Contains    ${title}
+    Tolerant Click    ${NAV_LOGO}
+    Wait Until Page Contains Element    ${FIRST_HEADER}
 
 Scroll To Video
     [Documentation]    Scrolls the page to bring the video element into view.
