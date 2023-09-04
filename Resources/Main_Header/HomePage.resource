@@ -19,7 +19,7 @@ ${BTN_TESTER}                   //div[contains (@class, 'tabs')]//a[contains(tex
 ${TESTER_QUOTE}                 //p[contains (text(), 'structured test procedures, checklists, automated test scripts, or exploratory testing.“')]
 ${TEST_DESIGN_LINK}             //div[contains (@class, 'box')]//a[contains(text(), 'Learn more about Test Design')]
 ### Locators for homepage ###
-${START_FOR_FREE}               //a[contains(text(), 'Start for Free')]
+${START_FOR_FREE}               (//div[contains(@class, 'cta')]//a[contains(@href, 'https://www.testbench.com/')])[1]
 ${LEARN_MORE_ABOUT_IMBUS}       //a[contains(text(), 'Learn More About imbus')]
 ${IMBUS_LOGO}                   //div[@id='logo']//a[contains(text(), 'imbus AG')]
 ${ACCEPT_COOKIES_IMBUS}         //div[@id='cookieconsent:body']//a[contains(text(), 'allow all cookies ')]
