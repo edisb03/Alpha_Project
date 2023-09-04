@@ -23,11 +23,11 @@ P1_TO03_TC02 Register to Sign Up with Valid Email And Valid Password Without Che
     Navigate To Sign Up
     Enter Dynamic Email And Password    Arber    ${USER_06}    # hotmail.com
     Tick The Checkbox
-    Control If Page Contains    Well done
+    Control If Login/SignUp Page Contains    Well done
     Verify If Tick Is Visible    SignUp_Valid_Email
     Verify If Tick Is Visible    SignUp_Valid_Password
     Check Button State And Sign-Up/Log-In    Sign_up_Enabled
-    Control If Page Contains    Check Your Email
+    Control If Login/SignUp Page Contains    Check Your Email
 
 P1_TO03_TC03 Register To Sign Up With Registered Email
     [Documentation]    This Test Case verifies the behavior of the 'Sign up' process on test bench website
@@ -36,8 +36,8 @@ P1_TO03_TC03 Register To Sign Up With Registered Email
     Accept Cookies
     Navigate To Sign Up
     Enter Email And Password    &{USER_01}
-    Control If Page Contains    Email already exists.
-    Control If Page Contains    Well done
+    Control If Login/SignUp Page Contains    Email already exists.
+    Control If Login/SignUp Page Contains    Well done
     Verify If Tick Is Visible    SignUp_Valid_Email
     Verify If Tick Is Visible    SignUp_Valid_Password
     Check Button State And Sign-Up/Log-In    Sign_up_Disabled
@@ -64,11 +64,11 @@ P1_TO03_TC05 Register to Sign Up with Valid Email And Valid Password With Checkb
     Enter Dynamic Email And Password    Arber    ${USER_06}
     Sleep    5s
     Tick The Checkbox
-    Control If Page Contains    Well done
+    Control If Login/SignUp Page Contains    Well done
     Verify If Tick Is Visible    SignUp_Valid_Email
     Verify If Tick Is Visible    SignUp_Valid_Password
     Check Button State And Sign-Up/Log-In    Sign_up_Enabled
-    Control If Page Contains    Check Your Email
+    Control If Login/SignUp Page Contains    Check Your Email
 
 P1_TO03_TC06 Register To Sign Up With Invalid Email And Valid Password
     [Documentation]    This test case verifies the behavior of the "Sign Up" process on the test bench website

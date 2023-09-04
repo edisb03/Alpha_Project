@@ -36,6 +36,8 @@ ${SUBTITLE_TESTBENCH}           //h3[contains(text(), 'What You Can Do With Test
 
 # Status
 ${WELL_DONE_STATUS}             //div[contains(@class, 'checklist')]//p[contains(@class, 'msg--success')]
+${EMAIL_ALEADY_EXIST}           //p[contains(@class, 'msg--error')]
+${CHECK_YOUR_EMAIL}             ////h3[contains(@class, 'h2')]
 
 *** Keywords ***
 Use TestBench For Free
@@ -56,13 +58,17 @@ More About Imbus
     Click Element    ${LEARN_MORE_ABOUT_IMBUS}
     Wait Until Page Contains Element    ${IMBUS_LOGO}
 
-Control If Page Contains
+Control If Login/SignUp Page Contains
     [Documentation]    Check If Page Contains Text.
     [Arguments]    ${status}
     IF    "${status}" == "Well done"
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${WELL_DONE_STATUS}
-    ELSE IF    "${status}" == "not defined"
-        No Operation
+    ELSE IF    "${status}" == "Email already exists"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${EMAIL_ALEADY_EXIST}
+    ELSE IF    "${status}" == "Check Your Email"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${CHECK_YOUR_EMAIL}   
+    ELSE
+        Fail    Unexpected status: ${status}
     END
 
 Navigate To Card
