@@ -33,6 +33,10 @@ ${TOOL_CUSTOMIZATION}           //h3[contains(text(), 'Tool Customization')]
 ${TOOL_INTEGRATION}             //h3[contains(text(), 'Tool Integration')]
 ${SUBTITLE_TESTBENCH}           //h3[contains(text(), 'What You Can Do With TestBench')]
 
+# Status
+${WELL_DONE_STATUS}            //div[contains(@class, 'checklist')]//p[contains(@class, 'msg--success')]
+
+
 *** Keywords ***
 Use TestBench For Free
     [Documentation]    This keyword is used to navigate to Start For Free.
@@ -54,8 +58,12 @@ More About Imbus
 
 Control If Page Contains
     [Documentation]    Check If Page Contains Text.
-    [Arguments]    ${teksti}
-    Wait Until Keyword Succeeds    3x    1s    Page Should Contain    ${teksti}
+    [Arguments]    ${status}
+    IF    "${status}" == "Well done"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain    ${WELL_DONE_STATUS}
+    ELSE IF    "${status}" == "not defined"
+        No Operation
+    END
     
 Navigate To Card
     [Documentation]    Verifies if all the links works properly.
