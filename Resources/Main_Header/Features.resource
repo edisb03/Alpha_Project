@@ -97,7 +97,8 @@ Control If The MH Page Contains
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${BLOG_PAGE_TITLE}
     ELSE IF    "${status}" == "The Smart Test Management Tool"
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${FIRST_HEADER}
+    ELSE IF    "${status}" == "What You Can Do With TestBench"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${SUBTITLE_TESTBENCH}
     ELSE
         Fail    Unexpected status: ${status}
     END
-

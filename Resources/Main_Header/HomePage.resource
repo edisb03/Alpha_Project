@@ -24,15 +24,15 @@ ${LEARN_MORE_ABOUT_IMBUS}       //a[contains(text(), 'Learn More About imbus')]
 ${IMBUS_LOGO}                   //div[@id='logo']//a[contains(text(), 'imbus AG')]
 ${ACCEPT_COOKIES_IMBUS}         //div[@id='cookieconsent:body']//a[contains(text(), 'allow all cookies ')]
 ### Home Page Locators For Card ###
-${REQUIREMENTS_MANAGEMENT}      //h3[contains(text(), 'Requirements Management')]
-${TEST_MANAGEMENT}              //h3[contains(text(), 'Test Management')]
-${TEST_DESIGN}                  //h3[contains(text(), 'Test Design')]
-${TEST_EXECUTION}               //h3[contains(text(), 'Test Execution')]
-${TEST_AUTOMATION}              //h3[contains(text(), 'Test Automation')]
-${TEST_COLLABORATION}           //h3[contains(text(), 'Team Collaboration')]
-${TOOL_CUSTOMIZATION}           //h3[contains(text(), 'Tool Customization')]
-${TOOL_INTEGRATION}             //h3[contains(text(), 'Tool Integration')]
-${SUBTITLE_TESTBENCH}           //h3[contains(text(), 'What You Can Do With TestBench')]
+${REQUIREMENTS_MANAGEMENT}      (//div[@class='card-inner'])[1]
+${TEST_MANAGEMENT}              (//div[@class='card-inner'])[2]
+${TEST_DESIGN}                  (//div[@class='card-inner'])[3]
+${TEST_EXECUTION}               (//div[@class='card-inner'])[4]
+${TEST_AUTOMATION}              (//div[@class='card-inner'])[5]
+${TEST_COLLABORATION}           (//div[@class='card-inner'])[6]
+${TOOL_CUSTOMIZATION}           (//div[@class='card-inner'])[7]
+${TOOL_INTEGRATION}             (//div[@class='card-inner'])[8]
+${SUBTITLE_TESTBENCH}           //div[@class='flyntComponent componentSpacing themeLight']//h3[@class='h2']
 
 # Status
 ${WELL_DONE_STATUS}             //div[contains(@class, 'checklist')]//p[contains(@class, 'msg--success')]
@@ -81,9 +81,6 @@ Control If Login/SignUp Page Contains
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${ENTER_YOUR_DETAILS_BELOW}
     ELSE IF    "${status}" == "Welcome!"
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${ENTER_YOUR_DETAILS_BELOW}
-    
-    
-    //h2[contains(@class, 'h2')]
     ELSE
         Fail    Unexpected status: ${status}
     END

@@ -6,12 +6,13 @@ Resource            ..//Resources/import.resource
 Test Setup          Open Web Browser    # browser_type=headlesschrome
 Test Teardown       Close Browser
 
+
 *** Test Cases ***
 P1_TO01_MH_TC01 Verify Cards On Home Page
     [Documentation]    Navigate and Validate Cards On Home Page.
     [Tags]    p1to01_tc01    exploratory
     Accept Cookies
-    Control If The Page Contains    What You Can Do With TestBench
+    Control If The MH Page Contains    What You Can Do With TestBench
     Check Test Bench Service Cards
 
 P1_TO01_MH_TC02 Start For Free
