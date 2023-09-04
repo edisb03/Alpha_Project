@@ -69,6 +69,7 @@ P1TO02_TC06 Account Lockout After Multiple Failed Attempts
     Check Button State And Sign-Up/Log-In    Log_in_Enabled
     Control If Page Contains    Log in failed. Please check your credentials.
     Verify And Click Forgot Your Password
+    Check Reset Password Availability    Reset_Password_Disabled
 
 P1_TO02_LN_TC08 Translate Login Page To Deutsch (German)
     [Documentation]    In this test case is tested if login page is translated correctly from English to German
@@ -81,6 +82,7 @@ P1_TO02_LN_TC08 Translate Login Page To Deutsch (German)
     Perform Language Switching     English_To_Deutsch
     Control If Page Contains       Einloggen um loszulegen
     Verify Login Form Is In    Deutsch
+    Verify Default Languange Is    Deutsch
     Enter Email And Password    &{USER_02}
 
 P1_TO02_LN_TC09 Valid Credentials Of Not Registered User

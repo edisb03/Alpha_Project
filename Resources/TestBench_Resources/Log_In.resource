@@ -86,8 +86,6 @@ Verify And Click Forgot Your Password
     Wait Until Element Is Visible    ${FORGOT_PASSWORD}
     Click Element    ${FORGOT_PASSWORD}
     Wait Until Page Contains    Don’t Worry, We Got You!
-    Wait Until Element Is Visible    ${SIGN_UP_OR_LOGIN_BUTTON}
-    Element Should Be Disabled    ${SIGN_UP_OR_LOGIN_BUTTON}
 
 Check Reset Password Availability
     [Documentation]    Keyword is used to check the state of a button and perform actions accordingly.
