@@ -71,7 +71,6 @@ P1TO02_TC06 Account Lockout After Multiple Failed Attempts
     Verify And Click Forgot Your Password
     Check Reset Password Availability    Reset_Password_Disabled
 
-
 P1TO02_TC07 Forgot Password - Reset Password Flow
     [Documentation]    In this test case is tested if an error message is shown after filling the Login form
     ...    with incorrect credentials and the user can click the checkbox Forgot my password.
