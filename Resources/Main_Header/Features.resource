@@ -85,3 +85,19 @@ Try Data-Driven Testing
     Wait Until Element Is Visible    ${TRY_DATA-DRIVEN_TESTING}
     Click Element    ${TRY_DATA-DRIVEN_TESTING}
     Wait Until Page Contains    Get started with a free account
+
+Control If The MH Page Contains
+    [Documentation]    Navigate to Try Data-Driven Testing button
+    [Arguments]    ${status}
+    IF    "${status}" == "Explore. Learn. Create. Execute. Improve."
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${EXPLORE_LERAN...TITLE}
+    ELSE IF    "${status}" == "Let the Data Do All Your Testing"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${EXPLORE_LERAN...TITLE}
+    ELSE IF    "${status}" == "Welcome to the World of Testing"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${BLOG_PAGE_TITLE}
+    ELSE IF    "${status}" == "The Smart Test Management Tool"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${FIRST_HEADER}
+    ELSE
+        Fail    Unexpected status: ${status}
+    END
+

@@ -53,7 +53,7 @@ P1_TO01_MH_TC06 Verify Try Exploratory Testing
     Try Exploratory Testing
     Go Back
     Navigate To Learn More Exploratory Testing    Learn More
-    Control If The Page Contains    Explore. Learn. Create. Execute. Improve.
+    Control If The MH Page Contains   Explore. Learn. Create. Execute. Improve.
 
 P1_TO01_MH_TC07 Verify Try Data-Driven Testing
     [Documentation]    Verify Try Data-Driven Testing button.
@@ -63,7 +63,8 @@ P1_TO01_MH_TC07 Verify Try Data-Driven Testing
     Try Data-Driven Testing
     Go Back
     Navigate To Learn More Data Driven    Learn More
-    Control If The Page Contains    Let the Data Do All Your Testing
+    Control If The MH Page Contains
+    ...    Let the Data Do All Your Testing
 
 P1TO01_TC09 Navigate To Blog
     [Documentation]    User open web page of TestBench : www.testbanch.com and,
@@ -73,7 +74,7 @@ P1TO01_TC09 Navigate To Blog
     Set Selenium Speed    0.5
     Accept Cookies
     Navigate To Blog
-    Control If Page Contains    Welcome to the World of Testing
+    Control If The MH Page Contains    Welcome to the World of Testing
 
 P1_TO01_MH_TC10 Verify Test Approaches Links
     [Documentation]    Check if Test Approaches link are opened successfully and validate each content of links..
@@ -136,9 +137,9 @@ P1_TO01_TC21 Switch Page To Deutch And Revert To Default Language English
     Accept Cookies
     Verify Default Languange Is    English
     Perform Language Switching    English_To_Deutsch
-    Control If Page Contains    Das intelligente Testmanagement-Werkzeug
+    Control If The MH Page Contains     The Smart Test Management Tool
     Perform Language Switching    Deutsch_To_Deutsch
     Scroll To Verify Test Bench Logo
     Navigate To TestBench Logo
     Perform Language Switching    Deutsch_To_English
-    Control If Page Contains    The Smart Test Management Tool
+    Control If The MH Page Contains     The Smart Test Management Tool
