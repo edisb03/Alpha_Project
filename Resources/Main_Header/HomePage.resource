@@ -81,9 +81,6 @@ Control If Login/SignUp Page Contains
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${ENTER_YOUR_DETAILS_BELOW}
     ELSE IF    "${status}" == "Welcome!"
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${ENTER_YOUR_DETAILS_BELOW}
-    
-    
-    //h2[contains(@class, 'h2')]
     ELSE
         Fail    Unexpected status: ${status}
     END
