@@ -24,7 +24,7 @@ P1_TO02_LN_TC02 Valid Credentials Of Registered User
     Verify If Tick Is Visible    SignUp_Valid_Email
     Verify If Tick Is Visible    SignUp_Valid_Password
     Check Button State And Sign-Up/Log-In    Log_in_Enabled
-    Control If Page Contains    Welcome!
+    Control If Login/SignUp Page Contains    Welcome!
 
 P1TO02_TC03 Invalid Email Valid Password Failed Login
     [Documentation]    In this test case is tested if a registered user can fulfill the login form
@@ -36,7 +36,7 @@ P1TO02_TC03 Invalid Email Valid Password Failed Login
     Verify If Tick Is Visible    SignUp_Invalid_Email
     Verify If Tick Is Visible    SignUp_Valid_Password
     Check Button State And Sign-Up/Log-In    Log_in_Enabled
-    Control If Page Contains    Log in failed. Please check your credentials.
+    Control If Login/SignUp Page Contains   Log in failed. Please check your credentials.
 
 P1TO02_TC04 Valid Email Invalid Password Failed Login
     [Documentation]    In this test case is tested if a registered user can fulfill the login form
@@ -47,7 +47,7 @@ P1TO02_TC04 Valid Email Invalid Password Failed Login
     Enter Email And Password    &{USER_05}
     Verify If Tick Is Visible    Login_Valid_Email
     Check Button State And Sign-Up/Log-In    Log_in_Enabled
-    Control If Page Contains    Log in failed. Please check your credentials.
+    Control If Login/SignUp Page Contains    Log in failed. Please check your credentials.
 
 P1TO02_TC05 Empty Email And Password
     [Documentation]    In this test case user navigates to Log in and try,
@@ -66,7 +66,7 @@ P1TO02_TC06 Account Lockout After Multiple Failed Attempts
     Enter Email And Password    &{USER_05}
     Verify If Tick Is Visible    Login_Valid_Email
     Check Button State And Sign-Up/Log-In    Log_in_Enabled
-    Control If Page Contains    Log in failed. Please check your credentials.
+    Control If Login/SignUp Page Contains    Log in failed. Please check your credentials.
     Verify And Click Forgot Your Password
     Check Reset Password Availability    Reset_Password_Disabled
 
@@ -110,4 +110,4 @@ P1_TO02_LN_TC09 Valid Credentials Of Not Registered User
     Verify If Tick Is Visible    SignUp_Valid_Email
     Verify If Tick Is Visible    SignUp_Invalid_Password
     Check Button State And Sign-Up/Log-In    Log_in_Enabled
-    Control If Page Contains    Log in failed. Please check your credentials.
+    Control If Login/SignUp Page Contains    Log in failed. Please check your credentials.

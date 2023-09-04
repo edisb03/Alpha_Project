@@ -39,6 +39,7 @@ ${WELL_DONE_STATUS}             //div[contains(@class, 'checklist')]//p[contains
 ${EMAIL_ALEADY_EXIST}           //p[contains(@class, 'msg--error')]
 ${CHECK_YOUR_EMAIL}             ////h3[contains(@class, 'h2')]
 ${ENTER_YOUR_DETAILS_BELOW}     //div[contains(@class, 'overline')]
+${WELCOME}                      //h2[contains(@class, 'h2')]
 
 
 # MH_STATUS
@@ -78,6 +79,11 @@ Control If Login/SignUp Page Contains
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${EMAIL_ALEADY_EXIST} 
     ELSE IF    "${status}" == "Enter your details below"
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${ENTER_YOUR_DETAILS_BELOW}
+    ELSE IF    "${status}" == "Welcome!"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${ENTER_YOUR_DETAILS_BELOW}
+    
+    
+    //h2[contains(@class, 'h2')]
     ELSE
         Fail    Unexpected status: ${status}
     END
