@@ -162,7 +162,7 @@ Perform Language Switching
         Mouse Over    ${ENGLISH}
         Wait Until Page Contains Element    ${GERMAN}
         Tolerant Click    ${GERMAN}
-        Accept Cookies    Alle Cookies akzeptieren
+        Accept Cookies
     ELSE IF    "${language}" == "English_To_Deutsch"
         Element Should Not Be Visible    ${ACCEPT_GERMAN_COOKEIS}
     ELSE IF    "${language}" == "Deutsch_To_English"
