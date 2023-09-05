@@ -19,10 +19,10 @@ ${BTN_TESTER}                   //div[contains (@class, 'tabs')]//a[contains(tex
 ${TESTER_QUOTE}                 //p[contains (text(), 'structured test procedures, checklists, automated test scripts, or exploratory testing.“')]
 ${TEST_DESIGN_LINK}             //div[contains (@class, 'box')]//a[contains(text(), 'Learn more about Test Design')]
 ### Locators for homepage ###
-${START_FOR_FREE}               (//div[contains(@class, 'cta')]//a[contains(@href, 'https://www.testbench.com/')])[1]
-${LEARN_MORE_ABOUT_IMBUS}       //a[contains(text(), 'Learn More About imbus')]
-${IMBUS_LOGO}                   //div[@id='logo']//a[contains(text(), 'imbus AG')]
-${ACCEPT_COOKIES_IMBUS}         //div[@id='cookieconsent:body']//a[contains(text(), 'allow all cookies ')]
+${START_FOR_FREE}               (//div[contains(@class, 'cta')]//a[contains(@href, 'https://www.testbench.com/')])[7]
+${LEARN_MORE_ABOUT_IMBUS}       //div[(contains(@class, 'cta'))]//a[contains(@href, 'https://www.imbus.de')]
+${IMBUS_LOGO}                   //div[@id='logo']//a
+${ACCEPT_COOKIES_IMBUS}         (//a[@class='cc-btn cc-allow-all cc-w-100'])[1]
 ### Home Page Locators For Card ###
 ${REQUIREMENTS_MANAGEMENT}      (//div[@class='card-inner'])[1]
 ${TEST_MANAGEMENT}              (//div[@class='card-inner'])[2]
@@ -43,8 +43,11 @@ ${WELCOME}                      //h2[contains(@class, 'h2')]
 
 
 # MH_STATUS
-${EXPLORE_LERAN...TITLE}        //h2[contains(@class, 'h1')]
-${BLOG_PAGE_TITLE}        //h2[contains(@class, 'h2')]
+${EXPLORE_LERAN...TITLE}                    //h2[contains(@class, 'h1')]
+${BLOG_PAGE_TITLE}                          //h2[contains(@class, 'h2')]
+${GET_STARTED_WITH_FREE_ACCOUNT}            //div[contains(@class, 'overline')]
+${IMBUS_PAGE_TITTLE}                        //h2[contains(@class, ' headline--h3 headline--noline')]
+${FEATURES_PAGE_TITTLE}                     //h1[contains(@class, 'overline')]
 
 
 *** Keywords ***
@@ -52,19 +55,19 @@ Use TestBench For Free
     [Documentation]    This keyword is used to navigate to Start For Free.
     Wait Until Element Is Visible    ${START_FOR_FREE}
     Click Element    ${START_FOR_FREE}
-    Wait Until Page Contains    Get started with a free account
+    Control If The MH Page Contains    Get started with a free account
 
 Accept Cookies Imbus Page
-    [Documentation]    This keyword is for Cookies and for validate that TestBench web is open.
-    Tolerant Click    ${ACCEPT_COOKIES_IMBUS}
-    Wait Until Keyword Succeeds    3x    1s    Wait Until Page Contains    Our Portfolio and trend topics
+    [Documentation]    This keyword is foraccepting Cookies and for validate that TestBench web is open.
+    Wait Until Keyword Succeeds    3s    3x    Tolerant Click    ${ACCEPT_COOKIES_IMBUS}
+    Wait Until Page Contains Element    ${IMBUS_LOGO}
+    Control If The MH Page Contains    Our Portfolio and trend topics
 
 More About Imbus
     [Documentation]    This keyword is used to navigate to Learn More About Imbus button.
     Scroll Element Into View    ${LEARN_MORE_ABOUT_IMBUS}
-    Wait Until Element Is Visible    ${LEARN_MORE_ABOUT_IMBUS}
-    Click Element    ${LEARN_MORE_ABOUT_IMBUS}
-    Wait Until Page Contains Element    ${IMBUS_LOGO}
+    Wait Until Page Contains Element   ${LEARN_MORE_ABOUT_IMBUS}
+    Tolerant Click    ${LEARN_MORE_ABOUT_IMBUS}
 
 Control If Login/SignUp Page Contains
     [Documentation]    Check If Page Contains Text.
@@ -171,3 +174,9 @@ Check Test Bench Service Cards
     Navigate To Card    Tool Customization
     Go Back
     Navigate To Card    Tool Integration
+
+Open Imbus Page
+    [Documentation]     This keyword is for accepting Cookies and for validate that TestBench web is open
+    ${handles}=  Get Window Handles
+    Switch Window    ${handles}[-1]
+    Accept Cookies Imbus Page

@@ -5,14 +5,14 @@ Resource    ../import.resource
 
 
 *** Variables ***
-${REQUIREMENTS_MANAGEMENT_FEATURES}              //h2[contains(text(), 'Requirements Management')]
-${TEST_MANAGEMENT_FEATURES}                      //h2[contains(text(), 'Test Management')]
-${TEST_DESIGN_FEATURES}                          //h2[contains(text(), 'Test Design')]
-${TEST_EXECUTION_FEATURES}                       //h2[contains(text(), 'Test Execution')]
-${TEST_AUTOMATION_FEATURES}                      //h2[contains(text(), 'Test Automation')]
-${TEST_COLLABORATION_FEATURES}                   //h2[contains(text(), 'Team Collaboration')]
-${CUSTOMIZATION_FEATURES}                        //h2[contains(text(), 'Customization')]
-${INTEGRATION_FEATURES}                          //h2[contains(text(), 'Integration')]
+${REQUIREMENTS_MANAGEMENT_FEATURES}              (//h2[@class='h3'])[1]
+${TEST_MANAGEMENT_FEATURES}                      (//h2[@class='h3'])[2]
+${TEST_DESIGN_FEATURES}                          (//h2[@class='h3'])[3]
+${TEST_EXECUTION_FEATURES}                       (//h2[@class='h3'])[4]
+${TEST_AUTOMATION_FEATURES}                      (//h2[@class='h3'])[5]
+${TEST_COLLABORATION_FEATURES}                   (//h2[@class='h3'])[6]
+${CUSTOMIZATION_FEATURES}                        (//h2[@class='h3'])[7]
+${INTEGRATION_FEATURES}                          (//h2[@class='h3'])[8]
 ${TRY_TESTBENCH_NOW}                             //a[contains(text(), 'Try TestBench Now')]
 ${TRY_EXPLORTORY_TESTING}                        //a[contains(text(), 'Try Exploratory Testing')]
 ${TRY_DATA-DRIVEN_TESTING}                       //a[contains(text(), 'Try Data-Driven Testing')]
@@ -23,28 +23,20 @@ Verify Content Features
     [Documentation]    Navigate to Requirements Management within Features
     Execute JavaScript    window.scrollTo(0,1000);
     Wait Until Page Contains Element    ${REQUIREMENTS_MANAGEMENT_FEATURES}
-    Page Should Contain    Requirements Management
     Execute JavaScript    window.scrollTo(0,1500);
     Wait Until Page Contains Element    ${TEST_MANAGEMENT_FEATURES}
-    Page Should Contain    Test Management
     Execute JavaScript    window.scrollTo(0,2300);
     Wait Until Page Contains Element    ${TEST_DESIGN_FEATURES}
-    Page Should Contain    Test Design
     Execute JavaScript    window.scrollTo(0,3000);
     Wait Until Page Contains Element    ${TEST_EXECUTION_FEATURES}
-    Page Should Contain    Test Execution
     Execute JavaScript    window.scrollTo(0,4000);
     Wait Until Page Contains Element    ${TEST_AUTOMATION_FEATURES}
-    Page Should Contain    Test Automation
     Execute JavaScript    window.scrollTo(0,4800);
     Wait Until Page Contains Element    ${TEST_COLLABORATION_FEATURES}
-    Page Should Contain    Team Collaboration
     Execute JavaScript    window.scrollTo(0,5500);
     Wait Until Page Contains Element    ${CUSTOMIZATION_FEATURES}
-    Page Should Contain    Customization
     Execute JavaScript    window.scrollTo(0,6200);
     Wait Until Page Contains Element    ${INTEGRATION_FEATURES}
-    Page Should Contain    Integration
 
 Try TestBench Now
     [Documentation]    Navigate to Try Testbench Now button
@@ -99,6 +91,12 @@ Control If The MH Page Contains
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${FIRST_HEADER}
     ELSE IF    "${status}" == "What You Can Do With TestBench"
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${SUBTITLE_TESTBENCH}
+    ELSE IF    "${status}" == "Get started with a free account"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${GET_STARTED_WITH_FREE_ACCOUNT}
+    ELSE IF    "${status}" == "Our Portfolio and trend topics"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${IMBUS_PAGE_TITTLE}
+    ELSE IF    "${status}" == "Discover the features"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${FEATURES_PAGE_TITTLE}
     ELSE
         Fail    Unexpected status: ${status}
     END

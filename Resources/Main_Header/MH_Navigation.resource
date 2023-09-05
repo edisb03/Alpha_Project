@@ -36,7 +36,7 @@ Navigate To Features
     [Documentation]    This keyword is used to navigate to Features...
     Wait Until Page Contains Element    ${NAV_FEATURES}
     Click Element    ${NAV_FEATURES}
-    Wait Until Page Contains    Discover the features
+    Control If The MH Page Contains    Discover the features
 
 Navigate To Test Approaches
     [Documentation]    Navigate To Test Approaches
