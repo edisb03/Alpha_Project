@@ -26,7 +26,9 @@ ${NAV_TESTBENCH_BENEFITS}               //h2[contains(text(), 'Your Personal Tes
 ${EXPLORATORY_TESTING_TITLE_VIDEO}      //h3[contains(text(),'The Right Tool – For the Right Job')]
 ${EXPLORATORY_TESTING_VIDEO}            //button[@aria-label='Play Video']
 ${VIDEO_PLAYER}                         (//iframe)[1]
-${DROP_DOWN_LIST}                       (//span[@lang='en'][normalize-space()='English'])[1]
+# ${DROP_DOWN_LIST}    (//span[@lang='en'][normalize-space()='English'])[1]
+${DROP_DOWN_ENGLISH}                    (//li[contains(@class, 'menu-item menu-item')])[2]
+${DROP_DOWN_GERMAN}                     (//li[contains(@class, 'menu-item menu')]//span[contains(@lang, 'de')])[1]
 ${ENGLISH}                              (//span[@lang='en'][normalize-space()='English'])[1]
 ${GERMAN}                               (//span[@lang='de'][normalize-space()='Deutsch'])[1]
 ${FOOTER_TB_LOGO}                       (//img[@alt='TestBench'])[3]
@@ -138,36 +140,73 @@ Verify Default Languange Is
         ${german_text}    Get Text    ${GERMAN}
     END
 
+# Perform Language Switching
+#    [Documentation]    Performs language switching from `${ENGLISH}` to `${GERMAN}`
+#    ...    and,${GERMAN} to ${ENGLISH} verifies the switch.
+#    [Arguments]    ${language}
+#    Set Selenium Speed    0.3
+#    IF    "${language}" == "English_To_English"
+#    Wait Until Page Contains Element    ${ENGLISH}
+#    Page Should Contain    English
+#    Tolerant Click    ${ENGLISH}
+#    ELSE IF    "${language}" == "English_To_English"
+#    Element Should Not Be Visible    ${ACCEPT_COOKIES}
+#    No Operation
+#    ELSE IF    "${language}" == "Deutsch_To_Deutsch"
+#    Wait Until Page Contains Element    ${GERMAN}
+#    Mouse Over    ${GERMAN}
+#    Page Should Contain    Deutsch
+#    Tolerant Click    ${GERMAN}
+#    ELSE IF    "${language}" == "English_To_Deutsch"
+#    Mouse Over    ${ENGLISH}
+#    Wait Until Page Contains Element    ${GERMAN}
+#    Tolerant Click    ${GERMAN}
+#    Accept Cookies
+#    ELSE IF    "${language}" == "English_To_Deutsch"
+#    Element Should Not Be Visible    ${ACCEPT_GERMAN_COOKEIS}
+#    ELSE IF    "${language}" == "Deutsch_To_English"
+#    Page Should Contain    Deutsch
+#    Wait Until Page Contains Element    ${GERMAN}
+#    Tolerant Click    ${GERMAN}
+#    Wait Until Page Contains Element    ${ENGLISH}
+#    Tolerant Click    ${ENGLISH}
+#    END
+
+Start Test Bench
+    [Arguments]     ${language}
+    Open Web Browser
+    Accept Cookies
+    Perform Language Switching    ${language}
+
 Perform Language Switching
     [Documentation]    Performs language switching from `${ENGLISH}` to `${GERMAN}`
     ...    and,${GERMAN} to ${ENGLISH} verifies the switch.
     [Arguments]    ${language}
-    Set Selenium Speed    0.3
-    IF    "${language}" == "English_To_English"
-        Wait Until Page Contains Element    ${ENGLISH}
-        Page Should Contain    English
-        Tolerant Click    ${ENGLISH}
-    ELSE IF    "${language}" == "English_To_English"
-        Element Should Not Be Visible    ${ACCEPT_COOKIES}
-        No Operation
-    ELSE IF    "${language}" == "Deutsch_To_Deutsch"
-        Wait Until Page Contains Element    ${GERMAN}
-        Mouse Over    ${GERMAN}
-        Page Should Contain    Deutsch
-        Tolerant Click    ${GERMAN}
-    ELSE IF    "${language}" == "English_To_Deutsch"
-        Mouse Over    ${ENGLISH}
-        Wait Until Page Contains Element    ${GERMAN}
-        Tolerant Click    ${GERMAN}
-        Accept Cookies
-    ELSE IF    "${language}" == "English_To_Deutsch"
-        Element Should Not Be Visible    ${ACCEPT_GERMAN_COOKEIS}
-    ELSE IF    "${language}" == "Deutsch_To_English"
-        Page Should Contain    Deutsch
-        Wait Until Page Contains Element    ${GERMAN}
-        Tolerant Click    ${GERMAN}
-        Wait Until Page Contains Element    ${ENGLISH}
-        Tolerant Click    ${ENGLISH}
+    ${status}    Run Keyword And Return Status    Element Should Be Visible    ${DROP_DOWN_ENGLISH}
+    IF    '${status}' == 'True'
+        Wait Until Page Contains Element    ${DROP_DOWN_ENGLISH}
+        Click Element    ${DROP_DOWN_ENGLISH}
+        IF    '${language}' == 'English'
+            Wait Until Page Contains Element    ${ENGLISH}
+            Click Element    ${ENGLISH}
+            Accept Cookies
+        ELSE IF    '${language}' == 'Deutsch'
+            Wait Until Page Contains Element    ${GERMAN}
+            Click Element    ${GERMAN}
+            Accept Cookies
+        END
+    ELSE IF    '${status}' == 'False'
+        Wait Until Page Contains Element    ${DROP_DOWN_GERMAN}
+        Click Element    ${DROP_DOWN_GERMAN}
+        IF    '${language}' == 'English'
+            Wait Until Page Contains Element    ${ENGLISH}
+            Click Element    ${ENGLISH}
+            Accept Cookies
+        ELSE IF    '${language}' == 'Deutsch'
+            Wait Until Page Contains Element    ${GERMAN}
+            Click Element    ${GERMAN}
+            Accept Cookies
+        END
     END
 
 Scroll To Verify Test Bench Logo
