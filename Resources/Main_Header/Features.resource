@@ -76,7 +76,7 @@ Try Data-Driven Testing
     Execute JavaScript    window.scrollTo(0,8800);
     Wait Until Element Is Visible    ${TRY_DATA-DRIVEN_TESTING}
     Click Element    ${TRY_DATA-DRIVEN_TESTING}
-    Wait Until Page Contains    Get started with a free account
+    Control If The MH Page Contains    Get started with a free account
 
 Control If The MH Page Contains
     [Documentation]    Navigate to Try Data-Driven Testing button
