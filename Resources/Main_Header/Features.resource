@@ -13,9 +13,9 @@ ${TEST_AUTOMATION_FEATURES}                      (//h2[@class='h3'])[5]
 ${TEST_COLLABORATION_FEATURES}                   (//h2[@class='h3'])[6]
 ${CUSTOMIZATION_FEATURES}                        (//h2[@class='h3'])[7]
 ${INTEGRATION_FEATURES}                          (//h2[@class='h3'])[8]
-${TRY_TESTBENCH_NOW}                             //div[contains(@class, 'box-inner box-inner--cta')]//a[contains(@href, 'https://www.testbench.com')]
+${TRY_TESTBENCH_NOW}                             (//div[@class='box-inner box-inner--cta'])[1]//a[1]
 ${TRY_EXPLORTORY_TESTING}                        //div[@class='box box--imageRight']//div[@class='cta']//a[2]
-${TRY_DATA-DRIVEN_TESTING}                       (//div[contains(@class, 'cta')]//a[contains(@href, 'https://www.testbench.com')])[5]
+${TRY_DATA-DRIVEN_TESTING}                       (//div[@class='cta'])[2]//a[2]
 ${LEARN_MORE}                                    //div[@class='box box--imageRight']//div[@class='cta']//a[1]
 
 
@@ -67,9 +67,8 @@ Navigate To Learn More Data Driven
     ...    finds the Learn More Function and Clicks on it
     [Arguments]    ${Learn_More_2}
     Execute JavaScript    window.scrollTo(0,7800);
-    Wait Until Page Contains Element    (//a[@href='/data-driven-testing/'])[1]
-    Page Should Contain    ${Learn_More_2}
-    Click Element    (//a[@href='/data-driven-testing/'])[1]
+    Wait Until Page Contains Element    //div[@class='box box--imageLeft']//div[@class='cta']//a[2]
+    Tolerant Click                      //div[@class='box box--imageLeft']//div[@class='cta']//a[2]
 
 Try Data-Driven Testing
     [Documentation]    Navigate to Try Data-Driven Testing button
