@@ -28,7 +28,7 @@ P1_TO01_MH_TC03 Learn More About Imbus
     Accept Cookies
     Navigate To TestBench Logo
     More About Imbus
-    Accept Cookies Imbus Page
+    Open Imbus Page
 
 P1_TO01_MH_TC04 Verify Feature Functions
     [Documentation]    Navigates to Features and verifies each existing features.
@@ -39,7 +39,8 @@ P1_TO01_MH_TC04 Verify Feature Functions
 
 P1_TO01_MH_TC05 Verify Try TestBench Now
     [Documentation]    After open test bench page, open Features item and check
-    ...    if button "Try TestBench Now" within the page is enabled.
+    ...    if button "Try TestBench Now" within the page is enabled.(This test case can be tested only when page
+    ...    is in English since TestBench Now button doesn't appear when page is in German)
     [Tags]    p1to01_tc05    explorator
     Accept Cookies
     Navigate To Features
@@ -64,8 +65,7 @@ P1_TO01_MH_TC07 Verify Try Data-Driven Testing
     Try Data-Driven Testing
     Go Back
     Navigate To Learn More Data Driven    Learn More
-    Control If The MH Page Contains
-    ...    Let the Data Do All Your Testing
+    Control If The MH Page Contains    Let the Data Do All Your Testing
 
 P1TO01_TC09 Navigate To Blog
     [Documentation]    User open web page of TestBench : www.testbanch.com and,
