@@ -64,8 +64,7 @@ P1_TO01_MH_TC07 Verify Try Data-Driven Testing
     Try Data-Driven Testing
     Go Back
     Navigate To Learn More Data Driven    Learn More
-    Control If The MH Page Contains
-    ...    Let the Data Do All Your Testing
+    Control If The MH Page Contains    Let the Data Do All Your Testing
 
 P1TO01_TC09 Navigate To Blog
     [Documentation]    User open web page of TestBench : www.testbanch.com and,
