@@ -4,8 +4,8 @@ Documentation       Main Header Section    ...
 Resource            ..//Resources/import.resource
 
 Test Setup          Open Web Browser    # browser_type=headlesschrome
-#Test Teardown       Close Browser
-
+# Test Setup        Start Test Bench    Deutch 
+Test Teardown       Close Browser
 
 *** Test Cases ***
 P1_TO01_MH_TC01 Verify Cards On Home Page
@@ -137,10 +137,10 @@ P1_TO01_TC21 Switch Page To Deutch And Revert To Default Language English
     ...    of the website from the home page using the language switcher...
     Accept Cookies
     Verify Default Languange Is    English
-    Perform Language Switching    English_To_Deutsch
+    Perform Language Switching    Deutsch
     Control If The MH Page Contains     The Smart Test Management Tool
-    Perform Language Switching    Deutsch_To_Deutsch
+    Perform Language Switching    Deutsch
     Scroll To Verify Test Bench Logo
     Navigate To TestBench Logo
-    Perform Language Switching    Deutsch_To_English
+    Perform Language Switching    English
     Control If The MH Page Contains     The Smart Test Management Tool

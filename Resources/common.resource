@@ -15,11 +15,17 @@ ${FIRST_HEADER}             //h1[@class='h1']
 *** Keywords ***
 Accept Cookies
     [Documentation]    This keyword is for accepting cookies on the TestBench web page.
-    Set Selenium Speed    0.2
-    Wait Until Page Contains Element    ${COOKIES}
-    Tolerant Click    ${COOKIES}
-    Wait Until Page Contains Element   ${FIRST_HEADER}
-    Wait Until Keyword Succeeds    3x    1s    Verify Main Header
+    ${accept}    Run Keyword And Return Status    Element Should Be Visible    ${COOKIES}
+    IF    '${accept}' == 'True'
+        Set Selenium Speed    0.2
+        Wait Until Page Contains Element    ${COOKIES}
+        Tolerant Click    ${COOKIES}
+        Wait Until Page Contains Element   ${FIRST_HEADER}
+        Wait Until Keyword Succeeds    3x    1s    Verify Main Header
+    ELSE
+        Element Should Not Be Visible    ${COOKIES}
+        No Operation
+    END
 
 Tick The Checkbox
     [Documentation]    Waits until the specified checkbox element is present on the page
