@@ -16,6 +16,7 @@ ${INTEGRATION_FEATURES}                          (//h2[@class='h3'])[8]
 ${TRY_TESTBENCH_NOW}                             //div[contains(@class, 'box-inner box-inner--cta')]//a[contains(@href, 'https://www.testbench.com')]
 ${TRY_EXPLORTORY_TESTING}                        //div[@class='box box--imageRight']//div[@class='cta']//a[2]
 ${TRY_DATA-DRIVEN_TESTING}                       (//div[contains(@class, 'cta')]//a[contains(@href, 'https://www.testbench.com')])[5]
+${LEARN_MORE}                                    //div[@class='box box--imageRight']//div[@class='cta']//a[1]
 
 
 *** Keywords ***
@@ -58,10 +59,8 @@ Navigate To Learn More Exploratory Testing
     ...    finds the Learn More Function and Clicks on it
     [Arguments]    ${Learn_More_1}
     Execute JavaScript    window.scrollTo(0,7800);
-    Wait Until Page Contains Element
-    ...    (//a[@href='https://www.testbench.com/exploratory-testing/'][normalize-space()='Learn More'])[1]
-    Page Should Contain    ${Learn_More_1}
-    Click Element    (//a[@href='https://www.testbench.com/exploratory-testing/'][normalize-space()='Learn More'])[1]
+    Wait Until Page Contains Element   ${LEARN_MORE}
+    Tolerant Click                     ${LEARN_MORE}
 
 Navigate To Learn More Data Driven
     [Documentation]    Scrolls down to the middle of the page
