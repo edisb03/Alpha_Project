@@ -21,7 +21,7 @@ ${GER_COOKIES}                          //div[contains(@class, 'container')]//p/
 ${MAIN_HEADER}                          (//ul[contains(@class, "menu")])[1]
 ${NAV_ENG}                              (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'English')])[1]
 ${NAV_GER}                              (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'Deutsch')])[1]
-${NAV_TESTBENCH_BENEFITS}               //h2[contains(text(), 'Your Personal TestBench Benefit')]
+${NAV_TESTBENCH_BENEFITS}               (//h2[@class='overline'])[4]
 ### Exploratory testing video locators
 ${EXPLORATORY_TESTING_TITLE_VIDEO}      //h3[contains(text(),'The Right Tool – For the Right Job')]
 ${EXPLORATORY_TESTING_VIDEO}            //button[@aria-label='Play Video']
