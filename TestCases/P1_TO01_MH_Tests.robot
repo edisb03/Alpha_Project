@@ -28,7 +28,7 @@ P1_TO01_MH_TC03 Learn More About Imbus
     Accept Cookies
     Navigate To TestBench Logo
     More About Imbus
-    Accept Cookies Imbus Page
+    Open Imbus Page
 
 P1_TO01_MH_TC04 Verify Feature Functions
     [Documentation]    Navigates to Features and verifies each existing features.
