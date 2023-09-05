@@ -39,7 +39,8 @@ P1_TO01_MH_TC04 Verify Feature Functions
 
 P1_TO01_MH_TC05 Verify Try TestBench Now
     [Documentation]    After open test bench page, open Features item and check
-    ...    if button "Try TestBench Now" within the page is enabled.
+    ...    if button "Try TestBench Now" within the page is enabled.(This test case can be tested only when page
+    ...    is in English since TestBench Now button doesn't appear when page is in German)
     [Tags]    p1to01_tc05    explorator
     Accept Cookies
     Navigate To Features
