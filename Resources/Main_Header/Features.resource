@@ -17,6 +17,7 @@ ${TRY_TESTBENCH_NOW}                             (//div[@class='box-inner box-in
 ${TRY_EXPLORTORY_TESTING}                        //div[@class='box box--imageRight']//div[@class='cta']//a[2]
 ${TRY_DATA-DRIVEN_TESTING}                       (//div[@class='cta'])[2]//a[2]
 ${LEARN_MORE}                                    //div[@class='box box--imageRight']//div[@class='cta']//a[1]
+${LEARN_MORE_DATA}                               //div[@class='box box--imageLeft']//div[@class='cta']//a[1]
 
 
 *** Keywords ***
@@ -66,9 +67,10 @@ Navigate To Learn More Data Driven
     [Documentation]    Scrolls down to the middle of the page
     ...    finds the Learn More Function and Clicks on it
     [Arguments]    ${Learn_More_2}
-    Execute JavaScript    window.scrollTo(0,7800);
-    Wait Until Page Contains Element    //div[@class='box box--imageLeft']//div[@class='cta']//a[2]
-    Tolerant Click                      //div[@class='box box--imageLeft']//div[@class='cta']//a[2]
+    Set Selenium Speed    0.2
+    Execute JavaScript    window.scrollTo(0,9000);
+    Wait Until Keyword Succeeds    3x    1s    Wait Until Page Contains Element    ${LEARN_MORE_DATA}
+    Tolerant Click                      ${LEARN_MORE_DATA}
 
 Try Data-Driven Testing
     [Documentation]    Navigate to Try Data-Driven Testing button

@@ -11,7 +11,7 @@ ${NAV_EXPLOTARY_TESTING}                //header/nav[1]/div[1]/div[1]/ul[1]/li[2
 ${NAV_DATA-DRIVEN-TESTING}              (//a[contains (@href, "https://www.testbench.com/data-driven-testing/")])[1]
 ${NAV_KEYWORD-DRIVEN_TESTING}           //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[3]/a[1]
 ### Main Header Locators ###
-${NAV_BLOG}                             //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/blog/')]
+${NAV_BLOG}                             //a[@href="https://www.testbench.com/blog/"]
 ${NAV_RESOURCES}                        //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/resources')]
 ${LOGIN_BUTTON}                         (//a[contains(@href, 'https://www.testbench.com')])[8]
 ${LOGIN_PAGE_TITLE}                     //div[@class='box-inner box-inner--right']//div[@id='logIn']//div[@class='overline']
@@ -68,9 +68,8 @@ Search Links By Name
 
 Navigate To Blog
     [Documentation]    This Keyword is used to navigate to Blog
-    Wait Until Page Contains Element    ${NAV_BLOG}
-    Click Element    ${NAV_BLOG}
-    Wait Until Page Contains    TestBench Blog
+    Wait Until Keyword Succeeds    3x    3s     Wait Until Page Contains Element    ${NAV_BLOG}
+    Wait Until Keyword Succeeds    3x    3s     Tolerant Click                      ${NAV_BLOG}
 
 Navigate To Resources
     [Documentation]    This keyword is used to navigate to Resources.

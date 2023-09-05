@@ -4,7 +4,7 @@ Documentation       Main Header Section    ...
 Resource            ..//Resources/import.resource
 
 Test Setup          Open Web Browser    # browser_type=headlesschrome
-Test Teardown       Close Browser
+#Test Teardown       Close Browser
 
 
 *** Test Cases ***
@@ -61,6 +61,7 @@ P1_TO01_MH_TC07 Verify Try Data-Driven Testing
     [Documentation]    Verify Try Data-Driven Testing button.
     [Tags]    p1to01_tc07    exploratory
     Accept Cookies
+    Perform Language Switching    English_To_Deutsch
     Navigate To Features
     Try Data-Driven Testing
     Go Back
@@ -72,7 +73,6 @@ P1TO01_TC09 Navigate To Blog
     ...    checks for Blog item on main Header, then verifies if,
     ...    its clickable and new page is opened after.
     [Tags]    p1to01_tc09    exploratory
-    Set Selenium Speed    0.5
     Accept Cookies
     Navigate To Blog
     Control If The MH Page Contains    Welcome to the World of Testing
