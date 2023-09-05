@@ -15,7 +15,7 @@ ${CUSTOMIZATION_FEATURES}                        (//h2[@class='h3'])[7]
 ${INTEGRATION_FEATURES}                          (//h2[@class='h3'])[8]
 ${TRY_TESTBENCH_NOW}                             //div[contains(@class, 'box-inner box-inner--cta')]//a[contains(@href, 'https://www.testbench.com')]
 ${TRY_EXPLORTORY_TESTING}                        //div[@class='box box--imageRight']//div[@class='cta']//a[2]
-${TRY_DATA-DRIVEN_TESTING}                       (//div[contains(@class, 'cta')]//a[contains(@href, 'https://www.testbench.com')])[5]
+${TRY_DATA-DRIVEN_TESTING}                       //div[@class='box box--imageLeft']//div[@class='cta']//a[2]
 
 
 *** Keywords ***
@@ -77,7 +77,7 @@ Try Data-Driven Testing
     Execute JavaScript    window.scrollTo(0,8800);
     Wait Until Element Is Visible    ${TRY_DATA-DRIVEN_TESTING}
     Click Element    ${TRY_DATA-DRIVEN_TESTING}
-    Wait Until Page Contains    Get started with a free account
+    Control If The MH Page Contains    Get started with a free account
 
 Control If The MH Page Contains
     [Documentation]    Navigate to Try Data-Driven Testing button
