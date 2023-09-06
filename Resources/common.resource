@@ -5,6 +5,10 @@ Resource            import.resource
 
 
 *** Variables ***
+&{DEMATIC_URL}
+...    prod=https://www.testbench.com/
+${ENV}            prod
+
 ${ACCEPT_COOKIES}           (//a[@role='button'][normalize-space()='Accept all'])[1]
 ${ACCEPT_GERMAN_COOKEIS}    //*[@id="BorlabsCookieBox"]/div/div/div/div[1]/div/div/div/p[2]/a
 ${CHECKBOX}                 //div[@class='newsletter']//label//span
@@ -13,6 +17,13 @@ ${FIRST_HEADER}             //h1[@class='h1']
 
 
 *** Keywords ***
+Start Test Bench
+    [Documentation]  Preconditon for Test Setup
+    [Arguments]     ${language}
+    Open Web Browser
+    Accept Cookies
+    Perform Language Switching    ${language}
+
 Accept Cookies
     [Documentation]    This keyword is for accepting cookies on the TestBench web page.
     ${accept}    Run Keyword And Return Status    Element Should Be Visible    ${COOKIES}
