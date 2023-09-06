@@ -16,12 +16,13 @@ ${NAV_BLOG}                             (//li[contains(@class, 'menu-item')]//a[
 ${NAV_RESOURCES}                        (//li[contains(@class, 'menu-item')]//a[contains(text(), 'R')])[1]
 ${LOGIN_BUTTON}                         (//li[contains(@class, 'menu-item')]//a[contains(text(), 'L')])[1]
 ${LOGIN_PAGE_TITLE}                     (//div[@class='overline'])[1]
-${NAV_SIGN_UP}                          (//li[contains(@class, 'menu-item')]//a[contains(text(), 'S')])[1]
-${NAV_LOGO}                             (//header[contains(@class, 'mainHeader')]//a//img[contains(@class, 'logo-image')])[1]
+${NAV_SIGN_UP}                          (//li[contains(@class, 'menu-item')]//a[contains(text(), 'Sign Up')])[1]
+${NAV_GER_REG}                          (//li[contains(@class, 'menu-item')]//a[contains(text(), 'Registrieren')])[1]
+${NAV_LOGO}                             //img[@class="logo-image"]
 ${MAIN_HEADER}                          (//ul[contains(@class, "menu")])[1]
 ${NAV_TESTBENCH_BENEFITS}               (//h2[@class='overline'])[4]
 ### Exploratory testing video locators
-${EXPLORATORY_TESTING_TITLE_VIDEO}     (//div[@class='box-inner box-inner--content text text--lg'])[3]//h3[@class='h1']
+${EXPLORATORY_TESTING_TITLE_VIDEO}      (//div[@class='box-inner box-inner--content text text--lg'])[3]//h3[@class='h1']
 ${EXPLORATORY_TESTING_VIDEO}            //button[@aria-label='Play Video']
 ${VIDEO_PLAYER}                         (//iframe)[1]
 # ${DROP_DOWN_LIST}    (//span[@lang='en'][normalize-space()='English'])[1]
@@ -36,37 +37,37 @@ ${FOOTER_TB_LOGO}                       (//img[@alt='TestBench'])[3]
 Navigate To Features
     [Documentation]    This keyword is used to navigate to Features...
     Wait Until Page Contains Element    ${NAV_FEATURES}
-    Click Element                       ${NAV_FEATURES}
+    Click Element    ${NAV_FEATURES}
     Control If The MH Page Contains    Discover the features
 
 Navigate To Test Approaches
     [Documentation]    Navigate To Test Approaches
     Wait Until Page Contains Element    ${NAV_TEST_APPROACHES}
-    Tolerant Click                      ${NAV_TEST_APPROACHES}
+    Tolerant Click    ${NAV_TEST_APPROACHES}
 
 Search Links By Name
     [Documentation]    Search the specified links by using its name
     [Arguments]    ${link_status}
     IF    "${link_status}" == "Exploratory Testing"
         Wait Until Page Contains Element    ${NAV_EXPLOTARY_TESTING}
-        Tolerant Click                      ${NAV_EXPLOTARY_TESTING}
+        Tolerant Click    ${NAV_EXPLOTARY_TESTING}
     ELSE IF    "${link_status}" == "Data-Driven Testing"
-        Wait Until Page Contains Element     ${NAV_DATA-DRIVEN-TESTING}
-        Tolerant Click                        ${NAV_DATA-DRIVEN-TESTING}
+        Wait Until Page Contains Element    ${NAV_DATA-DRIVEN-TESTING}
+        Tolerant Click    ${NAV_DATA-DRIVEN-TESTING}
     ELSE IF    "${link_status}" == "Keyword-Driven Testing"
         Wait Until Page Contains Element    ${NAV_KEYWORD-DRIVEN_TESTING}
-        Tolerant Click                      ${NAV_KEYWORD-DRIVEN_TESTING}
+        Tolerant Click    ${NAV_KEYWORD-DRIVEN_TESTING}
     END
 
 Navigate To Blog
     [Documentation]    This Keyword is used to navigate to Blog
-    Wait Until Keyword Succeeds    3x    3s     Wait Until Page Contains Element    ${NAV_BLOG}
-    Wait Until Keyword Succeeds    3x    3s     Tolerant Click                      ${NAV_BLOG}
+    Wait Until Keyword Succeeds    3x    3s    Wait Until Page Contains Element    ${NAV_BLOG}
+    Wait Until Keyword Succeeds    3x    3s    Tolerant Click    ${NAV_BLOG}
 
 Navigate To Resources
     [Documentation]    This keyword is used to navigate to Resources.
     Wait Until Page Contains Element    ${NAV_RESOURCES}
-    Tolerant Click                      ${NAV_RESOURCES}
+    Tolerant Click    ${NAV_RESOURCES}
     Wait Until Page Contains    Find it quick - Use it right away
 
 Navigate To Login
@@ -78,9 +79,16 @@ Navigate To Login
 
  Navigate To Sign Up
     [Documentation]    This keyword is used to navigate to Sign Up.
-    Wait Until Page Contains Element    ${NAV_SIGN_UP}
-    Click Element    ${NAV_SIGN_UP}
-    Wait Until Page Contains Element    //h3[@class='h2']
+    [Arguments]    ${text}
+    IF    '${text}' == 'Sign Up'
+        Wait Until Page Contains Element    ${NAV_SIGN_UP}
+        Tolerant Click    ${NAV_SIGN_UP}
+        Wait Until Page Contains Element    //h3[@class='h2']
+    ELSE IF    '${text}' == 'Registrieren'
+        Wait Until Page Contains Element    ${NAV_GER_REG}
+        Tolerant Click    ${NAV_GER_REG}
+        Wait Until Page Contains Element    //h3[@class='h2']
+    END
 
 Navigate To TestBench Logo
     [Documentation]    This keyword is used to navigate to TestBench logo
@@ -93,7 +101,7 @@ Scroll To Video
     [Arguments]    ${video_title}
     Wait Until Page Contains Element    ${EXPLORATORY_TESTING_TITLE_VIDEO}
     Wait Until Page Contains Element    ${EXPLORATORY_TESTING_VIDEO}
-    Scroll Element Into View            ${EXPLORATORY_TESTING_VIDEO}
+    Scroll Element Into View    ${EXPLORATORY_TESTING_VIDEO}
 
 Play Video
     [Documentation]    Placeholder for the Play Video keyword.

@@ -6,8 +6,8 @@ Resource            ../import.resource
 
 *** Variables ***
 ### SU - SIGN UP
-${SU_EMAIL}                     //input[@type='text']
-${SU_PASSWORD}                  //input[@name='password']
+${SU_EMAIL}                     (//input[@type='text'])[1]
+${SU_PASSWORD}                  (//input[@name='password'])[1]
 ${SIGN_IN_TICK}                 //input[@type='text']
 ${PASSWORD_TICK_VERIFY}         //input[@name='password']
 ${INVALID_PASSWORD}             //div[@class='pw-check']
@@ -28,7 +28,6 @@ Verify If Tick Is Visible
     [Documentation]    Keyword ensures that a tick sign icon is displayed on the page, often used
     ...    to confirm successful actions or completion during testing or automation tasks.
     [Arguments]    ${login_OR_sign_up}
-    Wait Until Element Is Visible    ${NAV_LOGO}
     IF    '${login_OR_sign_up}' == 'SignUp_Valid_Email'
         Wait Until Page Contains Element    ${SIGN_IN_TICK}
         Element Should Be Visible    ${SIGN_IN_TICK}

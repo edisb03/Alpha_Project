@@ -23,6 +23,7 @@ ${FORGOT_PASSWORD}      //a[contains(@href, '/log-in/#/password-forgot')]
 ${EMAIL_LABEL_GER}      //div[@id="logIn"]//label[contains(text(), 'E-Mail')]
 ${PASSWORD_LABEL_GER}   //div[@id="logIn"]//label[contains(text(), 'Passwort')]
 ${LN_ANMELDEN_BUTTON}   //div[@class='cta space-between']//a[contains(@href, '/de/sign-up/')]
+${FORGOT_PASS_MESSAGE}  (//h3[@class='h2'])[1]
 
 ### Users ###
 # &{USER_01} Registered user with valid credentials
@@ -88,8 +89,8 @@ Check The Login Form Is As According Language
 Verify And Click Forgot Your Password
     [Documentation]    This keyword verify if "Forgot your password" is shown in the Login form and can be clicked.
     Wait Until Element Is Visible    ${FORGOT_PASSWORD}
-    Click Element    ${FORGOT_PASSWORD}
-    Wait Until Page Contains    Don’t Worry, We Got You!
+    Tolerant Click    ${FORGOT_PASSWORD}
+    Wait Until Page Contains Element   ${FORGOT_PASS_MESSAGE}
 
 Check Reset Password Availability
     [Documentation]    Keyword is used to check the state of a Reset Password button and perform actions accordingly.

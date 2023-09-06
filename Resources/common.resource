@@ -7,6 +7,7 @@ Resource            import.resource
 *** Variables ***
 &{TESTBENCH_URL}
 ...    prod=https://www.testbench.com/
+
 ${ENV}            prod
 
 ${CHECKBOX}                 //div[@class='newsletter']//label//span
@@ -17,10 +18,11 @@ ${FIRST_HEADER}             //h1[@class='h1']
 *** Keywords ***
 Start Test Bench
     [Documentation]  Start browser, maximize window and navigate to TestBench Website
-    [Arguments]    ${language}  ${url}=${TESTBENCH_URL.${ENV}}
+    [Arguments]    ${language}  ${text}   ${url}=${TESTBENCH_URL.${ENV}}
     Start Browser     ${url}
     Accept Cookies
     Perform Language Switching    ${language}
+    Navigate To Sign Up    ${text}
 
 Accept Cookies
     [Documentation]    This keyword is for accepting cookies on the TestBench web page.

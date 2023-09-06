@@ -36,9 +36,9 @@ ${SUBTITLE_TESTBENCH}           //div[@class='flyntComponent componentSpacing th
 
 # Status
 ${WELL_DONE_STATUS}             //div[contains(@class, 'checklist')]//p[contains(@class, 'msg--success')]
-${EMAIL_ALEADY_EXIST}           //p[contains(@class, 'msg--error')]
-${CHECK_YOUR_EMAIL}             ////h3[contains(@class, 'h2')]
-${ENTER_YOUR_DETAILS_BELOW}     //div[contains(@class, 'overline')]
+${EMAIL_ALEADY_EXIST}           (//p[@class='msg msg--error'])[1]
+${CHECK_YOUR_EMAIL}             //h3[contains(@class, 'h2')]
+${ENTER_YOUR_DETAILS_BELOW}     //h2[@class='h2']
 ${WELCOME}                      //h2[contains(@class, 'h2')]
 
 # MH_STATUS
@@ -77,8 +77,8 @@ Control If Login/SignUp Page Contains
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${EMAIL_ALEADY_EXIST}
     ELSE IF    "${status}" == "Check Your Email"
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${CHECK_YOUR_EMAIL}
-    ELSE IF    "${status}" == "Log in failed. Please check your credentials"
-        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${EMAIL_ALEADY_EXIST} 
+    ELSE IF    "${status}" == "Log in failed. Please check your credentials."
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${EMAIL_ALEADY_EXIST}
     ELSE IF    "${status}" == "Enter your details below"
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${ENTER_YOUR_DETAILS_BELOW}
     ELSE IF    "${status}" == "Welcome!"
