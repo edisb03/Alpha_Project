@@ -6,6 +6,7 @@ Resource            ..//Resources/import.resource
 Test Setup          Open Web Browser    # browser_type=headlesschrome
 Test Teardown       Close Browser
 
+
 *** Test Cases ***
 P1_TO02_LN_TC01 Navigate To Log In
     [Documentation]    Open TestBench web page navigate to Log in And validate if page is open....
@@ -95,7 +96,7 @@ P1_TO02_LN_TC08 Translate Login Page To Deutsch
     Navigate To Login
     Verify Default Languange Is    English
     Control If Login/SignUp Page Contains    Enter your details below
-    Perform Language Switching    English_To_Deutsch
+    Perform Language Switching    Deutsch
     Control If Login/SignUp Page Contains    Einloggen um loszulegen
     Check The Login Form Is As According Language    Deutsch
     Enter Email And Password    &{USER_02}
