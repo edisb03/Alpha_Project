@@ -160,12 +160,6 @@ Verify Default Languange Is
 #    Tolerant Click    ${ENGLISH}
 #    END
 
-Start Test Bench
-    [Arguments]     ${language}
-    Open Web Browser
-    Accept Cookies
-    Perform Language Switching    ${language}
-
 Perform Language Switching
     [Documentation]    Performs language switching from `${ENGLISH}` to `${GERMAN}`
     ...    and,${GERMAN} to ${ENGLISH} verifies the switch.

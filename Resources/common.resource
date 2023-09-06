@@ -5,12 +5,10 @@ Resource            import.resource
 
 
 *** Variables ***
-&{DEMATIC_URL}
+&{TESTBENCH_URL}
 ...    prod=https://www.testbench.com/
 ${ENV}            prod
 
-${ACCEPT_COOKIES}           (//a[@role='button'][normalize-space()='Accept all'])[1]
-${ACCEPT_GERMAN_COOKEIS}    //*[@id="BorlabsCookieBox"]/div/div/div/div[1]/div/div/div/p[2]/a
 ${CHECKBOX}                 //div[@class='newsletter']//label//span
 ${COOKIES}                  //p[@class='_brlbs-accept'][1]
 ${FIRST_HEADER}             //h1[@class='h1']
@@ -18,9 +16,9 @@ ${FIRST_HEADER}             //h1[@class='h1']
 
 *** Keywords ***
 Start Test Bench
-    [Documentation]  Preconditon for Test Setup
-    [Arguments]     ${language}
-    Open Web Browser
+    [Documentation]  Start browser, maximize window and navigate to TestBench Website
+    [Arguments]    ${language}  ${url}=${TESTBENCH_URL.${ENV}}
+    Start Browser     ${url}
     Accept Cookies
     Perform Language Switching    ${language}
 

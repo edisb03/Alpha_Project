@@ -16,6 +16,7 @@ Library    Collections
 # ...    add_argument("--ignore-certificate-errors");
 # ...    add_argument("--ignore-ssl-errors")
 
+
 # *** Keywords ***
 # Open Web Browser
 #     [Documentation]    Opens a new browser instance and maximizes the window
