@@ -48,17 +48,14 @@ Search Links By Name
     [Documentation]    Search the specified links by using its name
     [Arguments]    ${link_status}
     IF    "${link_status}" == "Exploratory Testing"
-        Sleep    3s
-        Page Should Contain    Exploratory Testing
-        Tolerant Click    ${NAV_EXPLOTARY_TESTING}
+        Wait Until Page Contains Element    ${NAV_EXPLOTARY_TESTING}
+        Tolerant Click                      ${NAV_EXPLOTARY_TESTING}
     ELSE IF    "${link_status}" == "Data-Driven Testing"
-        Sleep    5s
-        Page Should Contain    Data-Driven Testing
-        Tolerant Click    ${NAV_DATA-DRIVEN-TESTING}
+        Wait Until Page Contains Element     ${NAV_DATA-DRIVEN-TESTING}
+        Tolerant Click                        ${NAV_DATA-DRIVEN-TESTING}
     ELSE IF    "${link_status}" == "Keyword-Driven Testing"
-        Page Should Contain    Keyword-Driven Testing
-        Sleep    3s
-        Tolerant Click    ${NAV_KEYWORD-DRIVEN_TESTING}
+        Wait Until Page Contains Element    ${NAV_KEYWORD-DRIVEN_TESTING}
+        Tolerant Click                      ${NAV_KEYWORD-DRIVEN_TESTING}
     END
 
 Navigate To Blog
