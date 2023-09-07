@@ -1,5 +1,8 @@
 *** Settings ***
 Documentation       Login In Section
+...    This section contains test cases for the Log In functionality
+...    on the TestBench website. These test cases cover various scenarios,
+...    including valid and invalid login attempts, password reset, and language switching.
 
 Resource            ..//Resources/import.resource
 

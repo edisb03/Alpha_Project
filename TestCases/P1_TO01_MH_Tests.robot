@@ -1,5 +1,8 @@
 *** Settings ***
-Documentation       Main Header Section    ...
+Documentation       Main Header Section
+...    This section contains test cases for the Main Header functionality
+...    on the TestBench website. These test cases cover various scenarios,
+...    including navigation, content validation, language switching, and more.
 
 Resource            ..//Resources/import.resource
 

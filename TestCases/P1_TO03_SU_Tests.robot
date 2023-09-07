@@ -1,6 +1,8 @@
 *** Settings ***
 Documentation       Sign Up Section
-
+...    This section contains test cases for the Sign Up functionality
+...    on the TestBench website. These test cases cover various scenarios,
+...    including valid and invalid inputs during the registration process.
 Resource            ../Resources/import.resource
 
 # Test Setup           Start Test Bench    English   Sign Up
