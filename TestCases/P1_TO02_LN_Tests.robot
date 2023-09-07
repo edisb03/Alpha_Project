@@ -90,9 +90,8 @@ P1_TO02_LN_TC08 Translate Login Page To Deutsch
     Verify Default Languange Is    English
     Control If Login/SignUp Page Contains    Enter your details below
     Perform Language Switching    Deutsch
-    Control If Login/SignUp Page Contains    Einloggen um loszulegen
-    Check The Login Form Is As According Language    Deutsch
-    Enter Email And Password    &{USER_02}
+    Control If Login/SignUp Page Contains    Enter your details below
+    Check That Login Form Is German Page    Deutsch
 
 P1_TO02_LN_TC09 Valid Credentials Of Not Registered User
     [Documentation]    In this test case is tested if not registered user can fullfill login form

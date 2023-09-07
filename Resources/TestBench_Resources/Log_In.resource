@@ -68,7 +68,7 @@ Enter Dynamic Email And Password
     Input Text    ${SU_EMAIL}       ${email}
     Input Text    ${SU_PASSWORD}    ${dynamic_password}
 
-Check The Login Form Is As According Language
+Check That Login Form Is German Page
     [Documentation]    This keyword checks the Log in form language
     [Arguments]    ${language}
     Set Selenium Speed    0.3
@@ -123,12 +123,12 @@ Enter The Email-RP
         Wait Until Element Is Visible    ${SU_EMAIL}
         Input Text    ${SU_EMAIL}   ${email}
         Wait Until Element Is Visible    ${SIGN_UP_OR_LOGIN_BUTTON}
-        Click Element    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Tolerant Click    ${SIGN_UP_OR_LOGIN_BUTTON}
     ELSE IF    '${email}' == '${USER_2}'
         Wait Until Element Is Visible    ${SU_EMAIL}
         Input Text    ${SU_EMAIL}   ${email}
         Wait Until Element Is Visible    ${SIGN_UP_OR_LOGIN_BUTTON}
-        Click Element    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Tolerant Click    ${SIGN_UP_OR_LOGIN_BUTTON}
         Page Should Contain    Sorry, your email address is not registered.
     ELSE IF    '${email}' == '${USER_3}'
         Wait Until Element Is Visible    ${SU_EMAIL}

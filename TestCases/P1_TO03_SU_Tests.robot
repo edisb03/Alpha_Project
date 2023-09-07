@@ -3,8 +3,8 @@ Documentation       Sign Up Section
 
 Resource            ../Resources/import.resource
 
-Test Setup           Start Test Bench    English   Sign Up
-# Test Setup         Start Test Bench    Deutsch   Registrieren
+# Test Setup           Start Test Bench    English   Sign Up
+Test Setup         Start Test Bench    Deutsch   Registrieren
 Test Teardown       Close Browser
 
 

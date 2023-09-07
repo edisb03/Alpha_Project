@@ -38,7 +38,7 @@ ${SUBTITLE_TESTBENCH}           //div[@class='flyntComponent componentSpacing th
 ${WELL_DONE_STATUS}             //div[contains(@class, 'checklist')]//p[contains(@class, 'msg--success')]
 ${EMAIL_ALEADY_EXIST}           (//p[@class='msg msg--error'])[1]
 ${CHECK_YOUR_EMAIL}             //h3[contains(@class, 'h2')]
-${ENTER_YOUR_DETAILS_BELOW}     //h2[@class='h2']
+${ENTER_YOUR_DETAILS_BELOW}     (//div[@class='overline'])[1]
 ${WELCOME}                      //h2[contains(@class, 'h2')]
 
 # MH_STATUS
