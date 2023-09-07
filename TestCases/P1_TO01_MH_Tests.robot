@@ -6,8 +6,8 @@ Documentation       Main Header Section
 
 Resource            ..//Resources/import.resource
 
-# Test Setup          Start Test Bench     English   ${EMPTY}
-Test Setup         Start Test Bench    Deutsch  ${EMPTY}
+Test Setup          Start Test Bench     English   ${EMPTY}
+#Test Setup         Start Test Bench    Deutsch  ${EMPTY}
 Test Teardown       Close Browser
 
 
@@ -165,11 +165,13 @@ P1_TO01_MH_TC19 Verify Fast Setup Link Within Resources Page
 
 P1_TO01_MH_TC20 Verify English Option In The Language Dropdown List
     [Documentation]    Verifies that English option is shown in the language dropdown list
+    [Tags]    p1to01_tc20    exploratory
     Perform Language Switching    English
 
 P1_TO01_TC21 Switch Page To Deutch And Revert To Default Language English
     [Documentation]    Verify that users can navigate to the Deutsch version,
     ...    of the website from the home page using the language switcher...
+    [Tags]    p1to01_tc21    exploratory
     Verify Default Languange Is    English
     Perform Language Switching    Deutsch
     Control If The MH Page Contains     The Smart Test Management Tool
