@@ -13,7 +13,7 @@ Test Teardown       Close Browser
 *** Test Cases ***
 P1_TO03_TC01 Navigate To Sign Up
     [Documentation]    Open TestBench web page navigate to Sign Up And validate if page is open.
-    [Tags]    p1to03_tc01    exploratory
+    [Tags]    P1TO03_TC01    exploratory
     Navigate To TestBench Logo
 
 P1_TO03_TC02 Register to Sign Up with Valid Email And Valid Password Without Checkbox
