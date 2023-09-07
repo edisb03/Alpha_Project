@@ -31,7 +31,6 @@ Accept Cookies
         Set Selenium Speed    0.2
         Wait Until Page Contains Element    ${COOKIES}
         Tolerant Click    ${COOKIES}
-        Wait Until Page Contains Element   ${FIRST_HEADER}
         Wait Until Keyword Succeeds    3x    1s    Verify Main Header
     ELSE
         Element Should Not Be Visible    ${COOKIES}

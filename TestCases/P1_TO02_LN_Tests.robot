@@ -7,7 +7,7 @@ Documentation       Login In Section
 Resource            ..//Resources/import.resource
 
 Test Setup           Start Test Bench    English   ${EMPTY}
-# Test Setup          Start Test Bench    Deutsch   ${EMPTY}
+#Test Setup          Start Test Bench    Deutsch   ${EMPTY}
 Test Teardown       Close Browser
 
 
@@ -93,7 +93,7 @@ P1_TO02_LN_TC08 Translate Login Page To Deutsch
     Verify Default Languange Is    English
     Control If Login/SignUp Page Contains    Enter your details below
     Perform Language Switching    Deutsch
-    Control If Login/SignUp Page Contains    Enter your details below
+    Control If Login/SignUp Page Contains    Geben Sie Ihre Daten unten ein
     Check The Log In Form Language    Deutsch
 
 P1_TO02_LN_TC09 Valid Credentials Of Not Registered User

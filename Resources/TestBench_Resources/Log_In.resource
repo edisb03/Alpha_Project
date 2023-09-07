@@ -15,14 +15,10 @@ ${SU_PASSWORD}          //input[@name='password']
 ${SU_EMAIL}             //input[@type='text']
 ${SIGN_UP_BUTTON}       //button[@class='button button--primary']
 ### Login labels and buttons in English language  ###
-${EMAIL_LABEL_ENG}      //div[@id="logIn"]//label[contains(text(), 'Email')]
-${PASSWORD_LABEL_ENG}   //div[@id="logIn"]//label[contains(text(), 'Password')]
-${LN_SIGN_UP_BUTTON}    //div[@class='cta space-between']//a[contains(@href, '/sign-up/')]
+${EMAIL_LABEL}          (//label)[1]
+${PASSWORD_LABEL}       (//label)[2]
+${LN_SIGN_UP_BUTTON}    (//a[@class='button button--ghost button--small'])[1]
 ${FORGOT_PASSWORD}      //a[contains(@href, '/log-in/#/password-forgot')]
-### Login labels and buttons in German language  ###
-${EMAIL_LABEL_GER}      //div[@id="logIn"]//label[contains(text(), 'E-Mail')]
-${PASSWORD_LABEL_GER}   //div[@id="logIn"]//label[contains(text(), 'Passwort')]
-${LN_ANMELDEN_BUTTON}   //div[@class='cta space-between']//a[contains(@href, '/de/sign-up/')]
 ${FORGOT_PASS_MESSAGE}  (//h3[@class='h2'])[1]
 
 ### Users ###
@@ -73,17 +69,17 @@ Check The Log In Form Language
     [Arguments]    ${language}
     Set Selenium Speed    0.3
     IF    "${language}" == "English"
-        Page Should Contain Element    ${EMAIL_LABEL_ENG}
-        Page Should Contain Element    ${PASSWORD_LABEL_ENG}
+        Page Should Contain Element    ${EMAIL_LABEL}
+        Page Should Contain Element    ${PASSWORD_LABEL}
         Wait Until Page Contains Element    ${SIGN_UP_OR_LOGIN_BUTTON}
         Element Should Be Visible    ${SIGN_UP_OR_LOGIN_BUTTON}
         Element Should Be Visible    ${LN_SIGN_UP_BUTTON}
     ELSE IF    "${language}" == "Deutsch"
-        Page Should Contain Element    ${EMAIL_LABEL_GER}
-        Page Should Contain Element    ${PASSWORD_LABEL_GER}
+        Page Should Contain Element    ${EMAIL_LABEL}
+        Page Should Contain Element    ${PASSWORD_LABEL}
         Wait Until Page Contains Element    ${SIGN_UP_OR_LOGIN_BUTTON}
         Element Should Be Visible    ${SIGN_UP_OR_LOGIN_BUTTON}
-        Element Should Be Visible    ${LN_ANMELDEN_BUTTON}
+        Element Should Be Visible    ${LN_SIGN_UP_BUTTON}
     END
 
 Verify And Click Forgot Your Password

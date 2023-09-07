@@ -82,7 +82,9 @@ Control If Login/SignUp Page Contains
     ELSE IF    "${status}" == "Enter your details below"
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${ENTER_YOUR_DETAILS_BELOW}
     ELSE IF    "${status}" == "Welcome!"
-        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${WELCOME} 
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${WELCOME}
+    ELSE IF    "${status}" == "Geben Sie Ihre Daten unten ein"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${ENTER_YOUR_DETAILS_BELOW}
     ELSE
         Fail    Unexpected status: ${status}
     END
