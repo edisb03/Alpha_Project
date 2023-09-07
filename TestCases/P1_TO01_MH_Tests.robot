@@ -65,6 +65,11 @@ P1_TO01_MH_TC07 Verify Try Data-Driven Testing
     Navigate To Learn More Data Driven    Learn More
     Control If The MH Page Contains    Let the Data Do All Your Testing
 
+P1_TO01_MH_TC08 Navigate To English Language
+    [Documentation]    Verifies that English option is shown at Header of the testbench page
+    [Tags]    p1to01_tc08    exploratory
+    Verify Default Languange Is    English
+
 P1TO01_TC09 Navigate To Blog
     [Documentation]    User open web page of TestBench : www.testbanch.com and,
     ...    checks for Blog item on main Header, then verifies if,
@@ -121,6 +126,46 @@ P1_TO01_MH_TC15 Navigate As A Tester
     ...    and verify new page content...
     [Tags]    p1to01_tc15    exploratory
     Navigate To Your Personal TestBench Benefit    Tester
+
+P1_TO01_MH_TC16 Verify Test Automation Link Within Resources Page
+    [Documentation]    Verifies if user can click Test Automation Link which is within Resources page
+    ...    and validates next page.
+    [Tags]    p1to01_tc16    exploratory
+    Navigate To Resources
+    Verify Resources Links    Test Automation
+    Verify New Automation Page
+    Verify Page Of GitHub    ${TA_TITLE}
+
+P1_TO01_MH_TC17 Verify Data-Driven Testing Link Within Resources Page
+    [Documentation]    Verifies if user can click Data-Driven Testing Link which is within Resources page
+    ...    and validates next page.
+    [Tags]    p1to01_tc17    exploratory
+    Navigate To Resources
+    Verify Resources Links    Data-Driven Testing
+    Verify New Automation Page
+    Verify Page Of GitHub    ${DD_PAGE_TITLE}
+
+P1_TO01_MH_TC18 Verify Defect Export Link Within Resources Page
+    [Documentation]    Verifies if user can click Defect Export Link which is within Resources page
+    ...    and validates next page.
+    [Tags]    p1to01_tc18    exploratory
+    Navigate To Resources
+    Verify Resources Links    Defect Export
+    Verify New Automation Page
+    Verify Page Of GitHub    ${DE_PAGE_TITLE}
+
+P1_TO01_MH_TC19 Verify Fast Setup Link Within Resources Page
+    [Documentation]    Verifies if user can click Fast Setup Link which is within Resources page
+    ...    and validates next page.
+    [Tags]    p1to01_tc19    exploratory
+    Navigate To Resources
+    Verify Resources Links    Fast Setup
+    Verify New Automation Page
+    Verify Page Of GitHub    ${FS_PAGE_TITLE}
+
+P1_TO01_MH_TC20 Verify English Option In The Language Dropdown List
+    [Documentation]    Verifies that English option is shown in the language dropdown list
+    Perform Language Switching    English
 
 P1_TO01_TC21 Switch Page To Deutch And Revert To Default Language English
     [Documentation]    Verify that users can navigate to the Deutsch version,

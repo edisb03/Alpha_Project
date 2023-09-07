@@ -98,6 +98,8 @@ Control If The MH Page Contains
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${IMBUS_PAGE_TITTLE}
     ELSE IF    "${status}" == "Discover the features"
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${FEATURES_PAGE_TITTLE}
+    ELSE IF    "${status}" == "Find it quick - Use it right away"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element   ${RESOURCES_PAGE_TITTLE}
     ELSE
         Fail    Unexpected status: ${status}
     END

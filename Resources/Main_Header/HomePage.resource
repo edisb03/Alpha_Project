@@ -47,7 +47,7 @@ ${BLOG_PAGE_TITLE}                          //h2[contains(@class, 'h2')]
 ${GET_STARTED_WITH_FREE_ACCOUNT}            //div[contains(@class, 'overline')]
 ${IMBUS_PAGE_TITTLE}                        //h2[contains(@class, ' headline--h3 headline--noline')]
 ${FEATURES_PAGE_TITTLE}                     //h1[contains(@class, 'overline')]
-
+${RESOURCES_PAGE_TITTLE}                    //p[@class='overline']
 
 *** Keywords ***
 Use TestBench For Free
@@ -80,8 +80,6 @@ Control If Login/SignUp Page Contains
     ELSE IF    "${status}" == "Log in failed. Please check your credentials."
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${EMAIL_ALEADY_EXIST}
     ELSE IF    "${status}" == "Enter your details below"
-        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${ENTER_YOUR_DETAILS_BELOW}
-    ELSE IF    "${status}" == "Welcome!"
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${ENTER_YOUR_DETAILS_BELOW}
     ELSE
         Fail    Unexpected status: ${status}
