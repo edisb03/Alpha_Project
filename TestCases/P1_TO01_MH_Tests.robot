@@ -90,7 +90,7 @@ P1_TO01_MH_TC10 Verify Test Approaches Links
     Navigate To Test Approaches
     Search Links By Name    Keyword-Driven Testing
 
-P1TO01_TC11 Validate Video Exploratory Testing
+P1_TO01_TC11 Validate Video Exploratory Testing
     [Documentation]    User opens the web page of TestBench: www.testbench.com and
     ...    checks if they can open Exploratory Testing under Test Approaches on the Main Header
     ...    finding the specified link, scrolling to a video, and controlling the video

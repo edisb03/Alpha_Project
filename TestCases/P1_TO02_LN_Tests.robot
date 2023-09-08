@@ -29,7 +29,7 @@ P1_TO02_LN_TC02 Valid Credentials Of Registered User
     Check Button State And Sign-Up/Log-In    Log_in_Enabled
     Control If Login/SignUp Page Contains    Welcome!
 
-P1TO02_TC03 Invalid Email Valid Password Failed Login
+P1_TO02_TC03 Invalid Email Valid Password Failed Login
     [Documentation]    In this test case is tested if a registered user can fulfill the login form
     ...    with wrong email and valid password and then check the Login button state and error message as well.
     [Tags]    P1TO02_TC03    exploratory
@@ -40,7 +40,7 @@ P1TO02_TC03 Invalid Email Valid Password Failed Login
     Check Button State And Sign-Up/Log-In    Log_in_Enabled
     Control If Login/SignUp Page Contains   Log in failed. Please check your credentials.
 
-P1TO02_TC04 Valid Email Invalid Password Failed Login
+P1_TO02_TC04 Valid Email Invalid Password Failed Login
     [Documentation]    In this test case is tested if a registered user can fulfill the login form
     ...    with correct email and invalid password and then check the Login button state and error message as well.
     [Tags]    P1TO02_TC04    exploratory
@@ -50,14 +50,14 @@ P1TO02_TC04 Valid Email Invalid Password Failed Login
     Check Button State And Sign-Up/Log-In    Log_in_Enabled
     Control If Login/SignUp Page Contains    Log in failed. Please check your credentials.
 
-P1TO02_TC05 Empty Email And Password
+P1_TO02_TC05 Empty Email And Password
     [Documentation]    In this test case user navigates to Log in and try,
     ...    to login without filling the login form at all..
     [Tags]    P1TO02_TC05    exploratory
     Navigate To Login
     Check Button State And Sign-Up/Log-In    Log_in_Disabled
 
-P1TO02_TC06 Account Lockout After Multiple Failed Attempts
+P1_TO02_TC06 Account Lockout After Multiple Failed Attempts
     [Documentation]    In this test case is tested if an error message is shown after filling the Login form
     ...    with incorrect credentials and the user can click the checkbox Forgot my password.
     [Tags]    P1TO02_TC06    exploratory
@@ -69,7 +69,7 @@ P1TO02_TC06 Account Lockout After Multiple Failed Attempts
     Verify And Click Forgot Your Password
     Check Reset Password Availability    Reset_Password_Disabled
 
-P1TO02_TC07 Forgot Password Reset Password Flow
+P1_TO02_TC07 Forgot Password Reset Password Flow
     [Documentation]    In this test case is tested if an error message is shown after filling the Login form
     ...    with incorrect credentials and the user can click the checkbox Forgot my password.
     ...    Then enter the email and checks the if Reset Password is enable and clickable.
