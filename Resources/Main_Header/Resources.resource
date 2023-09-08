@@ -42,12 +42,16 @@ Verify Page Of GitHub
     [Documentation]    Check for the content text of GitHub page
     [Arguments]    ${GitHub_page_tittle}
     IF    '${GitHub_page_tittle}' == "Test Case Automation Agent for TestBench CS"
+        Execute JavaScript    window.scrollTo(0,1000);
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${TA_TITLE}
     ELSE IF    "${GitHub_page_tittle}" == "DDT table import via Excel for TestBench CS"
+        Execute JavaScript    window.scrollTo(0,500);
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${DD_PAGE_TITLE}
     ELSE IF    "${GitHub_page_tittle}" == "Defect Export via Excel for TestBench CS"
+        Execute JavaScript    window.scrollTo(0,500);
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${DE_PAGE_TITLE}
     ELSE IF    "${GitHub_page_tittle}" == "Setup users along with Workspaces in TestBench CS"
+        Execute JavaScript    window.scrollTo(0,500);
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${FS_PAGE_TITLE}
     ELSE
         Fail    Unexpected status:  ${GitHub_page_tittle}
