@@ -57,7 +57,7 @@ Try Exploratory Testing
 
 Navigate To Learn More Exploratory Testing
     [Documentation]    Scrolls down to the middle of the page
-    ...    finds the Learn More Function and Clicks on it
+    ...    finds the Learn More Function and Clicks on it.
     [Arguments]    ${Learn_More_1}
     Execute JavaScript    window.scrollTo(0,7800);
     Wait Until Page Contains Element   ${LEARN_MORE}
