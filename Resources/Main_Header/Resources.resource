@@ -41,7 +41,17 @@ Verify New Automation Page
 Verify Page Of GitHub
     [Documentation]    Check for the content text of GitHub page
     [Arguments]    ${GitHub_page_tittle}
-    Wait Until Keyword Succeeds    3x    3s    Wait Until Page Contains Element    ${GitHub_page_tittle}
+    IF    '${GitHub_page_tittle}' == "Test Case Automation Agent for TestBench CS"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${TA_TITLE}
+    ELSE IF    "${GitHub_page_tittle}" == "DDT table import via Excel for TestBench CS"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${DD_PAGE_TITLE}
+    ELSE IF    "${GitHub_page_tittle}" == "Defect Export via Excel for TestBench CS"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${DE_PAGE_TITLE}
+    ELSE IF    "${GitHub_page_tittle}" == "Setup users along with Workspaces in TestBench CS"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${FS_PAGE_TITLE}
+    ELSE
+        Fail    Unexpected status:  ${GitHub_page_tittle}
+    END
 
  Control If The Page Contains
     [Documentation]    Reusable keyword
