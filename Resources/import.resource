@@ -17,5 +17,6 @@ Resource            ../Resources/TestBench_Resources/Sign_Up.resource
 Resource             ../Resources/Main_Header/API_resource.resource
 Library             ../API/Test_Api_Status.py
 Library             ../API/Api_Status.py
+Library             ../API/API_YAML.py
 
 ### Python files resources
