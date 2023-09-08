@@ -70,7 +70,7 @@ P1_TO01_MH_TC08 Navigate To English Language
     [Tags]    P1TO01_TC08    exploratory
     Verify Default Languange Is    English
 
-P1TO01_TC09 Navigate To Blog
+P1_TO01_TC09 Navigate To Blog
     [Documentation]    User open web page of TestBench : www.testbanch.com and,
     ...    checks for Blog item on main Header, then verifies if,
     ...    its clickable and new page is opened after.
