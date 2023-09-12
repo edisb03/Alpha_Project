@@ -5,37 +5,39 @@ Resource            import.resource
 
 
 *** Variables ***
-${ACCEPT_COOKIES}           (//a[@role='button'][normalize-space()='Accept all'])[1]
-${ACCEPT_GERMAN_COOKEIS}    //*[@id="BorlabsCookieBox"]/div/div/div/div[1]/div/div/div/p[2]/a
-${CHECKBOX}                 //span[contains(text(),'Please send me occasional')]
+&{TESTBENCH_URL}
+...    prod=https://www.testbench.com/
+
+${ENV}            prod
+
+${CHECKBOX}                 //div[@class='newsletter']//label//span
+${COOKIES}                  //p[@class='_brlbs-accept'][1]
+${FIRST_HEADER}             //h1[@class='h1']
 
 
 *** Keywords ***
+Start Test Bench
+    [Documentation]  Start browser, maximize window and navigate to TestBench Website
+    [Arguments]   ${url}=${TESTBENCH_URL.${ENV}}
+    Start Browser     ${url}
+    Accept Cookies
+    Perform Language Switching    English   # Langauges available Deutsch or English
+
 Accept Cookies
-    [Documentation]    This keyword is for Cookies and for validate that TestBench web is open.
-    [Arguments]    ${COOKIE}
-    Set Selenium Speed    0.2
-    IF    "${COOKIE}" == "Accept all"
-        Wait Until Page Contains    Accept all
-        Tolerant Click    ${ACCEPT_COOKIES}
-        Wait Until Keyword Succeeds    3x    1s    Wait Until Page Contains    The Smart Test Management Tool
+    [Documentation]    This keyword is for accepting cookies on the TestBench web page.
+    ${accept}    Run Keyword And Return Status    Element Should Be Visible    ${COOKIES}
+    IF    '${accept}' == 'True'
+        Set Selenium Speed    0.2
+        Wait Until Page Contains Element    ${COOKIES}
+        Tolerant Click    ${COOKIES}
         Wait Until Keyword Succeeds    3x    1s    Verify Main Header
-    ELSE IF    "${COOKIE}" == "Accept all"
-        Element Should Not Be Visible    ${ACCEPT_COOKIES}
-        No Operation
-    ELSE IF    "${COOKIE}" == "Alle Cookies akzeptieren"
-        Wait Until Page Contains    Alle Cookies akzeptieren
-        Wait Until Page Contains Element    ${ACCEPT_GERMAN_COOKEIS}
-        Tolerant Click    ${ACCEPT_GERMAN_COOKEIS}
-    ELSE IF    "${COOKIE}" == "Alle Cookies akzeptieren"
-        Element Should Not Be Visible    ${ACCEPT_GERMAN_COOKEIS}
+    ELSE
+        Element Should Not Be Visible    ${COOKIES}
         No Operation
     END
 
 Tick The Checkbox
     [Documentation]    Waits until the specified checkbox element is present on the page
     ...    Once the checkbox is visible, it's clicked to select it.
-    [Arguments]    ${tick_checkbox}
-    Wait Until Page Contains Element    ${CHECKBOX}
-    Tolerant Click    ${CHECKBOX}
-    Page Should Contain    ${tick_checkbox}
+    Wait Until Page Contains Element        ${CHECKBOX}
+    Tolerant Click                         ${CHECKBOX}

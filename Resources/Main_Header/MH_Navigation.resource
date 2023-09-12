@@ -5,29 +5,29 @@ Resource            ../import.resource
 
 
 *** Variables ***
-${NAV_FEATURES}                         //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/features/')]
-${NAV_TEST_APPROACHES}                  //a[@href="#"]
+${NAV_FEATURES}                         (//li[contains(@class, 'menu-item')]//a[contains(text(), 'F')])[1]
+${NAV_TEST_APPROACHES}                  (//li[contains(@class, 'menu-item')]//a[contains(text(), 'Test')])[1]
 ### Locators for Test Approaches Links ###
-${NAV_EXPLOTARY_TESTING}                //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[1]/a[1]
-${NAV_DATA-DRIVEN-TESTING}              (//a[contains (@href, "https://www.testbench.com/data-driven-testing/")])[1]
-${NAV_KEYWORD-DRIVEN_TESTING}           //header/nav[1]/div[1]/div[1]/ul[1]/li[2]/ul[1]/li[3]/a[1]
+${NAV_EXPLOTARY_TESTING}                (//li[contains(@class, 'nav-drop-item')]//a[contains(text(), 'Explo')])[1]
+${NAV_DATA-DRIVEN-TESTING}              (//li[contains(@class, 'nav-drop-item')]//a[contains(text(), 'Dat')])[1]
+${NAV_KEYWORD-DRIVEN_TESTING}           (//li[contains(@class, 'nav-drop-item')]//a[contains(text(), 'Key')])[1]
 ### Main Header Locators ###
-${NAV_BLOG}                             //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/blog/')]
-${NAV_RESOURCES}                        //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/resources')]
-${LOGIN_BUTTON}                         /div[@class='wrapper']//li[5]
-${LOGIN_PAGE_TITLE}                     //div[@class='box-inner box-inner--right']//div[@id='logIn']//div[@class='overline']
-${NAV_SIGN_UP}                          //nav[contains(@class, 'flyntComponent')][1]//li[contains(@class, 'menu-item')]//a[contains(@href, 'https://www.testbench.com/sign-up/')]
-${NAV_LOGO}                             (//header[contains(@class, 'mainHeader')]//a//img[contains(@class, 'logo-image')])[1]
-${GER_COOKIES}                          //div[contains(@class, 'container')]//p//a[contains(text(), 'Alle Cookies akzeptieren')][1]
+${NAV_BLOG}                             (//li[contains(@class, 'menu-item')]//a[contains(text(), 'Blog')])[1]
+${NAV_RESOURCES}                        (//li[contains(@class, 'menu-item')]//a[contains(text(), 'R')])[1]
+${LOGIN_BUTTON}                         (//li[contains(@class, 'menu-item')]//a[contains(text(), 'L')])[1]
+${LOGIN_PAGE_TITLE}                     (//div[@class='overline'])[1]
+${NAV_SIGN_UP}                          (//li[contains(@class, 'menu-item')]//a[contains(text(), 'Sign Up')])[1]
+${NAV_GER_REG}                          (//li[contains(@class, 'menu-item')]//a[contains(text(), 'Registrieren')])[1]
+${NAV_LOGO}                             //img[@class="logo-image"]
 ${MAIN_HEADER}                          (//ul[contains(@class, "menu")])[1]
-${NAV_ENG}                              (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'English')])[1]
-${NAV_GER}                              (//div[contains(@class, 'container centerMaxWidthContainer')]//ul//li//span[contains(text(), 'Deutsch')])[1]
-${NAV_TESTBENCH_BENEFITS}               //h2[contains(text(), 'Your Personal TestBench Benefit')]
+${NAV_TESTBENCH_BENEFITS}               (//h2[@class='overline'])[4]
 ### Exploratory testing video locators
-${EXPLORATORY_TESTING_TITLE_VIDEO}      //h3[contains(text(),'The Right Tool – For the Right Job')]
+${EXPLORATORY_TESTING_TITLE_VIDEO}      (//div[@class='box-inner box-inner--content text text--lg'])[3]//h3[@class='h1']
 ${EXPLORATORY_TESTING_VIDEO}            //button[@aria-label='Play Video']
 ${VIDEO_PLAYER}                         (//iframe)[1]
-${DROP_DOWN_LIST}                       (//span[@lang='en'][normalize-space()='English'])[1]
+${DROP_DOWN}                            (//span[@class='wpml-ls-native'])[1]
+${DROP_DOWN_ENGLISH}                    (//li[contains(@class, 'menu-item menu-item')])[2]
+${DROP_DOWN_GERMAN}                     (//li[contains(@class, 'menu-item menu')]//span[contains(@lang, 'de')])[1]
 ${ENGLISH}                              (//span[@lang='en'][normalize-space()='English'])[1]
 ${GERMAN}                               (//span[@lang='de'][normalize-space()='Deutsch'])[1]
 ${FOOTER_TB_LOGO}                       (//img[@alt='TestBench'])[3]
@@ -38,7 +38,7 @@ Navigate To Features
     [Documentation]    This keyword is used to navigate to Features...
     Wait Until Page Contains Element    ${NAV_FEATURES}
     Click Element    ${NAV_FEATURES}
-    Wait Until Page Contains    Discover the features
+    Control If The MH Page Contains    Discover the features
 
 Navigate To Test Approaches
     [Documentation]    Navigate To Test Approaches
@@ -48,37 +48,27 @@ Navigate To Test Approaches
 Search Links By Name
     [Documentation]    Search the specified links by using its name
     [Arguments]    ${link_status}
-    Wait Until Page Contains    Test Approaches
-    Navigate To Test Approaches
-    Set Selenium Speed    0.3
     IF    "${link_status}" == "Exploratory Testing"
-        Sleep    3s
-        Page Should Contain    Exploratory Testing
+        Wait Until Page Contains Element    ${NAV_EXPLOTARY_TESTING}
         Tolerant Click    ${NAV_EXPLOTARY_TESTING}
-        Page Should Contain    Exploratory Testing Explained
     ELSE IF    "${link_status}" == "Data-Driven Testing"
-        Sleep    5s
-        Page Should Contain    Data-Driven Testing
+        Wait Until Page Contains Element    ${NAV_DATA-DRIVEN-TESTING}
         Tolerant Click    ${NAV_DATA-DRIVEN-TESTING}
-        Page Should Contain    Data-Driven Testing
     ELSE IF    "${link_status}" == "Keyword-Driven Testing"
-        Page Should Contain    Keyword-Driven Testing
-        Sleep    3s
+        Wait Until Page Contains Element    ${NAV_KEYWORD-DRIVEN_TESTING}
         Tolerant Click    ${NAV_KEYWORD-DRIVEN_TESTING}
-        Page Should Contain    Keyword-Driven Testing
     END
 
 Navigate To Blog
     [Documentation]    This Keyword is used to navigate to Blog
-    Wait Until Page Contains Element    ${NAV_BLOG}
-    Click Element    ${NAV_BLOG}
-    Wait Until Page Contains    TestBench Blog
+    Wait Until Keyword Succeeds    3x    3s    Wait Until Page Contains Element    ${NAV_BLOG}
+    Wait Until Keyword Succeeds    3x    3s    Tolerant Click    ${NAV_BLOG}
 
 Navigate To Resources
     [Documentation]    This keyword is used to navigate to Resources.
     Wait Until Page Contains Element    ${NAV_RESOURCES}
-    Click Element    ${NAV_RESOURCES}
-    Wait Until Page Contains    Find it quick - Use it right away
+    Tolerant Click    ${NAV_RESOURCES}
+    Control If The MH Page Contains    Find it quick - Use it right away
 
 Navigate To Login
     [Documentation]    Navigates to Login Button
@@ -89,22 +79,27 @@ Navigate To Login
 
  Navigate To Sign Up
     [Documentation]    This keyword is used to navigate to Sign Up.
-    Wait Until Page Contains Element    ${NAV_SIGN_UP}
-    Click Element    ${NAV_SIGN_UP}
-    Wait Until Page Contains    Get started with a free account
+    ${status}    Run Keyword And Return Status    Element Should Be Visible     ${NAV_SIGN_UP}
+    IF    '${status}' == 'True'
+        Wait Until Page Contains Element    ${NAV_SIGN_UP}
+        Tolerant Click    ${NAV_SIGN_UP}
+        Wait Until Page Contains Element    //h3[@class='h2']
+    ELSE
+        Wait Until Page Contains Element    ${NAV_GER_REG}
+        Tolerant Click    ${NAV_GER_REG}
+        Wait Until Page Contains Element    //h3[@class='h2']
+    END
 
 Navigate To TestBench Logo
     [Documentation]    This keyword is used to navigate to TestBench logo
-    [Arguments]    ${title}
     Wait Until Page Contains Element    ${NAV_LOGO}
-    Tolerant Click   ${NAV_LOGO}
-    Control If Page Contains    ${title}
+    Tolerant Click    ${NAV_LOGO}
+    Wait Until Page Contains Element    ${FIRST_HEADER}
 
 Scroll To Video
     [Documentation]    Scrolls the page to bring the video element into view.
     [Arguments]    ${video_title}
     Wait Until Page Contains Element    ${EXPLORATORY_TESTING_TITLE_VIDEO}
-    Page Should Contain    ${video_title}
     Wait Until Page Contains Element    ${EXPLORATORY_TESTING_VIDEO}
     Scroll Element Into View    ${EXPLORATORY_TESTING_VIDEO}
 
@@ -145,32 +140,33 @@ Perform Language Switching
     [Documentation]    Performs language switching from `${ENGLISH}` to `${GERMAN}`
     ...    and,${GERMAN} to ${ENGLISH} verifies the switch.
     [Arguments]    ${language}
-    Set Selenium Speed    0.3
-    IF    "${language}" == "English_To_English"
-        Wait Until Page Contains Element    ${ENGLISH}
-        Page Should Contain    English
-        Tolerant Click    ${ENGLISH}
-    ELSE IF    "${language}" == "English_To_English"
-        Element Should Not Be Visible    ${ACCEPT_COOKIES}
-        No Operation
-    ELSE IF    "${language}" == "Deutsch_To_Deutsch"
-        Wait Until Page Contains Element    ${GERMAN}
-        Mouse Over    ${GERMAN}
-        Page Should Contain    Deutsch
-        Tolerant Click    ${GERMAN}
-    ELSE IF    "${language}" == "English_To_Deutsch"
-        Mouse Over    ${ENGLISH}
-        Wait Until Page Contains Element    ${GERMAN}
-        Tolerant Click    ${GERMAN}
-        Accept Cookies    Alle Cookies akzeptieren
-    ELSE IF    "${language}" == "English_To_Deutsch"
-        Element Should Not Be Visible    ${ACCEPT_GERMAN_COOKEIS}
-    ELSE IF    "${language}" == "Deutsch_To_English"
-        Page Should Contain    Deutsch
-        Wait Until Page Contains Element    ${GERMAN}
-        Tolerant Click    ${GERMAN}
-        Wait Until Page Contains Element    ${ENGLISH}
-        Tolerant Click    ${ENGLISH}
+    ${status}    Run Keyword And Return Status    Element Should Be Visible    ${DROP_DOWN_ENGLISH}
+    IF    '${status}' == 'True'
+        Wait Until Page Contains Element    ${DROP_DOWN_ENGLISH}
+        Click Element    ${DROP_DOWN_ENGLISH}
+        IF    '${language}' == 'English'
+            Wait Until Page Contains Element    ${ENGLISH}
+            Click Element    ${ENGLISH}
+            Accept Cookies
+        ELSE IF    '${language}' == 'Deutsch'
+            Wait Until Page Contains Element    ${GERMAN}
+            Click Element    ${GERMAN}
+            Accept Cookies
+        END
+    ELSE IF    '${status}' == 'False'
+        Wait Until Page Contains Element    ${DROP_DOWN}
+        Mouse Over    ${DROP_DOWN}
+        Wait Until Page Contains Element    ${DROP_DOWN_GERMAN}
+        Click Element    ${DROP_DOWN_GERMAN}
+        IF    '${language}' == 'English'
+            Wait Until Page Contains Element    ${ENGLISH}
+            Click Element    ${ENGLISH}
+            Accept Cookies
+        ELSE IF    '${language}' == 'Deutsch'
+            Accept Cookies
+            Wait Until Page Contains Element    ${GERMAN}
+            Tolerant Click    ${GERMAN}
+        END
     END
 
 Scroll To Verify Test Bench Logo

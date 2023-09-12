@@ -14,6 +14,12 @@ ${LOGIN_PAGE_TITLE}     //div[@class='box-inner box-inner--right']//div[@id='log
 ${SU_PASSWORD}          //input[@name='password']
 ${SU_EMAIL}             //input[@type='text']
 ${SIGN_UP_BUTTON}       //button[@class='button button--primary']
+### Login labels and buttons in English language  ###
+${EMAIL_LABEL}          (//label)[1]
+${PASSWORD_LABEL}       (//label)[2]
+${LN_SIGN_UP_BUTTON}    (//a[@class='button button--ghost button--small'])[1]
+${FORGOT_PASSWORD}      //a[contains(@href, '/log-in/#/password-forgot')]
+${FORGOT_PASS_MESSAGE}  (//h3[@class='h2'])[1]
 
 ### Users ###
 # &{USER_01} Registered user with valid credentials
@@ -30,6 +36,10 @@ ${SIGN_UP_BUTTON}       //button[@class='button button--primary']
 ${USER_06}              hotmail.com
 ${USER_07}              gmail.com
 ${USER_08}              imbus-peja.de
+
+${USER_1}               agnesaa_m@hotmail.com   ### Registered user in the test bench app
+${USER_2}               agnesa@hotmail.com      ### Not Registered user in the test bench app
+${USER_3}               agnesa                  ### Invalid Email
 
 
 *** Keywords ***
@@ -53,3 +63,71 @@ Enter Dynamic Email And Password
     ${dynamic_password}=    Catenate     ${low_case}${uppercase_letter}${lowercase_letter}${digit}${special_char}@_
     Input Text    ${SU_EMAIL}       ${email}
     Input Text    ${SU_PASSWORD}    ${dynamic_password}
+
+Check The Log In Form Language
+    [Documentation]    This keyword checks the Log in form language
+    [Arguments]    ${language}
+    Set Selenium Speed    0.3
+    IF    "${language}" == "English"
+        Page Should Contain Element    ${EMAIL_LABEL}
+        Page Should Contain Element    ${PASSWORD_LABEL}
+        Wait Until Page Contains Element    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Element Should Be Visible    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Element Should Be Visible    ${LN_SIGN_UP_BUTTON}
+    ELSE IF    "${language}" == "Deutsch"
+        Page Should Contain Element    ${EMAIL_LABEL}
+        Page Should Contain Element    ${PASSWORD_LABEL}
+        Wait Until Page Contains Element    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Element Should Be Visible    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Element Should Be Visible    ${LN_SIGN_UP_BUTTON}
+    END
+
+Verify And Click Forgot Your Password
+    [Documentation]    This keyword verify if "Forgot your password" is shown in the Login form and can be clicked.
+    Wait Until Element Is Visible    ${FORGOT_PASSWORD}
+    Tolerant Click    ${FORGOT_PASSWORD}
+    Wait Until Page Contains Element   ${FORGOT_PASS_MESSAGE}
+
+Check Reset Password Availability
+    [Documentation]    Keyword is used to check the state of a Reset Password button and perform actions accordingly.
+    ...    The keyword checks if the button is disabled or enabled to click, and takes actions
+    ...    based on the button state.
+    [Arguments]    ${button_available}
+    ${status}=    Run Keyword And Return Status    Element Should Be Enabled    ${SIGN_UP_OR_LOGIN_BUTTON}
+    IF    '${button_available}' == 'Reset_Password_Enabled'
+        Wait Until Page Contains Element    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Element Should Be Visible    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Click Button    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Log    Reset password button is enabled and clickable
+    ELSE IF    '${button_available}' == 'Reset_Password_Disabled'
+        IF    ${status} == False
+            Log    Reset password button is disabled and not clickable
+        END
+    END
+
+Enter The Email
+    [Documentation]    Keyword is used to enter email in the Reset Password email box.
+    [Arguments]    ${email}
+    Wait Until Element Is Visible    ${SU_EMAIL}
+    Input Text    ${SU_EMAIL}   ${email}
+
+Enter The Email-RP
+    [Documentation]    Keyword is used to enter registered, not registered or invalid email
+    ...    in the Reset Password email box.
+    [Arguments]    ${email}
+    IF    '${email}' == '${USER_1}'
+        Wait Until Element Is Visible    ${SU_EMAIL}
+        Input Text    ${SU_EMAIL}   ${email}
+        Wait Until Element Is Visible    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Tolerant Click    ${SIGN_UP_OR_LOGIN_BUTTON}
+    ELSE IF    '${email}' == '${USER_2}'
+        Wait Until Element Is Visible    ${SU_EMAIL}
+        Input Text    ${SU_EMAIL}   ${email}
+        Wait Until Element Is Visible    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Tolerant Click    ${SIGN_UP_OR_LOGIN_BUTTON}
+        Page Should Contain    Sorry, your email address is not registered.
+    ELSE IF    '${email}' == '${USER_3}'
+        Wait Until Element Is Visible    ${SU_EMAIL}
+        Input Text    ${SU_EMAIL}   ${email}
+        Element Should Be Disabled    ${SIGN_UP_OR_LOGIN_BUTTON}
+    END

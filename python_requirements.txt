@@ -2,3 +2,5 @@ robotframework
 robotframework-seleniumlibrary
 robotframework-robocop
 robotframework-libtoc
+robotframework-requests
+PyYAML
