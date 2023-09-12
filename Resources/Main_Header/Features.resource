@@ -100,6 +100,8 @@ Control If The MH Page Contains
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${FEATURES_PAGE_TITTLE}
     ELSE IF    "${status}" == "Find it quick - Use it right away"
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element   ${RESOURCES_PAGE_TITTLE}
+    ELSE IF    "${status}" == "Keyword-Driven Testing "
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element   ${KD_TITLE}
     ELSE
         Fail    Unexpected status: ${status}
     END

@@ -16,6 +16,7 @@ ${FEATURES_LINK}          //ul[contains(@class, 'menu menu--level-1')]//a[contai
 ${EXPLOR_TESTING_LINK}    //ul[contains(@class, 'menu menu--level-1')]//a[contains(text(), 'E')]
 ${DD_TESTING_LINK}        (//ul[contains(@class, 'menu menu--level-1')]//a[contains(text(), 'D')])[1]
 ${KD_TESTING_LINK}        //ul[contains(@class, 'menu menu--level-1')]//a[contains(text(), 'Ke')]
+${KD_TITLE}               (//p[contains(@class, 'overline')])[1]
 
 
 *** Keywords ***
@@ -51,10 +52,13 @@ Validate Footer HeadLine
     ELSE IF    "${testbench_links}" == "Exploratory Testing"
          Wait Until Page Contains Element    ${EXPLOR_TESTING_LINK}
          Tolerant Click    ${EXPLOR_TESTING_LINK}
+         Control If The MH Page Contains   Explore. Learn. Create. Execute. Improve.
     ELSE IF    "${testbench_links}" == "Data Driven Testing"
          Wait Until Page Contains Element    ${DD_TESTING_LINK}
          Tolerant Click    ${DD_TESTING_LINK}
+         Control If The MH Page Contains    Let the Data Do All Your Testing
     ELSE IF    "${testbench_links}" == "Keyword Driven Testing"
          Wait Until Page Contains Element    ${KD_TESTING_LINK}
          Tolerant Click    ${KD_TESTING_LINK}
+         Control If The MH Page Contains    Keyword-Driven Testing
     END
