@@ -1,3 +1,4 @@
+name:   Second_workflow
 on: workflow_dispatch
 
 jobs:
