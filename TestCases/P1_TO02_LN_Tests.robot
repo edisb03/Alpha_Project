@@ -19,7 +19,7 @@ P1_TO02_LN_TC01 Navigate To Log In
 
 P1_TO02_LN_TC02 Valid Credentials Of Registered User
     [Documentation]    In this test case is tested if a registered user can fulfill the login form
-    ...    with their valid credentials and the Login button is enabled
+    ...    with their valid credentials and the Login button is enabled.
     [Tags]    P1TO02_TC02    exploratory
     Navigate To Login
     Enter Email And Password    &{USER_01}
