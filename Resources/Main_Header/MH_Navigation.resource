@@ -30,7 +30,7 @@ ${DROP_DOWN_ENGLISH}                    (//li[contains(@class, 'menu-item menu-i
 ${DROP_DOWN_GERMAN}                     (//li[contains(@class, 'menu-item menu')]//span[contains(@lang, 'de')])[1]
 ${ENGLISH}                              (//span[@lang='en'][normalize-space()='English'])[1]
 ${GERMAN}                               (//span[@lang='de'][normalize-space()='Deutsch'])[1]
-${FOOTER_TB_LOGO}                       (//img[@alt='TestBench'])[3]
+
 
 
 *** Keywords ***
