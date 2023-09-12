@@ -1,4 +1,4 @@
-on:
+on: dev 
 
 jobs:
   first_autobot:
