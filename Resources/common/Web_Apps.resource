@@ -48,7 +48,7 @@ ${HEADLESS CHROME OPTIONS}
 Start Browser
     [Documentation]    Opens a new browser using the global variable `BROWSER`, sets necessary *browser args*
     ...    and navigates to the given `URL`. Finally the browser *windows is maximized*.
-    [Arguments]    ${URL}=${BROWSER}    ${browser}=${BROWSER}
+    [Arguments]    ${URL}=${EMPTY}    ${browser}=${BROWSER}
     &{browser args}=    Create Dictionary
     IF    "${BROWSER}" == "headlesschrome"
         Set To Dictionary    ${browser args}    options=${HEADLESS CHROME OPTIONS}
