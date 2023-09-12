@@ -18,5 +18,10 @@ Resource             ../Resources/Main_Header/API_resource.resource
 Library             ../API/Test_Api_Status.py
 Library             ../API/Api_Status.py
 Library             ../API/API_YAML.py
+<<<<<<< HEAD
 Resource            ../Resources/Footer/Footerelements.robot
+=======
+Library             yaml
+
+>>>>>>> dev
 ### Python files resources
