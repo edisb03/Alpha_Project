@@ -6,9 +6,8 @@ Documentation       Login In Section
 
 Resource            ..//Resources/import.resource
 
-Test Setup           Start Test Bench    English   ${EMPTY}
-#Test Setup          Start Test Bench    Deutsch   ${EMPTY}
-Test Teardown       Close Browser
+Test Setup           Start Test Bench
+Test Teardown        Close Browser
 
 
 *** Test Cases ***

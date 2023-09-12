@@ -18,11 +18,11 @@ ${FIRST_HEADER}             //h1[@class='h1']
 *** Keywords ***
 Start Test Bench
     [Documentation]  Start browser, maximize window and navigate to TestBench Website
-    [Arguments]    ${language}  ${text}   ${url}=${TESTBENCH_URL.${ENV}}
+    [Arguments]   ${url}=${TESTBENCH_URL.${ENV}}
     Start Browser     ${url}
     Accept Cookies
-    Perform Language Switching    ${language}
-    Navigate To Sign Up    ${text}
+    Perform Language Switching    English
+    Navigate To Sign Up    Sign Up
 
 Accept Cookies
     [Documentation]    This keyword is for accepting cookies on the TestBench web page.

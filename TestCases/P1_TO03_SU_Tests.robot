@@ -5,9 +5,8 @@ Documentation       Sign Up Section
 ...    including valid and invalid inputs during the registration process.
 Resource            ../Resources/import.resource
 
-Test Setup           Start Test Bench    English   Sign Up
-#Test Setup         Start Test Bench    Deutsch   Registrieren
-Test Teardown       Close Browser
+Test Setup           Start Test Bench
+Test Teardown        Close Browser
 
 
 *** Test Cases ***
