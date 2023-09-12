@@ -1,4 +1,4 @@
-name: Run DryRun
+name: DryRun
 
 on:
   push:
