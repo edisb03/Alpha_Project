@@ -14,7 +14,7 @@ Test API Status Code 300
     Test Api    300
 
 Retrieve and Validate API Info Data
-    [Documentation]    Test retrieving and working with API info data.
+    [Documentation]    Test retrieving and working with API info data..
     ${info_data}    Get Info Data
     Log    Info Section Data:
     Log Many    ${info_data}
