@@ -21,8 +21,7 @@ Start Test Bench
     [Arguments]   ${url}=${TESTBENCH_URL.${ENV}}
     Start Browser     ${url}
     Accept Cookies
-    Perform Language Switching    English
-    Navigate To Sign Up    Sign Up
+    Perform Language Switching    English   # Langauges available Deutsch or English
 
 Accept Cookies
     [Documentation]    This keyword is for accepting cookies on the TestBench web page.

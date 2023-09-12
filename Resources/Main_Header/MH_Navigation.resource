@@ -79,12 +79,12 @@ Navigate To Login
 
  Navigate To Sign Up
     [Documentation]    This keyword is used to navigate to Sign Up.
-    [Arguments]    ${text}
-    IF    '${text}' == 'Sign Up'
+    ${status}    Run Keyword And Return Status    Element Should Be Visible     ${NAV_SIGN_UP}
+    IF    '${status}' == 'True'
         Wait Until Page Contains Element    ${NAV_SIGN_UP}
         Tolerant Click    ${NAV_SIGN_UP}
         Wait Until Page Contains Element    //h3[@class='h2']
-    ELSE IF    '${text}' == 'Registrieren'
+    ELSE
         Wait Until Page Contains Element    ${NAV_GER_REG}
         Tolerant Click    ${NAV_GER_REG}
         Wait Until Page Contains Element    //h3[@class='h2']
