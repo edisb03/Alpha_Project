@@ -32,7 +32,7 @@ ${BROWSER}
 ...    chrome
 # ${BROWSER}    ff
 # ${BROWSER}    headlesschrome
-# ${BROWSER}    edge
+# ${BROWSER}    chrome
 
 # Heal "page crashing" issues
 # https://stackoverflow.com/questions/53902507/unknown-error-session-deleted-because-of-page-crash-from-unknown-error-cannot
@@ -48,7 +48,7 @@ ${HEADLESS CHROME OPTIONS}
 Start Browser
     [Documentation]    Opens a new browser using the global variable `BROWSER`, sets necessary *browser args*
     ...    and navigates to the given `URL`. Finally the browser *windows is maximized*.
-    [Arguments]    ${URL}=${empty}    ${browser}=${BROWSER}
+    [Arguments]    ${URL}=${BROWSER}    ${browser}=${BROWSER}
     &{browser args}=    Create Dictionary
     IF    "${BROWSER}" == "headlesschrome"
         Set To Dictionary    ${browser args}    options=${HEADLESS CHROME OPTIONS}

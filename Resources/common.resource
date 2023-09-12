@@ -19,7 +19,7 @@ ${FIRST_HEADER}             //h1[@class='h1']
 Start Test Bench
     [Documentation]  Start browser, maximize window and navigate to TestBench Website
     [Arguments]   ${url}=${TESTBENCH_URL.${ENV}}
-    Start Browser     ${url}
+    Start Browser     ${url}    headlesschrome
     Accept Cookies
     Perform Language Switching    English   # Langauges available Deutsch or English
 
