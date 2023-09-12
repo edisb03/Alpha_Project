@@ -69,7 +69,7 @@ P1_TO03_TC05 Register to Sign Up with Valid Email And Valid Password With Checkb
 
 P1_TO03_TC06 Register To Sign Up With Invalid Email And Valid Password
     [Documentation]    This test case verifies the behavior of the "Sign Up" process on the test bench website
-    ...    when an nonsregistered invalid email and a valid password are entered.
+    ...    when an nonsregistered invalid email and a valid password are entered...
     [Tags]    P1TO03_TC06     exploratory
     Navigate To Sign Up
     Enter Email And Password    &{USER_04}
