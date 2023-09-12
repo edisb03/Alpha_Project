@@ -3,4 +3,3 @@ robotframework-seleniumlibrary
 robotframework-robocop
 robotframework-libtoc
 robotframework-requests
-# robotframework-pyyaml

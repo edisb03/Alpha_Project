@@ -13,7 +13,7 @@ Test API Status Code 300
     [Documentation]    Test API status code with expected status code 300
     Test Api    300
 
-Test API Return Yaml Data Text
+Retrieve and Validate API Info Data
     [Documentation]    Test retrieving and working with API info data
     ${info_data}    Get Info Data
     Log    Info Section Data:
