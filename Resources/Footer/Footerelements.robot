@@ -10,7 +10,9 @@ ${TESTBENCH_HL}        (//span[contains(@class, 'menu-item--headline')])[1]
 ${LEARN_HL}            (//span[contains(@class, 'menu-item--headline')])[2]
 ${SUPPORT_HL}          (//span[contains(@class, 'menu-item--headline')])[3]
 ${COMPANY_HL}          (//span[contains(@class, 'menu-item--headline')])[4]
-
+#TestBench Headline links locators
+${HOME_LINK}    //ul[contains(@class, 'menu menu--level-1')]//a[contains(text(), 'H')]
+${FEATURES_LINK}
 *** Keywords ***
 Check Footer Test Bench Logo
     [Documentation]    This keyword verifies that testbench logo is showing in the bottom right of footer
@@ -30,3 +32,9 @@ Validate Footer HeadLine
          Wait Until Page Contains Element    ${COMPANY_HL}
     END
 
+Navigate To Testbench Link
+    [Documentation]    This keyword is used for validating the progress of TestBench Headline Links
+    [Arguments]    ${testbench_links}
+    IF    $var_in_py_expr1 == $var_in_py_expr2
+        
+    END
