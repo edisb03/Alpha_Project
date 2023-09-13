@@ -12,9 +12,6 @@ pipeline
         choice(name: 'BROWSER', choices:["headlesschrome", "chrome"], description: 'The browser to run the tests with')
         choice(name: 'ENVIRONMENT', choices:["prod"], description: 'The environment to run the Testcases')
         choice(name: 'LANGUAGE', choices:["English"], description: 'Country language')
-        string(name: 'INCLUDE_TAGS', defaultValue: params.INCLUDE_TAGS, description: "Only tests with these tags are executed. Leave empty to run all tests. Doesn't affect the dryrun - it checks all tests anyway.")
-        string(name: 'EXCLUDE_TAGS', defaultValue: 'brokenORDoNotExecute', description: 'Tests with these tags are NOT executed and NOT included in report')
-        string(name: 'SKIP_TAGS', defaultValue: 'bug*ORBUG*ORBug*', description: 'Tests with these tags are NOT executed, yet they are displayed in report - with status SKIP')
         choice(name: 'LOG_LEVEL', choices:["Info", "Debug", "Trace"], description: 'Robot Framework log level. Higher levels (Debug, Trace) give you the more verbose output, but slower the execution.')
 
     }
