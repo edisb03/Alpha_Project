@@ -27,7 +27,7 @@ Start Test Bench
     Start Browser     ${url}   # headlesschrome
     Accept Cookies
     Get Json Data = ${JSON_FILE_PATH}
-    ${json_content}=    Get File    Get Json Data
+    ${json_content}=    Get File    ${JSON_FILE_PATH}
     ${selected_options}=    Get From Dictionary    json.loads('''${json_content}''')['option_2']    json
     Perform Language Switching     ${selected_options}  # Langauges available Deutsch or English
     RETURN    ${selected_options}
