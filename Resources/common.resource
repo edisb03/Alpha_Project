@@ -1,10 +1,15 @@
 *** Settings ***
 Documentation       Common
-
 Resource            import.resource
 Resource            ../Json/lang.json
+Library    XML
+Library    OperatingSystem
+Library    JSONLibrary
+
 
 *** Variables ***
+${JSON_FILE_PATH}     ${EXECDIR}//Json//lang.json
+
 &{TESTBENCH_URL}
 ...    prod=https://www.testbench.com/
 
@@ -19,9 +24,13 @@ ${FIRST_HEADER}             //h1[@class='h1']
 Start Test Bench
     [Documentation]  Start browser, maximize window and navigate to TestBench Website
     [Arguments]   ${url}=${TESTBENCH_URL.${ENV}}
-    Start Browser     ${url}    headlesschrome
+    Start Browser     ${url}   # headlesschrome
     Accept Cookies
-    Perform Language Switching     English  # Langauges available Deutsch or English
+    Get Json Data = ${JSON_FILE_PATH}
+    ${json_content}=    Get File    Get Json Data
+    ${selected_options}=    Get From Dictionary    json.loads('''${json_content}''')['option_2']    json
+    Perform Language Switching     ${selected_options}  # Langauges available Deutsch or English
+    RETURN    ${selected_options}
 
 Accept Cookies
     [Documentation]    This keyword is for accepting cookies on the TestBench web page.

@@ -1,9 +1,5 @@
-[
-  [{"language": "Deutsch"}]
 
-    { "name": "testbench",
-      "environment": "prod",
-      "url": "https://www.testbench.com/"
-    }
-]
-
+{
+   "option_1": "Deutsch",
+   "option_2": "Deutsch"
+}
