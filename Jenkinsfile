@@ -33,7 +33,7 @@ pipeline
          {
              when {
                  anyOf {
-                     changeset "dockerfile"
+                     changeset "Dockerfile"
                      changeset "python_requirements.txt"
                      }
                  }
