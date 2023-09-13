@@ -1,7 +1,7 @@
 pipeline 
 {
     agent {
-        label 'Dockerfile'
+        label 'windows'
     }
     options {
         disableConcurrentBuilds()
@@ -11,7 +11,7 @@ pipeline
 
         choice(name: 'BROWSER', choices:["headlesschrome", "chrome"], description: 'The browser to run the tests with')
         choice(name: 'ENVIRONMENT', choices:["prod"], description: 'The environment to run the Testcases')
-        choice(name: 'LANGUAGE', choices:["English"], description: 'Country language')
+        choice(name: 'LANGUAGE', choices:["English"])
         choice(name: 'LOG_LEVEL', choices:["Info", "Debug", "Trace"], description: 'Robot Framework log level. Higher levels (Debug, Trace) give you the more verbose output, but slower the execution.')
 
     }
