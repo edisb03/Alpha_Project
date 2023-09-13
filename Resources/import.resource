@@ -19,6 +19,6 @@ Library             ../API/Test_Api_Status.py
 Library             ../API/Api_Status.py
 Library             ../API/API_YAML.py
 Library             yaml
-Library              python.configuration/Data_handling.py
+# Library              python.configuration/Data_handling.py
 
 ### Python files resources

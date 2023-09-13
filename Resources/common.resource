@@ -1,10 +1,8 @@
 *** Settings ***
 Documentation       Common
 Resource            import.resource
-Resource            ../Json/lang.json
 Library    XML
 Library    OperatingSystem
-Library    JSONLibrary
 
 
 *** Variables ***
@@ -26,9 +24,9 @@ Start Test Bench
     [Arguments]   ${url}=${TESTBENCH_URL.${ENV}}
     Start Browser     ${url}   # headlesschrome
     Accept Cookies
-    Get Json Data = ${JSON_FILE_PATH}
+    # Get Json Data = ${JSON_FILE_PATH}
     ${json_content}=    Get File    ${JSON_FILE_PATH}
-    ${selected_options}=    Get From Dictionary    json.loads('''${json_content}''')['option_2']    json
+    ${selected_options}=    Evaluate   json.loads('''${json_content}''')['option']    json
     Perform Language Switching     ${selected_options}  # Langauges available Deutsch or English
     RETURN    ${selected_options}
 
