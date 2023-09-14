@@ -1,7 +1,7 @@
 
 {
    "name": "Test Bench",
-   "language": "Deutsch",  
+   "language": "English",  
    "environment": "prod",
    "url": "https://www.testbench.com/",
    "browser": "headlesschrome"

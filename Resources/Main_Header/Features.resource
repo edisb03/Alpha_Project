@@ -86,7 +86,7 @@ Control If The MH Page Contains
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${EXPLORE_LERAN...TITLE}
     ELSE IF    "${status}" == "Let the Data Do All Your Testing"
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${EXPLORE_LERAN...TITLE}
-    ELSE IF    "${status}" == "Welcome to the World of Testing"
+    ELSE IF    "${status}" == "TestBench Blog"
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${BLOG_PAGE_TITLE}
     ELSE IF    "${status}" == "The Smart Test Management Tool"
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${FIRST_HEADER}
