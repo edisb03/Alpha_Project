@@ -32,7 +32,6 @@ ${ENGLISH}                              (//span[@lang='en'][normalize-space()='E
 ${GERMAN}                               (//span[@lang='de'][normalize-space()='Deutsch'])[1]
 
 
-
 *** Keywords ***
 Navigate To Features
     [Documentation]    This keyword is used to navigate to Features...

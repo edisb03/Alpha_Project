@@ -11,11 +11,11 @@ ${LEARN_HL}            (//span[contains(@class, 'menu-item--headline')])[2]
 ${SUPPORT_HL}          (//span[contains(@class, 'menu-item--headline')])[3]
 ${COMPANY_HL}          (//span[contains(@class, 'menu-item--headline')])[4]
 # TestBench Headline links locators
-${HOME_LINK}              //ul[contains(@class, 'menu menu--level-1')]//a[contains(text(), 'H')]
-${FEATURES_LINK}          //ul[contains(@class, 'menu menu--level-1')]//a[contains(text(), 'F')]
-${EXPLOR_TESTING_LINK}    //ul[contains(@class, 'menu menu--level-1')]//a[contains(text(), 'E')]
-${DD_TESTING_LINK}        (//ul[contains(@class, 'menu menu--level-1')]//a[contains(text(), 'D')])[1]
-${KD_TESTING_LINK}        //ul[contains(@class, 'menu menu--level-1')]//a[contains(text(), 'Ke')]
+${HOME_LINK}              (//ul[contains(@class, 'menu menu--level-1')]//a[contains(@href,"https://www.testbench.com/")])[1]
+${FEATURES_LINK}          (//ul[contains(@class, 'menu menu--level-1')]//a[contains(@href,"https://www.testbench.com/")])[2]
+${EXPLOR_TESTING_LINK}    (//ul[contains(@class, 'menu menu--level-1')]//a[contains(@href,"https://www.testbench.com/")])[3]
+${DD_TESTING_LINK}        (//ul[contains(@class, 'menu menu--level-1')]//a[contains(@href,"https://www.testbench.com/")])[4]
+${KD_TESTING_LINK}         (//ul[contains(@class, 'menu menu--level-1')]//a[contains(@href,"https://www.testbench.com/")])[5]
 ${KD_TITLE}               //h1[contains(@class, 'h1')]
 
 
@@ -26,8 +26,12 @@ Check Footer Test Bench Logo
     Page Should Contain Element    ${FOOTER_TB_LOGO}
 
 Validate Footer HeadLine
-    [Documentation]    This keyword is used for validating headline items of footer 
+    [Documentation]    This keyword is used for validating headline items of footer
     [Arguments]    ${headlines}
+#     ${json_content}=    Get File    ${JSON_FILE_PATH}
+#     ${headlines}=    Evaluate   json.loads('''${json_content}''')['language']    json
+#     Perform Language Switching     ${headlines}
+
     IF    "${headlines}" == "TestBench"
          Wait Until Page Contains Element    ${TESTBENCH_HL}
     ELSE IF  "${headlines}" == "Learn"
@@ -38,7 +42,7 @@ Validate Footer HeadLine
          Wait Until Page Contains Element    ${COMPANY_HL}
     END
 
- Click Testbench Headline Link
+Click Testbench Headline Link
     [Documentation]    This keyword is used for validating the progress of TestBench Headline Links
     [Arguments]    ${testbench_links}
     IF    "${testbench_links}" == "Home"

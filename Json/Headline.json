@@ -1,0 +1,47 @@
+{
+    "Keyword": "Validate Footer HeadLine",
+    "Documentation": "This keyword is used for validating headline items of footer",
+    "Arguments": ["${headlines}"],
+    "Steps": [
+        {
+            "Keyword": "IF",
+            "Arguments": ["${headlines} == TestBench"],
+            "Steps": [
+                {
+                    "Keyword": "Wait Until Page Contains Element",
+                    "Arguments": ["${TESTBENCH_HL}"]
+                }
+            ]
+        },
+        {
+            "Keyword": "ELSE IF",
+            "Arguments": ["${headlines} == Learn"],
+            "Steps": [
+                {
+                    "Keyword": "Wait Until Page Contains Element",
+                    "Arguments": ["${LEARN_HL}"]
+                }
+            ]
+        },
+        {
+            "Keyword": "ELSE IF",
+            "Arguments": ["${headlines} == Support"],
+            "Steps": [
+                {
+                    "Keyword": "Wait Until Page Contains Element",
+                    "Arguments": ["${SUPPORT_HL}"]
+                }
+            ]
+        },
+        {
+            "Keyword": "ELSE IF",
+            "Arguments": ["${headlines} == Company"],
+            "Steps": [
+                {
+                    "Keyword": "Wait Until Page Contains Element",
+                    "Arguments": ["${COMPANY_HL}"]
+                }
+            ]
+        }
+    ]
+}

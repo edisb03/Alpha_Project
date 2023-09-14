@@ -19,7 +19,7 @@ Library             ../API/Test_Api_Status.py
 Library             ../API/Api_Status.py
 Library             ../API/API_YAML.py
 <<<<<<< HEAD
-Resource            ../Resources/Footer/Footerelements.robot
+Resource           ../Resources/Footer/TestBenchHeadline.robot
 =======
 Library             yaml
 # Library              python.configuration/Data_handling.py
