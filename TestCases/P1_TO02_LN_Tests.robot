@@ -12,14 +12,14 @@ Test Teardown        Close Browser
 
 *** Test Cases ***
 P1_TO02_LN_TC01 Navigate To Log In
-    [Documentation]    Open TestBench web page navigate to Log in And validate if page is open....
+    [Documentation]    Open TestBench web page navigate to Log in And validate if page is open.
     [Tags]    P1TO02_TC01    exploratory
     Navigate To Login
     Navigate To TestBench Logo
 
 P1_TO02_LN_TC02 Valid Credentials Of Registered User
     [Documentation]    In this test case is tested if a registered user can fulfill the login form
-    ...    with their valid credentials and the Login button is enabled
+    ...    with their valid credentials and the Login button is enabled..
     [Tags]    P1TO02_TC02    exploratory
     Navigate To Login
     Enter Email And Password    &{USER_01}
@@ -51,7 +51,7 @@ P1_TO02_TC04 Valid Email Invalid Password Failed Login
 
 P1_TO02_TC05 Empty Email And Password
     [Documentation]    In this test case user navigates to Log in and try,
-    ...    to login without filling the login form at all..
+    ...    to login without filling the login form at all.
     [Tags]    P1TO02_TC05    exploratory
     Navigate To Login
     Check Button State And Sign-Up/Log-In    Log_in_Disabled

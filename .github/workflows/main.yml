@@ -1,16 +1,21 @@
-on: workflow_dispatch
+name: DryRun
+
+on:
+  push:
+    branches:
+      - dev
 
 jobs:
   first_autobot:
-        runs-on:  ubuntu-latest
-        steps:
-          - name: Return of the autobots
-            run:  echo "Hi, my name is Optimus Prime"
-          - name: Dark side of the moon
-            run: echo "We have suffered losses, but we have not lost the war."
-          - name: Checkout
-            uses: actions/checkout@v2
-          - name: Build Docker
-            run: docker build -t my_app:v1.0 . --file Dockerfile
-          - name: Execute Test Cases
-            run: docker run -v $(pwd):/workdir my_app:v1.0 robot --dryrun /workdir/TestCases
+    runs-on: ubuntu-latest
+    steps:  # Corrected indentation
+      - name: Return of the autobots
+        run: echo "Hi, my name is Optimus Prime"
+      - name: Dark side of the moon
+        run: echo "We have suffered losses, but we have not lost the war."
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build Docker
+        run: docker build -t my_app:v1.0 . --file Dockerfile
+      - name: Execute DryRun
+        run: docker run -v $(pwd):/workdir my_app:v1.0 robot --dryrun /workdir/TestCases
