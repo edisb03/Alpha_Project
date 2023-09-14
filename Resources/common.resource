@@ -22,13 +22,13 @@ ${FIRST_HEADER}             //h1[@class='h1']
 Start Test Bench
     [Documentation]  Start browser, maximize window and navigate to TestBench Website
     [Arguments]   ${url}=${TESTBENCH_URL.${ENV}}
-    Start Browser     ${url}   # headlesschrome
-    Accept Cookies
-    # Get Json Data = ${JSON_FILE_PATH}
     ${json_content}=    Get File    ${JSON_FILE_PATH}
-    ${selected_options}=    Evaluate   json.loads('''${json_content}''')['option']    json
-    Perform Language Switching     ${selected_options}  # Langauges available Deutsch or English
-    RETURN    ${selected_options}
+    ${headlessbrowser}=    Evaluate   json.loads('''${json_content}''')['browser']    json
+    Start Browser     ${url}   ${headlessbrowser}
+    Accept Cookies
+    ${json_content}=    Get File    ${JSON_FILE_PATH}
+    ${language}=    Evaluate   json.loads('''${json_content}''')['language']    json
+    Perform Language Switching     ${language} 
 
 Accept Cookies
     [Documentation]    This keyword is for accepting cookies on the TestBench web page.
