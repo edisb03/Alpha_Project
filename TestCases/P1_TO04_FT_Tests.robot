@@ -26,3 +26,27 @@ P1TO04_TC03- Footer Features Link Verification
     Check Footer Test Bench Logo
     Validate Footer HeadLine    TestBench
     Click Testbench Headline Link    Features
+
+P1TO04_TC04- Footer Exploratory Testing Link Verification
+    [Documentation]    This Test case verifies and validates that Exploratory Testing
+    ...    link is working properly without any errors
+    [Tags]    P1TO04_TC03    exploratory
+    Check Footer Test Bench Logo
+    Validate Footer HeadLine    TestBench
+    Click Testbench Headline Link    Exploratory Testing
+
+P1TO04_TC05- Footer Data Driven Testing Link Verification
+    [Documentation]    This Test case verifies and validates that Data Driven Testing
+    ...    link is working properly without any errors
+    [Tags]    P1TO04_TC03    exploratory
+    Check Footer Test Bench Logo
+    Validate Footer HeadLine    TestBench
+    Click Testbench Headline Link    Data Driven Testing
+
+P1TO04_TC05- Footer Keyword Driven Testing Link Verification
+    [Documentation]    This Test case verifies and validates that Keyword Driven Testing 
+    ...    link is working properly without any errors
+    [Tags]    P1TO04_TC03    exploratory
+    Check Footer Test Bench Logo
+    Validate Footer HeadLine    TestBench
+    Click Testbench Headline Link    Keyword Driven Testing

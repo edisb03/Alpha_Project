@@ -16,7 +16,7 @@ ${FEATURES_LINK}          //ul[contains(@class, 'menu menu--level-1')]//a[contai
 ${EXPLOR_TESTING_LINK}    //ul[contains(@class, 'menu menu--level-1')]//a[contains(text(), 'E')]
 ${DD_TESTING_LINK}        (//ul[contains(@class, 'menu menu--level-1')]//a[contains(text(), 'D')])[1]
 ${KD_TESTING_LINK}        //ul[contains(@class, 'menu menu--level-1')]//a[contains(text(), 'Ke')]
-${KD_TITLE}               (//p[contains(@class, 'overline')])[1]
+${KD_TITLE}               //h1[contains(@class, 'h1')]
 
 
 *** Keywords ***
@@ -60,5 +60,5 @@ Validate Footer HeadLine
     ELSE IF    "${testbench_links}" == "Keyword Driven Testing"
          Wait Until Page Contains Element    ${KD_TESTING_LINK}
          Tolerant Click    ${KD_TESTING_LINK}
-         Control If The MH Page Contains    Keyword-Driven Testing
+         Control If The MH Page Contains    Unambiguous. Concise. Readable Test Cases.
     END
