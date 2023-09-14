@@ -1,9 +1,9 @@
-[
-  [{"language": "Deutsch"}]
 
-    { "name": "testbench",
-      "environment": "prod",
-      "url": "https://www.testbench.com/"
-    }
-]
-
+{
+   "name": "Test Bench",
+   "language": "Deutsch",  
+   "environment": "prod",
+   "url": "https://www.testbench.com/",
+   "browser": "headlesschrome"
+   
+}
