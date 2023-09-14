@@ -43,7 +43,7 @@ P1TO04_TC05- Footer Data Driven Testing Link Verification
     Validate Footer HeadLine    TestBench
     Click Testbench Headline Link    Data Driven Testing
 
-P1TO04_TC05- Footer Keyword Driven Testing Link Verification
+P1TO04_TC06- Footer Keyword Driven Testing Link Verification
     [Documentation]    This Test case verifies and validates that Keyword Driven Testing 
     ...    link is working properly without any errors
     [Tags]    P1TO04_TC03    exploratory
