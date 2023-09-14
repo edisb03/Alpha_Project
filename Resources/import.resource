@@ -20,5 +20,6 @@ Library             ../API/Api_Status.py
 Library             ../API/API_YAML.py
 Library             yaml
 # Library              python.configuration/Data_handling.py
+Library           ../Resources/python.configuration/key.py
 
 ### Python files resources
