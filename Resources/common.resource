@@ -26,7 +26,6 @@ Start Test Bench
     ${headlessbrowser}=    Evaluate   json.loads('''${json_content}''')['browser']    json
     Start Browser     ${url}   ${headlessbrowser}
     Accept Cookies
-    ${json_content}=    Get File    ${JSON_FILE_PATH}
     ${language}=    Evaluate   json.loads('''${json_content}''')['language']    json
     Perform Language Switching     ${language} 
 
