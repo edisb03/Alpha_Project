@@ -44,7 +44,7 @@ ${WELCOME}                      (//h2[@class='h2'])[1]
 # MH_STATUS
 ${EXPLORE_LERAN...TITLE}                    (//h2[@class='h1'])[1]
 ${BLOG_PAGE_TITLE}                          //h2[contains(@class, 'h2')]
-${GET_STARTED_WITH_FREE_ACCOUNT}            //div[contains(@class, 'overline')]
+${GET_STARTED_WITH_FREE_ACCOUNT}            (//div[@class='overline'])[1]
 ${IMBUS_PAGE_TITTLE}                        //h2[contains(@class, ' headline--h3 headline--noline')]
 ${FEATURES_PAGE_TITTLE}                     //h1[contains(@class, 'overline')]
 ${RESOURCES_PAGE_TITTLE}                    //p[@class='overline']

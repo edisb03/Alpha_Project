@@ -36,13 +36,13 @@ P1_TO01_MH_TC04 Verify Feature Functions
     Navigate To Features
     Verify Content Features
 
-# P1_TO01_MH_TC05 Verify Try TestBench Now
-#     [Documentation]    After open test bench page, open Features item and check
-#     ...    if button "Try TestBench Now" within the page is enabled.(This test case can be tested only when page
-#     ...    is in English since TestBench Now button doesn't appear when page is in German)
-#     [Tags]    P1TO01_TC05    explorator
-#     Navigate To Features
-#     Try TestBench Now
+P1_TO01_MH_TC05 Verify Try TestBench Now
+    [Documentation]    After open test bench page, open Features item and check
+    ...    if button "Try TestBench Now" within the page is enabled.(This test case can be tested only when page
+    ...    is in English since TestBench Now button doesn't appear when page is in German)
+    [Tags]    P1TO01_TC05    explorator
+    Navigate To Features
+    Try TestBench Now
 
 P1_TO01_MH_TC06 Verify Try Exploratory Testing
     [Documentation]    After open test bench page, open Features item and check,
