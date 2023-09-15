@@ -11,7 +11,6 @@ ${TUTORIALS}          //div[@class='button button--tab active']//a[@class='menu-
 
 
 *** Keywords ***
-
 Navigate To The Search Bar
     [Documentation]    Navigate to the Search bar on the Blog
     Wait Until Page Contains Element    ${SEARCH_BAR}
@@ -23,9 +22,8 @@ Search Article
     Tolerant Click    ${SEARCH_ICON}
 
 Cancel Pop Up Window
-    ${OS}= Windows
-    Run Keyword If    '${OS}' == 'Windows'    Run    taskkill /F /IM chrome.exe
-    Run Keyword If    '${OS}' != 'Windows'    Comment    Unsupported OS for this example
+    [Documentation]    Cancel Pop Up Window
+    Press Escape Key
 
 Navigate To The Tutorials
     [Documentation]    Navigate to the Tutorilas within the Blog

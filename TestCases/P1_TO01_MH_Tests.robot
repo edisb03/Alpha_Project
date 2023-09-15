@@ -186,8 +186,8 @@ P1_TO01_TC22 Search For Existing Blog Articles
     [Tags]    P1TO01_TC22    exploratory
     Navigate To Blog
     Control If The MH Page Contains    TestBench Blog
-    Sleep    5s
     # Cancel Pop Up Window
     # Navigate To The Tutorials
     Search Article
+    Sleep    2s
     Cancel Pop Up Window
