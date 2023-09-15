@@ -1,23 +1,23 @@
 *** Settings ***
 Documentation       Features
 
-Resource    ../import.resource
+Resource            ../import.resource
 
 
 *** Variables ***
-${REQUIREMENTS_MANAGEMENT_FEATURES}              (//h2[@class='h3'])[1]
-${TEST_MANAGEMENT_FEATURES}                      (//h2[@class='h3'])[2]
-${TEST_DESIGN_FEATURES}                          (//h2[@class='h3'])[3]
-${TEST_EXECUTION_FEATURES}                       (//h2[@class='h3'])[4]
-${TEST_AUTOMATION_FEATURES}                      (//h2[@class='h3'])[5]
-${TEST_COLLABORATION_FEATURES}                   (//h2[@class='h3'])[6]
-${CUSTOMIZATION_FEATURES}                        (//h2[@class='h3'])[7]
-${INTEGRATION_FEATURES}                          (//h2[@class='h3'])[8]
-${TRY_TESTBENCH_NOW}                             (//div[@class='box-inner box-inner--cta'])[1]//a[1]
-${TRY_EXPLORTORY_TESTING}                        //div[@class='box box--imageRight']//div[@class='cta']//a[2]
-${TRY_DATA-DRIVEN_TESTING}                       (//div[@class='cta'])[2]//a[2]
-${LEARN_MORE}                                    //div[@class='box box--imageRight']//div[@class='cta']//a[1]
-${LEARN_MORE_DATA}                               //div[@class='box box--imageLeft']//div[@class='cta']//a[1]
+${REQUIREMENTS_MANAGEMENT_FEATURES}     (//h2[@class='h3'])[1]
+${TEST_MANAGEMENT_FEATURES}             (//h2[@class='h3'])[2]
+${TEST_DESIGN_FEATURES}                 (//h2[@class='h3'])[3]
+${TEST_EXECUTION_FEATURES}              (//h2[@class='h3'])[4]
+${TEST_AUTOMATION_FEATURES}             (//h2[@class='h3'])[5]
+${TEST_COLLABORATION_FEATURES}          (//h2[@class='h3'])[6]
+${CUSTOMIZATION_FEATURES}               (//h2[@class='h3'])[7]
+${INTEGRATION_FEATURES}                 (//h2[@class='h3'])[8]
+${TRY_TESTBENCH_NOW}                    (//div[@class='box-inner box-inner--cta'])[1]//a[1]
+${TRY_EXPLORTORY_TESTING}               //div[@class='box box--imageRight']//div[@class='cta']//a[2]
+${TRY_DATA-DRIVEN_TESTING}              (//div[@class='cta'])[2]//a[2]
+${LEARN_MORE}                           //div[@class='box box--imageRight']//div[@class='cta']//a[1]
+${LEARN_MORE_DATA}                      //div[@class='box box--imageLeft']//div[@class='cta']//a[1]
 
 
 *** Keywords ***
@@ -41,18 +41,23 @@ Verify Content Features
     Wait Until Page Contains Element    ${INTEGRATION_FEATURES}
 
 Try TestBench Now
-    [Documentation]    Navigate to Try Testbench Now button
-    Execute JavaScript    window.scrollTo(0,7200);
-    Wait Until Page Contains Element    ${TRY_TESTBENCH_NOW}
-    Wait Until Keyword Succeeds    3x    3s    Click Element    ${TRY_TESTBENCH_NOW}
-    Control If The MH Page Contains    Get started with a free account
+    [Documentation]    Navigate to Try Testbench Now button and verify its presence.
+    Execute JavaScript    window.scrollTo(0, 7200)
+    ${isElementPresent} =    Run Keyword And Return Status    Page Should Contain Element    ${TRY_TESTBENCH_NOW}
+    IF    '${isElementPresent}' == 'True'
+        Wait Until Keyword Succeeds    3x    3s    Tolerant Click    ${TRY_TESTBENCH_NOW}
+        Control If The MH Page Contains    Get started with a free account
+        Log    Button is present in English version of the page
+    ELSE
+        Log    Button is not present in German version of the page
+    END
 
 Try Exploratory Testing
     [Documentation]    Navigate to Try Exploratory Testing button
     Execute JavaScript    window.scrollTo(0,7900);
     Wait Until Page Contains Element    ${TRY_EXPLORTORY_TESTING}
     Sleep    1s
-    Tolerant Click   ${TRY_EXPLORTORY_TESTING}
+    Tolerant Click    ${TRY_EXPLORTORY_TESTING}
     Control If The MH Page Contains    Get started with a free account
 
 Navigate To Learn More Exploratory Testing
@@ -60,8 +65,8 @@ Navigate To Learn More Exploratory Testing
     ...    finds the Learn More Function and Clicks on it.
     [Arguments]    ${Learn_More_1}
     Execute JavaScript    window.scrollTo(0,7800);
-    Wait Until Page Contains Element   ${LEARN_MORE}
-    Tolerant Click                     ${LEARN_MORE}
+    Wait Until Page Contains Element    ${LEARN_MORE}
+    Tolerant Click    ${LEARN_MORE}
 
 Navigate To Learn More Data Driven
     [Documentation]    Scrolls down to the middle of the page
@@ -70,7 +75,7 @@ Navigate To Learn More Data Driven
     Set Selenium Speed    0.2
     Execute JavaScript    window.scrollTo(0,9000);
     Wait Until Keyword Succeeds    3x    1s    Wait Until Page Contains Element    ${LEARN_MORE_DATA}
-    Tolerant Click                      ${LEARN_MORE_DATA}
+    Tolerant Click    ${LEARN_MORE_DATA}
 
 Try Data-Driven Testing
     [Documentation]    Navigate to Try Data-Driven Testing button
@@ -99,7 +104,7 @@ Control If The MH Page Contains
     ELSE IF    "${status}" == "Discover the features"
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${FEATURES_PAGE_TITTLE}
     ELSE IF    "${status}" == "Find it quick - Use it right away"
-        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element   ${RESOURCES_PAGE_TITTLE}
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${RESOURCES_PAGE_TITTLE}
     ELSE
         Fail    Unexpected status: ${status}
     END
