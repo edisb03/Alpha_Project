@@ -28,10 +28,6 @@ Check Footer Test Bench Logo
 Validate Footer HeadLine
     [Documentation]    This keyword is used for validating headline items of footer
     [Arguments]    ${headlines}
-#     ${json_content}=    Get File    ${JSON_FILE_PATH}
-#     ${headlines}=    Evaluate   json.loads('''${json_content}''')['language']    json
-#     Perform Language Switching     ${headlines}
-
     IF    "${headlines}" == "TestBench"
          Wait Until Page Contains Element    ${TESTBENCH_HL}
     ELSE IF  "${headlines}" == "Learn"
