@@ -10,7 +10,7 @@ pipeline {
         choice(name: 'BROWSER', choices: ["headlesschrome", "chrome"], description: 'The browser to run the tests with')
         choice(name: 'ENVIRONMENT', choices: ["prod"], description: 'The environment to run the Testcases')
         choice(name: 'LANGUAGE', choices: ["English"])
-        choice(name: 'LOG_LEVEL', choices: ["Info", "Debug", "Trace"], description: 'Robot Framework log level. Higher levels (Debug, Trace) give you more verbose output but slow down the execution.')
+
     }
 
     stages {
@@ -22,7 +22,7 @@ pipeline {
                 }
             }
             steps {
-                echo "Building Docker images"
+                echo "Building Docker"
                 withCredentials([usernamePassword(credentialsId: 'nexus-docker-dgsp', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     script {
                         docker.withRegistry("${dockerRegistry}", "${USERNAME}", "${PASSWORD}") {
