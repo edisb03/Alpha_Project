@@ -23,6 +23,7 @@ Resource           ../Resources/Footer/TestBenchHeadline.robot
 =======
 Library             yaml
 # Library              python.configuration/Data_handling.py
+#Library           ../Resources/python.configuration/key.py
 
 >>>>>>> dev
 ### Python files resources
