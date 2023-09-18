@@ -22,13 +22,18 @@ pipeline {
                 }
             }
             steps {
-                echo "Building Docker"
-                withCredentials([usernamePassword(credentialsId: 'nexus-docker-dgsp', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                    script {
-                        docker.withRegistry("${dockerRegistry}", "${USERNAME}", "${PASSWORD}") {
-                            docker.build("${image}:${version}", ".").push()
-                        }
-                    }
+                // echo "Building Docker"
+                // withCredentials([usernamePassword(credentialsId: 'nexus-docker-imbus', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                //     script {
+                //         docker.withRegistry("${dockerRegistry}", "${USERNAME}", "${PASSWORD}") {
+                //             docker.build("${image}:${version}", ".").push()
+                //         }
+                //     }
+                // }
+                script{
+                    """
+                    docker build -t  .  --file Dockerfile
+                    """
                 }
             }
         }
