@@ -39,7 +39,7 @@ pipeline {
                     echo 'Running code checks'
                     def robotImage = "${dockerRegistry}/${image}:${version}"
                     def command = """
-                        docker run --pull=always --user "$(id -u):$(id -g)" -v /etc/passwd:/etc/passwd:ro --rm -v $WORKSPACE:/workdir ${robotImage} bash -c "robot --dryrun --exclude ${EXCLUDE_TAGS} --skip ${SKIP_TAGS} --loglevel ${LOG_LEVEL} --outputdir workdir/output/dryrun workdir"
+                        docker run --pull=always --user "\$(id -u):\$(id -g)" -v /etc/passwd:/etc/passwd:ro --rm -v $WORKSPACE:/workdir ${dockerRegistry}/${image}:${version} bash -c "robot --dryrun --exclude ${EXCLUDE_TAGS} --skip ${SKIP_TAGS} --loglevel ${LOG_LEVEL} --outputdir workdir/output/dryrun workdir""
                         docker run --pull=always --user "$(id -u):$(id -g)" -v /etc/passwd:/etc/passwd:ro --rm -v $WORKSPACE:/workdir ${robotImage} bash -c "robocop --argumentfile workdir/.robocop --reports rules_by_id,rules_by_error_type workdir"
                     """
                     sh command
