@@ -36,6 +36,14 @@ pipeline {
                     """
                 }
             }
+        } stage("codecheck"){
+            steps{
+                script{
+                    """
+                    docker run -v $(pwd):/workdir my_app:v1.0 robot --dryrun /workdir/TestCases
+                    """
+                }
+            }
         }
 
 
@@ -94,37 +102,37 @@ pipeline {
         // }
     }
 
-    // post {
-    //     always {
-    //         script {
-    //             step(
-    //                 [
-    //                     $class: 'RobotPublisher',
-    //                     outputPath: 'output',
-    //                     outputFileName: '**/output.xml',
-    //                     reportFileName: '**/report.html',
-    //                     logFileName: '**/log.html',
-    //                     disableArchiveOutput: false,
-    //                     passThreshold: 100,
-    //                     unstableThreshold: 75,
-    //                     otherFiles: "**/*.png,**/*.jpg",
-    //                 ]
-    //             )
-    //             if (currentBuild.result == 'FAILURE') {
-    //                 robot rerunFailedTests(output: 'output')
-    //             }
-    //         }
-    //     }
+    post {
+        always {
+            script {
+                step(
+                    [
+                        $class: 'RobotPublisher',
+                        outputPath: 'output',
+                        outputFileName: '**/output.xml',
+                        reportFileName: '**/report.html',
+                        logFileName: '**/log.html',
+                        disableArchiveOutput: false,
+                        passThreshold: 100,
+                        unstableThreshold: 75,
+                        otherFiles: "**/*.png,**/*.jpg",
+                    ]
+                )
+                if (currentBuild.result == 'FAILURE') {
+                    robot rerunFailedTests(output: 'output')
+                }
+            }
+        }
 
-    //     failure {
-    //         emailext(
-    //             subject: "Build failed in Jenkins: " + "${env.JOB_NAME}".split("/").join(" » ") + " #${env.BUILD_ID}",
-    //             body: "<p>See <<a href='${env.BUILD_URL}'>${env.BUILD_URL}</a>></p>",
-    //             attachLog: true,
-    //             recipientProviders: [culprits(), requestor()]
-    //         )
-    //     }
-    // }
+        // failure {
+        //     emailext(
+        //         subject: "Build failed in Jenkins: " + "${env.JOB_NAME}".split("/").join(" » ") + " #${env.BUILD_ID}",
+        //         body: "<p>See <<a href='${env.BUILD_URL}'>${env.BUILD_URL}</a>></p>",
+        //         attachLog: true,
+        //         recipientProviders: [culprits(), requestor()]
+        //     )
+        // }
+    }
 
     // cleanup {
     //     cleanWs(
