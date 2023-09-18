@@ -36,11 +36,12 @@ pipeline {
                     """
                 }
             }
-        } stage("codecheck"){
+        } 
+        stage('codecheck'){
             steps{
                 script{
                     """
-                    docker run -v $(pwd):/workdir my_app:v1.0 robot --dryrun /workdir/TestCases
+                    docker run robot --dryrun /workdir/TestCases
                     """
                 }
             }
