@@ -15,12 +15,12 @@ pipeline {
 
     stages {
         stage('builddocker') {
-            when {
-                anyOf {
-                    changeset "Dockerfile"
-                    changeset "python_requirements.txt"
-                }
-            }
+            // when {
+            //     anyOf {
+            //         changeset "Dockerfile"
+            //         changeset "python_requirements.txt"
+            //     }
+            // }
             steps {
                 // echo "Building Docker"
                 // withCredentials([usernamePassword(credentialsId: 'nexus-docker-imbus', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
