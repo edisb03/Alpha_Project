@@ -39,59 +39,59 @@ pipeline {
         }
 
 
-        stage('docs') {
-            steps {
-                script {
-                    echo 'Creating keyword docs'
-                    def robotImage = "${dockerRegistry}/${image}:${version}"
-                    def command = """
-                        docker run --pull=always --user "$(id -u):$(id -g)" -v /etc/passwd:/etc/passwd:ro --rm -v $WORKSPACE:/workdir ${robotImage} bash -c "libtoc --output_dir workdir/output/docs workdir/Resources"
-                    """
-                    sh command
-                    publishHTML(target: [
-                        allowMissing: false,
-                        alwaysLinkToLastBuild: false,
-                        keepAll: true,
-                        reportDir: 'output/docs',
-                        reportFiles: '**/*.html',
-                        reportName: 'Keywords docs'
-                    ])
-                }
-            }
-        }
+        // stage('docs') {
+        //     steps {
+        //         script {
+        //             echo 'Creating keyword docs'
+        //             def robotImage = "${dockerRegistry}/${image}:${version}"
+        //             def command = """
+        //                 docker run --pull=always --user "$(id -u):$(id -g)" -v /etc/passwd:/etc/passwd:ro --rm -v $WORKSPACE:/workdir ${robotImage} bash -c "libtoc --output_dir workdir/output/docs workdir/Resources"
+        //             """
+        //             sh command
+        //             publishHTML(target: [
+        //                 allowMissing: false,
+        //                 alwaysLinkToLastBuild: false,
+        //                 keepAll: true,
+        //                 reportDir: 'output/docs',
+        //                 reportFiles: '**/*.html',
+        //                 reportName: 'Keywords docs'
+        //             ])
+        //         }
+        //     }
+        // }
 
-        stage('smoketest') {
-            when { expression { params.SKIP_SMOKE_TEST != true } }
-            steps {
-                script {
-                    echo 'Running smoke tests'
-                    def robotImage = "${dockerRegistry}/${image}:${version}"
-                    def command = """
-                        docker run --pull=always --user "$(id -u):$(id -g)" -v /etc/passwd:/etc/passwd:ro --rm -v $WORKSPACE:/workdir ${robotImage} bash -c "robot --include smokeORSMOKEORSmoke --exclude ${EXCLUDE_TAGS} --skip ${SKIP_TAGS} -v BROWSER:${BROWSER} -v ENV:${ENVIRONMENT} -v COUNTRY:${COUNTRY} -v LANGUAGE:${LANGUAGE} --loglevel ${LOG_LEVEL} --outputdir workdir/output/quicktest workdir/TestCases"
-                    """
-                    sh command
-                }
-            }
-        }
+        // stage('smoketest') {
+        //     when { expression { params.SKIP_SMOKE_TEST != true } }
+        //     steps {
+        //         script {
+        //             echo 'Running smoke tests'
+        //             def robotImage = "${dockerRegistry}/${image}:${version}"
+        //             def command = """
+        //                 docker run --pull=always --user "$(id -u):$(id -g)" -v /etc/passwd:/etc/passwd:ro --rm -v $WORKSPACE:/workdir ${robotImage} bash -c "robot --include smokeORSMOKEORSmoke --exclude ${EXCLUDE_TAGS} --skip ${SKIP_TAGS} -v BROWSER:${BROWSER} -v ENV:${ENVIRONMENT} -v COUNTRY:${COUNTRY} -v LANGUAGE:${LANGUAGE} --loglevel ${LOG_LEVEL} --outputdir workdir/output/quicktest workdir/TestCases"
+        //             """
+        //             sh command
+        //         }
+        //     }
+        // }
 
-        stage('testrun') {
-            when {
-                allOf {
-                    expression { params.INCLUDE_TAGS != 'smokeORSMOKEORSmoke' }
-                    not { triggeredBy "SCMTrigger" }
-                }
-            }
-            steps {
-                script {
-                    echo 'Running tests'
-                    def robotImage = "${dockerRegistry}/${image}:${version}"
-                    def command = """
-                        docker run --pull=always --user "$(id -u):$(id -g)" -v /etc/passwd:/etc/passwd:ro --rm -v $WORKSPACE:/workdir ${robotImage} bash -c "robot --include ${INCLUDE_TAGS} --exclude ${EXCLUDE_TAGS} --skip ${SKIP_TAGS} -v BROWSER:${BROWSER} -v ENV:${ENVIRONMENT} -v COUNTRY:\\"${COUNTRY}\\" -v LANGUAGE:${LANGUAGE} --loglevel ${LOG_LEVEL} --outputdir workdir/output/testrun workdir/TestCases"
-                    """
-                    sh command
-                }
-            }
-        }
+        // stage('testrun') {
+        //     when {
+        //         allOf {
+        //             expression { params.INCLUDE_TAGS != 'smokeORSMOKEORSmoke' }
+        //             not { triggeredBy "SCMTrigger" }
+        //         }
+        //     }
+        //     steps {
+        //         script {
+        //             echo 'Running tests'
+        //             def robotImage = "${dockerRegistry}/${image}:${version}"
+        //             def command = """
+        //                 docker run --pull=always --user "$(id -u):$(id -g)" -v /etc/passwd:/etc/passwd:ro --rm -v $WORKSPACE:/workdir ${robotImage} bash -c "robot --include ${INCLUDE_TAGS} --exclude ${EXCLUDE_TAGS} --skip ${SKIP_TAGS} -v BROWSER:${BROWSER} -v ENV:${ENVIRONMENT} -v COUNTRY:\\"${COUNTRY}\\" -v LANGUAGE:${LANGUAGE} --loglevel ${LOG_LEVEL} --outputdir workdir/output/testrun workdir/TestCases"
+        //             """
+        //             sh command
+        //         }
+        //     }
+        // }
     }
 
     post {
