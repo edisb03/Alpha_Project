@@ -41,7 +41,7 @@ pipeline {
             steps{
                 script{
                     """
-                    docker run robot --dryrun /workdir/TestCases
+                    docker run robot --outputdir /workdir/output/dryrun --dryrun /workdir/TestCases
                     """
                 }
             }
@@ -119,9 +119,6 @@ pipeline {
                         otherFiles: "**/*.png,**/*.jpg",
                     ]
                 )
-                if (currentBuild.result == 'FAILURE') {
-                    robot rerunFailedTests(output: 'output')
-                }
             }
         }
 
