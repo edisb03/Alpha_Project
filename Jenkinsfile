@@ -1,6 +1,5 @@
 
 
-
 pipeline {
     agent any
 
@@ -16,14 +15,23 @@ pipeline {
     }
 
     stages {
+        stage('Preparation') {
+            steps {
+                deleteDir() // Clean the workspace
+            }
+        }
+
         stage('builddocker') {
             steps {
                 script {
                     echo "Building Docker Image"
-                    // Use Windows-style paths and PowerShell syntax
-                    powershell """
-                        docker build -t mydockerimage .
-                    """
+                    // Set the Docker socket for Windows
+                    def dockerSocket = 'npipe:////./pipe/docker_engine'
+                    
+                    withDockerServer(dockerSocket) {
+                        // Your Docker commands here
+                        sh 'docker build -t mydockerimage .'
+                    }
                 }
             }
         }
@@ -62,6 +70,73 @@ pipeline {
         }
     }
 }
+// pipeline {
+//     agent any
+
+//     options {
+//         disableConcurrentBuilds()
+//         skipStagesAfterUnstable()
+//     }
+
+//     parameters {
+//         choice(name: 'BROWSER', choices: ["headlesschrome", "chrome"], description: 'The browser to run the tests with')
+//         choice(name: 'ENVIRONMENT', choices: ["prod"], description: 'The environment to run the Testcases')
+//         choice(name: 'LANGUAGE', choices: ["English"])
+//     }
+
+//     stages {
+//         stage('Preparation') {
+//                 steps {
+//                     deleteDir() // Clean the workspace
+//                 }
+//             }
+
+//         stage('builddocker') {
+//             steps {
+//                 script {
+//                     echo "Building Docker Image"
+//                     // Use Windows-style paths and PowerShell syntax
+//                     powershell """
+//                         docker build -t mydockerimage .
+//                     """
+//                 }
+//             }
+//         }
+
+//         stage('codecheck') {
+//             steps {
+//                 script {
+//                     echo "Running Robot Framework Tests"
+//                     def robotImage = "mydockerimage:latest"  // Use the image name you built
+//                     // Use Windows-style paths and PowerShell syntax
+//                     powershell """
+//                         docker run --rm -v ${WORKSPACE}:/workdir ${robotImage} robot --outputdir /workdir/output/dryrun --dryrun /workdir/TestCases
+//                     """
+//                 }
+//             }
+//         }
+//     }
+
+//     post {
+//         always {
+//             script {
+//                 step(
+//                     [
+//                         $class: 'RobotPublisher',
+//                         outputPath: 'output',
+//                         outputFileName: '**/output.xml',
+//                         reportFileName: '**/report.html',
+//                         logFileName: '**/log.html',
+//                         disableArchiveOutput: false,
+//                         passThreshold: 100,
+//                         unstableThreshold: 75,
+//                         otherFiles: "**/*.png,**/*.jpg",
+//                     ]
+//                 )
+//             }
+//         }
+//     }
+// }
 
 
 
