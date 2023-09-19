@@ -1,6 +1,3 @@
-
-
-
 pipeline {
     agent any
 
@@ -17,19 +14,24 @@ pipeline {
 
     stages {
         stage('Preparation') {
-                steps {
-                    deleteDir() // Clean the workspace
-                }
+            steps {
+                deleteDir() // Clean the workspace
             }
+        }
 
         stage('builddocker') {
             steps {
                 script {
-                    echo "Building Docker Image"
-                    // Use Windows-style paths and PowerShell syntax
-                    powershell """
-                        docker build -t mydockerimage .
-                    """
+                    // Set the Docker socket for Windows
+                    def dockerSocket = 'npipe:////./pipe/docker_engine'
+                    
+                    withDockerServer(dockerSocket) {
+                        echo "Building Docker Image"
+                        // Use Windows-style paths and PowerShell syntax
+                        powershell """
+                            docker build -t mydockerimage .
+                        """
+                    }
                 }
             }
         }
@@ -68,18 +70,6 @@ pipeline {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
