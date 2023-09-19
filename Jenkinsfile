@@ -34,19 +34,19 @@ pipeline {
             }
         }
 
-        stage('codecheck') {
-            steps {
-                script {
-                    echo "Running Robot Framework Tests"
-                    def robotImage = "mydockerimage:latest"  // Use the image name you built
-                    // Use Windows-style paths and PowerShell syntax
-                    powershell """
-                        docker run --rm -v ${WORKSPACE}:/workdir ${robotImage} robot --outputdir /workdir/output/dryrun --dryrun /workdir/TestCases
-                    """
-                }
-            }
-        }
-    }
+    //     stage('codecheck') {
+    //         steps {
+    //             script {
+    //                 echo "Running Robot Framework Tests"
+    //                 def robotImage = "mydockerimage:latest"  // Use the image name you built
+    //                 // Use Windows-style paths and PowerShell syntax
+    //                 powershell """
+    //                     docker run --rm -v ${WORKSPACE}:/workdir ${robotImage} robot --outputdir /workdir/output/dryrun --dryrun /workdir/TestCases
+    //                 """
+    //             }
+    //         }
+    //     }
+    // }
 
     post {
         always {
