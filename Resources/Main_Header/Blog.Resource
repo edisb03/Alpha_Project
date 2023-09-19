@@ -85,7 +85,7 @@ Check All Articles Page Two
     Go Back
     Navigate To Articles Page Two   Designing Tests Is All About The Data
     Go Back
-    Navigate To Articles Page Two   This Is How to Do It! Exploratory Testing in TestBench – Part Two
+    Navigate To Articles Page Two   This Is How to Do It! Exploratory Testing in TestBench Part Two
     Go Back
     Navigate To Articles Page Two    Release-News: What’s New in Release 2.4
     Go Back
@@ -106,7 +106,7 @@ Navigate To Articles Page Two
     ELSE IF    "${article2}" == "Designing Tests Is All About The Data"
         Wait Until Page Contains Element    (//html[contains(@class, 'html blog paged paged-2')]//h4[contains(@class, 'h3')])[3]
         Click Element                       (//html[contains(@class, 'html blog paged paged-2')]//h4[contains(@class, 'h3')])[3]
-    ELSE IF    "${article2}" == "This Is How to Do It! Exploratory Testing in TestBench – Part Two"
+    ELSE IF    "${article2}" == "This Is How to Do It! Exploratory Testing in TestBench Part Two"
         Wait Until Page Contains Element    (//html[contains(@class, 'html blog paged paged-2')]//h4[contains(@class, 'h3')])[4]
         Click Element                       (//html[contains(@class, 'html blog paged paged-2')]//h4[contains(@class, 'h3')])[4]
     ELSE IF    "${article2}" == "Release-News: What’s New in Release 2.4"
@@ -121,12 +121,12 @@ Check All Articles Page Three
     [Documentation]        Checks and clicks all cards available under third page of All Articles.
     Navigate To Articles Page Three    This Is How to Do It! Exploratory Testing in TestBench.
     Go Back
-    Sleep    2s
-    Navigate To Articles Page Three    From Theory to Practice With the “VirtualShowRoom”.
+    Sleep    5s
+    Navigate To Articles Page Three    From Theory to Practice With the VirtualShowRoom.
     Go Back
-    # Sleep    2s
-    # Navigate To Articles Page Three    Individual Test Management – Flexibly Expandable per API
-    # Go Back
+    Sleep    2s
+    Navigate To Articles Page Three    Individual Test Management Flexibly Expandable per API
+    Go Back
     Sleep    2s
     Navigate To Articles Page Three    What if the Babel Fish Existed?
     Go Back
@@ -139,13 +139,16 @@ Navigate To Articles Page Three
         Execute JavaScript    window.scrollTo(0,1200);
         Wait Until Page Contains Element    (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[1]
         Click Element                       (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[1]
-    ELSE IF    "${article3}" == "From Theory to Practice With the “VirtualShowRoom”."
+    ELSE IF    "${article3}" == "From Theory to Practice With the VirtualShowRoom."
+        Execute JavaScript    window.scrollTo(0,1200);
         Wait Until Page Contains Element    (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[2]
         Click Element                       (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[2]
-    # ELSE IF    "${article3}" == "Individual Test Management – Flexibly Expandable per API"
-    #     Wait Until Page Contains Element    (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[3]
-    #     Click Element                       (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[3]
+    ELSE IF    "${article3}" == "Individual Test Management Flexibly Expandable per API"
+        Execute JavaScript    window.scrollTo(0,1700);
+        Wait Until Page Contains Element    (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[3]
+        Click Element                       (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[3]
     ELSE IF    "${article3}" == "What if the Babel Fish Existed?"
+        Execute JavaScript    window.scrollTo(0,1700);
         Scroll Element Into View    (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[4]
         Wait Until Page Contains Element    (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[4]
         Click Element                       (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[4]
