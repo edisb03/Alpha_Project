@@ -36,6 +36,15 @@ pipeline {
             }
         }
 
+        stage('Build Docker Image') {
+    steps {
+        script {
+            // Use the Dockerfile step here
+            docker.build("my-docker-image:latest", "-f path/to/Dockerfile .")
+        }
+    }
+    }
+
         stage('codecheck') {
             steps {
                 script {
