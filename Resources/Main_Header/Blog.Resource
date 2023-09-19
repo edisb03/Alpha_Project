@@ -21,10 +21,6 @@ Search Article
     Wait Until Page Contains Element    ${SEARCH_ICON}
     Tolerant Click    ${SEARCH_ICON}
 
-Cancel Pop Up Window
-    [Documentation]    Cancel Pop Up Window
-    Press Escape Key
-
 Navigate To The All Articles
     [Documentation]    Navigate to the Tutorilas within the Blog
     Wait Until Page Contains Element    ${ALL_ARTICLES}
@@ -140,15 +136,13 @@ Navigate To Articles Page Three
         Wait Until Page Contains Element    (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[1]
         Click Element                       (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[1]
     ELSE IF    "${article3}" == "From Theory to Practice With the VirtualShowRoom."
-        Execute JavaScript    window.scrollTo(0,1200);
-        Wait Until Page Contains Element    (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[2]
-        Click Element                       (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[2]
+        Wait Until Page Contains Element    (//html[contains(@class, 'html blog paged paged-3')]//a[contains(@href, 'https://www.testbench.com/blog/what-if-there-would-be-a-test-object-available-to-anyone-who-wants-to-practice-testing-part-one-move-from-software-testing-theory-to-practice-with-the-virtualshowroom/')][1])[1]
+        Click Element                       (//html[contains(@class, 'html blog paged paged-3')]//a[contains(@href, 'https://www.testbench.com/blog/what-if-there-would')][1])[1]
     ELSE IF    "${article3}" == "Individual Test Management Flexibly Expandable per API"
         Execute JavaScript    window.scrollTo(0,1700);
         Wait Until Page Contains Element    (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[3]
         Click Element                       (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[3]
     ELSE IF    "${article3}" == "What if the Babel Fish Existed?"
-        Execute JavaScript    window.scrollTo(0,1700);
         Scroll Element Into View    (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[4]
         Wait Until Page Contains Element    (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[4]
         Click Element                       (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[4]
