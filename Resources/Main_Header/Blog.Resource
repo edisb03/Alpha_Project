@@ -31,7 +31,7 @@ Navigate To The All Articles
     Tolerant Click   ${ALL_ARTICLES}
 
 Check All Articles
-    [Documentation]    Checks and clicks all cards available in the fist page of Test Bench..
+    [Documentation]    Checks and clicks all cards available under first page of All Articles.
     Navigate To Articles    Shape your testing using diagrams
     Go Back
     Navigate To Articles    Manage Cypress Tests With TestBench – Part Two: Inspect And Report Test Results
@@ -44,68 +44,125 @@ Check All Articles
     Go Back
     Navigate To Articles   Everything Is Prepared for You in a TestBench Template
     Go Back
-    
-# Check All Articles Page Two
-#     Navigate To Articles    Let’s Practice Testing!
-#     Go Back
-#     Navigate To Articles    Synchronize Jira with TestBench
-#     Go Back
-#     Navigate To Articles   Designing Tests Is All About The Data
-#     Go Back
-#     Navigate To Articles   This Is How to Do It! Exploratory Testing in TestBench – Part Two
-#     Go Back
-#     Navigate To Articles    Release-News: What’s New in Release 2.4
-#     Go Back
-#     Navigate To Articles   Manage and Control Cypress End-to-End System Tests With TestBench
-#     Go Back
 
 Navigate To Articles
-    [Documentation]    Verifies if all the links works properly.
+    [Documentation]    Verifies if all the links of articles works properly in first page under all articles.
     [Arguments]    ${article}
-    Set Selenium Speed    0.6
-    Execute JavaScript    window.scrollTo(0,1100);
+    Set Selenium Speed    0.9
     IF    "${article}" == "Shape your testing using diagrams"
-        Wait Until Page Contains Element    (//h4[@class= 'h3'])[1]
-        Click Element                      (//h4[@class= 'h3'])[1]
-    ELSE IF    "${article}" == " Manage Cypress Tests With TestBench – Part Two: Inspect And Report Test Results"
-        Wait Until Page Contains Element    (//h4[@class= 'h3'])[2]
-        Click Element                       (//h4[@class= 'h3'])[2]
+        Execute JavaScript    window.scrollTo(0,1200);
+        Wait Until Page Contains Element    (//html[contains(@class, 'html blog')]//h4[contains(@class, 'h3')])[1]
+        Page Should Contain Element         (//html[contains(@class, 'html blog')]//h4[contains(@class, 'h3')])[1]
+        Click Element                      (//html[contains(@class, 'html blog')]//h4[contains(@class, 'h3')])[1]
+    ELSE IF    "${article}" == "Manage Cypress Tests With TestBench – Part Two: Inspect And Report Test Results"
+        # Execute JavaScript    window.scrollTo(0,1200);
+        Wait Until Page Contains Element    (//html[contains(@class, 'html blog')]//h4[contains(@class, 'h3')])[2]
+        Page Should Contain Element         (//html[contains(@class, 'html blog')]//h4[contains(@class, 'h3')])[2]
+        Click Element                       (//html[contains(@class, 'html blog')]//h4[contains(@class, 'h3')])[2]
     ELSE IF    "${article}" == "Automating Security Tests – Doing Magic With The TestBench-API"
-        Wait Until Page Contains Element    (//h4[@class= 'h3'])[3]
-        Click Element                       (//h4[@class= 'h3'])[3]
+        # Execute JavaScript    window.scrollTo(0,2000);
+        Wait Until Page Contains Element    (//html[contains(@class, 'html blog')]//h4[contains(@class, 'h3')])[3]
+        Click Element                       (//html[contains(@class, 'html blog')]//h4[contains(@class, 'h3')])[3]
     ELSE IF    "${article}" == "What’s New in Release 2.5"
-        Wait Until Page Contains Element    (//h4[@class= 'h3'])[4]
-        Click Element                     (//h4[@class= 'h3'])[4]
+        # Execute JavaScript    window.scrollTo(0,2000);
+        Wait Until Page Contains Element    (//html[contains(@class, 'html blog')]//h4[contains(@class, 'h3')])[4]
+        Click Element                       (//html[contains(@class, 'html blog')]//h4[contains(@class, 'h3')])[4]
     ELSE IF    "${article}" == "How To Import Data Tables for Data-Driven Testing"
-        Wait Until Page Contains Element    (//h4[@class= 'h3'])[5]
-        Click Element                     (//h4[@class= 'h3'])[5]
+        # Execute JavaScript    window.scrollTo(0,2500);
+        Wait Until Page Contains Element    (//html[contains(@class, 'html blog')]//h4[contains(@class, 'h3')])[5]
+        Click Element                     (//html[contains(@class, 'html blog')]//h4[contains(@class, 'h3')])[5]
     ELSE IF    "${article}" == "Everything Is Prepared for You in a TestBench Template"
-        Wait Until Page Contains Element    (//h4[@class= 'h3'])[6]
-        Click Element                       (//h4[@class= 'h3'])[6]
-    # ELSE IF    "${article}" == " Let’s Practice Testing!"
-    #     Wait Until Page Contains Element    (//html[contains(@class, 'search-paged-2')]//h4[contains(@class, 'h3')])[1]
-    #     Click Element                       (//html[contains(@class, 'search-paged-2')]//h4[contains(@class, 'h3')])[1]
-    # ELSE IF    "${article}" == "Synchronize Jira with TestBench"
-    #     Wait Until Page Contains Element    (//html[contains(@class, 'search-paged-2')]//h4[contains(@class, 'h3')])[2]
-    #     Click Element                       (//html[contains(@class, 'search-paged-2')]//h4[contains(@class, 'h3')])[3]
-    # ELSE IF    "${article}" == "Designing Tests Is All About The Data"
-    #     Wait Until Page Contains Element    (//html[contains(@class, 'search-paged-2')]//h4[contains(@class, 'h3')])[3]
-    #     Click Element                     (//html[contains(@class, 'search-paged-2')]//h4[contains(@class, 'h3')])[3]
-    # ELSE IF    "${article}" == "This Is How to Do It! Exploratory Testing in TestBench – Part Two"
-    #     Wait Until Page Contains Element    (//html[contains(@class, 'search-paged-2')]//h4[contains(@class, 'h3')])[4]
-    #     Click Element                     (//html[contains(@class, 'search-paged-2')]//h4[contains(@class, 'h3')])[4]
-    # ELSE IF    "${article}" == "Release-News: What’s New in Release 2.4"
-    #     Wait Until Page Contains Element    (//html[contains(@class, 'search-paged-2')]//h4[contains(@class, 'h3')])[5]
-    #     Click Element                       (//html[contains(@class, 'search-paged-2')]//h4[contains(@class, 'h3')])[5]
-    # ELSE IF    "${article}" == "Manage and Control Cypress End-to-End System Tests With TestBench"
-    #     Wait Until Page Contains Element    (//html[contains(@class, 'search-paged-2')]//h4[contains(@class, 'h3')])[6]
-    #     Click Element                       (//html[contains(@class, 'search-paged-2')]//h4[contains(@class, 'h3')])[6]
+        # Execute JavaScript    window.scrollTo(0,2500);
+        Wait Until Page Contains Element    (//html[contains(@class, 'html blog')]//h4[contains(@class, 'h3')])[6]
+        Click Element                       (//html[contains(@class, 'html blog')]//h4[contains(@class, 'h3')])[6]
+    END
+
+Check All Articles Page Two
+    [Documentation]    Checks and clicks all cards available under second page of All Articles.
+    Navigate To Articles Page Two    Let’s Practice Testing!
+    Go Back
+    Navigate To Articles Page Two    Synchronize Jira with TestBench
+    Go Back
+    Navigate To Articles Page Two   Designing Tests Is All About The Data
+    Go Back
+    Navigate To Articles Page Two   This Is How to Do It! Exploratory Testing in TestBench – Part Two
+    Go Back
+    Navigate To Articles Page Two    Release-News: What’s New in Release 2.4
+    Go Back
+    Navigate To Articles Page Two   Manage and Control Cypress End-to-End System Tests With TestBench
+    Go Back
+
+Navigate To Articles Page Two
+    [Documentation]    Verifies if all the links of articles works properly in second page under all articles.
+    [Arguments]    ${article2}
+    Set Selenium Speed    0.9
+    IF    "${article2}" == "Let’s Practice Testing!"
+        Execute JavaScript    window.scrollTo(0,1000);
+        Wait Until Page Contains Element    (//html[contains(@class, 'html blog paged paged-2')]//h4[contains(@class, 'h3')])[1]
+        Click Element                       (//html[contains(@class, 'html blog paged paged-2')]//h4[contains(@class, 'h3')])[1]
+    ELSE IF    "${article2}" == "Synchronize Jira with TestBench"
+        Wait Until Page Contains Element    (//html[contains(@class, 'html blog paged paged-2')]//h4[contains(@class, 'h3')])[2]
+        Click Element                       (//html[contains(@class, 'html blog paged paged-2')]//h4[contains(@class, 'h3')])[2]
+    ELSE IF    "${article2}" == "Designing Tests Is All About The Data"
+        Wait Until Page Contains Element    (//html[contains(@class, 'html blog paged paged-2')]//h4[contains(@class, 'h3')])[3]
+        Click Element                       (//html[contains(@class, 'html blog paged paged-2')]//h4[contains(@class, 'h3')])[3]
+    ELSE IF    "${article2}" == "This Is How to Do It! Exploratory Testing in TestBench – Part Two"
+        Wait Until Page Contains Element    (//html[contains(@class, 'html blog paged paged-2')]//h4[contains(@class, 'h3')])[4]
+        Click Element                       (//html[contains(@class, 'html blog paged paged-2')]//h4[contains(@class, 'h3')])[4]
+    ELSE IF    "${article2}" == "Release-News: What’s New in Release 2.4"
+        Wait Until Page Contains Element    (//html[contains(@class, 'html blog paged paged-2')]//h4[contains(@class, 'h3')])[5]
+        Click Element                       (//html[contains(@class, 'html blog paged paged-2')]//h4[contains(@class, 'h3')])[5]
+    ELSE IF    "${article2}" == "Manage and Control Cypress End-to-End System Tests With TestBench"
+        Wait Until Page Contains Element    (//html[contains(@class, 'html blog paged paged-2')]//h4[contains(@class, 'h3')])[6]
+        Click Element                       (//html[contains(@class, 'html blog paged paged-2')]//h4[contains(@class, 'h3')])[6]
+    END
+
+Check All Articles Page Three
+    [Documentation]        Checks and clicks all cards available under third page of All Articles.
+    Navigate To Articles Page Three    This Is How to Do It! Exploratory Testing in TestBench.
+    Go Back
+    Sleep    2s
+    Navigate To Articles Page Three    From Theory to Practice With the “VirtualShowRoom”.
+    Go Back
+    # Sleep    2s
+    # Navigate To Articles Page Three    Individual Test Management – Flexibly Expandable per API
+    # Go Back
+    Sleep    2s
+    Navigate To Articles Page Three    What if the Babel Fish Existed?
+    Go Back
+
+Navigate To Articles Page Three
+    [Documentation]    Verifies if all the links of articles works properly in third page under all articles.
+    [Arguments]    ${article3}
+    Set Selenium Speed    0.9
+    IF    "${article3}" == "This Is How to Do It! Exploratory Testing in TestBench."
+        Execute JavaScript    window.scrollTo(0,1200);
+        Wait Until Page Contains Element    (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[1]
+        Click Element                       (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[1]
+    ELSE IF    "${article3}" == "From Theory to Practice With the “VirtualShowRoom”."
+        Wait Until Page Contains Element    (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[2]
+        Click Element                       (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[2]
+    # ELSE IF    "${article3}" == "Individual Test Management – Flexibly Expandable per API"
+    #     Wait Until Page Contains Element    (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[3]
+    #     Click Element                       (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[3]
+    ELSE IF    "${article3}" == "What if the Babel Fish Existed?"
+        Scroll Element Into View    (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[4]
+        Wait Until Page Contains Element    (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[4]
+        Click Element                       (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[4]
     END
 
 Next Link
-    [Documentation]    Click Next link
-    # Scroll Element Into View               //div[contains(@class, 'pagination pagination--prevDisabled')]//a
-    Execute JavaScript    window.scrollTo(0,9000);
+    [Documentation]    Click Next link in first page
+    Execute JavaScript    window.scrollTo(0,7000);
     Wait Until Keyword Succeeds    3x    3s     Wait Until Page Contains Element       //div[contains(@class, 'pagination pagination--prevDisabled')]//a
     Tolerant Click    //div[contains(@class, 'pagination pagination--prevDisabled')]//a
-    Wait Until Page Contains Element    //html[contains(@class, 'html blog')]//main//div//h2
+    Wait Until Page Contains Element    //html[contains(@class, 'html blog paged paged-2')]//main//div//h2
+    Sleep    3s
+
+Next Link Page Two
+    [Documentation]    Click Next link in second page
+    Execute JavaScript    window.scrollTo(0,7000);
+    Wait Until Keyword Succeeds    3x    3s     Wait Until Page Contains Element       (//div[contains(@class, 'pagination')]//a)[2]
+    Tolerant Click    (//div[contains(@class, 'pagination')]//a)[2]
+    Wait Until Page Contains Element    //html[contains(@class, 'html blog paged paged-3')]//main//div//h2
+    Sleep    1s
