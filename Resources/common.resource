@@ -7,6 +7,7 @@ Library    OperatingSystem
 
 *** Variables ***
 ${JSON_FILE_PATH}     ${EXECDIR}//Json//lang.json
+${JSON_ARTICLE_PATH}    ${EXECDIR}//Json//articles.json
 
 &{TESTBENCH_URL}
 ...    prod=https://www.testbench.com/

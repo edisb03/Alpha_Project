@@ -115,34 +115,39 @@ Navigate To Articles Page Two
 
 Check All Articles Page Three
     [Documentation]        Checks and clicks all cards available under third page of All Articles.
-    Navigate To Articles Page Three    This Is How to Do It! Exploratory Testing in TestBench.
+    ${articles_content}=    Get File    ${JSON_ARTICLE_PATH}
+    ${option_1}=    Evaluate   json.loads('''${articles_content}''')['option_1']    json
+    Navigate To Articles Page Three    option_1
     Go Back
     Sleep    5s
-    Navigate To Articles Page Three    From Theory to Practice With the VirtualShowRoom.
+    ${option_2}=    Evaluate   json.loads('''${articles_content}''')['option_2']    json
+    Navigate To Articles Page Three    option_2
     Go Back
     Sleep    2s
-    Navigate To Articles Page Three    Individual Test Management Flexibly Expandable per API
+    ${option_3}=    Evaluate   json.loads('''${articles_content}''')['option_3']    json
+    Navigate To Articles Page Three    option_3
     Go Back
     Sleep    2s
-    Navigate To Articles Page Three    What if the Babel Fish Existed?
+    ${option_4}=    Evaluate   json.loads('''${articles_content}''')['option_4']    json
+    Navigate To Articles Page Three   option_4
     Go Back
 
 Navigate To Articles Page Three
     [Documentation]    Verifies if all the links of articles works properly in third page under all articles.
     [Arguments]    ${article3}
-    Set Selenium Speed    0.9
-    IF    "${article3}" == "This Is How to Do It! Exploratory Testing in TestBench."
-        Execute JavaScript    window.scrollTo(0,1200);
+    IF    "${article3}" == "option_1"
+        Scroll Element Into View    (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[1]
         Wait Until Page Contains Element    (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[1]
         Click Element                       (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[1]
-    ELSE IF    "${article3}" == "From Theory to Practice With the VirtualShowRoom."
-        Wait Until Page Contains Element    (//html[contains(@class, 'html blog paged paged-3')]//a[contains(@href, 'https://www.testbench.com/blog/what-if-there-would-be-a-test-object-available-to-anyone-who-wants-to-practice-testing-part-one-move-from-software-testing-theory-to-practice-with-the-virtualshowroom/')][1])[1]
+    ELSE IF    "${article3}" == "option_2"
+        Scroll Element Into View    (//html[contains(@class, 'html blog paged paged-3')]//a[contains(@href, 'https://www.testbench.com/blog/what-if-there-would')][1])[1]
+        Wait Until Page Contains Element   (//html[contains(@class, 'html blog paged paged-3')]//a[contains(@href, 'https://www.testbench.com/blog/what-if-there-would')][1])[1]
         Click Element                       (//html[contains(@class, 'html blog paged paged-3')]//a[contains(@href, 'https://www.testbench.com/blog/what-if-there-would')][1])[1]
-    ELSE IF    "${article3}" == "Individual Test Management Flexibly Expandable per API"
-        Execute JavaScript    window.scrollTo(0,1700);
+    ELSE IF    "${article3}" == "option_3"
+        Scroll Element Into View    (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[3]
         Wait Until Page Contains Element    (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[3]
         Click Element                       (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[3]
-    ELSE IF    "${article3}" == "What if the Babel Fish Existed?"
+    ELSE IF    "${article3}" == "option_4"
         Scroll Element Into View    (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[4]
         Wait Until Page Contains Element    (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[4]
         Click Element                       (//html[contains(@class, 'html blog paged paged-3')]//h4[contains(@class, 'h3')])[4]
