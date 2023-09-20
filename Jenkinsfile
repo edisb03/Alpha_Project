@@ -23,7 +23,7 @@ pipeline {
     echo "Workspace directory: ${WORKSPACE}"
 }
 
-                    sh 'C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe --version'
+                    sh 'docker --version'
 
                 }
             }
