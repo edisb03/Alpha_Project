@@ -18,17 +18,16 @@ pipeline {
                 deleteDir() // Clean the workspace
             }
         }
-
+        
         stage('builddocker') {
             steps {
                 script {
-                    // Set the Docker socket for Windows
-                        powershell """
-                            docker build  .
-                        """
-                    }
+                    // Build the Docker image using the "Dockerfile" without specifying a custom tag
+                    sh 'docker build .'
                 }
             }
+        }
+
 
         stage('codecheck') {
             steps {
