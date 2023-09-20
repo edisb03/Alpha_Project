@@ -26,7 +26,7 @@ pipeline {
                      powershell '''
             # Run the Docker command to get the version
             docker --version
-            docker build alpha . 
+            docker build -t alpha . 
         '''
 
                 }
