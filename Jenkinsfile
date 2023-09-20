@@ -19,6 +19,10 @@ pipeline {
                 script {
                     // Build the Docker image using the Dockerfile in your workspace
                     // Replace 'my-app-image' with a suitable image name
+                    script {
+    echo "Workspace directory: ${WORKSPACE}"
+}
+
                     sh 'C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe --version'
 
                 }
