@@ -60,7 +60,7 @@ Check All Articles
     Go Back
     Navigate To Articles    Automating Security Tests Doing Magic With The TestBench-API
     Go Back
-    Navigate To Articles   Whats New in Release 2.5
+    Navigate To Articles   What's New in Release 2.5
     Go Back
     Navigate To Articles    How To Import Data Tables for Data-Driven Testing
     Go Back
@@ -85,9 +85,11 @@ Navigate To Articles
         Wait Until Page Contains Element    ${WHATS_NEWS...}
         Click Element                       ${WHATS_NEWS...}
     ELSE IF    "${article}" == "How To Import Data Tables for Data-Driven Testing"
-        Wait Until Page Contains Element    ${HOW_TO_IMPORT...}
-        Click Element                       ${HOW_TO_IMPORT...}
+        Scroll Element Into View            (//html[contains(@class, 'html blog')]//h4[contains(@class, 'h3')])[5]
+        Wait Until Page Contains Element    (//html[contains(@class, 'html blog')]//h4[contains(@class, 'h3')])[5]
+        Click Element                       (//html[contains(@class, 'html blog')]//h4[contains(@class, 'h3')])[5]
     ELSE IF    "${article}" == "Everything Is Prepared for You in a TestBench Template"
+        Scroll Element Into View            ${EVERYTHING_IS_PREP...}
         Wait Until Page Contains Element    ${EVERYTHING_IS_PREP...}
         Click Element                       ${EVERYTHING_IS_PREP...}
     END
