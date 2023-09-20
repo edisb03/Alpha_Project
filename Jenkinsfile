@@ -23,7 +23,10 @@ pipeline {
     echo "Workspace directory: ${WORKSPACE}"
 }
 
-                    sh 'docker --version'
+                     powershell '''
+            # Run the Docker command to get the version
+            docker --version
+        '''
 
                 }
             }
