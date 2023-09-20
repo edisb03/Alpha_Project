@@ -35,12 +35,7 @@ pipeline {
    stage('codecheck') {
     steps {
         powershell """
-            # Define variables
-            \$robotImage = 'Dockerfile:latest'  # Use the image name you built
-            \$workspaceDir = '\${WORKSPACE}'  # Note the escape character before \$
-
-            # Run Robot Framework dry-run
-            docker run --rm -v \$workspaceDir:/workdir \$robotImage robot --outputdir /workdir/output/dryrun --dryrun /workdir/TestCases
+            docker run --rm -v ${PWD}:/workdir alpha bash -c " robot --outputdir /workdir/output/dryrun --dryrun /workdir/TestCases"
         """
     }
 }
