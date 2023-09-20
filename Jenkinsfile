@@ -13,14 +13,14 @@ pipeline {
     }
 
     stages {
-        stage('Preparation') {
-            steps {
-                script {
-                    // Clean the workspace
-                    deleteDir()
-                }
-            }
-        }
+        // stage('Preparation') {
+        //     steps {
+        //         script {
+        //             // Clean the workspace
+        //             deleteDir()
+        //         }
+        //     }
+        // }
 
         stage('Build Docker Image') {
             steps {
