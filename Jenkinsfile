@@ -50,25 +50,25 @@ pipeline {
         }
     }
 
-    post {
-        always {
-            script {
-                step(
-                    [
-                        $class: 'RobotPublisher',
-                        outputPath: 'output',
-                        outputFileName: '**/output.xml',
-                        reportFileName: '**/report.html',
-                        logFileName: '**/log.html',
-                        disableArchiveOutput: false,
-                        passThreshold: 100,
-                        unstableThreshold: 75,
-                        otherFiles: "**/*.png,**/*.jpg",
-                    ]
-                )
-            }
-        }
-    }
+    // post {
+    //     always {
+    //         script {
+    //             step(
+    //                 [
+    //                     $class: 'RobotPublisher',
+    //                     outputPath: 'output',
+    //                     outputFileName: '**/output.xml',
+    //                     reportFileName: '**/report.html',
+    //                     logFileName: '**/log.html',
+    //                     disableArchiveOutput: false,
+    //                     passThreshold: 100,
+    //                     unstableThreshold: 75,
+    //                     otherFiles: "**/*.png,**/*.jpg",
+    //                 ]
+    //             )
+    //         }
+    //     }
+    // }
 }
 
 
