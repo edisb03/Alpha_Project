@@ -32,13 +32,14 @@ pipeline {
                 }
             }
         }
-   stage('codecheck') {
+stage('codecheck') {
     steps {
         powershell """
-            docker run --rm -v ${PWD}:/workdir alpha bash -c " robot --outputdir /workdir/output/dryrun --dryrun /workdir/TestCases"
+            docker run --rm -v ${WORKSPACE}:/workdir alpha bash -c "robot --outputdir /workdir/output/dryrun --dryrun /workdir/TestCases"
         """
     }
 }
+
 
 
     }
