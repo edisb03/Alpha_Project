@@ -13,34 +13,57 @@ pipeline {
     }
 
     stages {
-        // stage('Preparation') {
-        //     steps {
-        //         deleteDir() // Clean the workspace
-        //     }
-        // }
-
-        stage('builddocker') {
+        stage('Preparation') {
             steps {
                 script {
-                    // Build the Docker image using the "Dockerfile" without specifying a custom tag
-                    sh 'docker build .'
+                    // Clean the workspace
+                    deleteDir()
                 }
             }
         }
 
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    // Build the Docker image using the Dockerfile in your workspace
+                    // Replace 'my-app-image' with a suitable image name
+                    sh 'docker build -t my-app-image .'
+                }
+            }
+        }
 
-        // stage('codecheck') {
-        //     steps {
-        //         script {
-        //             echo "Running Robot Framework Tests"
-        //             def robotImage = "Dockerfile:latest"  // Use the image name you built
-        //             // Use Windows-style paths and PowerShell syntax
-        //             powershell """
-        //                 docker run --rm -v ${WORKSPACE}:/workdir ${robotImage} robot --outputdir /workdir/output/dryrun --dryrun /workdir/TestCases
-        //             """
-        //         }
-        //     }
-        // }
+        stage('Run Docker Container') {
+            steps {
+                script {
+                    // Run a Docker container based on the built image
+                    // You can pass environment variables and other options as needed
+                    // Replace 'my-app-container' with a suitable container name
+                    sh 'docker run --name my-app-container -d my-app-image'
+                }
+            }
+        }
+
+        stage('Execute Tests in Docker Container') {
+            steps {
+                script {
+                    // Example: Run tests inside the Docker container
+                    // Replace 'my-app-container' and the test command with your specific commands
+                    sh 'docker exec my-app-container your_test_command_here'
+                }
+            }
+        }
+
+        stage('Cleanup') {
+            steps {
+                script {
+                    // Stop and remove the Docker container
+                    sh 'docker stop my-app-container'
+                    sh 'docker rm my-app-container'
+
+                    // Optionally, remove the Docker image
+                    sh 'docker rmi my-app-image'
+                }
+            }
+        }
     }
-
 }
