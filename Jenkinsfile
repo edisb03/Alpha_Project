@@ -27,43 +27,43 @@ pipeline {
                 script {
                     // Build the Docker image using the Dockerfile in your workspace
                     // Replace 'my-app-image' with a suitable image name
-                    sh 'docker build -t my-app-image .'
+                    sh 'docker --version'
                 }
             }
         }
 
-        stage('Run Docker Container') {
-            steps {
-                script {
-                    // Run a Docker container based on the built image
-                    // You can pass environment variables and other options as needed
-                    // Replace 'my-app-container' with a suitable container name
-                    sh 'docker run --name my-app-container -d my-app-image'
-                }
-            }
-        }
+        // stage('Run Docker Container') {
+        //     steps {
+        //         script {
+        //             // Run a Docker container based on the built image
+        //             // You can pass environment variables and other options as needed
+        //             // Replace 'my-app-container' with a suitable container name
+        //             sh 'docker run --name my-app-container -d my-app-image'
+        //         }
+        //     }
+        // }
 
-        stage('Execute Tests in Docker Container') {
-            steps {
-                script {
-                    // Example: Run tests inside the Docker container
-                    // Replace 'my-app-container' and the test command with your specific commands
-                    sh 'docker exec my-app-container your_test_command_here'
-                }
-            }
-        }
+        // stage('Execute Tests in Docker Container') {
+        //     steps {
+        //         script {
+        //             // Example: Run tests inside the Docker container
+        //             // Replace 'my-app-container' and the test command with your specific commands
+        //             sh 'docker exec my-app-container your_test_command_here'
+        //         }
+        //     }
+        // }
 
-        stage('Cleanup') {
-            steps {
-                script {
-                    // Stop and remove the Docker container
-                    sh 'docker stop my-app-container'
-                    sh 'docker rm my-app-container'
+        // stage('Cleanup') {
+        //     steps {
+        //         script {
+        //             // Stop and remove the Docker container
+        //             sh 'docker stop my-app-container'
+        //             sh 'docker rm my-app-container'
 
-                    // Optionally, remove the Docker image
-                    sh 'docker rmi my-app-image'
-                }
-            }
-        }
+        //             // Optionally, remove the Docker image
+        //             sh 'docker rmi my-app-image'
+        //         }
+        //     }
+        // }
     }
 }
