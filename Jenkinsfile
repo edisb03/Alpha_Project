@@ -24,7 +24,7 @@ pipeline {
                 script {
                     // Set the Docker socket for Windows
                         powershell """
-                            docker build -t Dockerfile .
+                            docker build  .
                         """
                     }
                 }
