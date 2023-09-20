@@ -10,7 +10,7 @@ ${SEARCH_ICON}                 //input[@id='searchsubmit']
 ### ARTICLES AT ALL ARTICLES FIRST PAGE ###
 ${ALL_ARTICLES}                //div[@class='button button--tab active']//a[@class='menu-link']
 ${SHAPE_YOUR...}               (//html[contains(@class, 'html blog')]//h4[contains(@class, 'h3')])[1]
-${MANAGE_CYPRES...}            (//html[contains(@class, 'html blog')]//h4[contains(@class, 'h3')])[2]
+${MANAGE_CYPRES_1...}            (//html[contains(@class, 'html blog')]//h4[contains(@class, 'h3')])[2]
 ${AUTOMATING_SECURITY...}      (//html[contains(@class, 'html blog')]//h4[contains(@class, 'h3')])[3]
 ${WHATS_NEWS...}               (//html[contains(@class, 'html blog')]//h4[contains(@class, 'h3')])[4]
 ${HOW_TO_IMPORT...}            (//html[contains(@class, 'html blog')]//h4[contains(@class, 'h3')])[5]
@@ -75,13 +75,13 @@ Navigate To Articles
         Execute JavaScript    window.scrollTo(0,1200);
         Wait Until Page Contains Element    ${SHAPE_YOUR...}
         Click Element                       ${SHAPE_YOUR...}
-    ELSE IF    "${article}" == "Manage Cypress Tests With TestBench – Part Two: Inspect And Report Test Results"
-        Wait Until Page Contains Element    ${MANAGE_CYPRES...}
-        Click Element                       ${MANAGE_CYPRES...}
-    ELSE IF    "${article}" == "Automating Security Tests – Doing Magic With The TestBench-API"
+    ELSE IF    "${article}" == "Manage Cypress Tests With TestBench Part Two: Inspect And Report Test Results"
+        Wait Until Page Contains Element    ${MANAGE_CYPRES_1...}  
+        Click Element                       ${MANAGE_CYPRES_1...}  
+    ELSE IF    "${article}" == "Automating Security Tests Doing Magic With The TestBench-API"
         Wait Until Page Contains Element    ${AUTOMATING_SECURITY...}
         Click Element                       ${AUTOMATING_SECURITY...}
-    ELSE IF    "${article}" == "What’s New in Release 2.5"
+    ELSE IF    "${article}" == "What's New in Release 2.5"
         Wait Until Page Contains Element    ${WHATS_NEWS...}
         Click Element                       ${WHATS_NEWS...}
     ELSE IF    "${article}" == "How To Import Data Tables for Data-Driven Testing"
