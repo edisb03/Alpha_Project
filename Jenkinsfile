@@ -29,27 +29,18 @@ pipeline {
                         echo "Building Docker Image"
                         // Use Windows-style paths and PowerShell syntax
                         powershell """
-                            docker build -t mydockerimage .
+                            docker build -t Dockerfile .
                         """
                     }
                 }
             }
         }
 
-        stage('Build Docker Image') {
-    steps {
-        script {
-            // Use the Dockerfile step here
-            docker.build("my-docker-image:latest", "-f path/to/Dockerfile .")
-        }
-    }
-    }
-
         stage('codecheck') {
             steps {
                 script {
                     echo "Running Robot Framework Tests"
-                    def robotImage = "mydockerimage:latest"  // Use the image name you built
+                    def robotImage = "Dockerfile:latest"  // Use the image name you built
                     // Use Windows-style paths and PowerShell syntax
                     powershell """
                         docker run --rm -v ${WORKSPACE}:/workdir ${robotImage} robot --outputdir /workdir/output/dryrun --dryrun /workdir/TestCases
