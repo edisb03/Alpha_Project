@@ -6,11 +6,11 @@ pipeline {
         skipStagesAfterUnstable()
     }
 
-    parameters {
-        choice(name: 'BROWSER', choices: ["headlesschrome", "chrome"], description: 'The browser to run the tests with')
-        choice(name: 'ENVIRONMENT', choices: ["prod"], description: 'The environment to run the Testcases')
-        choice(name: 'LANGUAGE', choices: ["English"])
-    }
+    // parameters {
+    //     choice(name: 'BROWSER', choices: ["headlesschrome", "chrome"], description: 'The browser to run the tests with')
+    //     choice(name: 'ENVIRONMENT', choices: ["prod"], description: 'The environment to run the Testcases')
+    //     choice(name: 'LANGUAGE', choices: ["English"])
+    // }
     parameters {
 
         choice(name: 'BROWSER', choices:["headlesschrome", "chrome", "firefox"], description: 'The browser to run the tests with')
