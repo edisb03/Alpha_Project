@@ -1,7 +1,7 @@
 import keyboard
 
 def press_escape_key():
-    keyboard.press('esc')
-
-
-
+    keyboard.press('tab')
+    keyboard.press('tab')
+    keyboard.press('tab')
+    keyboard.press('enter')

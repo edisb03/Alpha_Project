@@ -60,8 +60,8 @@ Search Links By Name
 
 Navigate To Blog
     [Documentation]    This Keyword is used to navigate to Blog
-    Wait Until Keyword Succeeds    3x    3s    Wait Until Page Contains Element    ${NAV_BLOG}
-    Wait Until Keyword Succeeds    3x    3s    Tolerant Click    ${NAV_BLOG}
+    Wait Until Page Contains Element    ${NAV_BLOG}
+    Tolerant Click    ${NAV_BLOG}
 
 Navigate To Resources
     [Documentation]    This keyword is used to navigate to Resources.

@@ -179,3 +179,16 @@ P1_TO01_TC21 Switch Page To Deutch And Revert To Default Language English
     Navigate To TestBench Logo
     Perform Language Switching    English
     Control If The MH Page Contains     The Smart Test Management Tool
+
+P1_TO01_TC22 Search For Existing Blog Articles
+    [Documentation]    User open web page of TestBench, navigates to the Blog
+    ...    and search some existing articles within the Blog
+    [Tags]    P1TO01_TC22    exploratory
+    Navigate To Blog
+    Control If The MH Page Contains    TestBench Blog
+    Navigate To The All Articles
+    Check All Articles
+    Next Link
+    Check All Articles Page Two
+    Next Link Page Two
+    Check All Articles Page Three
