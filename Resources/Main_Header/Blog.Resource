@@ -189,3 +189,10 @@ Next Link Page Two
     Tolerant Click    ${NEXT_LINK_PAGE2}
     Wait Until Page Contains Element    ${TITLE_OF_PAGE_THREE_BLOG}
     Sleep    1s
+
+Blog Tab Name
+    [Documentation]    Name of the Blog tab
+    [Arguments]    ${tab_names}
+    ${tab_names}    Get Window Titles
+    Log    The current tab name is: ${tab_names[0]}
+    Title Should Be    Blog - TestBench
