@@ -92,6 +92,8 @@ stage('testrun'){
                     recipientProviders: [culprits(), requestor()]
                 )
             }    
+      }
+}
         // clean workspace after build
         // cleanup {
         //     cleanWs(cleanWhenNotBuilt: false,
@@ -102,4 +104,4 @@ stage('testrun'){
         //                        [pattern: '.propsfile', type: 'EXCLUDE']])
         //     }
         // }    
-}
+// }
