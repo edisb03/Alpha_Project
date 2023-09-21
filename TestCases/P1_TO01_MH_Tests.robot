@@ -199,10 +199,10 @@ P1_TO01_TC23 Verify Tabs Names Blog
     [Tags]    P1TO01_TC22    exploratory
     Navigate To Blog
     Control If The MH Page Contains    TestBench Blog
-    Navigate To The All Articles
-    Blog Tab Name    Blog - TestBench
+    # Navigate To The All Articles
     # Check All Articles
-    # Next Link
+    Next Link
     # Check All Articles Page Two
-    # Next Link Page Two
+    Next Link Page Two
+    Blog Tab Name    	Blog - Page 3 of 3 - TestBench
     # Check All Articles Page Three
