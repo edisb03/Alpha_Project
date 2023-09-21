@@ -201,4 +201,4 @@ P1_TO01_TC23 Verify Tabs Names Blog
     Control If The MH Page Contains    TestBench Blog
     Next Link
     Next Link Page Two
-    Blog Tab Name    Blog - Page 3 of 3 - TestBench
+    Blog Tab Name     Blog - Page 3 of 3 - TestBench
