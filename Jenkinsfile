@@ -102,4 +102,5 @@ stage('testrun'){
                                [pattern: '.propsfile', type: 'EXCLUDE']])
             }
         }
+        
 }
