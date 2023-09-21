@@ -93,13 +93,13 @@ stage('testrun'){
                 )
             }    
         // clean workspace after build
-        cleanup {
-            cleanWs(cleanWhenNotBuilt: false,
-                    deleteDirs: true,
-                    disableDeferredWipeout: true,
-                    notFailBuild: true,
-                    patterns: [[pattern: '.gitignore', type: 'INCLUDE'],
-                               [pattern: '.propsfile', type: 'EXCLUDE']])
-            }
-        }    
+        // cleanup {
+        //     cleanWs(cleanWhenNotBuilt: false,
+        //             deleteDirs: true,
+        //             disableDeferredWipeout: true,
+        //             notFailBuild: true,
+        //             patterns: [[pattern: '.gitignore', type: 'INCLUDE'],
+        //                        [pattern: '.propsfile', type: 'EXCLUDE']])
+        //     }
+        // }    
 }
