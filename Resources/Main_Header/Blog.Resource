@@ -192,16 +192,8 @@ Next Link Page Two
 
 Blog Tab Name
     [Documentation]    Name of the Blog tab
-    [Arguments]    ${tab_names}
+    [Arguments]    ${names_in_tab}
     ${tab_names}=    Get Window Titles
     Log    The current tab name is: ${tab_names[0]}
-    Run Keyword And Return Status    name
-
-${isElementPresent} =    Run Keyword And Return Status    Page Should Contain Element    ${TRY_TESTBENCH_NOW}
-    IF    '${isElementPresent}' == 'True'
-        Wait Until Keyword Succeeds    3x    3s    Tolerant Click    ${TRY_TESTBENCH_NOW}
-        Control If The MH Page Contains    Get started with a free account
-        Log    Button is present in English version of the page
-    ELSE
-        Log    Button is not present in German version of the page
-    END
+    ${name_in_tabs_converted}=    Convert To String    ${names_in_tab}
+    Should Be Equal As Strings   ${name_in_tabs_converted}    ${tab_names[0]}
