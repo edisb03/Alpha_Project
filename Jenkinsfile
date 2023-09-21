@@ -57,9 +57,6 @@ stage('testrun'){
         """
     }
 }
-
-
-
     }
 
       post {
