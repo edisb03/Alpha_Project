@@ -65,17 +65,17 @@ P1_TO01_MH_TC07 Verify Try Data-Driven Testing
     Control If The MH Page Contains    Let the Data Do All Your Testing
 
 P1_TO01_MH_TC08 Navigate To English Language
-    [Documentation]    Verifies that English option is shown at Header of the testbench page
+    [Documentation]    Verifies that English option is shown at Header of the testbench page.
     [Tags]    P1TO01_TC08    exploratory
     Verify Default Languange Is    English
 
-# P1_TO01_TC09 Navigate To Blog
-#     [Documentation]    User open web page of TestBench : www.testbanch.com and,
-#     ...    checks for Blog item on main Header, then verifies if,
-#     ...    its clickable and new page is opened after.
-#     [Tags]    P1TO01_TC09    exploratory
-#     Navigate To Blog
-#     Control If The MH Page Contains    Welcome to the World of Testing
+P1_TO01_TC09 Navigate To Blog
+    [Documentation]    User open web page of TestBench : www.testbanch.com and,
+    ...    checks for Blog item on main Header, then verifies if,
+    ...    its clickable and new page is opened after.
+    [Tags]    P1TO01_TC09    exploratory
+    Navigate To Blog
+    Control If The MH Page Contains    Welcome to the World of Testing
 
 P1_TO01_MH_TC10 Verify Test Approaches Links
     [Documentation]    Check if Test Approaches link are opened successfully and validate each content of links..
@@ -196,9 +196,18 @@ P1_TO01_TC22 Search For Existing Blog Articles
 P1_TO01_TC23 Verify Tabs Names Blog
     [Documentation]    User open web page of TestBench, navigates to the Blog
     ...    and search some existing articles within the Blog and checks tab name of the page three
-    [Tags]    P1TO01_TC22    exploratory
+    [Tags]    P1TO01_TC23    exploratory
     Navigate To Blog
     Control If The MH Page Contains    TestBench Blog
     Next Link
     Next Link Page Two
     Blog Tab Name     Blog - Page 3 of 3 - TestBench
+
+P1_TO01_TC24 Featured Articles
+    [Documentation]    User open web page of TestBench, navigates to the Blog
+    ...    and search some existing articles within the Blog
+    [Tags]    P1_TO01_TC24    exploratory
+    Navigate To Blog
+    Control If The MH Page Contains    TestBench Blog
+    Navigate To The All Articles
+    Featured Articles
