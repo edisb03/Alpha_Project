@@ -202,3 +202,12 @@ P1_TO01_TC23 Verify Tabs Names Blog
     Next Link
     Next Link Page Two
     Blog Tab Name     Blog - Page 3 of 3 - TestBench
+
+P1_TO01_TC24 Featured Articles
+    [Documentation]    User open web page of TestBench, navigates to the Blog
+    ...    and search some existing articles within the Blog
+    [Tags]    P1_TO01_TC23    exploratory
+    Navigate To Blog
+    Control If The MH Page Contains    TestBench Blog
+    Navigate To The All Articles
+    Featured Articles

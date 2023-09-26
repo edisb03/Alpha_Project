@@ -35,6 +35,13 @@ ${NEXT_LINK_PAGE2}               (//div[contains(@class, 'pagination')]//a)[2]
 ${TITLE_OF_PAGE_TWO_BLOG}        //html[contains(@class, 'html blog paged paged-2')]//main//div//h2
 ${TITLE_OF_PAGE_THREE_BLOG}      //html[contains(@class, 'html blog paged paged-3')]//main//div//h2
 
+${FEATURED_ART_SLIDE1}           //div[@class='swiper-slide swiper-slide-active']//span[@aria-label='Go to slide 1']
+${SLIDE1_TITLE}                  (//div[contains(@class, 'slide-content')]//h4[contains(@class, 'h2')]//a[contains(@href, 'https://www.testbench.com/blog/manage')])[1]
+${FEATURED_ART_SLIDE2}           //div[@class='swiper-slide swiper-slide-active']//span[@aria-label='Go to slide 2']
+${SLIDE2_TITLE}                  (//div[contains(@class, 'slide-content')]//h4[contains(@class, 'h2')]//a[contains(@href, 'https://www.testbench.com/blog/auto')])[1]
+${FEATURED_ART_SLIDE3}           //div[@class='swiper-slide swiper-slide-active']//span[@aria-label='Go to slide 3']
+${SLIDE3_TITLE}                  (//div[contains(@class, 'slide-content')]//h4[contains(@class, 'h2')]//a[contains(@href, 'https://www.testbench.com/blog/')])[1]
+
 
 *** Keywords ***
 Navigate To The Search Bar
@@ -185,7 +192,7 @@ Next Link
 Next Link Page Two
     [Documentation]    Click Next link in second page of all articles within Blog
     Execute JavaScript    window.scrollTo(0,7000);
-    Wait Until Keyword Succeeds    3x    3s     Wait Until Page Contains Element       ${NEXT_LINK_PAGE2} 
+    Wait Until Keyword Succeeds    3x    3s     Wait Until Page Contains Element       ${NEXT_LINK_PAGE2}
     Tolerant Click    ${NEXT_LINK_PAGE2}
     Wait Until Page Contains Element    ${TITLE_OF_PAGE_THREE_BLOG}
     Sleep    1s
@@ -197,3 +204,15 @@ Blog Tab Name
     Log    The current tab name is: ${tab_names[0]}
     ${name_in_tabs_converted}=    Convert To String    ${names_in_tab}
     Should Be Equal As Strings   ${name_in_tabs_converted}    ${tab_names[0]}
+
+Featured Articles
+    [Documentation]    Check featured articles within the All articles
+    Wait Until Page Contains Element    ${FEATURED_ART_SLIDE1}
+    Click Element    ${FEATURED_ART_SLIDE1}
+    Wait Until Page Contains Element    ${SLIDE1_TITLE}
+    Wait Until Page Contains Element    ${FEATURED_ART_SLIDE2}
+    Click Element    ${FEATURED_ART_SLIDE2}
+    Wait Until Page Contains Element    ${SLIDE2_TITLE}
+    Wait Until Page Contains Element    ${FEATURED_ART_SLIDE3}
+    Click Element    ${FEATURED_ART_SLIDE3}
+    Wait Until Page Contains Element    ${SLIDE3_TITLE}
