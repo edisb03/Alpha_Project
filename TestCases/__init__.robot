@@ -1,2 +1,2 @@
 *** Settings ***
-Test Tags    alpha
+# Test Tags    alpha
