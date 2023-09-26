@@ -126,41 +126,41 @@ P1_TO01_MH_TC15 Navigate As A Tester
     [Tags]    P1TO01_TC15    exploratory
     Navigate To Your Personal TestBench Benefit    Tester
 
-# P1_TO01_MH_TC16 Verify Test Automation Link Within Resources Page
-#     [Documentation]    Verifies if user can click Test Automation Link which is within Resources page
-#     ...    and validates next page.
-#     [Tags]    P1TO01_TC16    exploratory
-#     Navigate To Resources
-#     Verify Resources Links    Test Automation
-#     Verify New Automation Page
-#     Verify Page Of GitHub    Test Case Automation Agent for TestBench CS
+P1_TO01_MH_TC16 Verify Test Automation Link Within Resources Page
+    [Documentation]    Verifies if user can click Test Automation Link which is within Resources page
+    ...    and validates next page.
+    [Tags]    P1TO01_TC16    exploratory
+    Navigate To Resources
+    Verify Resources Links    Test Automation
+    Verify New Automation Page
+    Verify Page Of GitHub    Test Case Automation Agent for TestBench CS
 
-# P1_TO01_MH_TC17 Verify Data-Driven Testing Link Within Resources Page
-#     [Documentation]    Verifies if user can click Data-Driven Testing Link which is within Resources page
-#     ...    and validates next page.
-#     [Tags]    P1TO01_TC17    exploratory
-#     Navigate To Resources
-#     Verify Resources Links    Data-Driven Testing
-#     Verify New Automation Page
-#     Verify Page Of GitHub    DDT table import via Excel for TestBench CS
+P1_TO01_MH_TC17 Verify Data-Driven Testing Link Within Resources Page
+    [Documentation]    Verifies if user can click Data-Driven Testing Link which is within Resources page
+    ...    and validates next page.
+    [Tags]    P1TO01_TC17    exploratory
+    Navigate To Resources
+    Verify Resources Links    Data-Driven Testing
+    Verify New Automation Page
+    Verify Page Of GitHub    DDT table import via Excel for TestBench CS
 
-# P1_TO01_MH_TC18 Verify Defect Export Link Within Resources Page
-#     [Documentation]    Verifies if user can click Defect Export Link which is within Resources page
-#     ...    and validates next page.
-#     [Tags]    P1TO01_TC18    exploratory
-#     Navigate To Resources
-#     Verify Resources Links    Defect Export
-#     Verify New Automation Page
-#     Verify Page Of GitHub    Defect Export via Excel for TestBench CS
+P1_TO01_MH_TC18 Verify Defect Export Link Within Resources Page
+    [Documentation]    Verifies if user can click Defect Export Link which is within Resources page
+    ...    and validates next page.
+    [Tags]    P1TO01_TC18    exploratory
+    Navigate To Resources
+    Verify Resources Links    Defect Export
+    Verify New Automation Page
+    Verify Page Of GitHub    Defect Export via Excel for TestBench CS
 
-# P1_TO01_MH_TC19 Verify Fast Setup Link Within Resources Page
-#     [Documentation]    Verifies if user can click Fast Setup Link which is within Resources page
-#     ...    and validates next page.
-#     [Tags]    P1TO01_TC19    exploratory
-#     Navigate To Resources
-#     Verify Resources Links    Fast Setup
-#     Verify New Automation Page
-#     Verify Page Of GitHub    Setup users along with Workspaces in TestBench CS
+P1_TO01_MH_TC19 Verify Fast Setup Link Within Resources Page
+    [Documentation]    Verifies if user can click Fast Setup Link which is within Resources page
+    ...    and validates next page.
+    [Tags]    P1TO01_TC19    exploratory
+    Navigate To Resources
+    Verify Resources Links    Fast Setup
+    Verify New Automation Page
+    Verify Page Of GitHub    Setup users along with Workspaces in TestBench CS
 
 P1_TO01_MH_TC20 Verify English Option In The Language Dropdown List
     [Documentation]    Verifies that English option is shown in the language dropdown list
