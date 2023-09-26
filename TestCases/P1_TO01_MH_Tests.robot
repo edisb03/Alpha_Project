@@ -196,7 +196,7 @@ P1_TO01_TC22 Search For Existing Blog Articles
 P1_TO01_TC23 Verify Tabs Names Blog
     [Documentation]    User open web page of TestBench, navigates to the Blog
     ...    and search some existing articles within the Blog and checks tab name of the page three
-    [Tags]    P1TO01_TC22    exploratory
+    [Tags]    P1TO01_TC23    exploratory
     Navigate To Blog
     Control If The MH Page Contains    TestBench Blog
     Next Link
@@ -206,7 +206,7 @@ P1_TO01_TC23 Verify Tabs Names Blog
 P1_TO01_TC24 Featured Articles
     [Documentation]    User open web page of TestBench, navigates to the Blog
     ...    and search some existing articles within the Blog
-    [Tags]    P1_TO01_TC23    exploratory
+    [Tags]    P1_TO01_TC24    exploratory
     Navigate To Blog
     Control If The MH Page Contains    TestBench Blog
     Navigate To The All Articles
