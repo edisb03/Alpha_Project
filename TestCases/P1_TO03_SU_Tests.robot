@@ -71,8 +71,8 @@ P1_TO03_TC06 Register To Sign Up With Invalid Email And Valid Password
     [Documentation]    This test case verifies the behavior of the "Sign Up" process on the test bench website
     ...    when an nonsregistered invalid email and a valid password are entered.
     [Tags]    P1TO03_TC06     exploratory
-    # Navigate To Sign Up
-    # Enter Email And Password    &{USER_04}
+    Navigate To Sign Up
+    Enter Email And Password    &{USER_04}
     Verify If Tick Is Visible    SignUp_Invalid_Email
     Verify If Tick Is Visible    SignUp_Valid_Password
     Check Button State And Sign-Up/Log-In    Sign_up_Disabled
