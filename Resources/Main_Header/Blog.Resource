@@ -144,38 +144,38 @@ Navigate To Articles Page Two
 Check All Articles Page Three
     [Documentation]        Checks and clicks all cards available under third page of All Articles.
     ${articles_content}=    Get File    ${JSON_ARTICLE_PATH}
-    ${option_1}=    Evaluate   json.loads('''${articles_content}''')['option_1']    json
-    Navigate To Articles Page Three    option_1
+    ${card_1}=    Evaluate   json.loads('''${articles_content}''')['card_1']    json
+    Navigate To Articles Page Three    card_1
     Go Back
     Sleep    5s
-    ${option_2}=    Evaluate   json.loads('''${articles_content}''')['option_2']    json
-    Navigate To Articles Page Three    option_2
+    ${card_2}=    Evaluate   json.loads('''${articles_content}''')['card_2']    json
+    Navigate To Articles Page Three    card_2
     Go Back
     Sleep    2s
-    ${option_3}=    Evaluate   json.loads('''${articles_content}''')['option_3']    json
-    Navigate To Articles Page Three    option_3
+    ${card_3}=    Evaluate   json.loads('''${articles_content}''')['card_3']    json
+    Navigate To Articles Page Three    card_3
     Go Back
     Sleep    2s
-    ${option_4}=    Evaluate   json.loads('''${articles_content}''')['option_4']    json
-    Navigate To Articles Page Three   option_4
+    ${card_4}=    Evaluate   json.loads('''${articles_content}''')['card_4']    json
+    Navigate To Articles Page Three   card_4
     Go Back
 
 Navigate To Articles Page Three
     [Documentation]    Verifies if all the links of articles works properly in third page under all articles.
     [Arguments]    ${article3}
-    IF    "${article3}" == "option_1"
+    IF    "${article3}" == "card_1"
         Scroll Element Into View            ${EXP_TEST}
         Wait Until Page Contains Element    ${EXP_TEST}
         Click Element                       ${EXP_TEST}
-    ELSE IF    "${article3}" == "option_2"
+    ELSE IF    "${article3}" == "card_2"
         Scroll Element Into View            ${VIRTUAL_SHOW_ROOM}
         Wait Until Page Contains Element    ${VIRTUAL_SHOW_ROOM}
         Click Element                       ${VIRTUAL_SHOW_ROOM}
-    ELSE IF    "${article3}" == "option_3"
+    ELSE IF    "${article3}" == "card_3"
         Scroll Element Into View            ${INDIVIDUAL_TEST_API}
         Wait Until Page Contains Element    ${INDIVIDUAL_TEST_API}
         Click Element                       ${INDIVIDUAL_TEST_API}
-    ELSE IF    "${article3}" == "option_4"
+    ELSE IF    "${article3}" == "card_4"
         Scroll Element Into View            ${BABEL_FISH}
         Wait Until Page Contains Element    ${BABEL_FISH}
         Click Element                       ${BABEL_FISH}
