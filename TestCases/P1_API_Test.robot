@@ -18,7 +18,7 @@ Test API Status Code 300
 Retrieve and Validate API Info Data
     [Documentation]    Test retrieving and working with API info data..
     [Tags]     P1TO_API_TC3   exploratory
+    Click Element    //locator
     ${info_data}    Get Info Data
     Log    Info Section Data:
-    Click Element    //locator
     Log Many    ${info_data}
