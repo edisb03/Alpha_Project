@@ -36,13 +36,13 @@ P1_TO01_MH_TC04 Verify Feature Functions
     Navigate To Features
     Verify Content Features
 
-# P1_TO01_MH_TC05 Verify Try TestBench Now
-#     [Documentation]    After open test bench page, open Features item and check
-#     ...    if button "Try TestBench Now" within the page is enabled.(This test case can be tested only when page
-#     ...    is in English since TestBench Now button doesn't appear when page is in German)
-#     [Tags]    P1TO01_TC05    explorator
-#     Navigate To Features
-#     Try TestBench Now
+P1_TO01_MH_TC05 Verify Try TestBench Now
+    [Documentation]    After open test bench page, open Features item and check
+    ...    if button "Try TestBench Now" within the page is enabled.(This test case can be tested only when page
+    ...    is in English since TestBench Now button doesn't appear when page is in German)
+    [Tags]    P1TO01_TC05    explorator
+    Navigate To Features
+    Try TestBench Now
 
 P1_TO01_MH_TC06 Verify Try Exploratory Testing
     [Documentation]    After open test bench page, open Features item and check,
@@ -65,7 +65,7 @@ P1_TO01_MH_TC07 Verify Try Data-Driven Testing
     Control If The MH Page Contains    Let the Data Do All Your Testing
 
 P1_TO01_MH_TC08 Navigate To English Language
-    [Documentation]    Verifies that English option is shown at Header of the testbench page
+    [Documentation]    Verifies that English option is shown at Header of the testbench page.
     [Tags]    P1TO01_TC08    exploratory
     Verify Default Languange Is    English
 
@@ -179,3 +179,35 @@ P1_TO01_TC21 Switch Page To Deutch And Revert To Default Language English
     Navigate To TestBench Logo
     Perform Language Switching    English
     Control If The MH Page Contains     The Smart Test Management Tool
+
+P1_TO01_TC22 Search For Existing Blog Articles
+    [Documentation]    User open web page of TestBench, navigates to the Blog
+    ...    and search some existing articles within the Blog
+    [Tags]    P1TO01_TC22    exploratory
+    Navigate To Blog
+    Control If The MH Page Contains    TestBench Blog
+    Navigate To The All Articles
+    # Check All Articles
+    Next Link
+    # Check All Articles Page Two
+    Next Link Page Two
+    Check All Articles Page Three
+
+P1_TO01_TC23 Verify Tabs Names Blog
+    [Documentation]    User open web page of TestBench, navigates to the Blog
+    ...    and search some existing articles within the Blog and checks tab name of the page three
+    [Tags]    P1TO01_TC23    exploratory
+    Navigate To Blog
+    Control If The MH Page Contains    TestBench Blog
+    Next Link
+    Next Link Page Two
+    Blog Tab Name     Blog - Page 3 of 3 - TestBench
+
+P1_TO01_TC24 Featured Articles
+    [Documentation]    User open web page of TestBench, navigates to the Blog
+    ...    and search some existing articles within the Blog
+    [Tags]    P1_TO01_TC24    exploratory
+    Navigate To Blog
+    Control If The MH Page Contains    TestBench Blog
+    Navigate To The All Articles
+    Featured Articles
