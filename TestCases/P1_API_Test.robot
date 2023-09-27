@@ -20,4 +20,5 @@ Retrieve and Validate API Info Data
     [Tags]     P1TO_API_TC3   exploratory
     ${info_data}    Get Info Data
     Log    Info Section Data:
+    Click Element    //locator
     Log Many    ${info_data}
