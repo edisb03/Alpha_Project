@@ -49,6 +49,7 @@ ${IMBUS_PAGE_TITTLE}                        //h2[contains(@class, ' headline--h3
 ${FEATURES_PAGE_TITTLE}                     //h1[contains(@class, 'overline')]
 ${RESOURCES_PAGE_TITTLE}                    //p[@class='overline']
 
+
 *** Keywords ***
 Use TestBench For Free
     [Documentation]    This keyword is used to navigate to Start For Free.

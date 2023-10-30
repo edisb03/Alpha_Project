@@ -27,7 +27,7 @@ Verify Resources Links
         Tolerant Click    ${DATA_DRIVEN}
     ELSE IF    "${resources_links}" == "Defect Export"
         Page Should Contain Element    ${DEFECT_EXPORT}
-        Tolerant Click    ${DEFECT_EXPORT} 
+        Tolerant Click    ${DEFECT_EXPORT}
     ELSE IF    "${resources_links}" == "Fast Setup"
         Page Should Contain Element    ${FAST_SETUP}
         Tolerant Click    ${FAST_SETUP}
@@ -35,7 +35,7 @@ Verify Resources Links
 
 Verify New Automation Page
     [Documentation]    Check for New Page Loaded
-    ${handles}  Get Window Handles
+    ${handles}=  Get Window Handles
     Switch Window    ${handles}[1]
 
 Verify Page Of GitHub

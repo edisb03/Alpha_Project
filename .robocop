@@ -1,0 +1,7 @@
+--configure inconsistent-assignment:assignment_sign_type:equal_sign
+--configure too-many-calls-in-keyword:max_calls:30
+--configure too-many-calls-in-test-case:max_calls:30
+--configure too-long-test-case:max_len:35
+--configure line-too-long:ignore_pattern:([\$@&]\{.+\}.*|https?://\S+)
+--exclude missing-space-after-comment
+--configure return_status:quality_gate:E=5:W=500:I=-1
