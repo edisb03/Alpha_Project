@@ -19,12 +19,14 @@ P1_TO01_MH_TC01 Verify Cards On Home Page
 
 P1_TO01_MH_TC02 Start For Free
     [Documentation]    Navigate to the TestBench for free use.
+    ...    Does not exist on new version
     [Tags]    P1TO01_TC02    exploratory
     Navigate To TestBench Logo
     Use TestBench For Free
 
 P1_TO01_MH_TC03 Learn More About Imbus
     [Documentation]    Verifies that Learn More About Imbus button is clickable and its own new page is opened.
+    ...    Does not exist on new version
     [Tags]    P1TO01_TC03    exploratory
     Navigate To TestBench Logo
     More About Imbus
@@ -242,3 +244,20 @@ P1_TO01_TC24 Featured Articles
     Control If The MH Page Contains    TestBench Blog
     Navigate To The All Articles
     Featured Articles
+
+P1_TO0_TC25 Verify Integration Suboption Of Resources
+    [Documentation]    This test case valdidate the Integration suboption and its content
+    [Tags]    P1_TO01_TC25   exploratory
+    Navigate To Resources
+    Verify Resources Suboptions   Integration
+    Check Integration Overview    Perfect Tool
+    Check Integration Overview    Requirement Management
+    Check Integration Overview    Defect Management
+    Check Integration Overview    Automation Tool
+    Check Integration Overview    Questions
+
+P1_TO01_TC26 Verify Itox Suboption Of Resources
+    [Documentation]    This test case valdidate the Integration suboption and its content
+    [Tags]    P1_TO01_TC25   exploratory
+    Navigate To Resources
+    Verify Resources Suboptions    iTOX

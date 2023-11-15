@@ -67,7 +67,7 @@ Navigate To Resources
     [Documentation]    This keyword is used to navigate to Resources.
     Wait Until Page Contains Element    ${NAV_RESOURCES}
     Tolerant Click    ${NAV_RESOURCES}
-    Control If The MH Page Contains    Find it quick - Use it right away
+
 
 Navigate To Login
     [Documentation]    Navigates to Login Button
