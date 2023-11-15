@@ -19,7 +19,7 @@ ${LOGIN_PAGE_TITLE}                     (//div[@class='overline'])[1]
 ${NAV_SIGN_UP}                          (//li[contains(@class, 'menu-item')]//a[contains(text(), 'Sign Up')])[1]
 ${NAV_GER_REG}                          (//li[contains(@class, 'menu-item')]//a[contains(text(), 'Registrieren')])[1]
 ${NAV_LOGO}                             //img[@class="logo-image"]
-${MAIN_HEADER}                          (//ul[contains(@class, "menu")])[1]
+${MAIN_HEADER}                          (//div[contains(@class, "container centerMaxWidthContainer")])[1]
 ${NAV_TESTBENCH_BENEFITS}               (//h2[@class='overline'])[4]
 ### Exploratory testing video locators
 ${EXPLORATORY_TESTING_TITLE_VIDEO}      (//div[@class='box-inner box-inner--content text text--lg'])[3]//h3[@class='h1']

@@ -39,7 +39,7 @@ Verify New Automation Page
     Switch Window    ${handles}[1]
 
 Verify Page Of GitHub
-    [Documentation]    Check for the content text of GitHub page
+    [Documentation]    Check for the content text of GitHub page. This keyword its not usable on new version.
     [Arguments]    ${GitHub_page_tittle}
     IF    '${GitHub_page_tittle}' == "Test Case Automation Agent for TestBench CS"
         Execute JavaScript    window.scrollTo(0,1000);

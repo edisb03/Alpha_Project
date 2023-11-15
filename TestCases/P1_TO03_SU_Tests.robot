@@ -3,6 +3,7 @@ Documentation       Sign Up Section
 ...    This section contains test cases for the Sign Up functionality
 ...    on the TestBench website. These test cases cover various scenarios,
 ...    including valid and invalid inputs during the registration process.
+...    This Test Suite now is on blocked status because doesn't exist on new version anymore. But we won't delete it
 Resource            ../Resources/import.resource
 
 Test Setup           Start Test Bench

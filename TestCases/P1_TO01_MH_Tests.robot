@@ -14,7 +14,7 @@ Test Teardown       Close Browser
 P1_TO01_MH_TC01 Verify Cards On Home Page
     [Documentation]    Navigate and Validate Cards On Home Page.
     [Tags]    P1TO01_TC01    exploratory
-    Control If The MH Page Contains    What You Can Do With TestBench
+    Control If The MH Page Contains  Test on the highest level
     Check Test Bench Service Cards
 
 P1_TO01_MH_TC02 Start For Free
@@ -32,6 +32,9 @@ P1_TO01_MH_TC03 Learn More About Imbus
 
 P1_TO01_MH_TC04 Verify Feature Functions
     [Documentation]    Navigates to Features and verifies each existing features.
+    ...    Main Header does not contain Feature option in new version, so just skip it.
+    ...    Amended: Blerta Nikqi
+    ...    Date:11/15/2023
     [Tags]    P1TO01_TC04    exploratory
     Navigate To Features
     Verify Content Features
@@ -40,6 +43,9 @@ P1_TO01_MH_TC05 Verify Try TestBench Now
     [Documentation]    After open test bench page, open Features item and check
     ...    if button "Try TestBench Now" within the page is enabled.(This test case can be tested only when page
     ...    is in English since TestBench Now button doesn't appear when page is in German)
+    ...    Since Feature its not part of TestBench page, Try Test Bench now doesnt exist either, so just skip this test case.
+    ...    Amended: Blerta Nikqi
+    ...    Date:11/15/2023
     [Tags]    P1TO01_TC05    explorator
     Navigate To Features
     Try TestBench Now
@@ -47,6 +53,9 @@ P1_TO01_MH_TC05 Verify Try TestBench Now
 P1_TO01_MH_TC06 Verify Try Exploratory Testing
     [Documentation]    After open test bench page, open Features item and check,
     ...    if button "Try Exploratory Testing" within the page is enabled.
+    ...     Main Header does not contain Feature option in new version, so just skip it.
+    ...    Amended: Blerta Nikqi
+    ...    Date:11/15/2023
     [Tags]    P1TO01_TC06    exploratory
     Navigate To Features
     Try Exploratory Testing
@@ -56,6 +65,10 @@ P1_TO01_MH_TC06 Verify Try Exploratory Testing
 
 P1_TO01_MH_TC07 Verify Try Data-Driven Testing
     [Documentation]    Verify Try Data-Driven Testing button.
+    ...    In Old Version Data driven testing was part of Feature option.   
+    ...    Main Header does not contain Feature option in new version, so just skip it.
+    ...    Amended: Blerta Nikqi
+    ...    Date:11/15/2023
     [Tags]    P1TO01_TC07    exploratory
     Perform Language Switching    English_To_Deutsch
     Navigate To Features
@@ -73,12 +86,18 @@ P1_TO01_TC09 Navigate To Blog
     [Documentation]    User open web page of TestBench : www.testbanch.com and,
     ...    checks for Blog item on main Header, then verifies if,
     ...    its clickable and new page is opened after.
+    ...    Does not exist on new version, so just skip it.
+    ...    Amended: Blerta Nikqi
+    ...    Date: 11/15/2023
     [Tags]    P1TO01_TC09    exploratory
     Navigate To Blog
     Control If The MH Page Contains    Welcome to the World of Testing
 
 P1_TO01_MH_TC10 Verify Test Approaches Links
-    [Documentation]    Check if Test Approaches link are opened successfully and validate each content of links..
+    [Documentation]    Check if Test Approaches link are opened successfully and validate each content of links.
+    ...    Does no exist on new version
+    ...    Amended: Blerta Nikqi
+    ...    Date:11/15/2023
     [Tags]    P1TO01_TC10    exploratory
     Navigate To Test Approaches
     Search Links By Name    Exploratory Testing
@@ -94,6 +113,7 @@ P1_TO01_TC11 Validate Video Exploratory Testing
     ...    checks if they can open Exploratory Testing under Test Approaches on the Main Header
     ...    finding the specified link, scrolling to a video, and controlling the video
     ...    playback by playing and pausing it.
+    ...    Does not exist on new version.
     [Tags]    P1TO01_TC11    exploratory
     Set Selenium Speed    0.5
     Navigate To Test Approaches
@@ -106,23 +126,27 @@ P1_TO01_TC11 Validate Video Exploratory Testing
 P1_TO01_MH_TC12 Navigate As A Test Manager
     [Documentation]    Verify if    As A Test Manager Button is enabled, validate all its elements,
     ...    and verify new page content.
+    ...    Does not exist on new verision.
     [Tags]    P1TO01_TC12    exploratory
     Navigate To Your Personal TestBench Benefit    Test Manager
 
 P1_TO01_MH_TC13 Navigate As A Software Developer
     [Documentation]    Verifies if As A Software Developer Button is enabled, validate all its elements,
     ...    and verify new page content.
+    ...    Not part of new version
     [Tags]    P1TO01_TC13    exploratory
     Navigate To Your Personal TestBench Benefit    Software Developer
 
 P1_TO01_MH_TC14 Navigate As A Project Manager
     [Documentation]    Verifies if the As A Project Manager Button works correctly.
+    ...    Not part of new version
     [Tags]    P1TO01_TC14    exploratory
     Navigate To Your Personal TestBench Benefit    Project Manager
 
 P1_TO01_MH_TC15 Navigate As A Tester
     [Documentation]    Validates if the As A Test Manager Button is enabled, validate all it elements,
     ...    and verify new page content...
+    ...    Not part of new version
     [Tags]    P1TO01_TC15    exploratory
     Navigate To Your Personal TestBench Benefit    Tester
 
@@ -138,6 +162,7 @@ P1_TO01_MH_TC16 Verify Test Automation Link Within Resources Page
 P1_TO01_MH_TC17 Verify Data-Driven Testing Link Within Resources Page
     [Documentation]    Verifies if user can click Data-Driven Testing Link which is within Resources page
     ...    and validates next page.
+    ...    Not part of Resources page on  new versoon
     [Tags]    P1TO01_TC17    exploratory
     Navigate To Resources
     Verify Resources Links    Data-Driven Testing
@@ -147,6 +172,7 @@ P1_TO01_MH_TC17 Verify Data-Driven Testing Link Within Resources Page
 P1_TO01_MH_TC18 Verify Defect Export Link Within Resources Page
     [Documentation]    Verifies if user can click Defect Export Link which is within Resources page
     ...    and validates next page.
+    ...    ...    Not part of Resources page on  new versoon
     [Tags]    P1TO01_TC18    exploratory
     Navigate To Resources
     Verify Resources Links    Defect Export
@@ -156,6 +182,7 @@ P1_TO01_MH_TC18 Verify Defect Export Link Within Resources Page
 P1_TO01_MH_TC19 Verify Fast Setup Link Within Resources Page
     [Documentation]    Verifies if user can click Fast Setup Link which is within Resources page
     ...    and validates next page.
+    ...    ...    Not part of Resources page on  new versoon
     [Tags]    P1TO01_TC19    exploratory
     Navigate To Resources
     Verify Resources Links    Fast Setup
@@ -163,7 +190,8 @@ P1_TO01_MH_TC19 Verify Fast Setup Link Within Resources Page
     Verify Page Of GitHub    Setup users along with Workspaces in TestBench CS
 
 P1_TO01_MH_TC20 Verify English Option In The Language Dropdown List
-    [Documentation]    Verifies that English option is shown in the language dropdown list
+    [Documentation]    Verifies that English option is shown in the language dropdown list.
+    ...  Not part of Resources page on  new version
     [Tags]    P1TO01_TC20    exploratory
     Perform Language Switching    English
 
@@ -183,6 +211,7 @@ P1_TO01_TC21 Switch Page To Deutch And Revert To Default Language English
 P1_TO01_TC22 Search For Existing Blog Articles
     [Documentation]    User open web page of TestBench, navigates to the Blog
     ...    and search some existing articles within the Blog
+    ...    Blog its not part of new version
     [Tags]    P1TO01_TC22    exploratory
     Navigate To Blog
     Control If The MH Page Contains    TestBench Blog
@@ -196,6 +225,7 @@ P1_TO01_TC22 Search For Existing Blog Articles
 P1_TO01_TC23 Verify Tabs Names Blog
     [Documentation]    User open web page of TestBench, navigates to the Blog
     ...    and search some existing articles within the Blog and checks tab name of the page three
+    ...    Blog its not part of new version
     [Tags]    P1TO01_TC23    exploratory
     Navigate To Blog
     Control If The MH Page Contains    TestBench Blog
@@ -206,6 +236,7 @@ P1_TO01_TC23 Verify Tabs Names Blog
 P1_TO01_TC24 Featured Articles
     [Documentation]    User open web page of TestBench, navigates to the Blog
     ...    and search some existing articles within the Blog
+    ...    Blog not part of new version
     [Tags]    P1_TO01_TC24    exploratory
     Navigate To Blog
     Control If The MH Page Contains    TestBench Blog
