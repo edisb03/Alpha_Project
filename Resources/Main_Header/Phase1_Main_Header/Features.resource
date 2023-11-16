@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation       Features
 
-Resource            ../import.resource
+Resource            ../../import.resource
 
 
 *** Variables ***

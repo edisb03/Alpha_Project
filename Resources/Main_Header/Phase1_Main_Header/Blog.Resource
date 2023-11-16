@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation    Blog
 
-Resource        ../import.resource
+Resource        ../../import.resource
 
 
 *** Variables ***
