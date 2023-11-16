@@ -6,7 +6,7 @@ Resource            ../common.resource
 
 *** Variables ***
 #Resources Suboptions Keywords
-${INTEGRATION}            (//a[@class=" menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-2467 menu-item-has-children"])[1]
+${INTEGRATION}            (//a[contains(text(),'Integration')])[1]
 ${INTEGRATION_TITLE}      //p[@class='overline']
 ${ITORX}                  (//a[@class=" menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-2467 menu-item-has-children"])[2]
 ${ITORX_TITLE}            //h2[@class='h2 has-no-overline']
@@ -51,30 +51,27 @@ Verify Resources Suboptions
 
 Check Integration Overview
     [Documentation]    This keywords verifies the Integration page content
-    [Arguments]    ${integration_elements}
-    IF   "${integration_elements}" == "Perfect Tool"
-        Page Should Contain Element    ${PERFECT_TOOL_TITLE}
-        Page Should Contain Element    ${PERFECT_TOOL_DESCRIPTION}
-    ELSE IF    "${integration_elements}" == "Requirement Management"
-        Page Should Contain Element    ${REQUIREMENT_TOOL_CONNECTION_TITLE} 
-        Page Should Contain Element    ${REQUIREMENT_TOOL_CONNECTIONPARAGRAPH}
-        Page Should Contain Element    ${REQUIREMENT_TOOL_CONNECTION_LIST}
-        Page Should Contain Element    ${REQUIREMENT_TOOL_CONNECTION_CONTENT}
-    ELSE IF    "${integration_elements}" == "Defect Management"
-        Page Should Contain Element    ${DEFECT_MANAGMENT_CONNECTION_TITLE}
-        Page Should Contain Element    ${DEFECT_MANAGMENT_CONNECTION_PARAPGRAPH}
-        Page Should Contain Element    ${DEFECT_MANAGMENT_CONNECTION_LIST}
-        Page Should Contain Element    ${DEFECT_MANAGMENT_CONNECTION_CONTENT}
-    ELSE IF    "${integration_elements}" == "Automation Tool"
-        Page Should Contain Element    ${AUTOMATION_TOOL_CONNECTION_TITLE}
-        Page Should Contain Element    ${AUTOMATION_TOOL_CONNECTION_PARAGRAPH}
-        Page Should Contain Element    ${AUTOMATION_TOOL_CONNECTION_CONTENT}
-        Page Should Contain Element    ${AUTOMATION_TOOL_CONNECTION_CONTENT_LAST}
-    ELSE IF     "${integration_elements}" == "Questions"
-        Page Should Contain Element   ${QUESTIONS_TITLE}
-        Page Should Contain Element   ${QUESTIONS_CONTENT}
-        Element Should Be Enabled     ${ASK_US_BUTTON}
-    END
+    Page Should Contain Element    ${PERFECT_TOOL_TITLE}
+    Page Should Contain Element    ${PERFECT_TOOL_DESCRIPTION}
+    Scroll Element Into View       ${REQUIREMENT_TOOL_CONNECTION_TITLE} 
+    Page Should Contain Element    ${REQUIREMENT_TOOL_CONNECTION_TITLE} 
+    Page Should Contain Element    ${REQUIREMENT_TOOL_CONNECTIONPARAGRAPH}
+    Page Should Contain Element    ${REQUIREMENT_TOOL_CONNECTION_LIST}
+    Page Should Contain Element    ${REQUIREMENT_TOOL_CONNECTION_CONTENT}
+    Scroll Element Into View       ${DEFECT_MANAGMENT_CONNECTION_TITLE}
+    Page Should Contain Element    ${DEFECT_MANAGMENT_CONNECTION_TITLE}
+    Page Should Contain Element    ${DEFECT_MANAGMENT_CONNECTION_PARAPGRAPH}
+    Page Should Contain Element    ${DEFECT_MANAGMENT_CONNECTION_LIST}
+    Page Should Contain Element    ${DEFECT_MANAGMENT_CONNECTION_CONTENT}
+    Scroll Element Into View       ${AUTOMATION_TOOL_CONNECTION_TITLE}
+    Page Should Contain Element    ${AUTOMATION_TOOL_CONNECTION_TITLE}
+    Page Should Contain Element    ${AUTOMATION_TOOL_CONNECTION_PARAGRAPH}
+    Page Should Contain Element    ${AUTOMATION_TOOL_CONNECTION_CONTENT}
+    Page Should Contain Element    ${AUTOMATION_TOOL_CONNECTION_CONTENT_LAST}
+    Scroll Element Into View       ${QUESTIONS_TITLE}
+    Page Should Contain Element    ${QUESTIONS_TITLE}
+    Page Should Contain Element    ${QUESTIONS_CONTENT}
+    Element Should Be Enabled      ${ASK_US_BUTTON}
 
 Verify New Automation Page
     [Documentation]    Check for New Page Loaded
