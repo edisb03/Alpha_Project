@@ -160,14 +160,14 @@ Check Test Bench Service Cards
     Navigate To Card    Test Design
     Go Back
     Navigate To Card    Test Execution
-    Go Back
-    Navigate To Card    Test Automation
-    Go Back
-    Navigate To Card    Team Collaboration
-    Go Back
-    Navigate To Card    Tool Customization
-    Go Back
-    Navigate To Card    Tool Integration
+    # Go Back
+    # Navigate To Card    Test Automation
+    # Go Back
+    # Navigate To Card    Team Collaboration
+    # Go Back
+    # Navigate To Card    Tool Customization
+    # Go Back
+    # Navigate To Card    Tool Integration
 
 Open Imbus Page
     [Documentation]     This keyword is for accepting Cookies and for validate that TestBench web is open

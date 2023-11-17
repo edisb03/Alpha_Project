@@ -4,7 +4,7 @@ Documentation       Sign Up Section
 ...    on the TestBench website. These test cases cover various scenarios,
 ...    including valid and invalid inputs during the registration process.
 ...    This Test Suite now is on blocked status because doesn't exist on new version anymore. But we won't delete it
-Resource            ../Resources/import.resource
+Resource            ../../Resources/import.resource
 
 Test Setup           Start Test Bench
 Test Teardown        Close Browser
