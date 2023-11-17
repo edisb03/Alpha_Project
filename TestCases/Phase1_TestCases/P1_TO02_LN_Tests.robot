@@ -5,7 +5,7 @@ Documentation       Login In Section
 ...    including valid and invalid login attempts, password reset, and language switching.
 ...    This Test Suite now is on blocked status because doesn't exist on new version anymore. But we won't delete it
 
-Resource            ../..//Resources/import.resource
+Resource            ../../Resources/import.resource
 
 Test Setup           Start Test Bench
 Test Teardown        Close Browser
