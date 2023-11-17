@@ -10,7 +10,6 @@ Resource            common/Web_Apps.resource
 Resource            ../Resources/TestBench_Resources/Log_In.resource
 Resource            Main_Header/MH_Navigation.resource
 Resource            Main_Header/Phase1_Main_Header/Features.resource
-Resource            Main_Header/Phase1_Main_Header/Blog.resource
 Resource            Main_Header/Resources.resource
 Resource            Main_Header/HomePage.resource
 Resource            Main_Header/TestingSolutions.resource
