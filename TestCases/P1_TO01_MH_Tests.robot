@@ -41,15 +41,14 @@ P1_TO01_TC21 Switch Page To Deutch And Revert To Default Language English
     Perform Language Switching    English
     Control If The MH Page Contains     The Smart Test Management Tool
 
-P1_TO0_TC25 Verify Integration Suboption Of Resources
+P1_TO01_TC01 Verify Integration Suboption Of Resources
     [Documentation]    This test case valdidate the Integration suboption and its content
     [Tags]    P1_TO01_TC25   exploratory
     Navigate To Resources
     Verify Resources Suboptions   Integration
     Check Integration Overview
 
-
-P1_TO01_TC26 Verify Itox Suboption Of Resources
+P1_TO01_TC0201 Verify Itox Suboption Of Resources
     [Documentation]    This test case valdidate the Integration suboption and its content
     [Tags]    P1_TO01_TC25   exploratory
     Navigate To Resources
