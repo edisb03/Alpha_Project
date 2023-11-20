@@ -8,7 +8,7 @@ Resource            ../common.resource
 #Resources Suboptions Keywords
 ${INTEGRATION}            (//a[contains(text(),'Integration')])[1]
 ${INTEGRATION_TITLE}      //p[@class='overline']
-${ITORX}                  (//a[@class=" menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-2467 menu-item-has-children"])[2]
+${ITORX}                  (//a[@class=" menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-1762 menu-item-has-children"])[2]
 ${ITORX_TITLE}            //h2[@class='h2 has-no-overline']
 #Integration page keywords
 ${PERFECT_TOOL_TITLE}                           //h2[@class='h2']
@@ -33,6 +33,13 @@ ${AUTOMATION_TOOL_CONNECTION_CONTENT_LAST}       (//div[contains(@class, 'box-in
 ${QUESTIONS_TITLE}                                (//h2[@class="h2 has-no-overline"])[1]
 ${QUESTIONS_CONTENT}                              (//div[@class="content"])[2]
 ${ASK_US_BUTTON}                                  //a[@class="button button--primary"]
+
+#iTORX page keywords
+
+${WIZARD_TITLE}                   //h2[contains(@class, 'h2 has-no-overline')]
+${WIZZARD_DESCRIPTION}            (//div[contains(@class, 'content')])[1]
+${SECURE_CLEAR_ACCURATE_TITLE}    (//h2[contains(@class, 'h3 has-no-overline')])[1]
+${HEADER3_DESCRIPTION}            //div[contains(@id, 'anchor-secure._clear._accurate.')]//p
 
 
 *** Keywords ***
@@ -73,8 +80,12 @@ Check Integration Overview
     Page Should Contain Element    ${QUESTIONS_CONTENT}
     Element Should Be Enabled      ${ASK_US_BUTTON}
 
-Check iTORX Overview
+Check iTORX First Components
     [Documentation]   This keyword verifies the iTORX page content
+    Page Should Contain Element    ${WIZARD_TITLE} 
+    Page Should Contain Element    ${WIZZARD_DESCRIPTION}
+    Page Should Contain Element    ${SECURE_CLEAR_ACCURATE_TITLE}
+    Page Should Contain Element    ${HEADER3_DESCRIPTION}
 
 Verify New Automation Page
     [Documentation]    Check for New Page Loaded

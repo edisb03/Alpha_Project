@@ -48,8 +48,3 @@ P1_TO01_TC05 - Integration Drop Menu Item Content Verification
     Verify Resources Drop Menu item   Integration
     Check Integration Overview
 
-P1_TO01_TC06 Verify Itox Suboption Of Resources
-    [Documentation]    This test case valdidate the Integration suboption and its content
-    [Tags]    P1_TO01_TC06   exploratory
-    Navigate To Resources
-    Verify Resources Drop Menu item    iTOX
