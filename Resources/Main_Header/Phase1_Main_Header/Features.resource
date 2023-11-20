@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       Features
+Documentation       THIS TEST SUITE NOW IS ON BLOCKED STATUS BECAUSE DOESN'T EXIST ON NEW VERSION ANYMORE. BUT WE WON'T DELETE IT.
 
 Resource            ../../import.resource
 
