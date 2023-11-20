@@ -6,7 +6,7 @@ Library    Collections
 
 *** Variables ***
 ${BROWSER}
-...    chrome
+...    edge
 
 ${HEADLESS CHROME OPTIONS}
 ...    SEPARATOR=${SPACE}
@@ -26,7 +26,7 @@ Start Browser
     IF    "${BROWSER}" == "headlesschrome"
         Set To Dictionary    ${browser args}    options=${HEADLESS CHROME OPTIONS}
     END
-    SeleniumLibrary.Open Browser    ${URL}    ${BROWSER}    &{browser args}
+     SeleniumLibrary.Open Browser    ${URL}    ${BROWSER}    &{browser args}
     Maximize Browser Window
 
 Tolerant Click
