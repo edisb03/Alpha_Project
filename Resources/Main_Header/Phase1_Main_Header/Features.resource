@@ -84,29 +84,3 @@ Try Data-Driven Testing
     Click Element    ${TRY_DATA-DRIVEN_TESTING}
     Control If The MH Page Contains    Get started with a free account
 
-Control If The MH Page Contains
-    [Documentation]    Navigate to Try Data-Driven Testing button
-    [Arguments]    ${status}
-    IF    "${status}" == "Explore. Learn. Create. Execute. Improve."
-        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${EXPLORE_LERAN...TITLE}
-    ELSE IF    "${status}" == "Let the Data Do All Your Testing"
-        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${EXPLORE_LERAN...TITLE}
-    ELSE IF    "${status}" == "TestBench Blog"
-        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${BLOG_PAGE_TITLE}
-    ELSE IF    "${status}" == "The Smart Test Management Tool"
-        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${FIRST_HEADER}
-    ELSE IF    "${status}" == "What You Can Do With TestBench"
-        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${SUBTITLE_TESTBENCH}
-    ELSE IF    "${status}" == "Get started with a free account"
-        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${GET_STARTED_WITH_FREE_ACCOUNT}
-    ELSE IF    "${status}" == "Our Portfolio and trend topics"
-        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${IMBUS_PAGE_TITTLE}
-    ELSE IF    "${status}" == "Discover the features"
-        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${FEATURES_PAGE_TITTLE}
-    ELSE IF    "${status}" == "Find it quick - Use it right away"
-        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${RESOURCES_PAGE_TITTLE}
-    ELSE IF    "${status}" == "Unambiguous. Concise. Readable Test Cases."
-        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element   ${KD_TITLE}
-    ELSE
-        Fail    Unexpected status: ${status}
-    END

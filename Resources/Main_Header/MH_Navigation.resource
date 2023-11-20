@@ -26,10 +26,10 @@ ${EXPLORATORY_TESTING_TITLE_VIDEO}      (//div[@class='box-inner box-inner--cont
 ${EXPLORATORY_TESTING_VIDEO}            //button[@aria-label='Play Video']
 ${VIDEO_PLAYER}                         (//iframe)[1]
 ${DROP_DOWN}                            (//span[@class='wpml-ls-native'])[1]
-${DROP_DOWN_ENGLISH}                    (//li[contains(@class, 'menu-item menu-item')])[2]
+${DROP_DOWN_ENGLISH}                     (//li[contains(@class, 'menu-item menu')]//span[contains(@lang, 'en')])[1]
 ${DROP_DOWN_GERMAN}                     (//li[contains(@class, 'menu-item menu')]//span[contains(@lang, 'de')])[1]
-${ENGLISH}                              (//span[@lang='en'][normalize-space()='English'])[1]
-${GERMAN}                               (//span[@lang='de'][normalize-space()='Deutsch'])[1]
+${ENGLISH}                              (//span[contains(@class, 'wpml-ls-native')])[1]
+${GERMAN}                               (//span[contains(@class, 'wpml-ls-native')])[1]
 
 
 *** Keywords ***

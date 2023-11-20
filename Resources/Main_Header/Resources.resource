@@ -36,7 +36,7 @@ ${ASK_US_BUTTON}                                  //a[@class="button button--pri
 
 
 *** Keywords ***
-Verify Resources Suboptions
+Verify Resources Drop Menu item
     [Documentation]    Verify Resources suboption
     [Arguments]    ${resources_links}
     IF    "${resources_links}" == "Integration"
@@ -72,6 +72,9 @@ Check Integration Overview
     Page Should Contain Element    ${QUESTIONS_TITLE}
     Page Should Contain Element    ${QUESTIONS_CONTENT}
     Element Should Be Enabled      ${ASK_US_BUTTON}
+
+Check iTORX Overview
+    [Documentation]   This keyword verifies the iTORX page content
 
 Verify New Automation Page
     [Documentation]    Check for New Page Loaded
