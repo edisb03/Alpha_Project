@@ -59,7 +59,7 @@ Check Legal Link
     Tolerant Click    ${LEGAL_LINK}
     Wait Until Page Contains Element    ${LEGAL_TITLE}
 
-Navigate to Twitter Button
+Navigate To Twitter Button
     [Documentation]    This keyword validates Twitter button
     Wait Until Page Contains Element    ${TWITTER_BUTTON}
     Tolerant Click    ${TWITTER_BUTTON}
