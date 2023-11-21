@@ -16,7 +16,7 @@ ${ENV}            prod
 
 ${CHECKBOX}                 //div[@class='newsletter']//label//span
 ${COOKIES}                  //p[@class='_brlbs-accept'][1]
-${FIRST_HEADER}             //h1[@class='h1']
+${FIRST_HEADER}             (//div[contains(@class,'container centerMaxWidthContainer')])[1]
 
 
 *** Keywords ***
@@ -25,7 +25,7 @@ Start Test Bench
     [Arguments]   ${url}=${TESTBENCH_URL.${ENV}}
     ${json_content}=    Get File    ${JSON_FILE_PATH}
     ${headlessbrowser}=    Evaluate   json.loads('''${json_content}''')['browser']    json
-    Start Browser     ${url}   ${headlessbrowser}
+    Start Browser     ${url}   #${headlessbrowser}
     Accept Cookies
     ${language}=    Evaluate   json.loads('''${json_content}''')['language']    json
     Perform Language Switching     ${language} 

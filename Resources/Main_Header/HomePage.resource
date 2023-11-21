@@ -42,15 +42,23 @@ ${ENTER_YOUR_DETAILS_BELOW}     (//div[@class='overline'])[1]
 ${WELCOME}                      (//h2[@class='h2'])[1]
 
 # MH_STATUS
-${EXPLORE_LERAN...TITLE}                    (//h2[@class='h1'])[1]
-${BLOG_PAGE_TITLE}                          //h2[contains(@class, 'h2')]
-${GET_STARTED_WITH_FREE_ACCOUNT}            (//div[@class='overline'])[1]
 ${IMBUS_PAGE_TITTLE}                        //h2[contains(@class, ' headline--h3 headline--noline')]
-${FEATURES_PAGE_TITTLE}                     //h1[contains(@class, 'overline')]
+${HOME_PAGE_TITLE}                          //h1[contains(@class, 'h1 has-no-overline')]
 ${RESOURCES_PAGE_TITTLE}                    //p[@class='overline']
 
-
 *** Keywords ***
+
+Control If The MH Page Contains
+    [Documentation]    Navigate to Try Data-Driven Testing button
+    [Arguments]    ${status}
+    IF    "${status}" == "Test auf höchstem Niveau"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${HOME_PAGE_TITLE}
+    ELSE IF    "${status}" == "Test on the highest level"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${HOME_PAGE_TITLE}
+    ELSE
+        Fail    Unexpected status: ${status}
+    END
+
 Use TestBench For Free
     [Documentation]    This keyword is used to navigate to Start For Free.
     Wait Until Element Is Visible    ${START_FOR_FREE}
