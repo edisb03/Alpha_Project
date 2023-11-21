@@ -6,7 +6,7 @@ Library    Collections
 
 *** Variables ***
 ${BROWSER}
-...    edge
+...    chrome
 
 ${HEADLESS CHROME OPTIONS}
 ...    SEPARATOR=${SPACE}
