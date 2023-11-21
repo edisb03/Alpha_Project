@@ -20,6 +20,8 @@ P1TO01_TC01 - Navigate To Testing Solutions Menu Item
     Check If The Page Contains Elements    Testing automation
     Verify Testing Solution Drop Items    Keyword Driven Testing
     Check If The Page Contains Elements    Keyword Driven Testing
+    Go Back
+    Navigate To Testing Solutions
     Verify Testing Solution Drop Items    Data Driven Testing
     Check If The Page Contains Elements   Data Driven Testing
 
