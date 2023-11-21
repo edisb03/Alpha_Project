@@ -23,7 +23,7 @@ P1TO01_TC01 - Navigate To Testing Solutions Menu Item
     Verify Testing Solution Drop Items    Data Driven Testing
     Check If The Page Contains Elements   Data Driven Testing
 
- P1_TO01_TC03 Switch Page To Deutch And Revert To Default Language English
+P1_TO01_TC03 Switch Page To Deutch And Revert To Default Language English
     [Documentation]    Verify that users can navigate to the Deutsch version,
     ...    of the website from the home page using the language switcher...
     [Tags]    P1TO01_TC03    exploratory
