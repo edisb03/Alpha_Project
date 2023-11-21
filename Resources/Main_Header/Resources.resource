@@ -43,7 +43,7 @@ ${HEADER3_DESCRIPTION}            //div[contains(@id, 'anchor-secure._clear._acc
 
 
 *** Keywords ***
-Verify Resources Drop Menu item
+Verify Resources Drop Menu Item
     [Documentation]    Verify Resources suboption
     [Arguments]    ${resources_links}
     IF    "${resources_links}" == "Integration"
@@ -56,29 +56,6 @@ Verify Resources Drop Menu item
         Tolerant Click    ${ITORX}
     END
 
-Check Integration Overview
-    [Documentation]    This keywords verifies the Integration page content
-    Page Should Contain Element    ${PERFECT_TOOL_TITLE}
-    Page Should Contain Element    ${PERFECT_TOOL_DESCRIPTION}
-    Scroll Element Into View       ${REQUIREMENT_TOOL_CONNECTION_TITLE} 
-    Page Should Contain Element    ${REQUIREMENT_TOOL_CONNECTION_TITLE} 
-    Page Should Contain Element    ${REQUIREMENT_TOOL_CONNECTIONPARAGRAPH}
-    Page Should Contain Element    ${REQUIREMENT_TOOL_CONNECTION_LIST}
-    Page Should Contain Element    ${REQUIREMENT_TOOL_CONNECTION_CONTENT}
-    Scroll Element Into View       ${DEFECT_MANAGMENT_CONNECTION_TITLE}
-    Page Should Contain Element    ${DEFECT_MANAGMENT_CONNECTION_TITLE}
-    Page Should Contain Element    ${DEFECT_MANAGMENT_CONNECTION_PARAPGRAPH}
-    Page Should Contain Element    ${DEFECT_MANAGMENT_CONNECTION_LIST}
-    Page Should Contain Element    ${DEFECT_MANAGMENT_CONNECTION_CONTENT}
-    Scroll Element Into View       ${AUTOMATION_TOOL_CONNECTION_TITLE}
-    Page Should Contain Element    ${AUTOMATION_TOOL_CONNECTION_TITLE}
-    Page Should Contain Element    ${AUTOMATION_TOOL_CONNECTION_PARAGRAPH}
-    Page Should Contain Element    ${AUTOMATION_TOOL_CONNECTION_CONTENT}
-    Page Should Contain Element    ${AUTOMATION_TOOL_CONNECTION_CONTENT_LAST}
-    Scroll Element Into View       ${QUESTIONS_TITLE}
-    Page Should Contain Element    ${QUESTIONS_TITLE}
-    Page Should Contain Element    ${QUESTIONS_CONTENT}
-    Element Should Be Enabled      ${ASK_US_BUTTON}
 
 Check iTORX First Components
     [Documentation]   This keyword verifies the iTORX page content
@@ -111,10 +88,7 @@ Verify New Automation Page
 #         Fail    Unexpected status:  ${GitHub_page_tittle}
 #     END
 
- Control If The Page Contains
-    [Documentation]    Reusable keyword
-    [Arguments]    ${title}
-    Page Should Contain    ${title}
+
 
 Validate Title
     [Documentation]    Scrolls down to the middle of the page

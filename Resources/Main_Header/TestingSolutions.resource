@@ -4,23 +4,53 @@ Resource            ../import.resource
 
 
 *** Variables ***
-${TEST_AUTOMATION}    (//ul[contains(@class, 'menu')]//ul[contains(@class, 'nav-drop')]//li//a[contains(@href, '')])[1]
-${KEYWORD_DRIVEN_TESTING}    (//ul[contains(@class, 'menu')]//ul[contains(@class, 'nav-drop')]//li//a[contains(@href, '')])[1]
-${DATA_DRIVEN_TESTING}    (//ul[contains(@class, 'menu')]//ul[contains(@class, 'nav-drop')]//li//a[contains(@href, '')])[1]
+${TESTING_SOLUTIONS_ITEM}    (//li[contains(@class, 'menu-item menu-item--has-childs')])[1]
+${KEYWORDDRIVEN_TITLE}    //h1[contains(@class,'h1 has-no-overline')]
+${DATADRIVEN_TITLE}        //h1[contains(@class,'overline')]
+${TEST_AUTOMATION}        (//ul[contains(@class, 'menu')]//ul[contains(@class, 'nav-drop')]//li//a[contains(@href, '')])[1]
+${TEST_AUTOMATION_TITLE}    //h1[contains(@class, 'h1 has-no-overline')]
+${KEYWORD_DRIVEN_TESTING}    (//ul[contains(@class, 'menu')]//ul[contains(@class, 'nav-drop')]//li//a[contains(@href, '')])[2]
+${DATA_DRIVEN_TESTING}    (//ul[contains(@class, 'menu')]//ul[contains(@class, 'nav-drop')]//li//a[contains(@href, '')])[3]
 
 
 *** Keywords ***
-Navigate To Testing Solution
+Navigate To Testing Solutions
+    [Documentation]    This keyword is used to  navigate to testins solutions 
+    Wait Until Page Contains Element    ${TESTING_SOLUTIONS_ITEM}
+    Tolerant Click   ${TESTING_SOLUTIONS_ITEM}
+
+Verify Testing Solution Drop Items
     [Documentation]    This keyword is used to navigate to Testing Solution, we have 3 option and we will call
     ...    with arguments. Test automation, Keyword Driven Testing, Data Driven Testing.
     [Arguments]     ${testing_solution}
     IF    "${testing_solution}" == "Testing automation"
-        Wait Until Page Contains Element    ${TEST_AUTOMATION}
+        Wait Until Page Contains Element   ${TEST_AUTOMATION}
         Tolerant Click    ${TEST_AUTOMATION}
+        Sleep    2s
+        Page Should Contain Element    ${TEST_AUTOMATION_TITLE}
     ELSE IF    "${testing_solution}" == "Keyword Driven Testing"
         Wait Until Page Contains Element    ${KEYWORD_DRIVEN_TESTING}
         Tolerant Click    ${KEYWORD_DRIVEN_TESTING}
     ELSE IF    "${testing_solution}" == "Data Driven Testing"
         Wait Until Page Contains Element    ${DATA_DRIVEN_TESTING}
         Tolerant Click    ${DATA_DRIVEN_TESTING}
+    END
+
+ Control If The Page Contains
+    [Documentation]    Reusable keyword
+    [Arguments]    ${title}
+    IF    "${title}" == "Test automation"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${TEST_AUTOMATION_TITLE}
+    ELSE IF    "${title}" == "Testautomatisierung"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${TEST_AUTOMATION_TITLE}
+    ELSE IF    "${title}" == "Keyword Driven Testing"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${KEYWORDDRIVEN_TITLE}
+    ELSE IF    "${title}" == "Keyword-Driven Testing"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${KEYWORDDRIVEN_TITLE}
+    ELSE IF    "${title}" == "Data Driven Testing"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${DATA_DRIVEN_TESTING}
+    ELSE IF    "${title}" == "Data-Driven Testing"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${DATA_DRIVEN_TESTING}
+    ELSE
+        Fail    Unexpected status: ${title}
     END
