@@ -22,7 +22,6 @@ P1TO01_TC02 - Testing Automation Drop Menu Item Verification
     [Tags]     P1TO01_TC02  exploratory
     Navigate To Testing Solutions
     Verify Testing Solution Drop Items    Testing automation
-    
 
 P1TO01_TC03 - Keyword Driven Testing Drop Menu Item Verification
     [Documentation]    This Test case validates Testing Automation drop menu item in Testing solutions
@@ -37,38 +36,6 @@ P1TO01_TC04 - Data Driven Testing Drop Menu Item Verification
     Navigate To Testing Solutions
     Verify Testing Solution Drop Items    Data Driven Testing
     Control If The Page Contains    Data Driven Testing
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #     [Documentation]    Navigate and Validate Cards On Home Page.
