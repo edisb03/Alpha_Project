@@ -73,11 +73,6 @@ P1TO01_TC06 - Lets talk about your testautomation Button Verification
     Verify Testing Solution Drop Items    Testing automation
     Check Page Button State    ${LETS_TALK_BTN}
 
-#     [Documentation]    Navigate and Validate Cards On Home Page.
-#     [Tags]    P1TO01_TC01    exploratory
-#     Control If The MH Page Contains  Test on the highest level
-#     Check Test Bench Service Cards
-
 # P1_TO01_MH_TC03 Navigate To English Language
 #     [Documentation]    Verifies that English option is shown at Header of the testbench page.
 #     [Tags]    P1TO01_TC02    exploratory
