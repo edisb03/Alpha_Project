@@ -186,8 +186,9 @@ Check Page Button State
         Element Should Be Visible    ${LETS_TALK_BTN}
         Click Element    ${LETS_TALK_BTN}
         Log    Lets talk about your testautomation button is enabled and clickable
-    ELSE IF    '${button_available}' == 'Reset_Password_Disabled'
+    ELSE IF    '${button_available}' == 'Lets talk about your testautomation_Disabled'
         IF    ${status} == False
             Log    Lets talk about your testautomation button is disabled and not clickable
+
         END
     END
