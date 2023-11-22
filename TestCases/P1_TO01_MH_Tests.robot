@@ -48,12 +48,12 @@ P1_TO01_TC03 Switch Page To Deutch And Revert To Default Language English
     Navigate To TestBench Logo
     Control If The MH Page Contains    Test on the highest level
 
-# P1TO01_TC04 - Lets talk about your testautomation Button Verification
-#     [Documentation]    This Test case validates Lets tal about your testautomation button
-#     [Tags]     P1TO01_TC04  exploratory
-#     Navigate To Testing Solutions
-#     Verify Testing Solution Drop Items    Testing automation
-#     Check Page Button State     Lets talk about your testautomation_Enabled
+P1TO01_TC05 - Lets talk about your testautomation Button Verification
+    [Documentation]    This Test case validates Lets tal about your testautomation button
+    [Tags]     P1TO01_TC05 exploratory
+    Navigate To Testing Solutions
+    Verify Testing Solution Drop Items    Testing automation
+    Check Page Button State    ${LETS_TALK_BTN}
 
 # P1TO01_TC03 - Keyword Driven Testing Drop Menu Item Verification
 #     [Documentation]    This Test case validates Testing Automation drop menu item in Testing solutions

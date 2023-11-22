@@ -179,16 +179,8 @@ Check Page Button State
     ...    The keyword checks if the button is disabled or enabled to click, and takes actions
     ...    based on the button state.
     [Arguments]    ${button_available}
-    ${status}=    Run Keyword And Return Status    Element Should Be Enabled    ${LETS_TALK_BTN}
-    IF    '${button_available}' == 'Lets talk about your testautomation_Enabled'
-        Scroll Element Into View   ${LETS_TALK_BTN}
-        Wait Until Page Contains Element    ${LETS_TALK_BTN}
-        Element Should Be Visible    ${LETS_TALK_BTN}
-        Click Element    ${LETS_TALK_BTN}
-        Log    Lets talk about your testautomation button is enabled and clickable
-    ELSE IF    '${button_available}' == 'Lets talk about your testautomation_Disabled'
-        IF    ${status} == False
-            Log    Lets talk about your testautomation button is disabled and not clickable
-
-        END
-    END
+        Scroll Element Into View   ${button_available}
+        Wait Until Page Contains Element    ${button_available}
+        Element Should Be Visible    ${button_available}
+        Click Element    ${button_available}
+        Log    ${button_available} is enabled
