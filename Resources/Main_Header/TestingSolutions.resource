@@ -51,7 +51,10 @@ Verify Testing Solution Drop Items
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${DATA_DRIVEN_TESTING}
     ELSE IF    "${title}" == "Data-Driven Testing"
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${DATA_DRIVEN_TESTING}
+    ELSE IF    "${title}" == "INTEGRATION IN THE TESTBENCH"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${INTEGRATION_TITLE}
+    ELSE IF    "${title}" == "Your Wizard for the manual execution of tests"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${ITORX_TITLE}
     ELSE
         Fail    Unexpected status: ${title}
     END
-
