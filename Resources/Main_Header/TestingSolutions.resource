@@ -7,7 +7,7 @@ Resource            ../import.resource
 ${TESTING_SOLUTIONS_ITEM}        (//li[contains(@class, 'menu-item menu-item--has-childs')])[1]
 ${KEYWORDDRIVEN_TITLE}            //h1[contains(@class,'h1 has-no-overline')]
 ${DATADRIVEN_TITLE}               //h1[contains(@class,'overline')]
-${TEST_AUTOMATION}            (//ul[contains(@class, 'menu')]//ul[contains(@class, 'nav-drop')]//li//a[contains(@href, '')])[1]
+${TEST_AUTOMATION_DROP_DOWN}      (//ul[contains(@class, 'menu')]//ul[contains(@class, 'nav-drop')]//li//a[contains(@href, '')])[1]
 ${TEST_AUTOMATION_TITLE}    //h1[contains(@class, 'h1 has-no-overline')]
 ${KEYWORD_DRIVEN_TESTING}    (//ul[contains(@class, 'menu')]//ul[contains(@class, 'nav-drop')]//li//a[contains(@href, '')])[2]
 ${DATA_DRIVEN_TESTING}    (//ul[contains(@class, 'menu')]//ul[contains(@class, 'nav-drop')]//li//a[contains(@href, '')])[3]
@@ -24,8 +24,8 @@ Verify Testing Solution Drop Items
     ...    with arguments. Test automation, Keyword Driven Testing, Data Driven Testing.
     [Arguments]     ${testing_solution}
     IF    "${testing_solution}" == "Testing automation"
-        Wait Until Page Contains Element   ${TEST_AUTOMATION}
-        Tolerant Click    ${TEST_AUTOMATION}
+        Wait Until Page Contains Element   ${TEST_AUTOMATION_DROP_DOWN}
+        Tolerant Click    ${TEST_AUTOMATION_DROP_DOWN}
         Sleep    2s
     ELSE IF    "${testing_solution}" == "Keyword Driven Testing"
         Wait Until Page Contains Element    ${KEYWORD_DRIVEN_TESTING}
