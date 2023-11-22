@@ -173,3 +173,21 @@ Scroll To Verify Test Bench Logo
     ...    on footer page
     Scroll Element Into View    ${FOOTER_TB_LOGO}
     Tolerant Click    ${FOOTER_TB_LOGO}
+
+Check Page Button State
+    [Documentation]    Keyword to check the state of a button and perform actions accordingly.
+    ...    The keyword checks if the button is disabled or enabled to click, and takes actions
+    ...    based on the button state.
+    [Arguments]    ${button_available}
+    ${status}=    Run Keyword And Return Status    Element Should Be Enabled    ${LETS_TALK_BTN}
+    IF    '${button_available}' == 'Lets talk about your testautomation_Enabled'
+        Scroll Element Into View   ${LETS_TALK_BTN}
+        Wait Until Page Contains Element    ${LETS_TALK_BTN}
+        Element Should Be Visible    ${LETS_TALK_BTN}
+        Click Element    ${LETS_TALK_BTN}
+        Log    Lets talk about your testautomation button is enabled and clickable
+    ELSE IF    '${button_available}' == 'Reset_Password_Disabled'
+        IF    ${status} == False
+            Log    Lets talk about your testautomation button is disabled and not clickable
+        END
+    END
