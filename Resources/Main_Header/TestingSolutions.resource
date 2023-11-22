@@ -55,6 +55,8 @@ Verify Testing Solution Drop Items
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${INTEGRATION_TITLE}
     ELSE IF    "${title}" == "Your Wizard for the manual execution of tests"
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${ITORX_TITLE}
+    ELSE IF    "${title}" == "The test management and test design features"
+        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${CARD_SECTION_TITLE}
     ELSE
         Fail    Unexpected status: ${title}
     END

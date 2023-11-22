@@ -59,6 +59,13 @@ P1TO01_TC04 - Test Bench Main Header Logo Verification
     Navigate To TestBench Logo
     Control If The MH Page Contains    Test on the highest level
 
+P1TO01_TC05 - Navigate And Validate Cards Home Page
+    [Documentation]    This Test case validates Home Page cards: Testautomation, Keyworddriven Testing,
+    ...    Datadriven Testing, Integration.
+    [Tags]     P1TO01_TC05  exploratory
+    Check If The Page Contains Elements    The test management and test design features
+    Check Test Bench Service Cards
+
 # P1TO01_TC04 - Lets talk about your testautomation Button Verification
 #     [Documentation]    This Test case validates Lets tal about your testautomation button
 #     [Tags]     P1TO01_TC04  exploratory
