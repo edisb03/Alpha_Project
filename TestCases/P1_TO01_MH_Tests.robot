@@ -38,7 +38,7 @@ P1_TO01_TC03 Switch Page To Deutch And Revert To Default Language English
     Perform Language Switching    English
     Control If The MH Page Contains     Test on the highest level
 
- P1TO01_TC04 - Test Bench Main Header Logo Verification
+P1TO01_TC04 - Test Bench Main Header Logo Verification
     [Documentation]    This Test case validates Test Bench logo in Main Header
     [Tags]     P1TO01_TC04  exploratory
     Verify Main Header
