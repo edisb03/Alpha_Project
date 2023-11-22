@@ -25,6 +25,17 @@ P1TO01_TC01 - Navigate To Testing Solutions Menu Item
     Verify Testing Solution Drop Items    Data Driven Testing
     Check If The Page Contains Elements   Data Driven Testing
 
+P1TO01_TC02 - Navigate To Resources Menu Item
+    [Documentation]    This test case validates the Resources item in the main header
+    [Tags]    P1TO01_TC02  exploratory
+    Verify Main Header
+    Navigate To Resources
+    Verify Resources Drop Menu Item    Integration
+    Check If The Page Contains Elements    INTEGRATION IN THE TESTBENCH
+    Navigate To Resources
+    Verify Resources Drop Menu Item    iTORX
+    Check If The Page Contains Elements    Your Wizard for the manual execution of tests
+
 P1_TO01_TC03 Switch Page To Deutch And Revert To Default Language English
     [Documentation]    Verify that users can navigate to the Deutsch version,
     ...    of the website from the home page using the language switcher...
@@ -38,7 +49,7 @@ P1_TO01_TC03 Switch Page To Deutch And Revert To Default Language English
     Perform Language Switching    English
     Control If The MH Page Contains     Test on the highest level
 
- P1TO01_TC04 - Test Bench Main Header Logo Verification
+P1TO01_TC04 - Test Bench Main Header Logo Verification
     [Documentation]    This Test case validates Test Bench logo in Main Header
     [Tags]     P1TO01_TC04  exploratory
     Verify Main Header
@@ -47,6 +58,13 @@ P1_TO01_TC03 Switch Page To Deutch And Revert To Default Language English
     Check If The Page Contains Elements    Test automation
     Navigate To TestBench Logo
     Control If The MH Page Contains    Test on the highest level
+
+P1TO01_TC05 - Navigate And Validate Cards Home Page
+    [Documentation]    This Test case validates Home Page cards: Testautomation, Keyworddriven Testing,
+    ...    Datadriven Testing, Integration.
+    [Tags]     P1TO01_TC05  exploratory
+    Check If The Page Contains Elements    The test management and test design features
+    Check Test Bench Service Cards
 
 P1TO01_TC06 - Lets talk about your testautomation Button Verification
     [Documentation]    This Test case validates Lets tal about your testautomation button

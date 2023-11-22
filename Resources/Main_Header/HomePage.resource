@@ -24,14 +24,11 @@ ${LEARN_MORE_ABOUT_IMBUS}       //div[(contains(@class, 'cta'))]//a[contains(@hr
 ${IMBUS_LOGO}                   //div[@id='logo']//a
 ${ACCEPT_COOKIES_IMBUS}         (//a[@class='cc-btn cc-allow-all cc-w-100'])[1]
 ### Home Page Locators For Card ###
-${REQUIREMENTS_MANAGEMENT}      (//div[@class='card-inner'])[1]
-${TEST_MANAGEMENT}              (//div[@class='card-inner'])[2]
-${TEST_DESIGN}                  (//div[@class='card-inner'])[3]
-${TEST_EXECUTION}               (//div[@class='card-inner'])[4]
-${TEST_AUTOMATION}              (//div[@class='card-inner'])[5]
-${TEST_COLLABORATION}           (//div[@class='card-inner'])[6]
-${TOOL_CUSTOMIZATION}           (//div[@class='card-inner'])[7]
-${TOOL_INTEGRATION}             (//div[@class='card-inner'])[8]
+${CARD_SECTION_TITLE}           //h2[@class='h3 has-no-overline']
+${TESTAUTOMATION}               (//h3[@class='h4'])[1]
+${KEYWORDDRIVEN_TESTING}        (//h3[@class='h4'])[2]
+${DATADRIVEN_TESTING}           (//h3[@class='h4'])[3]
+${INTEGRATION}                  (//h3[@class='h4'])[4]
 ${SUBTITLE_TESTBENCH}           //div[@class='flyntComponent componentSpacing themeLight']//h3[@class='h2']
 
 # Status
@@ -103,30 +100,26 @@ Navigate To Card
     [Arguments]    ${card_links}
     Set Selenium Speed    0.3
     Execute JavaScript    window.scrollTo(0,1200);
-    IF    "${card_links}" == "Requirements Management"
-        Wait Until Page Contains Element    ${REQUIREMENTS_MANAGEMENT}
-        Tolerant Click                      ${REQUIREMENTS_MANAGEMENT}
-    ELSE IF    "${card_links}" == "Test Management"
-        Wait Until Page Contains Element    ${TEST_MANAGEMENT}
-        Tolerant Click                      ${TEST_MANAGEMENT}
-    ELSE IF    "${card_links}" == "Test Design"
-        Wait Until Page Contains Element    ${TEST_DESIGN}
-        Tolerant Click                      ${TEST_DESIGN}
-    ELSE IF    "${card_links}" == "Test Execution"
-        Wait Until Page Contains Element    ${TEST_EXECUTION}
-        Tolerant Click                      ${TEST_EXECUTION}
-    ELSE IF    "${card_links}" == "Test Automation"
-        Wait Until Page Contains Element    ${TEST_AUTOMATION}
-        Tolerant Click                      ${TEST_AUTOMATION}
-    ELSE IF    "${card_links}" == "Team Collaboration"
-        Wait Until Page Contains Element    ${TEST_COLLABORATION}
-        Tolerant Click                      ${TEST_COLLABORATION}
-    ELSE IF    "${card_links}" == "Tool Customization"
-        Wait Until Page Contains Element    ${TOOL_CUSTOMIZATION}
-        Tolerant Click                      ${TOOL_CUSTOMIZATION}
-    ELSE IF    "${card_links}" == "Tool Integration"
-        Wait Until Page Contains Element    ${TOOL_INTEGRATION}
-        Tolerant Click                      ${TOOL_INTEGRATION}
+    IF    "${card_links}" == "Testautomation"
+        Page Should Contain Element        ${TESTAUTOMATION}
+        Wait Until Page Contains Element    (//div[@class='card'])[1]//a[1]
+        Tolerant Click                      (//div[@class='card'])[1]//a[1]
+        Wait Until Page Contains Element    ${TEST_AUTOMATION_TITLE}
+    ELSE IF    "${card_links}" == "Keyworddriven Testing"
+        Page Should Contain Element        ${TESTAUTOMATION}
+        Wait Until Page Contains Element    (//div[@class='card'])[2]//a[1]
+        Tolerant Click                      (//div[@class='card'])[2]//a[1]
+        Wait Until Page Contains Element    ${KEYWORDDRIVEN_TITLE}
+    ELSE IF    "${card_links}" == "Datadriven Testing"
+        Page Should Contain Element        ${TESTAUTOMATION}
+        Wait Until Page Contains Element    (//div[@class='card'])[3]//a[1]
+        Tolerant Click                      (//div[@class='card'])[3]//a[1]
+        Wait Until Page Contains Element    ${DATA_DRIVEN_TESTING}
+    ELSE IF    "${card_links}" == "Integration"
+        Page Should Contain Element        ${TESTAUTOMATION}
+        Wait Until Page Contains Element    (//div[@class='card'])[4]//a[1]
+        Tolerant Click                      (//div[@class='card'])[4]//a[1]
+        Wait Until Page Contains Element    ${INTEGRATION_TITLE}
     END
 
 Navigate To Your Personal TestBench Benefit
@@ -160,22 +153,14 @@ Navigate To Your Personal TestBench Benefit
     END
 
 Check Test Bench Service Cards
-    [Documentation]    Checks and clicks all cards available in the fist page of Test Bench..
-    Navigate To Card    Requirements Management
+    [Documentation]    Checks and clicks all cards available in the first page of Test Bench..
+    Navigate To Card    Testautomation
     Go Back
-    Navigate To Card    Test Management
+    Navigate To Card    Keyworddriven Testing
     Go Back
-    Navigate To Card    Test Design
+    Navigate To Card    Datadriven Testing
     Go Back
-    Navigate To Card    Test Execution
-    # Go Back
-    # Navigate To Card    Test Automation
-    # Go Back
-    # Navigate To Card    Team Collaboration
-    # Go Back
-    # Navigate To Card    Tool Customization
-    # Go Back
-    # Navigate To Card    Tool Integration
+    Navigate To Card    Integration
 
 Open Imbus Page
     [Documentation]     This keyword is for accepting Cookies and for validate that TestBench web is open
