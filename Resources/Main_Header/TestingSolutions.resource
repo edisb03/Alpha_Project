@@ -7,7 +7,7 @@ Resource            ../import.resource
 ${TESTING_SOLUTIONS_ITEM}        (//li[contains(@class, 'menu-item menu-item--has-childs')])[1]
 ${KEYWORDDRIVEN_TITLE}            //h1[contains(@class,'h1 has-no-overline')]
 ${DATADRIVEN_TITLE}               //h1[contains(@class,'overline')]
-${TEST_AUTOMATION}            (//ul[contains(@class, 'menu')]//ul[contains(@class, 'nav-drop')]//li//a[contains(@href, '')])[1]
+${TEST_AUTOMATION_DROP_DOWN}        (//ul[contains(@class, 'menu')]//ul[contains(@class, 'nav-drop')]//li//a[contains(@href, '')])[1]
 ${TEST_AUTOMATION_TITLE}    //h1[contains(@class, 'h1 has-no-overline')]
 ${KEYWORD_DRIVEN_TESTING}    (//ul[contains(@class, 'menu')]//ul[contains(@class, 'nav-drop')]//li//a[contains(@href, '')])[2]
 ${DATA_DRIVEN_TESTING}    (//ul[contains(@class, 'menu')]//ul[contains(@class, 'nav-drop')]//li//a[contains(@href, '')])[3]
@@ -24,8 +24,8 @@ Verify Testing Solution Drop Items
     ...    with arguments. Test automation, Keyword Driven Testing, Data Driven Testing.
     [Arguments]     ${testing_solution}
     IF    "${testing_solution}" == "Testing automation"
-        Wait Until Page Contains Element   ${TEST_AUTOMATION}
-        Tolerant Click    ${TEST_AUTOMATION}
+        Wait Until Page Contains Element   ${TEST_AUTOMATION_DROP_DOWN}
+        Tolerant Click    ${TEST_AUTOMATION_DROP_DOWN}
         Sleep    2s
     ELSE IF    "${testing_solution}" == "Keyword Driven Testing"
         Wait Until Page Contains Element    ${KEYWORD_DRIVEN_TESTING}
@@ -33,23 +33,4 @@ Verify Testing Solution Drop Items
     ELSE IF    "${testing_solution}" == "Data Driven Testing"
         Wait Until Page Contains Element    ${DATA_DRIVEN_TESTING}
         Tolerant Click    ${DATA_DRIVEN_TESTING}
-    END
-
- Check If The Page Contains Elements
-    [Documentation]    Reusable keyword
-    [Arguments]    ${title}
-    IF    "${title}" == "Test automation"
-        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${TEST_AUTOMATION_TITLE}
-    ELSE IF    "${title}" == "Testautomatisierung"
-        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${TEST_AUTOMATION_TITLE}
-    ELSE IF    "${title}" == "Keyword Driven Testing"
-        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${KEYWORDDRIVEN_TITLE}
-    ELSE IF    "${title}" == "Keyword-Driven Testing"
-        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${KEYWORDDRIVEN_TITLE}
-    ELSE IF    "${title}" == "Data Driven Testing"
-        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${DATA_DRIVEN_TESTING}
-    ELSE IF    "${title}" == "Data-Driven Testing"
-        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${DATA_DRIVEN_TESTING}
-    ELSE
-        Fail    Unexpected status: ${title}
     END

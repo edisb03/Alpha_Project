@@ -17,7 +17,7 @@ P1TO01_TC01 - Navigate To Testing Solutions Menu Item
     Verify Main Header
     Navigate To Testing Solutions
     Verify Testing Solution Drop Items    Testing automation
-    Check If The Page Contains Elements    Testing automation
+    Check If The Page Contains Elements    Test automation
     Verify Testing Solution Drop Items    Keyword Driven Testing
     Check If The Page Contains Elements    Keyword Driven Testing
     Go Back
