@@ -18,7 +18,7 @@ ${LOGIN_BUTTON}                         (//li[contains(@class, 'menu-item')]//a[
 ${LOGIN_PAGE_TITLE}                     (//div[@class='overline'])[1]
 ${NAV_SIGN_UP}                          (//li[contains(@class, 'menu-item')]//a[contains(text(), 'Sign Up')])[1]
 ${NAV_GER_REG}                          (//li[contains(@class, 'menu-item')]//a[contains(text(), 'Registrieren')])[1]
-${NAV_LOGO}                             //img[@class="logo-image"]
+${NAV_LOGO}                             (//img[@class="logo-image"])[1]
 ${MAIN_HEADER}                          (//div[contains(@class, "container centerMaxWidthContainer")])[1]
 ${NAV_TESTBENCH_BENEFITS}               (//h2[@class='overline'])[4]
 ### Exploratory testing video locators
@@ -90,7 +90,7 @@ Navigate To Login
     END
 
 Navigate To TestBench Logo
-    [Documentation]    This keyword is used to navigate to TestBench logo
+    [Documentation]    This keyword is used to navigate to TestBench logo on Main 
     Wait Until Page Contains Element    ${NAV_LOGO}
     Tolerant Click    ${NAV_LOGO}
     Wait Until Page Contains Element    ${FIRST_HEADER}
