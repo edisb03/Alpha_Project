@@ -11,7 +11,8 @@ ${TEST_AUTOMATION_DROP_DOWN}      (//ul[contains(@class, 'menu')]//ul[contains(@
 ${TEST_AUTOMATION_TITLE}    //h1[contains(@class, 'h1 has-no-overline')]
 ${KEYWORD_DRIVEN_TESTING}    (//ul[contains(@class, 'menu')]//ul[contains(@class, 'nav-drop')]//li//a[contains(@href, '')])[2]
 ${DATA_DRIVEN_TESTING}    (//ul[contains(@class, 'menu')]//ul[contains(@class, 'nav-drop')]//li//a[contains(@href, '')])[3]
-
+#Test Automation Buttons 
+${LETS_TALK_BTN}            //div[contains(@id,'anchor-what_is_test_automation?')]//div[@class='cta']
 
 *** Keywords ***
 Navigate To Testing Solutions
@@ -53,3 +54,4 @@ Verify Testing Solution Drop Items
     ELSE
         Fail    Unexpected status: ${title}
     END
+
