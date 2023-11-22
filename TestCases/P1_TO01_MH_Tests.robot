@@ -68,7 +68,7 @@ P1TO01_TC05 - Navigate And Validate Cards Home Page
 
 P1TO01_TC06 - Lets talk about your testautomation Button Verification
     [Documentation]    This Test case validates Lets tal about your testautomation button
-    [Tags]     P1TO01_TC06 exploratory
+    [Tags]     P1TO01_TC06  exploratory
     Navigate To Testing Solutions
     Verify Testing Solution Drop Items    Testing automation
     Check Page Button State    ${LETS_TALK_BTN}
