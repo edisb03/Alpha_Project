@@ -43,8 +43,6 @@ P1_TO01_TC03 Switch Page To Deutch And Revert To Default Language English
     Verify Default Languange Is    English
     Perform Language Switching    Deutsch
     Control If The MH Page Contains     Test auf höchstem Niveau
-    Perform Language Switching    Deutsch
-    Scroll To Verify Test Bench Logo
     Navigate To TestBench Logo
     Perform Language Switching    English
     Control If The MH Page Contains     Test on the highest level
