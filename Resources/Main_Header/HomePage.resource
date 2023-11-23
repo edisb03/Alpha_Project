@@ -23,6 +23,8 @@ ${START_FOR_FREE}               (//div[contains(@class, 'cta')]//a[contains(@hre
 ${LEARN_MORE_ABOUT_IMBUS}       //div[(contains(@class, 'cta'))]//a[contains(@href, 'https://www.imbus.de')]
 ${IMBUS_LOGO}                   //div[@id='logo']//a
 ${ACCEPT_COOKIES_IMBUS}         (//a[@class='cc-btn cc-allow-all cc-w-100'])[1]
+${LEARN_MORE_BTN}               (//div[@class='box-inner box-inner--cta']//a)[1]
+${iTORX_PAGE_TITLE}             //h2[@class='h2 has-no-overline']
 ### Home Page Locators For Card ###
 ${CARD_SECTION_TITLE}           //h2[@class='h3 has-no-overline']
 ${TESTAUTOMATION}               (//h3[@class='h4'])[1]
@@ -34,6 +36,8 @@ ${RDM_TESTAUTOMATION}           (//div[@class='card'])[1]//a[1]
 ${RDM_KEYWORDD_TESTING}         (//div[@class='card'])[2]//a[1]
 ${RDM_DATAD_TESTING}            (//div[@class='card'])[3]//a[1]
 ${RDM_INTEGRATION}              (//div[@class='card'])[4]//a[1]
+### Home Page tites
+${NEW!_TITLE}                   (//div[contains(@class, 'box-inner box-inner--intro text text--lg')]//p[@class='overline'])[2]
 
 # Status
 ${WELL_DONE_STATUS}             //div[contains(@class, 'checklist')]//p[contains(@class, 'msg--success')]
