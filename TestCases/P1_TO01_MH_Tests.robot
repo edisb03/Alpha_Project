@@ -88,3 +88,11 @@ P1_TO01_MH_TC09 Validate Contact Us Button On Test Automation Page
     Navigate To Testing Solutions
     Verify Testing Solution Drop Items    Testing automation
     Check Page Button State    ${CONTACT_US_BTN}
+
+P1_TO01_MH_TC11 Validation Of Learn More Button And iTORX Page
+    [Documentation]    Verifies that Learn more button is shown and enabled in Home page at iTORX.
+    [Tags]    P1TO01_TC11    exploratory
+    Verify Main Header
+    Check If The Page Contains Elements       New!
+    Check Page Button State    ${LEARN_MORE_BTN}
+    Check If The Page Contains Elements       Your Wizard for the manual execution of tests
