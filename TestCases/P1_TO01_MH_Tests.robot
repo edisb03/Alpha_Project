@@ -88,3 +88,12 @@ P1_TO01_MH_TC09 Validate Contact Us Button On Test Automation Page
     Navigate To Testing Solutions
     Verify Testing Solution Drop Items    Testing automation
     Check Page Button State    ${CONTACT_US_BTN}
+
+P1_TO01_TC10 Validate Advantages In Automation With TestBench List Items
+    [Documentation]    This Test Case validates list inside of Test Automation page
+    [Tags]    P1TO01_TC10  exploratory
+    Navigate To Testing Solutions
+    Verify Testing Solution Drop Items    Testing automation
+    Check If The Page Contains Elements    Advantages in automation with TestBench
+    Test Automation List Items Box Verification
+    Check Page Button State    ${CONATCT_US_TA_BTN}

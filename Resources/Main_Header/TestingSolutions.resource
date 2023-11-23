@@ -14,6 +14,27 @@ ${DATA_DRIVEN_TESTING_DROP_DOWN}        (//ul[contains(@class, 'menu')]//ul[cont
 #Test Automation Buttons
 ${LETS_TALK_BTN}                         //div[contains(@id,'anchor-what_is_test_automation?')]//div[@class='cta']
 ${CONTACT_US_BTN}                        (//a[@class='button button--primary'])[2]
+#This variables validates Advantages in automation with TestBench:
+${HEADER2_TEST_AUTOMATION_TITLE}        (//div[contains(@class, 'box-inner box-inner--intro text text--lg')])[2]
+#Test Automation page list items keywords
+${TEST_DESIGN_LINK}        //a[contains(@class, 'h4 acc-0')]
+${CASE_GENERATION_LINK}    //a[contains(@class, 'h4 acc-1')]
+${PROCESSES_LINK}          //a[contains(@class, 'h4 acc-2')]
+${EFFICENT_LINK}           //a[contains(@class, 'h4 acc-3')]
+${FAST_LINK}               //a[contains(@class, 'h4 acc-4')]
+${NO_BORDERS_LINK}         //a[contains(@class, 'h4 acc-5')]
+${SECURING_LINK}           //a[contains(@class, 'h4 acc-6')]
+#Keywords for List items description
+${TEST_DESIGN_CONTENT}        //div[contains(@id, 'acc-0')]
+${CASE_GENERATION_CONTENT}    //div[contains(@id, 'acc-1')]
+${PROCESSES_CONTENT}          //div[contains(@id, 'acc-2')]
+${EFFICENT_CONTENT}           //div[contains(@id, 'acc-3')]
+${FAST_CONTENT}               //div[contains(@id, 'acc-4')]
+${NO_BORDERS_CONTENT}         //div[contains(@id, 'acc-5')]
+${SECURING_CONTENT}           //div[contains(@id, 'acc-6')]
+#Keyword for Contact us on Test Automation Page
+${CONATCT_US_TA_BTN}    (//a[contains(@class, 'button button--primary')])[2]
+
 
 *** Keywords ***
 Navigate To Testing Solutions
@@ -58,6 +79,51 @@ Verify Testing Solution Drop Items
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${ITORX_TITLE}
     ELSE IF    "${title}" == "The test management and test design features"
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${CARD_SECTION_TITLE}
+    ELSE IF     "${title}" == "Advantages in automation with TestBench"
+        Wait Until Page Contains Element    ${HEADER2_TEST_AUTOMATION_TITLE}
     ELSE
         Fail    Unexpected status: ${title}
     END
+
+Navigate To Test Automation List Item
+    [Documentation]    Verifies if all the list items work are shown and they are clickable
+    [Arguments]    ${card_links}
+    Set Selenium Speed    0.3
+    Execute JavaScript    window.scrollTo(0,1200);
+    IF    "${card_links}" == "Testdesign"
+        Page Should Contain Element        ${TEST_DESIGN_LINK}
+        Wait Until Page Contains Element    ${TEST_DESIGN_CONTENT}
+    ELSE IF    "${card_links}" == "Test case generation"
+        Page Should Contain Element         ${CASE_GENERATION_LINK}
+        Wait Until Page Contains Element    ${CASE_GENERATION_CONTENT}
+    ELSE IF    "${card_links}" == "Processes"
+        Wait Until Page Contains Element    ${PROCESSES_LINK}
+        Tolerant Click                      ${PROCESSES_LINK}
+        Wait Until Page Contains Element    ${PROCESSES_CONTENT}
+    ELSE IF    "${card_links}" == "Efficient"
+        Wait Until Page Contains Element    ${EFFICENT_LINK}
+        Tolerant Click                      ${EFFICENT_LINK}
+        Wait Until Page Contains Element    ${EFFICENT_CONTENT}
+    ELSE IF    "${card_links}" == "Fast"
+        Wait Until Page Contains Element    ${FAST_LINK}
+        Tolerant Click                      ${FAST_LINK}
+        Wait Until Page Contains Element    ${FAST_CONTENT}
+    ELSE IF    "${card_links}" == "No borders"
+        Wait Until Page Contains Element    ${NO_BORDERS_LINK}
+        Tolerant Click                      ${NO_BORDERS_LINK}
+        Wait Until Page Contains Element    ${NO_BORDERS_CONTENT}
+    ELSE IF    "${card_links}" == "Securing"
+        Wait Until Page Contains Element    ${SECURING_LINK}
+        Tolerant Click                      ${SECURING_LINK}
+        Wait Until Page Contains Element    ${SECURING_CONTENT}
+    END
+
+Test Automation List Items Box Verification
+    [Documentation]    Checks and clicks all cards available in the first page of Test Bench..
+    Navigate To Test Automation List Item    Testdesign
+    Navigate To Test Automation List Item    Processes
+    Navigate To Test Automation List Item    Test case generation
+    Navigate To Test Automation List Item    Efficient
+    Navigate To Test Automation List Item    Fast
+    Navigate To Test Automation List Item    No borders
+    Navigate To Test Automation List Item    Securing
