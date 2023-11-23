@@ -73,13 +73,13 @@ P1TO01_TC06 - Lets talk about your testautomation Button Verification
     Verify Testing Solution Drop Items    Testing automation
     Check Page Button State    ${LETS_TALK_BTN}
 
-# P1_TO01_MH_TC03 Navigate To English Language
-#     [Documentation]    Verifies that English option is shown at Header of the testbench page.
-#     [Tags]    P1TO01_TC02    exploratory
-#     Verify Default Languange Is    English
+P1_TO01_MH_TC07 Navigate To English Language
+    [Documentation]    Verifies that English option is shown at Header of the testbench page.
+    [Tags]    P1TO01_TC07    exploratory
+    Verify Default Languange Is    English
 
-# P1_TO01_MH_TC03 Verify English Option In The Language Dropdown List
-#     [Documentation]    Verifies that English option is shown in the language dropdown list.
-#     ...  Not part of Resources page on  new version
-#     [Tags]    P1TO01_TC03    exploratory
-#     Perform Language Switching    English
+P1_TO01_MH_TC08 Verify English Option In The Language Dropdown List
+    [Documentation]    Verifies that English option is shown in the language dropdown list.
+    ...  Not part of Resources page on  new version
+    [Tags]    P1TO01_TC08    exploratory
+    Perform Language Switching    English
