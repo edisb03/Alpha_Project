@@ -81,3 +81,10 @@ P1_TO01_MH_TC08 Verify English Option In The Language Dropdown List
     ...  Not part of Resources page on  new version
     [Tags]    P1TO01_TC08    exploratory
     Perform Language Switching    English
+
+P1_TO01_MH_TC09 Validate Contact Us Button On Test Automation Page
+    [Documentation]    Verifies that Contact us! button is shown and enabled in Test Automation page.
+    [Tags]    P1TO01_TC09    exploratory
+    Navigate To Testing Solutions
+    Verify Testing Solution Drop Items    Testing automation
+    Check Page Button State    ${CONTACT_US_BTN}

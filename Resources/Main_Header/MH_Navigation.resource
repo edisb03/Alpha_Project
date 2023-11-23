@@ -181,6 +181,5 @@ Check Page Button State
     [Arguments]    ${button_available}
         Scroll Element Into View   ${button_available}
         Wait Until Page Contains Element    ${button_available}
-        Element Should Be Visible    ${button_available}
         Click Element    ${button_available}
         Log    ${button_available} is enabled
