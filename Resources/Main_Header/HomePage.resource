@@ -30,6 +30,10 @@ ${KEYWORDDRIVEN_TESTING}        (//h3[@class='h4'])[2]
 ${DATADRIVEN_TESTING}           (//h3[@class='h4'])[3]
 ${INTEGRATION}                  (//h3[@class='h4'])[4]
 ${SUBTITLE_TESTBENCH}           //div[@class='flyntComponent componentSpacing themeLight']//h3[@class='h2']
+${RDM_TESTAUTOMATION}           (//div[@class='card'])[1]//a[1]
+${RDM_KEYWORDD_TESTING}         (//div[@class='card'])[2]//a[1]
+${RDM_DATAD_TESTING}            (//div[@class='card'])[3]//a[1]
+${RDM_INTEGRATION}              (//div[@class='card'])[4]//a[1]
 
 # Status
 ${WELL_DONE_STATUS}             //div[contains(@class, 'checklist')]//p[contains(@class, 'msg--success')]
@@ -102,23 +106,23 @@ Navigate To Card
     Execute JavaScript    window.scrollTo(0,1200);
     IF    "${card_links}" == "Testautomation"
         Page Should Contain Element        ${TESTAUTOMATION}
-        Wait Until Page Contains Element    (//div[@class='card'])[1]//a[1]
-        Tolerant Click                      (//div[@class='card'])[1]//a[1]
+        Wait Until Page Contains Element    ${RDM_TESTAUTOMATION}
+        Tolerant Click                      ${RDM_TESTAUTOMATION}
         Wait Until Page Contains Element    ${TEST_AUTOMATION_TITLE}
     ELSE IF    "${card_links}" == "Keyworddriven Testing"
         Page Should Contain Element        ${TESTAUTOMATION}
-        Wait Until Page Contains Element    (//div[@class='card'])[2]//a[1]
-        Tolerant Click                      (//div[@class='card'])[2]//a[1]
+        Wait Until Page Contains Element    ${RDM_KEYWORDD_TESTING}
+        Tolerant Click                      ${RDM_KEYWORDD_TESTING}
         Wait Until Page Contains Element    ${KEYWORDDRIVEN_TITLE}
     ELSE IF    "${card_links}" == "Datadriven Testing"
         Page Should Contain Element        ${TESTAUTOMATION}
-        Wait Until Page Contains Element    (//div[@class='card'])[3]//a[1]
-        Tolerant Click                      (//div[@class='card'])[3]//a[1]
+        Wait Until Page Contains Element    ${RDM_DATAD_TESTING}
+        Tolerant Click                      ${RDM_DATAD_TESTING}
         Wait Until Page Contains Element    ${DATA_DRIVEN_TESTING}
     ELSE IF    "${card_links}" == "Integration"
         Page Should Contain Element        ${TESTAUTOMATION}
-        Wait Until Page Contains Element    (//div[@class='card'])[4]//a[1]
-        Tolerant Click                      (//div[@class='card'])[4]//a[1]
+        Wait Until Page Contains Element    ${RDM_INTEGRATION}
+        Tolerant Click                      ${RDM_INTEGRATION}
         Wait Until Page Contains Element    ${INTEGRATION_TITLE}
     END
 
