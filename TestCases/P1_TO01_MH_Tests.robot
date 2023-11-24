@@ -113,3 +113,12 @@ P1TO01_TC12 The Road To Efficiency Components Validations On Home Page
     Check If The Page Contains Elements       The road to efficiency
     Check Page Button State    ${MORE_ABOUT_TA_BTN}
     Check If The Page Contains Elements       Test automation
+
+P1TO01_TC13 KEYWORD DRIVEN TESTING Components Validations On Home Page
+    [Documentation]    Verifies that Explore keyworddriven Testing button is shown and enabled in Home page
+    ...    at KEYWORDDRIVEN TESTING.
+    [Tags]    P1TO01_TC13    exploratory
+    Verify Main Header
+    Check If The Page Contains Elements       Keyworddriven Testing
+    Check Page Button State    ${EXP_KEYWORDDRIVEN_TEST}
+    Check If The Page Contains Elements       Keyword Driven Testing

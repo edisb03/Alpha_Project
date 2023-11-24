@@ -26,6 +26,7 @@ ${ACCEPT_COOKIES_IMBUS}         (//a[@class='cc-btn cc-allow-all cc-w-100'])[1]
 ${LEARN_MORE_BTN}               (//div[@class='box-inner box-inner--cta']//a)[1]
 ${iTORX_PAGE_TITLE}             //h2[@class='h2 has-no-overline']
 ${MORE_ABOUT_TA_BTN}            (//div[@class='cta']//a)[2]
+${EXP_KEYWORDDRIVEN_TEST}       (//div[@class='box-inner box-inner--cta']//a)[2]
 ### Home Page Locators For Card ###
 ${CARD_SECTION_TITLE}           //h2[@class='h3 has-no-overline']
 ${TESTAUTOMATION}               (//h3[@class='h4'])[1]
@@ -40,6 +41,7 @@ ${RDM_INTEGRATION}              (//div[@class='card'])[4]//a[1]
 ### Home Page tites
 ${NEW!_TITLE}                   (//div[contains(@class, 'box-inner box-inner--intro text text--lg')]//p[@class='overline'])[2]
 ${ROAD_EFFICIENCY_TITLE}        (//div[contains(@class, 'box-inner box-inner--content text text--lg')]//p[@class='overline'])[1]
+${KEYWORDDRIVEN_TITLE}          (//div[contains(@class, 'box-inner box-inner--intro text text--lg')]//p[@class='overline'])[3]
 
 # Status
 ${WELL_DONE_STATUS}             //div[contains(@class, 'checklist')]//p[contains(@class, 'msg--success')]
