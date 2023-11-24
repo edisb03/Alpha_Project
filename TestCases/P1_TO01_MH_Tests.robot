@@ -71,25 +71,25 @@ P1TO01_TC06 - Lets talk about your testautomation Button Verification
     Verify Testing Solution Drop Items    Testing automation
     Check Page Button State    ${LETS_TALK_BTN}
 
-P1_TO01_MH_TC07 Navigate To English Language
+P1TO01_TC07 Navigate To English Language
     [Documentation]    Verifies that English option is shown at Header of the testbench page.
     [Tags]    P1TO01_TC07    exploratory
     Verify Default Languange Is    English
 
-P1_TO01_MH_TC08 Verify English Option In The Language Dropdown List
+P1TO01_TC08 Verify English Option In The Language Dropdown List
     [Documentation]    Verifies that English option is shown in the language dropdown list.
     ...  Not part of Resources page on  new version
     [Tags]    P1TO01_TC08    exploratory
     Perform Language Switching    English
 
-P1_TO01_MH_TC09 Validate Contact Us Button On Test Automation Page
+P1TO01_TC09 Validate Contact Us Button On Test Automation Page
     [Documentation]    Verifies that Contact us! button is shown and enabled in Test Automation page.
     [Tags]    P1TO01_TC09    exploratory
     Navigate To Testing Solutions
     Verify Testing Solution Drop Items    Testing automation
     Check Page Button State    ${CONTACT_US_BTN}
 
-P1_TO01_TC10 Validate Advantages In Automation With TestBench List Items
+P1TO01_TC10 Validate Advantages In Automation With TestBench List Items
     [Documentation]    This Test Case validates list inside of Test Automation page
     [Tags]    P1TO01_TC10  exploratory
     Navigate To Testing Solutions
@@ -97,10 +97,19 @@ P1_TO01_TC10 Validate Advantages In Automation With TestBench List Items
     Check If The Page Contains Elements    Advantages in automation with TestBench
     Test Automation List Items Box Verification
 
-P1_TO01_MH_TC11 Validation Of Learn More Button And iTORX Page
+P1TO01_TC11 Validation Of Learn More Button And iTORX Page
     [Documentation]    Verifies that Learn more button is shown and enabled in Home page at iTORX.
     [Tags]    P1TO01_TC11    exploratory
     Verify Main Header
     Check If The Page Contains Elements       New!
     Check Page Button State    ${LEARN_MORE_BTN}
     Check If The Page Contains Elements       Your Wizard for the manual execution of tests
+
+P1TO01_TC12 The Road To Efficiency Components Validations On Home Page
+    [Documentation]    Verifies that More about Testautomation button is shown and enabled in Home page
+    ...    at Testautomation.
+    [Tags]    P1TO01_TC12    exploratory
+    Verify Main Header
+    Check If The Page Contains Elements       The road to efficiency
+    Check Page Button State    ${MORE_ABOUT_TA_BTN}
+    Check If The Page Contains Elements       Test automation

@@ -83,6 +83,8 @@ Verify Testing Solution Drop Items
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${iTORX_PAGE_TITLE}
     ELSE IF     "${title}" == "Advantages in automation with TestBench"
         Wait Until Page Contains Element    ${HEADER2_TEST_AUTOMATION_TITLE}
+    ELSE IF     "${title}" == "The road to efficiency"
+        Wait Until Page Contains Element    ${ROAD_EFFICIENCY_TITLE}
     ELSE
         Fail    Unexpected status: ${title}
     END
