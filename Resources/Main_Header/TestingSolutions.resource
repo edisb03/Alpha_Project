@@ -32,8 +32,6 @@ ${EFFICENT_CONTENT}           //div[contains(@id, 'acc-3')]
 ${FAST_CONTENT}               //div[contains(@id, 'acc-4')]
 ${NO_BORDERS_CONTENT}         //div[contains(@id, 'acc-5')]
 ${SECURING_CONTENT}           //div[contains(@id, 'acc-6')]
-#Keyword for Contact us on Test Automation Page
-${CONATCT_US_TA_BTN}    (//a[contains(@class, 'button button--primary')])[2]
 
 
 *** Keywords ***

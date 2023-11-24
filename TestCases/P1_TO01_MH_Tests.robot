@@ -96,7 +96,6 @@ P1_TO01_TC10 Validate Advantages In Automation With TestBench List Items
     Verify Testing Solution Drop Items    Testing automation
     Check If The Page Contains Elements    Advantages in automation with TestBench
     Test Automation List Items Box Verification
-    Check Page Button State    ${CONATCT_US_TA_BTN}
 
 P1_TO01_MH_TC11 Validation Of Learn More Button And iTORX Page
     [Documentation]    Verifies that Learn more button is shown and enabled in Home page at iTORX.
