@@ -41,7 +41,7 @@ ${RDM_INTEGRATION}              (//div[@class='card'])[4]//a[1]
 ### Home Page tites
 ${NEW!_TITLE}                   (//div[contains(@class, 'box-inner box-inner--intro text text--lg')]//p[@class='overline'])[2]
 ${ROAD_EFFICIENCY_TITLE}        (//div[contains(@class, 'box-inner box-inner--content text text--lg')]//p[@class='overline'])[1]
-${KEYWORDDRIVEN_TITLE}          (//div[contains(@class, 'box-inner box-inner--intro text text--lg')]//p[@class='overline'])[3]
+${KDRIVEN_TESTING_TITLE}          (//div[contains(@class, 'box-inner box-inner--intro text text--lg')]//p[@class='overline'])[3]
 
 # Status
 ${WELL_DONE_STATUS}             //div[contains(@class, 'checklist')]//p[contains(@class, 'msg--success')]

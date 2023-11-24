@@ -86,7 +86,7 @@ Verify Testing Solution Drop Items
     ELSE IF     "${title}" == "The road to efficiency"
         Wait Until Page Contains Element    ${ROAD_EFFICIENCY_TITLE}
     ELSE IF     "${title}" == "Keyworddriven Testing"
-        Wait Until Page Contains Element    ${KEYWORDDRIVEN_TITLE}
+        Wait Until Page Contains Element    ${KDRIVEN_TESTING_TITLE}
     ELSE
         Fail    Unexpected status: ${title}
     END
