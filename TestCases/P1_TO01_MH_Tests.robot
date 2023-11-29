@@ -123,6 +123,15 @@ P1TO01_TC13 KEYWORD DRIVEN TESTING Components Validations On Home Page
     Check Page Button State    ${EXP_KEYWORDDRIVEN_TEST}
     Check If The Page Contains Elements       Keyword Driven Testing
 
+P1TO01_TC14 Data DRIVEN TESTING Components Validations On Home Page
+    [Documentation]    Verifies that Mehr lesen button is shown and enabled in Home page
+    ...    at DATADRIVEN TESTING.
+    [Tags]    P1TO01_TC14    exploratory
+    Verify Main Header
+    Check If The Page Contains Elements       Varying tests by using test data
+    Check Page Button State    ${MEHR_LESEN}
+    Check If The Page Contains Elements       Data Driven Testing
+
 P1TO01_TC16 TESTBENCH TESTIMONIALS Components Validations On Home Page
     [Documentation]    Validates home page testbench testimonials container. User validates its buttons as well.
     [Tags]    P1TO01_TC1    exploratory

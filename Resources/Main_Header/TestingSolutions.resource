@@ -61,15 +61,9 @@ Verify Testing Solution Drop Items
     [Arguments]    ${title}
     IF    "${title}" == "Test automation"
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${TEST_AUTOMATION_TITLE}
-    ELSE IF    "${title}" == "Testautomatisierung"
-        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${TEST_AUTOMATION_TITLE}
     ELSE IF    "${title}" == "Keyword Driven Testing"
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${KEYWORDDRIVEN_TITLE}
-    ELSE IF    "${title}" == "Keyword-Driven Testing"
-        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${KEYWORDDRIVEN_TITLE}
     ELSE IF    "${title}" == "Data Driven Testing"
-        Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${DATA_DRIVEN_TESTING}
-    ELSE IF    "${title}" == "Data-Driven Testing"
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${DATA_DRIVEN_TESTING}
     ELSE IF    "${title}" == "INTEGRATION IN THE TESTBENCH"
         Wait Until Keyword Succeeds    3x    1s    Page Should Contain Element    ${INTEGRATION_TITLE}
@@ -89,6 +83,8 @@ Verify Testing Solution Drop Items
         Wait Until Page Contains Element    ${KDRIVEN_TESTING_TITLE}
     ELSE IF     "${title}" == "What our customers say"
         Wait Until Page Contains Element    ${TESTIMONIALS_TITLE}
+    ELSE IF     "${title}" == "Varying tests by using test data"
+        Wait Until Page Contains Element    ${DDRIVEN_TESTING_TITLE}
     ELSE
         Fail    Unexpected status: ${title}
     END
