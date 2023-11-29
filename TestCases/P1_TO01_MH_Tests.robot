@@ -132,6 +132,15 @@ P1TO01_TC14 Data DRIVEN TESTING Components Validations On Home Page
     Check Page Button State    ${MEHR_LESEN}
     Check If The Page Contains Elements       Data Driven Testing
 
+P1TO01_TC15 Integration Components Validations On Home Page
+    [Documentation]    Verifies that Read more! button is shown and enabled in Home page
+    ...    at Integration.
+    [Tags]    P1TO01_TC15    exploratory
+    Verify Main Header
+    Check If The Page Contains Elements       Work with any tool landscape
+    Check Page Button State    ${READ_MORE!}
+    Check If The Page Contains Elements       INTEGRATION IN THE TESTBENCH
+
 P1TO01_TC16 TESTBENCH TESTIMONIALS Components Validations On Home Page
     [Documentation]    Validates home page testbench testimonials container. User validates its buttons as well.
     [Tags]    P1TO01_TC1    exploratory

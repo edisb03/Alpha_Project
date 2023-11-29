@@ -36,6 +36,7 @@ ${TARGENIO_CONTAINER}           (//div[@class='box-inner--text']//blockquote[@cl
 ${TESTBENCH_IN_USE_LINK}        //a[normalize-space()='The TestBench in use']
 ${TARGENIO_PAGE}                //span[@class='logo avia-svg-logo']
 ${MEHR_LESEN}                   (//div[@class='cta']//a)[3]
+${READ_MORE!}                   (//div[@class='box-inner box-inner--cta']//a)[3]
 ### Home Page Locators For Card ###
 ${CARD_SECTION_TITLE}           //h2[@class='h3 has-no-overline']
 ${TESTAUTOMATION}               (//h3[@class='h4'])[1]
@@ -53,6 +54,7 @@ ${ROAD_EFFICIENCY_TITLE}        (//div[contains(@class, 'box-inner box-inner--co
 ${KDRIVEN_TESTING_TITLE}        (//div[contains(@class, 'box-inner box-inner--intro text text--lg')]//p[@class='overline'])[3]
 ${TESTIMONIALS_TITLE}           (//h2[@class='h2'])[7]
 ${DDRIVEN_TESTING_TITLE}        (//h2[@class='h2'])[5]
+${INTEGRATION_SUBTITLE}         (//h2[@class='h2'])[6]
 
 # Status
 ${WELL_DONE_STATUS}             //div[contains(@class, 'checklist')]//p[contains(@class, 'msg--success')]

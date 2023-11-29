@@ -85,6 +85,8 @@ Verify Testing Solution Drop Items
         Wait Until Page Contains Element    ${TESTIMONIALS_TITLE}
     ELSE IF     "${title}" == "Varying tests by using test data"
         Wait Until Page Contains Element    ${DDRIVEN_TESTING_TITLE}
+    ELSE IF     "${title}" == "Work with any tool landscape"
+        Wait Until Page Contains Element    ${INTEGRATION_SUBTITLE}
     ELSE
         Fail    Unexpected status: ${title}
     END
