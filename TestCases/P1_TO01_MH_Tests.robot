@@ -122,3 +122,15 @@ P1TO01_TC13 KEYWORD DRIVEN TESTING Components Validations On Home Page
     Check If The Page Contains Elements       Keyworddriven Testing
     Check Page Button State    ${EXP_KEYWORDDRIVEN_TEST}
     Check If The Page Contains Elements       Keyword Driven Testing
+
+P1TO01_TC16 TESTBENCH TESTIMONIALS Components Validations On Home Page
+    [Documentation]    Validates home page testbench testimonials container. User validates its buttons as well.
+    [Tags]    P1TO01_TC1    exploratory
+    Verify Main Header
+    Check If The Page Contains Elements       What our customers say
+    Check Swisscom Button Is Enabled
+    Verify Swisscom Container
+    Go Back
+    Navigate To Targenio Button
+    Verify Targenio Container
+    Go Back

@@ -27,6 +27,14 @@ ${LEARN_MORE_BTN}               (//div[@class='box-inner box-inner--cta']//a)[1]
 ${iTORX_PAGE_TITLE}             //h2[@class='h2 has-no-overline']
 ${MORE_ABOUT_TA_BTN}            (//div[@class='cta']//a)[2]
 ${EXP_KEYWORDDRIVEN_TEST}       (//div[@class='box-inner box-inner--cta']//a)[2]
+${SWISSCOM_BUTTON}              (//div[@class='box-inner--text']//blockquote[@class='quote'])[1]
+${SWISSCOM_CONTAINER}           (//div[@class='box-inner--text']//blockquote[@class='quote'])[1]
+${SWISSCOM_LINK}                //a[@href='https://www.swisscom.ch/de/privatkunden.html' and @class='button button--link']
+${SWISSCOM_LINK_PAGE}           //h2[@id='onetrust-policy-title']
+${TARGENIO_BUTTON}              //a[@class='button button--tab']
+${TARGENIO_CONTAINER}           (//div[@class='box-inner--text']//blockquote[@class='quote'])[2]
+${TESTBENCH_IN_USE_LINK}        //a[normalize-space()='The TestBench in use']
+${TARGENIO_PAGE}                //span[@class='logo avia-svg-logo']
 ### Home Page Locators For Card ###
 ${CARD_SECTION_TITLE}           //h2[@class='h3 has-no-overline']
 ${TESTAUTOMATION}               (//h3[@class='h4'])[1]
@@ -41,7 +49,8 @@ ${RDM_INTEGRATION}              (//div[@class='card'])[4]//a[1]
 ### Home Page tites
 ${NEW!_TITLE}                   (//div[contains(@class, 'box-inner box-inner--intro text text--lg')]//p[@class='overline'])[2]
 ${ROAD_EFFICIENCY_TITLE}        (//div[contains(@class, 'box-inner box-inner--content text text--lg')]//p[@class='overline'])[1]
-${KDRIVEN_TESTING_TITLE}          (//div[contains(@class, 'box-inner box-inner--intro text text--lg')]//p[@class='overline'])[3]
+${KDRIVEN_TESTING_TITLE}        (//div[contains(@class, 'box-inner box-inner--intro text text--lg')]//p[@class='overline'])[3]
+${TESTIMONIALS_TITLE}           (//h2[@class='h2'])[7]
 
 # Status
 ${WELL_DONE_STATUS}             //div[contains(@class, 'checklist')]//p[contains(@class, 'msg--success')]
@@ -179,3 +188,30 @@ Open Imbus Page
     ${handles}=  Get Window Handles
     Switch Window    ${handles}[-1]
     Accept Cookies Imbus Page
+
+Check Swisscom Button Is Enabled
+    [Documentation]    This keyword verifies swisscom button is enabled by default.
+    Scroll Element Into View    ${SWISSCOM_BUTTON}
+    Wait Until Page Contains Element    ${SWISSCOM_BUTTON}
+    Element Should Be Enabled    ${SWISSCOM_BUTTON}
+    Click Element    ${SWISSCOM_BUTTON}
+
+Verify Swisscom Container
+    [Documentation]    This keyword verifies Swisscom container.
+    Set Selenium Speed    0.3s
+    Scroll Element Into View    ${SWISSCOM_CONTAINER}
+    Wait Until Page Contains Element    ${SWISSCOM_CONTAINER}
+    Wait Until Element Is Visible    ${SWISSCOM_LINK}
+    Click Element    ${SWISSCOM_LINK}
+    Wait Until Page Contains Element    ${SWISSCOM_LINK_PAGE}
+
+Navigate To Targenio Button
+    Wait Until Page Contains Element    ${TARGENIO_BUTTON}
+    Click Element    ${TARGENIO_BUTTON}
+
+Verify Targenio Container
+    [Documentation]    This keyword verifies targenio container.
+    Wait Until Page Contains Element    ${TARGENIO_CONTAINER}
+    Wait Until Element Is Visible    ${TESTBENCH_IN_USE_LINK}
+    Click Element    ${TESTBENCH_IN_USE_LINK}
+    Wait Until Page Contains Element    ${TARGENIO_PAGE}
