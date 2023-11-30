@@ -143,7 +143,7 @@ P1TO01_TC15 Integration Components Validations On Home Page
 
 P1TO01_TC16 TESTBENCH TESTIMONIALS Components Validations On Home Page
     [Documentation]    Validates home page testbench testimonials container. User validates its buttons as well.
-    [Tags]    P1TO01_TC1    exploratory
+    [Tags]    P1TO01_TC16   exploratory
     Verify Main Header
     Check If The Page Contains Elements       What our customers say
     Check Swisscom Button Is Enabled
@@ -152,3 +152,12 @@ P1TO01_TC16 TESTBENCH TESTIMONIALS Components Validations On Home Page
     Navigate To Targenio Button
     Verify Targenio Container
     Go Back
+
+P1TO01_TC17 Validate Test Automation Drop Menu Item
+    [Documentation]    Validates Test Automation drop menu item.
+    [Tags]    P1TO01_TC17    exploratory
+    Verify Main Header
+    Navigate To Testing Solutions
+    Verify Testing Solution Drop Items    Testing automation
+    Check If The Page Contains Elements    Test automation
+    Check If The Page Contains Elements    Automated testing for more efficiency

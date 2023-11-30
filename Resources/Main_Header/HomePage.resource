@@ -55,6 +55,7 @@ ${KDRIVEN_TESTING_TITLE}        (//div[contains(@class, 'box-inner box-inner--in
 ${TESTIMONIALS_TITLE}           (//h2[@class='h2'])[7]
 ${DDRIVEN_TESTING_TITLE}        (//h2[@class='h2'])[5]
 ${INTEGRATION_SUBTITLE}         (//h2[@class='h2'])[6]
+${TESTAUTOMATION_SUBTITLE}      (//div[contains(@class, 'box-inner box-inner--intro text text--lg')]//h2)[1]
 
 # Status
 ${WELL_DONE_STATUS}             //div[contains(@class, 'checklist')]//p[contains(@class, 'msg--success')]
