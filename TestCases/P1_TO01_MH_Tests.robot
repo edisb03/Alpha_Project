@@ -171,3 +171,12 @@ P1TO01_TC18 Test Bench_How To Do It_Content Verification
     Check If The Page Contains Elements    Test automation
     Check If The Page Contains Elements    This is how test automation works
     Test Automation Blocks Verification
+
+P1TO01_TC19 Validate Keyword Driven Testing Drop Menu Item
+    [Documentation]    Validates Test Automation page specifically TESTBENCH_HOW TO DO IT section.
+    [Tags]    P1TO01_TC18    exploratory
+    Verify Main Header
+    Navigate To Testing Solutions
+    Verify Testing Solution Drop Items    Keyword Driven Testing
+    Check If The Page Contains Elements    Keyword Driven Testing
+    Check If The Page Contains Elements    More than just a few words
