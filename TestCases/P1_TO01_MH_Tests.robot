@@ -173,10 +173,19 @@ P1TO01_TC18 Test Bench_How To Do It_Content Verification
     Test Automation Blocks Verification
 
 P1TO01_TC19 Validate Keyword Driven Testing Drop Menu Item
-    [Documentation]    Validates Test Automation page specifically TESTBENCH_HOW TO DO IT section.
-    [Tags]    P1TO01_TC18    exploratory
+    [Documentation]    Validates KEYWORD DRIVEN TESTING drop menu item.
+    [Tags]    P1TO01_TC19    exploratory
     Verify Main Header
     Navigate To Testing Solutions
     Verify Testing Solution Drop Items    Keyword Driven Testing
     Check If The Page Contains Elements    Keyword Driven Testing
     Check If The Page Contains Elements    More than just a few words
+
+P1TO01_TC20 What is Keyword Driven Test verification
+    [Documentation]    Validates What is Keyword Driven Test? title
+    [Tags]    P1TO01_TC20    exploratory
+    Verify Main Header
+    Navigate To Testing Solutions
+    Verify Testing Solution Drop Items    Keyword Driven Testing
+    Check If The Page Contains Elements    Keyword Driven Testing
+    Check If The Page Contains Elements    What is Keyword Driven Test?

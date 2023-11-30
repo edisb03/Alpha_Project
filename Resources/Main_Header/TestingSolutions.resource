@@ -95,6 +95,8 @@ Verify Testing Solution Drop Items
         Wait Until Keyword Succeeds    3x    3s    Page Should Contain Element    ${TB_HOW_TO_DO_IT}
     ELSE IF     "${title}" == "More than just a few words"
         Wait Until Page Contains Element    ${TESTAUTOMATION_SUBTITLE}
+    ELSE IF     "${title}" == "What is Keyword Driven Test?"
+        Wait Until Page Contains Element    ${KDRIVEN_TESTING_SUBTITLE}
     ELSE
         Fail    Unexpected status: ${title}
     END
