@@ -24,6 +24,7 @@ ${EFFICENT_LINK}           //a[contains(@class, 'h4 acc-3')]
 ${FAST_LINK}               //a[contains(@class, 'h4 acc-4')]
 ${NO_BORDERS_LINK}         //a[contains(@class, 'h4 acc-5')]
 ${SECURING_LINK}           //a[contains(@class, 'h4 acc-6')]
+${TB_HOW_TO_DO_IT}         (//div[contains(@class, 'box-inner box-inner--intro text text--lg')]//h2)[3]
 #Keywords for List items description
 ${TEST_DESIGN_CONTENT}        //div[contains(@id, 'acc-0')]
 ${CASE_GENERATION_CONTENT}    //div[contains(@id, 'acc-1')]
@@ -89,6 +90,9 @@ Verify Testing Solution Drop Items
         Wait Until Page Contains Element    ${INTEGRATION_SUBTITLE}
     ELSE IF     "${title}" == "Automated testing for more efficiency"
         Wait Until Page Contains Element    ${TESTAUTOMATION_SUBTITLE}
+    ELSE IF     "${title}" == "This is how test automation works"
+        Scroll Element Into View     ${TB_HOW_TO_DO_IT}
+        Wait Until Keyword Succeeds    3x    3s    Page Should Contain Element    ${TB_HOW_TO_DO_IT}
     ELSE
         Fail    Unexpected status: ${title}
     END
@@ -135,3 +139,37 @@ Test Automation List Items Box Verification
     Navigate To Test Automation List Item    Fast
     Navigate To Test Automation List Item    No borders
     Navigate To Test Automation List Item    Securing
+
+Navigate To Test Automation Blocks
+    [Documentation]    Verifies if all the list items work are shown and they are clickable
+    [Arguments]    ${block}
+    Set Selenium Speed    0.3
+    Execute JavaScript    window.scrollTo(0,3500);
+    IF    "${block}" == "Test blocks of the TestBench and blocks of the library of the test automat:"
+        Scroll Element Into View    (//h2[@class='h3'])[1]
+        Page Should Contain Element        (//h2[@class='h3'])[1]
+    ELSE IF    "${block}" == "Assembling tests:"
+        Scroll Element Into View    (//h2[@class='h3'])[2]
+        Page Should Contain Element        (//h2[@class='h3'])[2]
+    ELSE IF    "${block}" == "Test planning in the TestBench:"
+        Scroll Element Into View    (//h2[@class='h3'])[3]
+        Page Should Contain Element        (//h2[@class='h3'])[3]
+    ELSE IF    "${block}" == "Start test execution:"
+        Scroll Element Into View    (//h2[@class='h3'])[4]
+        Page Should Contain Element        (//h2[@class='h3'])[4]
+    ELSE IF    "${block}" == "Execute automation:"
+        Scroll Element Into View    (//h2[@class='h3'])[5]
+        Page Should Contain Element        (//h2[@class='h3'])[5]
+    ELSE IF    "${block}" == "Return of results and evaluation:"
+        Scroll Element Into View    (//h2[@class='h3'])[6]
+        Page Should Contain Element        (//h2[@class='h3'])[6]
+    END
+
+Test Automation Blocks Verification
+    [Documentation]    Checks six blocks in Testing Automation page.
+    Navigate To Test Automation Blocks    Test blocks of the TestBench and blocks of the library of the test automat:
+    Navigate To Test Automation Blocks    Assembling tests:
+    Navigate To Test Automation Blocks    Test planning in the TestBench:
+    Navigate To Test Automation Blocks    Start test execution:
+    Navigate To Test Automation Blocks    Execute automation:
+    Navigate To Test Automation Blocks    Return of results and evaluation:

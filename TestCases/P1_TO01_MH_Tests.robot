@@ -161,3 +161,13 @@ P1TO01_TC17 Validate Test Automation Drop Menu Item
     Verify Testing Solution Drop Items    Testing automation
     Check If The Page Contains Elements    Test automation
     Check If The Page Contains Elements    Automated testing for more efficiency
+
+P1TO01_TC18 Test Bench_How To Do It_Content Verification
+    [Documentation]    Validates Test Automation page specifically TESTBENCH_HOW TO DO IT section.
+    [Tags]    P1TO01_TC18    exploratory
+    Verify Main Header
+    Navigate To Testing Solutions
+    Verify Testing Solution Drop Items    Testing automation
+    Check If The Page Contains Elements    Test automation
+    Check If The Page Contains Elements    This is how test automation works
+    Test Automation Blocks Verification
