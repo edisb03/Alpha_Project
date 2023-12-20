@@ -12,7 +12,7 @@ ${TEST_AUTOMATION_TITLE}                //h1[contains(@class, 'h1 has-no-overlin
 ${KEYWORD_DRIVEN_TESTING_DROP_DOWN}     (//ul[contains(@class, 'menu')]//ul[contains(@class, 'nav-drop')]//li//a[contains(@href, '')])[2]
 ${DATA_DRIVEN_TESTING_DROP_DOWN}        (//ul[contains(@class, 'menu')]//ul[contains(@class, 'nav-drop')]//li//a[contains(@href, '')])[3]
 #Test Automation Buttons
-${LETS_TALK_BTN}                         //div[contains(@id,'anchor-what_is_test_automation?')]//div[@class='cta']
+${LETS_TALK_BTN}                         //a[contains(@href,"mailto:%20testbench@imbus.de")]
 ${CONTACT_US_BTN}                        (//a[@class='button button--primary'])[2]
 #This variables validates Advantages in automation with TestBench:
 ${HEADER2_TEST_AUTOMATION_TITLE}        (//div[contains(@class, 'box-inner box-inner--intro text text--lg')])[2]
