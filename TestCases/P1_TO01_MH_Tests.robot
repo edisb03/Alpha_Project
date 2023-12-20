@@ -122,3 +122,70 @@ P1TO01_TC13 KEYWORD DRIVEN TESTING Components Validations On Home Page
     Check If The Page Contains Elements       Keyworddriven Testing
     Check Page Button State    ${EXP_KEYWORDDRIVEN_TEST}
     Check If The Page Contains Elements       Keyword Driven Testing
+
+P1TO01_TC14 Data DRIVEN TESTING Components Validations On Home Page
+    [Documentation]    Verifies that Mehr lesen button is shown and enabled in Home page
+    ...    at DATADRIVEN TESTING.
+    [Tags]    P1TO01_TC14    exploratory
+    Verify Main Header
+    Check If The Page Contains Elements       Varying tests by using test data
+    Check Page Button State    ${MEHR_LESEN}
+    Check If The Page Contains Elements       Data Driven Testing
+
+P1TO01_TC15 Integration Components Validations On Home Page
+    [Documentation]    Verifies that Read more! button is shown and enabled in Home page
+    ...    at Integration.
+    [Tags]    P1TO01_TC15    exploratory
+    Verify Main Header
+    Check If The Page Contains Elements       Work with any tool landscape
+    Check Page Button State    ${READ_MORE!}
+    Check If The Page Contains Elements       INTEGRATION IN THE TESTBENCH
+
+P1TO01_TC16 TESTBENCH TESTIMONIALS Components Validations On Home Page
+    [Documentation]    Validates home page testbench testimonials container. User validates its buttons as well.
+    [Tags]    P1TO01_TC16   exploratory
+    Verify Main Header
+    Check If The Page Contains Elements       What our customers say
+    Check Swisscom Button Is Enabled
+    Verify Swisscom Container
+    Go Back
+    Navigate To Targenio Button
+    Verify Targenio Container
+    Go Back
+
+P1TO01_TC17 Validate Test Automation Drop Menu Item
+    [Documentation]    Validates Test Automation drop menu item.
+    [Tags]    P1TO01_TC17    exploratory
+    Verify Main Header
+    Navigate To Testing Solutions
+    Verify Testing Solution Drop Items    Testing automation
+    Check If The Page Contains Elements    Test automation
+    Check If The Page Contains Elements    Automated testing for more efficiency
+
+P1TO01_TC18 Test Bench_How To Do It_Content Verification
+    [Documentation]    Validates Test Automation page specifically TESTBENCH_HOW TO DO IT section.
+    [Tags]    P1TO01_TC18    exploratory
+    Verify Main Header
+    Navigate To Testing Solutions
+    Verify Testing Solution Drop Items    Testing automation
+    Check If The Page Contains Elements    Test automation
+    Check If The Page Contains Elements    This is how test automation works
+    Test Automation Blocks Verification
+
+P1TO01_TC19 Validate Keyword Driven Testing Drop Menu Item
+    [Documentation]    Validates KEYWORD DRIVEN TESTING drop menu item.
+    [Tags]    P1TO01_TC19    exploratory
+    Verify Main Header
+    Navigate To Testing Solutions
+    Verify Testing Solution Drop Items    Keyword Driven Testing
+    Check If The Page Contains Elements    Keyword Driven Testing
+    Check If The Page Contains Elements    More than just a few words
+
+P1TO01_TC20 What is Keyword Driven Test verification
+    [Documentation]    Validates What is Keyword Driven Test? title
+    [Tags]    P1TO01_TC20    exploratory
+    Verify Main Header
+    Navigate To Testing Solutions
+    Verify Testing Solution Drop Items    Keyword Driven Testing
+    Check If The Page Contains Elements    Keyword Driven Testing
+    Check If The Page Contains Elements    What is Keyword Driven Test?
