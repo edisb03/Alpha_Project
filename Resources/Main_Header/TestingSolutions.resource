@@ -26,7 +26,7 @@ ${NO_BORDERS_LINK}         //a[contains(@class, 'h4 acc-5')]
 ${SECURING_LINK}           //a[contains(@class, 'h4 acc-6')]
 ${TB_HOW_TO_DO_IT}         (//div[contains(@class, 'box-inner box-inner--intro text text--lg')]//h2)[3]
 #Keywords for List items description
-${TEST_DESIGN_CONTENT}        //div[contains(@id, 'acc-0')]
+${TEST_DESIGN_CONTENT}        //a[contains(@class, 'h4 acc-0 active')]
 ${CASE_GENERATION_CONTENT}    //div[contains(@id, 'acc-1')]
 ${PROCESSES_CONTENT}          //div[contains(@id, 'acc-2')]
 ${EFFICENT_CONTENT}           //div[contains(@id, 'acc-3')]
